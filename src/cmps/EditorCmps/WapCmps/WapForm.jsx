@@ -41,11 +41,11 @@ export class WapForm extends Component {
     }
 
     render() {
-        const { inputs } = this.state
-        if (!inputs) return <div>Loading...</div>
+        // const { inputs } = this.state
+        // if (!inputs) return <div>Loading...</div>
         const { onSubmit } = this.props
         return (
-            <form className="wap-el" onSubmit={onSubmit}>
+            <form className="wap-el flex column" onSubmit={onSubmit}>
                 <TextField required id="outlined-basic" label="Your name" name="name" placeholder="John Smith" onChange={this.handleChange} />
                 <TextField required type="email" id="outlined-basic" label="Your Email" name="email" placeholder="Johnsmith@mail.com" onChange={this.handleChange} />
                 <TextField required type="number" id="outlined-basic" label="Your phone number" name="phoneNumber" placeholder="0501234567" onChange={this.handleChange} />

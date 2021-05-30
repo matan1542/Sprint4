@@ -9,11 +9,11 @@ export class EditCmpBar extends Component {
     if(!currCmp?.info) return <div>Please select any Component</div>
     return (
       <div className="edit-bar flex column">
-        {(currCmp) && <EditCmpStyleList
+        <EditCmpStyleList
           style={currCmp.info.style}
           currCmp={currCmp}
           onUpdateCurrCmp={onUpdateCurrCmp}
-        />}
+        />
       </div>
     )
   }

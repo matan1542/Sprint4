@@ -1,6 +1,6 @@
 // import {WapTxt} from '../WapCmps/WapTxt'
 import { cmpService } from '../../../services/cmp.service.js'
-export function AddCmpBar({ addCmp, changeCmpsIds, getCmpById, currWap }) {
+export function AddCmpBar({ addCmp, changeCmpsIds, currWap }) {
     const onAddCmp = async ({ target }) => {
         const value = target.attributes.value.value;
         const res = await cmpService.getCmpsById(value)
@@ -15,6 +15,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, getCmpById, currWap }) {
             <ul className="add-cmp-list clean-list flex justify-center column align-text-center">
                 <li value='wc01' onClick={onAddCmp}>Header</li>
                 <li value='wc05' onClick={onAddCmp}>Hero</li>
+                <li value='wc023' onClick={onAddCmp}>Form</li>
             </ul>
 
         </div>

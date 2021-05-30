@@ -32,7 +32,6 @@ useEffect(() => {
   const handleInputChange = async(event) => {
     const fontValue = !event.target.value ? 0 : Number(event.target.value)
   const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,fontSize:`${fontValue}px`}}}
-  console.log('cmp:', cmp)
    await onUpdateCurrCmp(cmp)
     setValue(fontValue);
   };

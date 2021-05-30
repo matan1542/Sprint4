@@ -1,5 +1,5 @@
 header {
-    background: rgb(216,255,255);
+    background: $clr7;
     // background: linear-gradient(0deg, rgba(216,255,255,0) 0%, rgba(188,207,255,1) 91%);
     width: 100%;
     .app-header {
@@ -7,7 +7,8 @@ header {
         padding: 0px 20px;
         margin: 0 auto;
         height: 70px;
-        border-bottom: 1px solid lightgray ;
+        box-shadow: 2px 0 4px 0;
+        margin-bottom: 1px;
         .app-logo {
             width: 250px;
         } 
@@ -17,7 +18,7 @@ header {
             margin-left: 30px;
             transition: .3s;
             padding: 10px 10px 5px;
-            border-radius: 15px 15px 0px 0px; 
+            border-radius: 0 15px ; 
             &:hover {
                 background-color: #87bae791;
             }
