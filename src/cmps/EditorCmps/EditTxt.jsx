@@ -1,19 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 
 export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
-  const [txtToEdit, setTxtToEdit] = useState(cmp.info.txt);
+  const [state, setState] = useState(cmp);
   const ref = useRef(true);
 
   useEffect(() => {
     if (ref.current) {
       ref.current = false;
     } else {
-      onUpdateCurrCmp(cmp);
+      
+      onUpdateCurrCmp(state);
+    //   console.log('cmp',cmp)
     }
-  }, [txtToEdit]);
+  }, [state]);
 
   const handleChange = ({ target }) => {
-    setTxtToEdit(target.innerText);
+    const field = target.attributes.name.value
+    const value = target.innerText
+    setState(state => ({
+        ...state,
+        info: {
+            ...state.info,
+            [field]: value
+        }
+    }))
   };
   console.log('txtToEdit', txtToEdit);
   return (
@@ -33,7 +43,7 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
         className="wap-text"
         name="txt"
         style={cmp.info.style}>
-        {txtToEdit}
+        {state.info.txt}
       </p>
     </>
   );
