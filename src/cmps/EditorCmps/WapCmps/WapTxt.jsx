@@ -3,7 +3,7 @@ import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined"
 import { EditorWapCmps } from "../EditorWapCmps";
 import { EditTxt } from "../EditTxt";
 
-const _ = require("lodash");
+// const _ = require("lodash");
 
 export function WapTxt({
   cmp,
@@ -18,7 +18,7 @@ export function WapTxt({
     <div className="wap-el">
       <EditTxt
         cmp={cmp}
-        onUpdateWap={() => updateWap(wap)}
+        onUpdateWap={() => {updateWap(wap); console.log('wap',wap)}}
         onUpdateCurrCmp={onUpdateCurrCmp}
         onCmpFocus={onCmpFocus}
       />
