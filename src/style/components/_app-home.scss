@@ -1,0 +1,31 @@
+.home {
+    max-width: 1440px;
+    padding: 0px 20px;
+    h1 {
+        font-size: 140px;
+        color: mediumblue;
+    }
+    h2 {
+        font-size: 90px;
+        color: mediumblue;
+    }
+    .home-hero {
+        border: 0.5px solid gray;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 8px;
+        padding: 16px;
+        background-color: #c5c5c5;
+    }
+    .btn-start {
+        background-color: lightskyblue;
+        color: mediumblue;
+        padding: 30px 10px;
+        border-radius: 50px;
+    }
+    a {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+    }
+}

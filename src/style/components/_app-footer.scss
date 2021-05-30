@@ -1,0 +1,21 @@
+footer {
+    position: absolute;
+    background: rgb(216,255,255);
+    width: 100%;
+    color: #3f7aae;
+    bottom: 0;
+    .app-footer {
+        max-width: 1440px;
+        padding: 0px 20px;
+        margin: 0 auto;
+        height: 50px;
+        border-bottom: 1px solid lightgray ;
+        .app-logo {
+            width: 250px;
+        } 
+        nav a {
+            color: #3f7aae;
+            margin-left: 30px;
+        }
+    }
+}

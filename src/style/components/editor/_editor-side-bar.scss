@@ -1,0 +1,53 @@
+.editor-side-bar {
+    background-color: $clr7;
+    min-width: 270px;
+    align-items: center;
+    padding: 10px;
+    height: 80vh;
+    box-shadow: 0 0 3px 0;
+    border-radius:em(10px);
+    .side-bar-nav{
+        align-items:center;
+        width: 100%;
+        button{
+            border: none;
+            background-color: inherit;
+            flex: auto;
+            min-height: 45px;
+            font-size:em(30px);
+            cursor: pointer;
+            &:hover{
+                border-bottom: 2px solid $clr4;
+            }
+        }
+    }
+    .btn-publish{
+        cursor: pointer;
+        border-radius:em(10px);
+        background-color: inherit;
+        font-size: em(30px);
+        border: 2px solid $clr5;
+        width: 200px;
+        &:hover{
+        background-color: $clr5;
+            color: $clr7;
+        }
+    }
+} 
+
+.add-cmp-list{
+    padding:em(10px);
+    &>*{
+        width: 170px;
+        margin-bottom: em(10px);
+        padding: em(12px);
+        color: white;
+        border-radius:em(5px);
+        box-shadow: 0 0 3px 0;
+        background-color: #34495e;
+        cursor: pointer;
+        &:hover {
+            opacity:0.8 ;
+        }
+    }
+}
