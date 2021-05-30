@@ -15,7 +15,7 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
   const handleChange = ({ target }) => {
     setTxtToEdit(target.innerText);
   };
-
+  console.log('txtToEdit', txtToEdit);
   return (
     <>
       <p

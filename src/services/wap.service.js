@@ -37,9 +37,10 @@ function remove(wapId) {
     return storageService.remove(STORAGE_KEY, wapId)
 }
 
-function save(wap) {
+async function save(wap) {
     if (wap._id) {
-        return storageService.put(STORAGE_KEY, wap)
+        const newWap = await storageService.put(STORAGE_KEY, wap)
+        return newWap
     } else {
         return storageService.post(STORAGE_KEY, wap)
     }
@@ -73,12 +74,12 @@ async function getTarget(targetWap, id) {
     }
 }
 
-async function addCmp(wap,cmp){
-    try{
+async function addCmp(wap, cmp) {
+    try {
         wap.cmps.push(cmp);
         return wap
     } catch (err) {
-        throw new Error('Had problem from service in addCmp',err)
+        throw new Error('Had problem from service in addCmp', err)
     }
 }
 

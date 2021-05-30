@@ -119,6 +119,7 @@ export function updateCurrCmp(wapObj, id, updateData) {
 }
 
 export function updateWap(wapObj) {
+    console.log("🚀 ~ file: wap.actions.js ~ line 122 ~ updateWap ~ wapObj", wapObj)
     return async dispatch => {
         try {
             const wap = await wapService.save(wapObj)

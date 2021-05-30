@@ -18,7 +18,10 @@ export function WapTxt({
     <div className="wap-el">
       <EditTxt
         cmp={cmp}
-        onUpdateWap={() => {updateWap(wap); console.log('wap',wap)}}
+        onUpdateWap={() => {
+          updateWap(wap);
+          console.log('wap', wap)
+        }}
         onUpdateCurrCmp={onUpdateCurrCmp}
         onCmpFocus={onCmpFocus}
       />
