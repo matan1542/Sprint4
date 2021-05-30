@@ -102,12 +102,12 @@ export function addCmp(wapObj, cmpObj) {
 
 
 export function updateCurrCmp(wapObj, id, updateData) {
-    console.log('causing problems updateCurrCmp', wapObj)
-    console.log('updateData', updateData, 'id', id)
+    // console.log('causing problems updateCurrCmp', wapObj)
+    // console.log('updateData', updateData, 'id', id)
     return async dispatch => {
         try {
             const wap = await wapService.updateTarget(wapObj, id, updateData)
-            console.log('causing problems updateCurrCmp', wap)
+            // console.log('wapObj', updateData)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap

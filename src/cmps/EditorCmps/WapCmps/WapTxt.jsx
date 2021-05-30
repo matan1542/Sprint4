@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 import { EditorWapCmps } from "../EditorWapCmps";
 import { EditTxt } from "../EditTxt";
@@ -18,7 +18,7 @@ export function WapTxt({
     <div className="wap-el">
       <EditTxt
         cmp={cmp}
-        onUpdateWap={() => {updateWap(wap); console.log('wap',wap)}}
+        onUpdateWap={() => {updateWap(wap)}}
         onUpdateCurrCmp={onUpdateCurrCmp}
         onCmpFocus={onCmpFocus}
       />
