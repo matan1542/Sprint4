@@ -14,9 +14,10 @@
         display: none;
         transition: .3s;
         border-radius: 10px;
+        background-size: cover;
     }
     &:hover {
-        outline: 2px dashed rgb(255, 37, 37);
+        outline: 1px dashed $clr3;
         z-index: 1;
         .wap-el-btn-del{
             display: block;
@@ -48,7 +49,7 @@
         border-radius: 10px;
     }
     &:hover {
-        outline: 2px dashed rgb(0, 255, 0);
+        outline: 1px dashed $clr3;
         z-index: 1;
         .wap-el-btn-del{
             display: block;
