@@ -20,9 +20,9 @@ function getCmpsById(cmpId) {
 async function changeIds(primeCmp) {
     console.log('primeCmp', primeCmp)
     primeCmp.id = utilService.makeId()
-    if (primeCmp.cmps && primeCmp.cmps.length) { }
+    if (!primeCmp?.cmps ) return primeCmp
     const res = await changeIdsToCmps(primeCmp)
-    console.log("🚀 ~ file: cmp.service.js ~ line 25 ~ changeIds ~ res", res)
+    // console.log("🚀 ~ file: cmp.service.js ~ line 25 ~ changeIds ~ res", res)
     return res
     function changeIdsToCmps(cmp) {
         cmp.cmps.forEach((target, index) => {

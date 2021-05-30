@@ -65,6 +65,8 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
           />
         );
+        case "wap-form":
+            return <WapForm/>
       default:
         return null;
     }

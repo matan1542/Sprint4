@@ -124,6 +124,7 @@ export function updateWap(wapObj) {
     return async dispatch => {
         try {
             const wap = await wapService.save(wapObj)
+            console.log('wap',wap)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap: wap.updatedEntity
