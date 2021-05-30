@@ -8,7 +8,7 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
     if (ref.current) {
       ref.current = false;
     } else {
-      onUpdateCurrCmp(txtToEdit);
+      onUpdateCurrCmp({ txtToEdit, id: cmp.id });
     }
   }, [txtToEdit]);
 

@@ -35,6 +35,7 @@ export class _Editor extends Component {
     };
     onUpdateCurrCmp = (cmp) => {
         const copyCmp = { ...cmp };
+        console.log("🚀 ~ file: Editor.jsx ~ line 38 ~ _Editor ~ copyCmp", copyCmp)
         delete copyCmp.id;
         this.props.updateCurrCmp(this.props.currWap, cmp.id, copyCmp);
     };
@@ -68,7 +69,7 @@ export class _Editor extends Component {
     render() {
         // console.log(this.state.editorStatus)
         const { editorStatus } = this.state
-        const { currCmp, currWap ,addCmp ,changeCmpsIds,updateWap} = this.props;
+        const { currCmp, currWap, addCmp, changeCmpsIds, updateWap } = this.props;
         if (!currWap) return <div>Loading...</div>;
         return (
             <section className="app-editor flex space-between">
