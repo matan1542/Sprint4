@@ -21,7 +21,6 @@ export function WapBtn({
           target.contentEditable = true;
         }}
         onBlur={({ target }) => {
-          console.log(target)
           target.contentEditable = false;
           updateWap(wap);
         }}
