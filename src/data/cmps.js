@@ -39,6 +39,7 @@ export const cmp = [{
                     "type": "wap-btn",
                     "info": {
                         "txt": "Home",
+                        "url": "",
                         "style": {
                             "color": "#ffffff",
                             "backgroundColor": "inherit",
@@ -52,6 +53,7 @@ export const cmp = [{
                     "type": "wap-btn",
                     "info": {
                         "txt": "News",
+                        "url": "",
                         "style": {
                             "color": "#ffffff",
                             "backgroundColor": "inherit",
@@ -65,6 +67,7 @@ export const cmp = [{
                     "type": "wap-btn",
                     "info": {
                         "txt": "About",
+                        "url": "",
                         "style": {
                             "color": "#ffffff",
                             "backgroundColor": "inherit",
@@ -115,6 +118,7 @@ export const cmp = [{
             "type": "wap-btn",
             "info": {
                 "txt": "Click to Enter!",
+                "url": "",
                 "style": {
                     "borderRadius": "15px",
                     "backgroundColor": "inherit",
