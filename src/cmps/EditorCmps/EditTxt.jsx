@@ -8,7 +8,7 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
     if (ref.current) {
       ref.current = false;
     } else {
-      onUpdateCurrCmp({ txtToEdit, id: cmp.id });
+      onUpdateCurrCmp(cmp);
     }
   }, [txtToEdit]);
 
@@ -32,8 +32,7 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
         }}
         className="wap-text"
         name="txt"
-        style={cmp.info.style}
-      >
+        style={cmp.info.style}>
         {txtToEdit}
       </p>
     </>
