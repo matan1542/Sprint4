@@ -1,4 +1,6 @@
-export const cmp = [{
+export const cmp = [
+    
+    {
     "id": "wc01",
     "type": "wap-section",
     "info": {
