@@ -68,7 +68,7 @@ export class _Editor extends Component {
     render() {
         // console.log(this.state.editorStatus)
         const { editorStatus } = this.state
-        const { currCmp, currWap ,addCmp ,changeCmpsIds,updateWap} = this.props;
+        const { currCmp, currWap ,addCmp ,changeCmpsIds,updateWap,cmps} = this.props;
         if (!currWap) return <div>Loading...</div>;
         return (
             <section className="app-editor flex space-between">
@@ -81,6 +81,7 @@ export class _Editor extends Component {
                     addCmp={addCmp}
                     currWap={currWap}
                     changeCmpsIds={changeCmpsIds}
+                    cmps={cmps}
                 />
                 <DragDropContext onDragEnd={this.onDragEnd}>
                     <div className="editor-wap">
@@ -102,6 +103,7 @@ export class _Editor extends Component {
 function mapStateToProps(state) {
     return {
         waps: state.wapModule.waps,
+        cmps: state.wapModule.cmps,
         currWap: state.wapModule.currWap,
         currCmp: state.wapModule.currCmp,
     };

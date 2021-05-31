@@ -7,6 +7,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {AddCmpList} from './AddCmpList'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function AddCmpBar({ addCmp, changeCmpsIds, currWap }) {
+export function AddCmpBar({ addCmp, changeCmpsIds, currWap ,cmps}) {
+
     const onAddCmp = async ({ target }) => {
         const value = target.attributes.value.value;
         const res = await cmpService.getCmpsById(value)
@@ -37,10 +39,10 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap }) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Accordion 1</Typography>
+          <Typography className={classes.heading}>Headers</Typography>
         </AccordionSummary>
         <AccordionDetails>
-        <div value='wc01' onClick={onAddCmp}>Header</div>
+                <AddCmpList cmps={cmps} sectionType="header-section"/>
                 {/* <li value='wc05' onClick={onAddCmp}>Hero</li>
                 <li value='wc023' onClick={onAddCmp}>Form</li> */}
         </AccordionDetails>
@@ -51,10 +53,10 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap }) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography className={classes.heading}>Accordion 2</Typography>
+          <Typography className={classes.heading}>Heros</Typography>
         </AccordionSummary>
         <AccordionDetails>
-        <div value='wc05' onClick={onAddCmp}>Hero</div>
+        <AddCmpList cmps={cmps} sectionType="hero-section"/>
         </AccordionDetails>
       </Accordion>
       <Accordion disabled>
@@ -70,4 +72,4 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap }) {
   );
 }
 
-{/* <li value='wc023' onClick={onAddCmp}>Form</li> */}
+// {/* <li value='wc023' onClick={onAddCmp}>Form</li> */}

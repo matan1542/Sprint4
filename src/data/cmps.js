@@ -2,6 +2,7 @@ export const cmp = [
     
     {
     "id": "wc01",
+    "sectionType":"header-section",
     "type": "wap-section",
     "info": {
         "style": {
@@ -84,6 +85,7 @@ export const cmp = [
 },
 {
     "id": "wc05",
+    "sectionType":"hero-section",
     "type": "wap-section",
     "info": {
         "txt": "",

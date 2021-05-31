@@ -11,7 +11,8 @@ export class EditorSideBar extends Component {
                 getCmpById={this.props.getCmpById} 
                 currCmp={this.props.currCmp}
                 changeCmpsIds={this.props.changeCmpsIds}
-                currWap={this.props.currWap}/>
+                currWap={this.props.currWap}
+                cmps={this.props.cmps}/>
             case 'edit':
                 return <EditCmpBar
                     currCmp={this.props.currCmp}
