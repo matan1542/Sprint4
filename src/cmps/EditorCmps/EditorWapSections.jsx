@@ -8,7 +8,6 @@ export class EditorWapSections extends Component {
     // console.log('onUpdateCurrCmp editorwapSection', onUpdateCurrCmp)
     // console.log(wap);
     if (!wap) return <div>Loading...</div>;
-    console.log(wap);
     return (
       <Droppable className="section" droppableId="1" isCombineEnabled>
         {(provided, snapshot) => (
