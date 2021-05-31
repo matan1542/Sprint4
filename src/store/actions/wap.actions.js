@@ -38,7 +38,6 @@ export function changeCmpsIds(cmpObj) {
     return async dispatch => {
         try {
             const currCmp = await cmpService.changeIds(cmpObj)
-            console.log('cmp', currCmp)
             const action = {
                 type: 'SET_CURR_CMP',
                 currCmp
@@ -87,6 +86,7 @@ export function addCmp(wapObj, cmpObj, idx) {
     return async dispatch => {
         try {
             const wap = await wapService.addCmp(wapObj, cmpObj, idx)
+            console.log('wap',wap)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap
