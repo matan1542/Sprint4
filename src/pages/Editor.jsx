@@ -64,7 +64,7 @@ export class _Editor extends Component {
 
   onDragEnd = async (res) => {
     console.log("🚀 ~ file: Editor.jsx ~ line 65 ~ _Editor ~ res", res);
-    const { destination, source, draggableId } = res;
+    const { destination, source, draggableId, type } = res;
     if (!destination) {
       return;
     }
@@ -75,6 +75,17 @@ export class _Editor extends Component {
       return;
     }
     if (source.droppableId === "1" && destination.droppableId === "2") return;
+
+    // if (type === 'section') {
+    //   const wapCmps = this.props.currWap;
+    //   const tempCmps = wapCmps.cmps.find(cmp => cmp.id === source.droppableId)
+    //   const tempCmp = tempCmps.cmps[source.index]
+    //   tempCmps.cmps.splice(source.index, 1, tempCmps.cmps[destination.index]);
+    // tempCmps.cmps.splice(destination.index, 1, tempCmp);
+    // console.log("🚀 ~ file: Editor.jsx ~ line 86 ~ _Editor ~ onDragEnd= ~ tempCmps", tempCmps)
+    // await this.props.updateWap(wapCmps);
+    //   return;
+    // }
 
     if (source.droppableId === "1" && destination.droppableId === "1") {
       const wapCmps = this.props.currWap;
