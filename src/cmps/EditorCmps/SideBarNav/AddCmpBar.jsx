@@ -1,6 +1,6 @@
 // import {WapTxt} from '../WapCmps/WapTxt'
 // import { cmpService } from '../../../services/cmp.service.js'
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -21,15 +21,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
-
-    // const onAddCmp = async ({ target }) => {
-    //     const value = target.attributes.value.value;
-    //     const res = await cmpService.getCmpsById(value)
-    //     console.log('res', res)
-    //     const cmp = await changeCmpsIds(res);
-    //     console.log("🚀 ~ file: AddCmpBar.jsx ~ line 10 ~ onAddCmp ~ cmp", cmp)
-    //     await addCmp(currWap, cmp)
-    // }
+    const [expanded, setExpanded] = useState(false);
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+      };
     const classes = useStyles();
 
     return (
@@ -40,7 +35,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        <Accordion>
+                        <Accordion disableSpacing={true} expanded={expanded === 'panel1a'} onChange={handleChange('panel1a')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -54,7 +49,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                 <li value='wc023' onClick={onAddCmp}>Form</li> */}
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion>
+                        <Accordion expanded={expanded === 'panel2a'} onChange={handleChange('panel2a')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2a-content"

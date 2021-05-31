@@ -27,8 +27,9 @@ export class _Editor extends Component {
         await this.props.loadCmps()
         await this.props.getById("5e28393890dd7201a06d4e44");
     }
-    onDeleteCmp = (cmpId) => {
-        this.props.deleteCmp(this.props.currWap, cmpId);
+    onDeleteCmp = async(cmpId) => {
+        await this.props.deleteCmp(this.props.currWap, cmpId);
+        this.props.setCurrCmp(null);
     };
 
     onCmpFocus = async (ev, cmp) => {
