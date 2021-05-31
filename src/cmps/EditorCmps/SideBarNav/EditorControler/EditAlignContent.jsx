@@ -17,47 +17,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
+export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [flexDirection, setFlexDirection] = React.useState('');
+  const [alignContent, setAlignContent] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
-    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,flexDirection:`${value}`}}}
+    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignItems:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setFlexDirection(event.target.value);
+    setAlignContent(event.target.value);
   };
 
 
   return (
     <div className={classes.root}>
       <Grid container spacing={0} alignItems="center">
-        <Grid item>
           <Typography id="input-slider" gutterBottom>
-            Direction
+            Align Items
           </Typography>
-        </Grid>
         <Grid item>
           <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel id="demo-simple-select-outlined-label">Direction</InputLabel>
+            <InputLabel id="demo-simple-select-outlined-label">{val}</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={flexDirection}
+              value={alignContent}
               onChange={handleChange}
-              label="FlexDirection"
+              label="alignContent"
               size="small"
             >
-              <MenuItem value={val}>{val}</MenuItem>
-                <MenuItem value="column">Column</MenuItem>
-                <MenuItem value="column-reverse">Column Reverse</MenuItem>
-                <MenuItem value="row">Row</MenuItem>
-                <MenuItem value="row-reverse">Row Reverse</MenuItem>            
-            </Select>
+                <MenuItem value="center">Center</MenuItem>
+                <MenuItem value="flex-start">Begining</MenuItem>
+                <MenuItem value="flex-end">End</MenuItem>
+              </Select>
           </FormControl>
-          
-         </Grid>
+        </Grid>
       </Grid>
     </div>
   );
