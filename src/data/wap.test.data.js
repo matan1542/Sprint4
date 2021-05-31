@@ -28,12 +28,17 @@ export const wap = [
                             "txt": "Logo",
                             "style": {
                                 "fontSize": "24px",
+                                "textAlign": "center",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "#101010",
-                                "padding": "10px",
+                                "textShadow": "",
+                                "letterSpacing": "0px",
+                                "paddingInline": "10px",
+                                "paddingBlock": "10px",
                                 "borderRadius": "15px",
-                                "textAlign": "center",
-                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []
@@ -50,14 +55,23 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "Home",
-                                    "action": {"link":"url"},
+                                    "action": { "link": "url" },
                                     "style": {
+                                        "fontSize": "16px",
+                                        "textAlign": "center",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
-                                        "border": "0px",
-                                        "marginLeft": "10px",
+                                        "textShadow": "",
+                                        "paddingInline": "10px",
+                                        "paddingBlock": "10px",
+                                        "borderRadius": "15px",
                                         "fontFamily": "none",
-                                        "letterSpacing": "0px"
+                                        "letterSpacing": "0px",
+                                        "border": "0px",
+
                                     }
                                 }
                             },
@@ -68,12 +82,20 @@ export const wap = [
                                     "txt": "News",
                                     "action": "",
                                     "style": {
+                                        "fontSize": "16px",
+                                        "textAlign": "center",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
-                                        "border": "0px",
-                                        "marginLeft": "10px",
+                                        "textShadow": "",
+                                        "paddingInline": "10px",
+                                        "paddingBlock": "10px",
+                                        "borderRadius": "15px",
                                         "fontFamily": "none",
-                                        "letterSpacing": "0px"
+                                        "letterSpacing": "0px",
+                                        "border": "0px",
                                     }
                                 }
                             },
@@ -84,12 +106,20 @@ export const wap = [
                                     "txt": "About",
                                     "action": "",
                                     "style": {
+                                        "fontSize": "16px",
+                                        "textAlign": "center",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
-                                        "border": "0px",
-                                        "marginLeft": "10px",
+                                        "textShadow": "",
+                                        "paddingInline": "10px",
+                                        "paddingBlock": "10px",
+                                        "borderRadius": "15px",
                                         "fontFamily": "none",
-                                        "letterSpacing": "0px"
+                                        "letterSpacing": "0px",
+                                        "border": "0px",
                                     }
                                 }
                             }
@@ -107,7 +137,7 @@ export const wap = [
                         "backgroundColor": "",
                         "paddingInline": "10px",
                         "paddingBlock": "10px",
-                        "flexDirection": "row",
+                        "flexDirection": "column",
                         "alignItems": "center",
                         "justifyContent": "center",
                         "alignContent": "unset",
@@ -122,12 +152,16 @@ export const wap = [
                             "txt": "Welcome to my first webApp",
                             "style": {
                                 "fontSize": "30px",
+                                "textAlign": "center",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "#00000087",
-                                "padding": "10px 20px",
-                                "marginBottom": "10px",
+                                "textShadow": "",
+                                "paddingInline": "10px",
+                                "paddingBlock": "20px",
                                 "borderRadius": "15px",
-                                "textAlign": "center",
                                 "fontFamily": "cursive",
                                 "letterSpacing": "0px"
                             }
@@ -141,13 +175,20 @@ export const wap = [
                             "txt": "Click to Enter!",
                             "action": "",
                             "style": {
-                                "borderRadius": "15px",
-                                "backgroundColor": "inherit",
-                                "border": "3px solid black",
+                                "textAlign": "center",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "white",
+                                "backgroundColor": "inherit",
+                                "textShadow": "",
                                 "fontSize": "35px",
+                                "paddingInline": "10px",
+                                "paddingBlock": "20px",
                                 "fontFamily": "math",
-                                "letterSpacing": "0px"
+                                "borderRadius": "15px",
+                                "letterSpacing": "0px",
+                                "border": "3px solid black",
                             }
                         }
                     }
@@ -178,10 +219,18 @@ export const wap = [
                             "txt": "Welcome to my first WebApp that have been created in 5 minutes by the WeBuild Editor, I'm so happy now that I have my own site.",
                             "style": {
                                 "fontSize": "16px",
+                                "textAlign": "left",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "padding": "10px",
-                                "textAlign": "center",
+                                "backgroundColor": "",
+                                "textShadow": "",
+                                "paddingInline": "10px",
+                                "paddingBlock": "10px",
                                 "fontFamily": "cursive",
+                                "borderRadius": "15px",
                                 "letterSpacing": "0px"
                             }
                         },
@@ -194,9 +243,17 @@ export const wap = [
                             "txt": "Important info about myself, I have never learn to code and I dont wish to learn... this site gave me the best and simple platform to build my dreamed WebApp!",
                             "style": {
                                 "fontSize": "16px",
+                                "textAlign": "left",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
-                                "padding": "10px",
+                                "backgroundColor": "",
+                                "textShadow": "",
+                                "paddingInline": "10px",
+                                "paddingBlock": "10px",
                                 "fontFamily": "cursive",
+                                "borderRadius": "15px",
                                 "letterSpacing": "0px"
                             }
                         },
@@ -229,9 +286,17 @@ export const wap = [
                             "txt": "©2021 Developer",
                             "style": {
                                 "fontSize": "14px",
+                                "textAlign": "left",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
-                                "padding": "5px",
+                                "backgroundColor": "",
+                                "textShadow": "",
+                                "paddingInline": "5px",
+                                "paddingBlock": "5px",
                                 "fontFamily": "math",
+                                "borderRadius": "15px",
                                 "letterSpacing": "0px"
                             }
                         },
