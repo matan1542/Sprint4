@@ -33,6 +33,7 @@ export class _Editor extends Component {
 
     onCmpFocus = async (ev, cmp) => {
         ev.stopPropagation();
+        console.log('cmp',cmp)
         await this.props.setCurrCmp(cmp);
         this.onEdit()
     };

@@ -1,7 +1,7 @@
 import { DynamicEditCmp } from "./DynamicEditCmp"
 
 export function EditCmpStyleList({ style, currCmp, onUpdateCurrCmp }) {
-    // console.log('Element style:', style)
+    console.log('Element style:', style)
     return (
         <div>
             {Object.entries(style).map((attribute, idx) => <DynamicEditCmp key={idx}
