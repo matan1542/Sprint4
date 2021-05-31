@@ -74,9 +74,9 @@ async function getTarget(targetWap, id) {
     }
 }
 
-async function addCmp(wap, cmp) {
+async function addCmp(wap, cmp, idx) {
     try {
-        wap.cmps.push(cmp);
+        await wap.cmps.splice(idx, 0, cmp);
         return wap
     } catch (err) {
         throw new Error('Had problem from service in addCmp', err)

@@ -83,10 +83,10 @@ export function setCurrCmp(currCmp) {
     }
 }
 
-export function addCmp(wapObj, cmpObj) {
+export function addCmp(wapObj, cmpObj, idx) {
     return async dispatch => {
         try {
-            const wap = await wapService.addCmp(wapObj, cmpObj)
+            const wap = await wapService.addCmp(wapObj, cmpObj, idx)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap

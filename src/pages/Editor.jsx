@@ -33,7 +33,7 @@ export class _Editor extends Component {
 
     onCmpFocus = async (ev, cmp) => {
         ev.stopPropagation();
-        console.log('cmp',cmp)
+        console.log('cmp', cmp)
         await this.props.setCurrCmp(cmp);
         this.onEdit()
     };
@@ -50,16 +50,13 @@ export class _Editor extends Component {
         this.setState({ editorStatus: 'add' })
     }
 
-    onAddCmp = async (cmpId) => {
+    onAddCmp = async (cmpId, idx) => {
         cmpId = [...cmpId]
         cmpId.shift()
         cmpId = cmpId.join('')
-        // const value = target.attributes.value.value;
         const cmp = await cmpService.getCmpsById(cmpId)
-        cmp.id = utilService.makeId()
-        // const cmp = await changeCmpsIds(res);
-        return await this.props.addCmp(this.props.currWap, cmp)
-        // console.log("🚀 ~ file: Editor.jsx ~ line 62 ~ _Editor ~ onAddCmp= ~ wap", wap)
+        const updatedCmp = await this.props.changeCmpsIds(cmp)
+        await this.props.addCmp(this.props.currWap, updatedCmp, idx)
     }
 
     onDragEnd = async res => {
@@ -85,7 +82,7 @@ export class _Editor extends Component {
             return
         }
         if (source.droppableId === "2" && destination.droppableId === "1") {
-            await this.onAddCmp(draggableId)
+            const cmp = await this.onAddCmp(draggableId, destination.index)
             const wapCmps = this.props.currWap
             const tempCmp = wapCmps.cmps[source.index]
             wapCmps.cmps.splice(source.index, 1, wapCmps.cmps[destination.index])
@@ -99,7 +96,7 @@ export class _Editor extends Component {
     render() {
         // console.log(this.state.editorStatus)
         const { editorStatus } = this.state
-        const { currCmp, currWap, addCmp, changeCmpsIds, updateWap,cmps } = this.props;
+        const { currCmp, currWap, addCmp, changeCmpsIds, updateWap, cmps } = this.props;
         if (!currWap) return <div>Loading...</div>;
         return (
             <section className="app-editor flex space-between">
