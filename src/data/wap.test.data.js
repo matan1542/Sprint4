@@ -28,7 +28,8 @@ export const wap = [
                                 "backgroundColor": "#101010",
                                 "padding": "10px",
                                 "borderRadius": "15px",
-                                "textAlign": "center"
+                                "textAlign": "center",
+                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []
@@ -50,7 +51,8 @@ export const wap = [
                                         "backgroundColor": "inherit",
                                         "border": "0px",
                                         "marginLeft": "10px",
-                                        "fontFamily": "none"
+                                        "fontFamily": "none",
+                                        "letterSpacing": "0px"
                                     }
                                 }
                             },
@@ -64,7 +66,8 @@ export const wap = [
                                         "backgroundColor": "inherit",
                                         "border": "0px",
                                         "marginLeft": "10px",
-                                        "fontFamily": "none"
+                                        "fontFamily": "none",
+                                        "letterSpacing": "0px"
                                     }
                                 }
                             },
@@ -78,7 +81,8 @@ export const wap = [
                                         "backgroundColor": "inherit",
                                         "border": "0px",
                                         "marginLeft": "10px",
-                                        "fontFamily": "none"
+                                        "fontFamily": "none",
+                                        "letterSpacing": "0px"
                                     }
                                 }
                             }
@@ -114,7 +118,8 @@ export const wap = [
                                 "marginBottom": "10px",
                                 "borderRadius": "15px",
                                 "textAlign": "center",
-                                "fontFamily": "cursive"
+                                "fontFamily": "cursive",
+                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []
@@ -130,7 +135,8 @@ export const wap = [
                                 "border": "3px solid black",
                                 "color": "white",
                                 "fontSize": "35px",
-                                "fontFamily": "math"
+                                "fontFamily": "math",
+                                "letterSpacing": "0px"
                             }
                         }
                     }
@@ -155,7 +161,8 @@ export const wap = [
                                 "fontSize": "16px",
                                 "color": "#ffffff",
                                 "padding": "10px",
-                                "fontFamily": "cursive"
+                                "fontFamily": "cursive",
+                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []
@@ -169,7 +176,8 @@ export const wap = [
                                 "fontSize": "16px",
                                 "color": "#ffffff",
                                 "padding": "10px",
-                                "fontFamily": "cursive"
+                                "fontFamily": "cursive",
+                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []
@@ -199,7 +207,8 @@ export const wap = [
                                 "fontSize": "14px",
                                 "color": "#ffffff",
                                 "padding": "5px",
-                                "fontFamily": "math"
+                                "fontFamily": "math",
+                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []

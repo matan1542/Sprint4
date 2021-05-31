@@ -16,8 +16,8 @@ function query(entityType, delay = 0) {
         if (entityType === 'waps') {
             entities = wap
         } else entities = cmp
-    console.log('entities',entities,'entityType',entityType)
-        
+        console.log('entities', entities, 'entityType', entityType)
+
         save(entityType, entities)
     }
 

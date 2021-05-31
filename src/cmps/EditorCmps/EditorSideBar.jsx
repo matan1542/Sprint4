@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 export class EditorSideBar extends Component {

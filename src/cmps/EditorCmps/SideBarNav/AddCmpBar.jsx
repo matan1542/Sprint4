@@ -1,5 +1,5 @@
 // import {WapTxt} from '../WapCmps/WapTxt'
-import { cmpService } from '../../../services/cmp.service.js'
+// import { cmpService } from '../../../services/cmp.service.js'
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
@@ -8,6 +8,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {AddCmpList} from './AddCmpList'
+import { Droppable } from 'react-beautiful-dnd';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,18 +22,24 @@ const useStyles = makeStyles((theme) => ({
 
 export function AddCmpBar({ addCmp, changeCmpsIds, currWap ,cmps}) {
 
-    const onAddCmp = async ({ target }) => {
-        const value = target.attributes.value.value;
-        const res = await cmpService.getCmpsById(value)
-        console.log('res', res)
-        const cmp = await changeCmpsIds(res);
-        console.log("🚀 ~ file: AddCmpBar.jsx ~ line 10 ~ onAddCmp ~ cmp", cmp)
-        await addCmp(currWap, cmp)
-    }
+    // const onAddCmp = async ({ target }) => {
+    //     const value = target.attributes.value.value;
+    //     const res = await cmpService.getCmpsById(value)
+    //     console.log('res', res)
+    //     const cmp = await changeCmpsIds(res);
+    //     console.log("🚀 ~ file: AddCmpBar.jsx ~ line 10 ~ onAddCmp ~ cmp", cmp)
+    //     await addCmp(currWap, cmp)
+    // }
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
+        <Droppable droppableId="2" isCombineEnabled>
+            {(provided, snapshot) => (
+                <div className="add-bar flex column"
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                >
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -59,15 +66,18 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap ,cmps}) {
         <AddCmpList cmps={cmps} sectionType="hero-section"/>
         </AccordionDetails>
       </Accordion>
-      <Accordion disabled>
+      {/* <Accordion disabled>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <div value='wc023' onClick={onAddCmp}>Form</div>
         </AccordionSummary>
-      </Accordion>
+      </Accordion> */}
+      {provided.placeholder}
+      </div>
+       )}
+      </Droppable>
     </div>
   );
 }

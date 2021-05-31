@@ -8,9 +8,9 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
     if (ref.current) {
       ref.current = false;
     } else {
-      
+
       onUpdateCurrCmp(state);
-    //   console.log('cmp',cmp)
+      //   console.log('cmp',cmp)
     }
   }, [state]);
 
@@ -18,14 +18,14 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
     const field = target.attributes.name.value
     const value = target.innerText
     setState(state => ({
-        ...state,
-        info: {
-            ...state.info,
-            [field]: value
-        }
+      ...state,
+      info: {
+        ...state.info,
+        [field]: value
+      }
     }))
   };
-
+  // console.log('txtToEdit', txtToEdit);
   return (
     <>
       <p
@@ -35,10 +35,10 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
           onUpdateWap();
         }}
         suppressContentEditableWarning={true}
-        onClick={({ target }) => {
-          onCmpFocus(cmp, target);
-          target.contentEditable = true;
-          target.onFocus = true;
+        onClick={(ev) => {
+          onCmpFocus(ev, cmp);
+          ev.target.contentEditable = true;
+          ev.target.onFocus = true;
         }}
         className="wap-text"
         name="txt"
