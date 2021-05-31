@@ -1,125 +1,90 @@
-export const cmp = [{
-    "id": "wc01",
-    "type": "wap-section",
-    "info": {
-        "style": {
-            "backgroundColor": "#101010",
-            "display": "flex",
-            "padding": "10px",
-            "alignItems": "center",
-            "justifyContent": "space-between"
-        }
-    },
-    "cmps": [
-        {
-            "id": "wc011",
-            "type": "wap-text",
-            "info": {
-                "txt": "Logo",
-                "style": {
-                    "fontSize": "24px",
-                    "color": "#ffffff",
-                    "backgroundColor": "#101010",
-                    "padding": "10px",
-                    "borderRadius": "15px",
-                    "textAlign": "center",
-                    "letterSpacing": "0px"
-                }
-            },
-            "cmps": []
+export const cmp = [
+    {
+        "id": "wc01",
+        "type": "wap-section",
+        "info": {
+            "style": {
+                "backgroundColor": "#101010",
+                "display": "flex",
+                "padding": "10px",
+                "alignItems": "center",
+                "justifyContent": "space-between"
+            }
         },
-        {
-            "id": "wc012",
-            "type": "wap-nav",
-            "info": {
-                "style": {},
+        "cmps": [
+            {
+                "id": "wc011",
+                "type": "wap-text",
+                "info": {
+                    "txt": "Logo",
+                    "style": {
+                        "fontSize": "24px",
+                        "color": "#ffffff",
+                        "backgroundColor": "#101010",
+                        "padding": "10px",
+                        "borderRadius": "15px",
+                        "textAlign": "center",
+                        "letterSpacing": "0px"
+                    }
+                },
+                "cmps": []
             },
-            "cmps": [
-                {
-                    "id": "wc0121",
-                    "type": "wap-btn",
-                    "info": {
-                        "txt": "Home",
-                        "url": "",
-                        "style": {
-                            "color": "#ffffff",
-                            "backgroundColor": "inherit",
-                            "border": "0px",
-                            "marginLeft": "10px",
-                            "letterSpacing": "0px"
-                        }
-                    }
+            {
+                "id": "wc012",
+                "type": "wap-nav",
+                "info": {
+                    "style": {},
                 },
-                {
-                    "id": "wc0123",
-                    "type": "wap-btn",
-                    "info": {
-                        "txt": "News",
-                        "url": "",
-                        "style": {
-                            "color": "#ffffff",
-                            "backgroundColor": "inherit",
-                            "border": "0px",
-                            "marginLeft": "10px",
-                            "letterSpacing": "0px"
+                "cmps": [
+                    {
+                        "id": "wc0121",
+                        "type": "wap-btn",
+                        "info": {
+                            "txt": "Home",
+                            "url": "",
+                            "style": {
+                                "color": "#ffffff",
+                                "backgroundColor": "inherit",
+                                "border": "0px",
+                                "marginLeft": "10px",
+                                "letterSpacing": "0px"
+                            }
                         }
-                    }
-                },
-                {
-                    "id": "wc0122",
-                    "type": "wap-btn",
-                    "info": {
-                        "txt": "About",
-                        "url": "",
-                        "style": {
-                            "color": "#ffffff",
-                            "backgroundColor": "inherit",
-                            "border": "0px",
-                            "marginLeft": "10px",
-                            "letterSpacing": "0px"
+                    },
+                    {
+                        "id": "wc0123",
+                        "type": "wap-btn",
+                        "info": {
+                            "txt": "News",
+                            "url": "",
+                            "style": {
+                                "color": "#ffffff",
+                                "backgroundColor": "inherit",
+                                "border": "0px",
+                                "marginLeft": "10px",
+                                "letterSpacing": "0px"
+                            }
+                        }
+                    },
+                    {
+                        "id": "wc0122",
+                        "type": "wap-btn",
+                        "info": {
+                            "txt": "About",
+                            "url": "",
+                            "style": {
+                                "color": "#ffffff",
+                                "backgroundColor": "inherit",
+                                "border": "0px",
+                                "marginLeft": "10px",
+                                "letterSpacing": "0px"
+                            }
                         }
                     }
                 ]
             }
         ]
     },
-<<<<<<< HEAD
-    "cmps": [
-        {
-            "id": "wc051",
-            "type": "wap-text",
-            "info": {
-                "txt": "Welcome to my first webApp",
-                "style": {
-                    "fontSize": "30px",
-                    "color": "#ffffff",
-                    "backgroundColor": "#00000087",
-                    "padding": "10px 20px",
-                    "marginBottom": "10px",
-                    "borderRadius": "15px",
-                    "textAlign": "center",
-                    "fontFamily": "cursive",
-                    "letterSpacing": "0px"
-                }
-            },
-            "cmps": []
-        },
-        {
-            "id": "wc0511",
-            "type": "wap-btn",
-            "info": {
-                "txt": "Click to Enter!",
-                "url": "",
-                "style": {
-                    "borderRadius": "15px",
-                    "backgroundColor": "inherit",
-                    "border": "3px solid black",
-                    "color": "white",
-                    "fontSize": "35px",
-                    "fontFamily": "math",
-                    "letterSpacing": "0px"
-                }
-=======
     {
         "id": "wc05",
         "type": "wap-section",
@@ -132,7 +97,6 @@ export const cmp = [{
                 "alignItems": "center",
                 "justifyContent": "center",
                 "minHeight": "300px"
->>>>>>> a9cd801da3f2676da1bfdc5be2fb4da54ddfe518
             }
         },
         "cmps": [
@@ -149,7 +113,8 @@ export const cmp = [{
                         "marginBottom": "10px",
                         "borderRadius": "15px",
                         "textAlign": "center",
-                        "fontFamily": "cursive"
+                        "fontFamily": "cursive",
+                        "letterSpacing": "0px"
                     }
                 },
                 "cmps": []
@@ -166,7 +131,8 @@ export const cmp = [{
                         "border": "3px solid black",
                         "color": "white",
                         "fontSize": "35px",
-                        "fontFamily": "math"
+                        "fontFamily": "math",
+                        "letterSpacing": "0px"
                     }
                 }
             },
