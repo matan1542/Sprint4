@@ -14,7 +14,7 @@ export const wap = [
                         "padding": "10px 20px",
                         "alignItems": "center",
                         "justifyContent": "space-between",
-                        "flexDirection": "column"
+                        "flexDirection": "row"
                     }
                 },
                 "cmps": [
