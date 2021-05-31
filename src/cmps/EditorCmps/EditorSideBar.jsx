@@ -29,7 +29,9 @@ export class EditorSideBar extends Component {
                     <button onClick={() => this.props.onAdd()}>Add</button>
                     <button onClick={() => this.props.onEdit()}>Edit</button>
                 </nav>
+                <div className="editor-sections-list"> 
                 {this.DynamicCmp()}
+                </div>
                 <button className="btn btn-publish">Publish</button>
             </div>
         )
