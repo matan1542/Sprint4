@@ -7,8 +7,12 @@ import { EditBackgroundImg } from './EditorControler/EditBackgroundImg'
 import { EditPadding } from './EditorControler/EditPadding'
 import { EditJustifyContent } from './EditorControler/EditJustifyContent'
 import { EditAlignContent } from './EditorControler/EditAlignContent'
+import { EditTxtUnderLine } from './EditorControler/EditTxtUnderLine'
+import { EditTxtBold } from './EditorControler/EditTxtBold'
+import { EditTxtItalic } from './EditorControler/EditTxtItalic'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
+    console.log("🚀 ~ file: DynamicEditCmp.jsx ~ line 15 ~ DynamicEditCmp ~ attribute", attribute)
     // console.log(attribute, value);
     switch (attribute) {
         case "paddingInline":
@@ -33,6 +37,12 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
             return <EditJustifyContent val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "alignContent":
             return <EditAlignContent val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "textDecoration":
+            return <EditTxtUnderLine onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "fontWeight":
+            return <EditTxtBold onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "fontStyle":
+            return <EditTxtItalic onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         default: return null
     }
 }

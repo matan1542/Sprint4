@@ -29,9 +29,9 @@ export const wap = [
                             "style": {
                                 "fontSize": "24px",
                                 "textAlign": "center",
-                                "textDecoration":"",
-                                "fontWeight":"",
-                                "fontStyle":"",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "#101010",
                                 "textShadow": "",
@@ -55,13 +55,13 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "Home",
-                                    "action": {"link":"url"},
+                                    "action": { "link": "url" },
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
-                                        "textDecoration":"",
-                                        "fontWeight":"",
-                                        "fontStyle":"",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
                                         "textShadow": "",
@@ -71,7 +71,7 @@ export const wap = [
                                         "fontFamily": "none",
                                         "letterSpacing": "0px",
                                         "border": "0px",
-                                        
+
                                     }
                                 }
                             },
@@ -84,9 +84,9 @@ export const wap = [
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
-                                        "textDecoration":"",
-                                        "fontWeight":"",
-                                        "fontStyle":"",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
                                         "textShadow": "",
@@ -108,9 +108,9 @@ export const wap = [
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
-                                        "textDecoration":"",
-                                        "fontWeight":"",
-                                        "fontStyle":"",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
                                         "textShadow": "",
@@ -153,9 +153,9 @@ export const wap = [
                             "style": {
                                 "fontSize": "30px",
                                 "textAlign": "center",
-                                "textDecoration":"",
-                                "fontWeight":"",
-                                "fontStyle":"",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "#00000087",
                                 "textShadow": "",
@@ -164,7 +164,7 @@ export const wap = [
                                 "borderRadius": "15px",
                                 "fontFamily": "cursive",
                                 "letterSpacing": "0px"
-                                }
+                            }
                         },
                         "cmps": []
                     },
@@ -176,9 +176,9 @@ export const wap = [
                             "action": "",
                             "style": {
                                 "textAlign": "center",
-                                "textDecoration":"",
-                                "fontWeight":"",
-                                "fontStyle":"",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "white",
                                 "backgroundColor": "inherit",
                                 "textShadow": "",
@@ -220,9 +220,9 @@ export const wap = [
                             "style": {
                                 "fontSize": "16px",
                                 "textAlign": "left",
-                                "textDecoration":"",
-                                "fontWeight":"",
-                                "fontStyle":"",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "",
                                 "textShadow": "",
@@ -243,9 +243,9 @@ export const wap = [
                             "style": {
                                 "fontSize": "16px",
                                 "textAlign": "left",
-                                "textDecoration":"",
-                                "fontWeight":"",
-                                "fontStyle":"",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "",
                                 "textShadow": "",
@@ -286,9 +286,9 @@ export const wap = [
                             "style": {
                                 "fontSize": "14px",
                                 "textAlign": "left",
-                                "textDecoration":"",
-                                "fontWeight":"",
-                                "fontStyle":"",
+                                "textDecoration": "",
+                                "fontWeight": "",
+                                "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "",
                                 "textShadow": "",
@@ -296,7 +296,7 @@ export const wap = [
                                 "paddingBlock": "5px",
                                 "fontFamily": "math",
                                 "borderRadius": "15px",
-                                "letterSpacing": "0px"                                
+                                "letterSpacing": "0px"
                             }
                         },
                         "cmps": []

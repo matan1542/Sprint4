@@ -26,6 +26,11 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     const searchFile = {
         imgs: []
     }
+    const loading = {
+        isLoding: false
+    }
+
+    const [loadingState, setLoading] = useState(loading)
     const [fileState, setFile] = useState(file)
     const [searchState, setSearch] = useState(searchFile)
 
@@ -35,17 +40,20 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     // }, [searchState])
 
     const fileToSearch = async ({ target }) => {
+        setLoading({ isLoding: true })
         const imgs = await suggestImgs(target.value)
-        console.log("🚀 ~ file: EditBackgroundImg.jsx ~ line 38 ~ fileToSearch ~ imgs", imgs)
         setSearch({ ...searchState, imgs })
+        setLoading({ isLoding: false })
     }
 
     const onSubmitForm = async (ev) => {
         ev.preventDefault()
         if (!fileState.file) return
+        setLoading({ isLoding: true })
         const url = await uploadImg(fileState.file)
         const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } }
         await onUpdateCurrCmp(cmp)
+        setLoading({ isLoding: false })
     }
 
     const removeBackgroundImg = async () => {
@@ -55,13 +63,16 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     }
 
     const onSelectPhoto = async (url) => {
+        setLoading({ isLoding: true })
         const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } }
         await onUpdateCurrCmp(cmp)
+        setLoading({ isLoding: false })
     }
 
     return (
         <>
             <form onSubmit={onSubmitForm} className={classes.btnGroup}>
+                {loadingState.isLoding && <small>loading...</small>}
                 <ButtonGroup size="small" variant="text" color="inherit" aria-label="text primary button group">
                     <Button component="label">
                         Upload Image
