@@ -50,7 +50,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "Home",
-                                    "action": "",
+                                    "action": {"link":"url"},
                                     "style": {
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
