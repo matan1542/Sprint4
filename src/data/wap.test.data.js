@@ -13,7 +13,8 @@ export const wap = [
                         "backgroundColor": "#101010",
                         "padding": "10px 20px",
                         "alignItems": "center",
-                        "justifyContent": "space-between"
+                        "justifyContent": "space-between",
+                        "flexDirection": "column"
                     }
                 },
                 "cmps": [
