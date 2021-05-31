@@ -34,7 +34,6 @@ export class _Editor extends Component {
 
   onCmpFocus = async (ev, cmp) => {
     ev.stopPropagation();
-    console.log("cmp", cmp);
     await this.props.setCurrCmp(cmp);
     this.onEdit();
   };
@@ -63,7 +62,6 @@ export class _Editor extends Component {
   };
 
   onDragEnd = async (res) => {
-    console.log("🚀 ~ file: Editor.jsx ~ line 65 ~ _Editor ~ res", res);
     const { destination, source, draggableId } = res;
     if (!destination) {
       return;

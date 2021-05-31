@@ -1,6 +1,6 @@
 .editor-side-bar {
-    
   position: relative;
+  font-family: raleway;
   background-color: $clr7;
   width: 15%;
   min-width: 16rem;
@@ -10,7 +10,7 @@
   box-shadow: 0 3px 6px rgba(0, 0, 100, 0.15);
   border-radius: 1rem;
   margin: 0 8px;
- 
+
   .side-bar-nav {
     align-items: center;
     width: 100%;
@@ -26,15 +26,18 @@
       }
     }
   }
-  .editor-sections-list{
-    height: 100%;
+  .editor-sections-list {
+    padding: 40px 0 0 10px;
+    height: 77%;
     width: 100%;
+    font-family: raleway;
+    overflow-x: hidden;
     overflow-y: auto;
   }
   .btn-publish {
     position: absolute;
     bottom: 0;
-    margin-bottom:rem(10px) ;
+    margin-bottom: rem(10px);
     cursor: pointer;
     border-radius: em(10px);
     background-color: inherit;

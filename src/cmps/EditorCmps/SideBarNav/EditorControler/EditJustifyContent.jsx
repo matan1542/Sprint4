@@ -6,11 +6,12 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(0),
-    minWidth: 200,
+    minWidth: 150,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -33,11 +34,14 @@ export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
   return (
     <div className={classes.root}>
       <Grid container spacing={0} alignItems="center">
+       <Box display="flex" alignItems="center">
+         <Box mr={2} >
           <Typography id="input-slider" gutterBottom>
             Justify Content
           </Typography>
+          </Box>
         <Grid item>
-          <FormControl variant="outlined" className={classes.formControl}>
+          <FormControl variant="outlined" size="small" className={classes.formControl}>
             <InputLabel id="demo-simple-select-outlined-label">{val}</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
@@ -56,6 +60,7 @@ export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
             </Select>
           </FormControl>
         </Grid>
+        </Box>
       </Grid>
     </div>
   );
