@@ -71,8 +71,8 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
                             hidden
                         />
                     </Button>
-                    <Button type="button" onClick={removeBackgroundImg}>Remove image</Button>
                     <Button type="submit">Save image</Button>
+                    <Button type="button" onClick={removeBackgroundImg}>Remove image</Button>
                 </ButtonGroup>
             </form>
             <TextField label="Type to search" id="standard-basic"
