@@ -25,7 +25,6 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
       }
     }))
   };
-  // console.log('txtToEdit', txtToEdit);
   return (
     <>
       <p
