@@ -11,6 +11,10 @@ const _ = require("lodash");
 const useStyle = makeStyles({
     btnGroup: {
         marginBottom: 10
+    },
+    img: {
+        objectFit: 'cover',
+        marginBottom: 10
     }
 })
 
@@ -20,17 +24,21 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
         file: null
     }
     const searchFile = {
-        term: null,
         imgs: []
     }
     const [fileState, setFile] = useState(file)
     const [searchState, setSearch] = useState(searchFile)
 
-    useEffect(() => {
-        const fileToSearch = (file) => {
-            console.log('useEffect');
-        }
-    }, [searchState])
+    // useEffect(() => {
+    //     console.log('!!!!!!');
+    //     _.debounce(fileToSearch(searchState.term), 500)
+    // }, [searchState])
+
+    const fileToSearch = async ({ target }) => {
+        const imgs = await suggestImgs(target.value)
+        console.log("🚀 ~ file: EditBackgroundImg.jsx ~ line 38 ~ fileToSearch ~ imgs", imgs)
+        setSearch({ ...searchState, imgs })
+    }
 
     const onSubmitForm = async (ev) => {
         ev.preventDefault()
@@ -64,7 +72,13 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
             <TextField label="Type to search" id="standard-basic"
                 className={classes.btnGroup}
                 value={searchState.term}
-                onChange={({ target }) => setSearch({ ...searchState, term: target.value })} />
+                onChange={_.debounce(fileToSearch, 500)} />
+
+            {searchState.imgs.length > 0 &&
+                <div className="flex column">
+                    {searchState.imgs.map(img => <img key={img.url} className='img-sample mb-2' src={img.url} />)}
+                </div>
+            }
 
         </>
     )
