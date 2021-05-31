@@ -56,7 +56,8 @@ export class _Editor extends Component {
         cmpId = cmpId.join('')
         const cmp = await cmpService.getCmpsById(cmpId)
         const updatedCmp = await this.props.changeCmpsIds(cmp)
-        await this.props.addCmp(this.props.currWap, updatedCmp, idx)
+       const wap = await this.props.addCmp(this.props.currWap, updatedCmp, idx)
+       return wap
     }
 
     onDragEnd = async res => {
@@ -82,12 +83,8 @@ export class _Editor extends Component {
             return
         }
         if (source.droppableId === "2" && destination.droppableId === "1") {
-            const cmp = await this.onAddCmp(draggableId, destination.index)
-            const wapCmps = this.props.currWap
-            const tempCmp = wapCmps.cmps[source.index]
-            wapCmps.cmps.splice(source.index, 1, wapCmps.cmps[destination.index])
-            wapCmps.cmps.splice(destination.index, 1, tempCmp)
-            await this.props.updateWap(wapCmps)
+            const wap = await this.onAddCmp(draggableId, destination.index)
+            await this.props.updateWap(wap)
             return
         }
     }

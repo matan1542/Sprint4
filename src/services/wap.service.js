@@ -75,9 +75,16 @@ async function getTarget(targetWap, id) {
 }
 
 async function addCmp(wap, cmp, idx) {
+    // console.log('wap',wap)
     try {
-        await wap.cmps.splice(idx, 0, cmp);
-        return wap
+    const oneWapHalf = wap.cmps.slice(0,idx)
+    oneWapHalf.push(cmp);
+    const otherWapHalf = wap.cmps.slice(idx) 
+    const wapObj = {...wap,cmps:[...oneWapHalf.concat(otherWapHalf)]} 
+    //  const wapObj = { ...wap, cmps: [...wap.cmps.slice(0, idx),cmp, ...wap.cmps.slice(idx)] }
+    //  console.log('wapObj',wapObj)
+    //  save(wapObj)
+        return wapObj
     } catch (err) {
         throw new Error('Had problem from service in addCmp', err)
     }
