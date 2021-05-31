@@ -66,14 +66,6 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                                 <AddCmpList cmps={cmps} sectionType="hero-section" />
                             </AccordionDetails>
                         </Accordion>
-                        {/* <Accordion disabled>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
-        >
-        </AccordionSummary>
-      </Accordion> */}
                         {provided.placeholder}
                     </div>
                 )}
@@ -81,5 +73,3 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
         </div>
     );
 }
-
-// {/* <li value='wc023' onClick={onAddCmp}>Form</li> */}
