@@ -1,5 +1,4 @@
 import axios from "axios";
-const cheerio = require('cheerio')
 
 
 export async function suggestImgs(term) {

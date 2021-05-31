@@ -53,6 +53,12 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
         setFile({ file: null })
     }
+
+    const onSelectPhoto = async (url) => {
+        const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } }
+        await onUpdateCurrCmp(cmp)
+    }
+
     return (
         <>
             <form onSubmit={onSubmitForm} className={classes.btnGroup}>
@@ -76,7 +82,7 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
 
             {searchState.imgs.length > 0 &&
                 <div className="flex column">
-                    {searchState.imgs.map(img => <img key={img.url} className='img-sample mb-2' src={img.url} />)}
+                    {searchState.imgs.map(img => <img key={img.url} className='img-sample mb-2' src={img.url} onClick={() => onSelectPhoto(img.url)} />)}
                 </div>
             }
 
