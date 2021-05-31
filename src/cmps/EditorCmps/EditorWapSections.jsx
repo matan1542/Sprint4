@@ -4,13 +4,13 @@ import { Droppable } from "react-beautiful-dnd";
 
 export class EditorWapSections extends Component {
   render() {
-    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp,updateWap } = this.props;
+    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap } = this.props;
     // console.log('onUpdateCurrCmp editorwapSection', onUpdateCurrCmp)
     // console.log(wap);
     if (!wap) return <div>Loading...</div>;
     return (
       <Fragment>
-        <Droppable className="section" droppableId="wap-editor" key={wap._id}>
+        <Droppable className="section" droppableId="1" key={wap._id} isCombineEnabled>
           {(provided, snapshot) => (
             <div
               ref={provided.innerRef}

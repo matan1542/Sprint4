@@ -52,6 +52,7 @@ export function changeCmpsIds(cmpObj) {
 }
 //funciton that would get the current wap according to his id
 export function getById(wapId) {
+    console.log("🚀 ~ file: wap.actions.js ~ line 55 ~ getById ~ wapId", wapId)
     return async dispatch => {
         try {
             const wap = await wapService.getById(wapId)
@@ -124,7 +125,7 @@ export function updateWap(wapObj) {
     return async dispatch => {
         try {
             const wap = await wapService.save(wapObj)
-            console.log('wap',wap)
+            console.log('wap', wap)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap: wap.updatedEntity

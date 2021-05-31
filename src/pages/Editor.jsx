@@ -14,6 +14,7 @@ import {
     addCmp
 } from "../store/actions/wap.actions.js";
 import { DragDropContext } from 'react-beautiful-dnd'
+import { cmpService } from '../services/cmp.service.js'
 // import { wapService } from "../services/wap.service";
 
 export class _Editor extends Component {
@@ -47,8 +48,18 @@ export class _Editor extends Component {
         this.setState({ editorStatus: 'add' })
     }
 
+    onAddCmp = async (cmpId) => {
+        console.log("🚀 ~ file: Editor.jsx ~ line 52 ~ _Editor ~ onAddCmp= ~ cmpId", cmpId)
+        // const value = target.attributes.value.value;
+        const res = await cmpService.getCmpsById(cmpId)
+        console.log('res', res)
+        const cmp = await changeCmpsIds(res);
+        return await this.props.addCmp(this.props.currWap, cmp)
+    }
+
     onDragEnd = async res => {
-        const { destination, source } = res
+        console.log("🚀 ~ file: Editor.jsx ~ line 51 ~ _Editor ~ res", res)
+        const { destination, source, draggableId, combine } = res
         if (!destination) {
             return
         }
@@ -58,11 +69,21 @@ export class _Editor extends Component {
         ) {
             return
         }
-        const wapCmps = this.props.currWap
-        const tempCmp = wapCmps.cmps[source.index]
-        wapCmps.cmps.splice(source.index, 1, wapCmps.cmps[destination.index])
-        wapCmps.cmps.splice(destination.index, 1, tempCmp)
-        await this.props.updateWap(wapCmps)
+        if (source.droppableId === '1' && destination.droppableId === '2') return
+
+        if (source.droppableId === '1' && destination.droppableId === '1') {
+            const wapCmps = this.props.currWap
+            const tempCmp = wapCmps.cmps[source.index]
+            wapCmps.cmps.splice(source.index, 1, wapCmps.cmps[destination.index])
+            wapCmps.cmps.splice(destination.index, 1, tempCmp)
+            await this.props.updateWap(wapCmps)
+            return
+        }
+        if (source.droppableId === "2" && combine?.droppableId === "2") {
+            console.log("🚀 ~ file: Editor.jsx ~ line 83 ~ _Editor ~ source", source)
+            this.onAddCmp(draggableId)
+            return
+        }
     }
 
 
@@ -73,17 +94,18 @@ export class _Editor extends Component {
         if (!currWap) return <div>Loading...</div>;
         return (
             <section className="app-editor flex space-between">
-                <EditorSideBar
-                    currCmp={currCmp}
-                    onUpdateCurrCmp={this.onUpdateCurrCmp}
-                    editorStatus={editorStatus}
-                    onEdit={this.onEdit}
-                    onAdd={this.onAdd}
-                    addCmp={addCmp}
-                    currWap={currWap}
-                    changeCmpsIds={changeCmpsIds}
-                />
                 <DragDropContext onDragEnd={this.onDragEnd}>
+                    <EditorSideBar
+                        currCmp={currCmp}
+                        onUpdateCurrCmp={this.onUpdateCurrCmp}
+                        editorStatus={editorStatus}
+                        onEdit={this.onEdit}
+                        onAdd={this.onAdd}
+                        addCmp={addCmp}
+                        currWap={currWap}
+                        changeCmpsIds={changeCmpsIds}
+                        onDragEnd={this.onDragEnd}
+                    />
                     <div className="editor-wap">
                         <EditorWapSections
                             wap={currWap}

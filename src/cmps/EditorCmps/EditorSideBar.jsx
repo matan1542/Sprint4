@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 export class EditorSideBar extends Component {
@@ -7,11 +8,14 @@ export class EditorSideBar extends Component {
         // console.log('this.props.currCmp',this.props.currCmp)
         switch (this.props.editorStatus) {
             case 'add':
-                return <AddCmpBar addCmp={this.props.addCmp}
-                getCmpById={this.props.getCmpById} 
-                currCmp={this.props.currCmp}
-                changeCmpsIds={this.props.changeCmpsIds}
-                currWap={this.props.currWap}/>
+                return (
+                    // <DragDropContext onDragEnd={this.props.onDragEnd}>
+                    <AddCmpBar addCmp={this.props.addCmp}
+                        getCmpById={this.props.getCmpById}
+                        currCmp={this.props.currCmp}
+                        changeCmpsIds={this.props.changeCmpsIds}
+                        currWap={this.props.currWap} />)
+            // </DragDropContext>)
             case 'edit':
                 return <EditCmpBar
                     currCmp={this.props.currCmp}
