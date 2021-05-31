@@ -8,11 +8,8 @@ import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 const useStyles = makeStyles({
   root: {
-    width: 250,
-  },
-  input: {
-    width: 42,
-  },
+    width: 200,
+  }
 });
 
 export function EditFontSize({val, onUpdateCurrCmp,currCmp}) {
@@ -29,24 +26,10 @@ useEffect(() => {
     setValue(newValue);
   };
 
-  const handleInputChange = async(event) => {
-    const fontValue = !event.target.value ? 0 : Number(event.target.value)
-  const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,fontSize:`${fontValue}px`}}}
-   await onUpdateCurrCmp(cmp)
-    setValue(fontValue);
-  };
-
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={0} alignItems="center">
+      <Grid container spacing={1} alignItems="center">
         <Typography id="input-slider" gutterBottom>
             Text Size
         </Typography>
@@ -61,22 +44,7 @@ useEffect(() => {
             max={100}
             onChange={handleSliderChange}
             aria-labelledby="input-slider"
-          />
-        </Grid>
-        <Grid item>
-          <Input
-            className={classes.input}
-            value={value}
-            margin="dense"
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            inputProps={{
-              step: 30,
-              min: 0,
-              max: 100,
-              type: 'number',
-              'aria-labelledby': 'input-slider',
-            }}
+            valueLabelDisplay="auto"
           />
         </Grid>
       </Grid>

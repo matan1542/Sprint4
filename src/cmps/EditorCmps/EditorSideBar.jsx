@@ -1,6 +1,35 @@
 import { Component } from "react";
 import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
+
+// import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
+import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+
+// const raleway = {
+//   fontFamily: 'Raleway',
+//   fontStyle: 'normal',
+//   fontDisplay: 'swap',
+//   fontWeight: 400,
+//   src: `
+//     local('Raleway'),
+//     local('Raleway-Regular'),
+//     url(${RalewayWoff2}) format('woff2')
+//   `,
+//   unicodeRange:
+//     'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
+// };
+const theme = createMuiTheme({
+    typography: {
+      fontFamily: 'Raleway, Arial',
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': 'raleway',
+        },
+      },
+    },
+  });
 export class EditorSideBar extends Component {
 
     DynamicCmp = (props) => {
@@ -21,10 +50,13 @@ export class EditorSideBar extends Component {
                 return //...some default error view
         }
     }
+    
 
     render() {
         return (
             <div className="editor-side-bar flex column">
+                <ThemeProvider theme={theme}>
+                <CssBaseline />
                 <nav className="side-bar-nav flex">
                     <button onClick={() => this.props.onAdd()}>Add</button>
                     <button onClick={() => this.props.onEdit()}>Edit</button>
@@ -33,6 +65,7 @@ export class EditorSideBar extends Component {
                 {this.DynamicCmp()}
                 </div>
                 <button className="btn btn-publish">Publish</button>
+                </ThemeProvider>
             </div>
         )
     }

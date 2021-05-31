@@ -35,7 +35,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        <Accordion disableSpacing={true} expanded={expanded === 'panel1a'} onChange={handleChange('panel1a')}>
+                        <Accordion expanded={expanded === 'panel1a'} onChange={handleChange('panel1a')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"

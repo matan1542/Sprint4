@@ -9,6 +9,7 @@ import { EditJustifyContent } from './EditorControler/EditJustifyContent'
 import { EditAlignContent } from './EditorControler/EditAlignContent'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
+    // console.log(attribute, value);
     switch (attribute) {
         case "paddingInline":
             return <EditPadding att={attribute} val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
