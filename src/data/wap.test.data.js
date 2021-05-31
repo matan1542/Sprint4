@@ -33,7 +33,7 @@ export const wap = [
                                 "padding": "10px",
                                 "borderRadius": "15px",
                                 "textAlign": "center",
-                                "letterSpacing": "0px"
+                                "letterSpacing": "0px",
                             }
                         },
                         "cmps": []
@@ -50,7 +50,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "Home",
-                                    "action": {"link":"url"},
+                                    "action": { "link": "url" },
                                     "style": {
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",

@@ -26,7 +26,10 @@ export const cmp = [
                         "backgroundColor": "#101010",
                         "padding": "10px",
                         "borderRadius": "15px",
-                        "textAlign": "center"
+                        "textAlign": "center",
+                        "textDecoration": "unset",
+                        "fontWeight": "unset",
+                        "fontStyle": "unset",
                     }
                 },
                 "cmps": []
