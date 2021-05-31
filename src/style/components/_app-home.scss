@@ -3,11 +3,11 @@
     padding: 0px 20px;
     h1 {
         font-size: 140px;
-        color: mediumblue;
+        color: $clr1;
     }
     h2 {
         font-size: 90px;
-        color: mediumblue;
+        color: $clr1;
     }
     .home-hero {
         border: 0.5px solid gray;
@@ -16,10 +16,12 @@
         margin-top: 8px;
         padding: 16px;
         background-color: #c5c5c5;
+        background-image: url(../../assets/img/HERO.jpg);
+        background-size: cover;
     }
     .btn-start {
-        background-color: lightskyblue;
-        color: mediumblue;
+        background-color: rgba(135, 206, 250, 0.548);
+        color: $clr5;
         padding: 30px 10px;
         border-radius: 50px;
     }
