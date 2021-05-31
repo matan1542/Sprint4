@@ -17,6 +17,7 @@ export class EditColor extends (Component) {
 
   toggleColorPicker = () => {
     this.setState(prevState => ({ showColorPicker: !prevState.showColorPicker }))
+
   }
 
   handleColorChange = async (color) => {
@@ -25,7 +26,7 @@ export class EditColor extends (Component) {
     const value = `rgba(${r},${g},${b},${a})`
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style, [att]:`${value}`}}}
     await onUpdateCurrCmp(cmp)
-  
+    this.toggleColorPicker()  
   }
 
   render() {
@@ -40,7 +41,7 @@ export class EditColor extends (Component) {
           onClick={this.toggleColorPicker}>
         {this.props.att === 'color' ? <FormatColorTextIcon/> : <FormatColorFillIcon/>}
         </button>
-        
+
         {showColorPicker &&
           <React.Fragment>
             <div className='colorpicker-cover' onClick={this.toggleColorPicker} />
