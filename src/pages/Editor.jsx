@@ -15,6 +15,7 @@ import {
 } from "../store/actions/wap.actions.js";
 import { DragDropContext } from 'react-beautiful-dnd'
 import { cmpService } from '../services/cmp.service.js'
+import { utilService } from '../services/utils.js'
 // import { wapService } from "../services/wap.service";
 
 export class _Editor extends Component {
@@ -49,16 +50,18 @@ export class _Editor extends Component {
     }
 
     onAddCmp = async (cmpId) => {
-        console.log("🚀 ~ file: Editor.jsx ~ line 52 ~ _Editor ~ onAddCmp= ~ cmpId", cmpId)
+        cmpId = [...cmpId]
+        cmpId.shift()
+        cmpId = cmpId.join('')
         // const value = target.attributes.value.value;
-        const res = await cmpService.getCmpsById(cmpId)
-        console.log('res', res)
-        const cmp = await changeCmpsIds(res);
-        return await this.props.addCmp(this.props.currWap, cmp)
+        const cmp = await cmpService.getCmpsById(cmpId)
+        cmp.id = utilService.makeId()
+        console.log('cmp', cmp)
+        // const cmp = await changeCmpsIds(res);
+        await this.props.addCmp(this.props.currWap, cmp)
     }
 
     onDragEnd = async res => {
-        console.log("🚀 ~ file: Editor.jsx ~ line 51 ~ _Editor ~ res", res)
         const { destination, source, draggableId, combine } = res
         if (!destination) {
             return
@@ -79,8 +82,7 @@ export class _Editor extends Component {
             await this.props.updateWap(wapCmps)
             return
         }
-        if (source.droppableId === "2" && combine?.droppableId === "2") {
-            console.log("🚀 ~ file: Editor.jsx ~ line 83 ~ _Editor ~ source", source)
+        if (source.droppableId === "2" && destination.droppableId === "1") {
             this.onAddCmp(draggableId)
             return
         }
