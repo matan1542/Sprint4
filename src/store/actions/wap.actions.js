@@ -52,7 +52,6 @@ export function changeCmpsIds(cmpObj) {
 }
 //funciton that would get the current wap according to his id
 export function getById(wapId) {
-    console.log("🚀 ~ file: wap.actions.js ~ line 55 ~ getById ~ wapId", wapId)
     return async dispatch => {
         try {
             const wap = await wapService.getById(wapId)

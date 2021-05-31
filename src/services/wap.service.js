@@ -47,7 +47,6 @@ async function save(wap) {
 }
 
 async function updateTarget(wap, id, updateData) {
-    console.log('wap',wap)
     try {
         const target = await getTarget(wap, id);
         Object.assign(target, updateData);

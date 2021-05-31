@@ -35,10 +35,10 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
           onUpdateWap();
         }}
         suppressContentEditableWarning={true}
-        onClick={({ target }) => {
-          onCmpFocus(cmp, target);
-          target.contentEditable = true;
-          target.onFocus = true;
+        onClick={(ev) => {
+          onCmpFocus(ev, cmp);
+          ev.target.contentEditable = true;
+          ev.target.onFocus = true;
         }}
         className="wap-text"
         name="txt"

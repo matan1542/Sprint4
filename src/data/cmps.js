@@ -79,25 +79,11 @@ export const cmp = [{
                             "letterSpacing": "0px"
                         }
                     }
-                }
-            ]
-        }
-    ]
-},
-{
-    "id": "wc05",
-    "type": "wap-section",
-    "info": {
-        "txt": "",
-        "style": {
-            "backgroundImage": "url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
-            "flexDirection": "column",
-            "padding": "10px",
-            "alignItems": "center",
-            "justifyContent": "center",
-            "minHeight": "300px"
-        }
+                ]
+            }
+        ]
     },
+<<<<<<< HEAD
     "cmps": [
         {
             "id": "wc051",
@@ -133,21 +119,70 @@ export const cmp = [{
                     "fontFamily": "math",
                     "letterSpacing": "0px"
                 }
+=======
+    {
+        "id": "wc05",
+        "type": "wap-section",
+        "info": {
+            "txt": "",
+            "style": {
+                "backgroundImage": "url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
+                "flexDirection": "column",
+                "padding": "10px",
+                "alignItems": "center",
+                "justifyContent": "center",
+                "minHeight": "300px"
+>>>>>>> a9cd801da3f2676da1bfdc5be2fb4da54ddfe518
             }
         },
-    ]
-},
-{
-    "id": "wc023",
-    "type": "wap-form",
-    "info": {
-        "style": {},
         "cmps": [
             {
-                "id": "wc0231",
-
-            }
+                "id": "wc051",
+                "type": "wap-text",
+                "info": {
+                    "txt": "Welcome to my first webApp",
+                    "style": {
+                        "fontSize": "30px",
+                        "color": "#ffffff",
+                        "backgroundColor": "#00000087",
+                        "padding": "10px 20px",
+                        "marginBottom": "10px",
+                        "borderRadius": "15px",
+                        "textAlign": "center",
+                        "fontFamily": "cursive"
+                    }
+                },
+                "cmps": []
+            },
+            {
+                "id": "wc0511",
+                "type": "wap-btn",
+                "info": {
+                    "txt": "Click to Enter!",
+                    "url": "",
+                    "style": {
+                        "borderRadius": "15px",
+                        "backgroundColor": "inherit",
+                        "border": "3px solid black",
+                        "color": "white",
+                        "fontSize": "35px",
+                        "fontFamily": "math"
+                    }
+                }
+            },
         ]
     },
-}
+    {
+        "id": "wc023",
+        "type": "wap-form",
+        "info": {
+            "style": {},
+            "cmps": [
+                {
+                    "id": "wc0231",
+
+                }
+            ]
+        },
+    }
 ]

@@ -31,13 +31,13 @@ export class _Editor extends Component {
         this.props.deleteCmp(this.props.currWap, cmpId);
     };
 
-    onCmpFocus = async (cmp) => {
+    onCmpFocus = async (ev, cmp) => {
+        ev.stopPropagation();
         await this.props.setCurrCmp(cmp);
         this.onEdit()
     };
     onUpdateCurrCmp = (cmp) => {
         const copyCmp = { ...cmp };
-        console.log("🚀 ~ file: Editor.jsx ~ line 38 ~ _Editor ~ copyCmp", copyCmp)
         delete copyCmp.id;
         this.props.updateCurrCmp(this.props.currWap, cmp.id, copyCmp);
     };
