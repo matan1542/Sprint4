@@ -50,6 +50,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "Home",
+                                    "action": "",
                                     "style": {
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
@@ -65,6 +66,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "News",
+                                    "action": "",
                                     "style": {
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
@@ -80,6 +82,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "About",
+                                    "action": "",
                                     "style": {
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
@@ -136,6 +139,7 @@ export const wap = [
                         "type": "wap-btn",
                         "info": {
                             "txt": "Click to Enter!",
+                            "action": "",
                             "style": {
                                 "borderRadius": "15px",
                                 "backgroundColor": "inherit",
