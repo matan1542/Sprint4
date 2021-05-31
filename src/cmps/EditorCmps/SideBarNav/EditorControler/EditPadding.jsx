@@ -34,7 +34,7 @@ export  function EditPadding({att,val,onUpdateCurrCmp ,currCmp}) {
         value={pad}
         onChange={onHandleChange}
         aria-labelledby="input-slider"
-        valueLabelDisplay="on"
+        valueLabelDisplay="auto"
       />
     </div>
   );

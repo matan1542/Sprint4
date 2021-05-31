@@ -180,6 +180,7 @@ export const wap = [
                                 "fontSize": "16px",
                                 "color": "#ffffff",
                                 "padding": "10px",
+                                "textAlign": "center",
                                 "fontFamily": "cursive",
                                 "letterSpacing": "0px"
                             }
