@@ -1,32 +1,44 @@
 .wap-section {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     background-size: cover;
-    >.wap-el-btn-del{
+    .wap-section-tool {
         position: absolute;
         top: 0;
         right: 0;
         padding: 0;
         z-index: 1;
-        @include get-color-yiq(rgb(255, 0, 0));
-        background-color: rgba(255, 0, 0, 0.281);
-        border: none;
-        width: 30px;
         display: none;
-        transition: .3s;
-        border-radius: 10px;
+        border-radius: 0px 0px 10px 10px;
+        background-color: rgb(32, 32, 32);
+        > button {
+            border: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            width: 30px;    
+            transition: .3s;
+            border-radius: 10px;
+        }
     }
     &:hover {
         outline: 1px dashed $clr3;
         z-index: 1;
-        .wap-el-btn-del{
-            display: block;
-            &:hover {
-                background-color:  rgba(255, 0, 0, 0.7);
-            }
+        .wap-section-tool{
+            display: flex;
+            > button {
+                &:hover {
+                    background-color:  rgba(255, 255, 255, 0.15);
+                }
+                &:focus, &:active{
+                    background-color:  rgba(255, 255, 255, 0.4);
+                }
+            }   
         }
     }
-    
 }
 
 .wap-el {
@@ -40,8 +52,8 @@
         bottom: 0;
         right: 0;
         z-index: 1;
-        @include get-color-yiq(rgb(255, 0, 0));
-        background-color: rgba(255, 0, 0, 0.281);
+        color: white;
+        background-color: rgb(32, 32, 32);
         border: none;
         width: 30px;
         display: none;
@@ -54,8 +66,11 @@
         .wap-el-btn-del{
             display: block;
             &:hover {
-                background-color: rgba(255, 0, 0, 0.7);
+                background-color:  rgba(255, 255, 255, 0.15);
+            }
+            &:focus, &:active{
+                background-color:  rgba(255, 255, 255, 0.4);
+            }
         }
-    }
     }
 }
