@@ -51,6 +51,7 @@ export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
               label="JustifyContent"
               size="small"
             >
+                <MenuItem value="unset">Unset</MenuItem>
                 <MenuItem value="center">Center</MenuItem>
                 <MenuItem value="flex-start">Begining</MenuItem>
                 <MenuItem value="flex-end">End</MenuItem>
