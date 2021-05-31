@@ -56,12 +56,13 @@ export class _Editor extends Component {
         // const value = target.attributes.value.value;
         const cmp = await cmpService.getCmpsById(cmpId)
         cmp.id = utilService.makeId()
-        console.log('cmp', cmp)
         // const cmp = await changeCmpsIds(res);
-        await this.props.addCmp(this.props.currWap, cmp)
+        return await this.props.addCmp(this.props.currWap, cmp)
+        // console.log("🚀 ~ file: Editor.jsx ~ line 62 ~ _Editor ~ onAddCmp= ~ wap", wap)
     }
 
     onDragEnd = async res => {
+        console.log("🚀 ~ file: Editor.jsx ~ line 65 ~ _Editor ~ res", res)
         const { destination, source, draggableId } = res
         if (!destination) {
             return
@@ -83,7 +84,12 @@ export class _Editor extends Component {
             return
         }
         if (source.droppableId === "2" && destination.droppableId === "1") {
-            this.onAddCmp(draggableId)
+            await this.onAddCmp(draggableId)
+            const wapCmps = this.props.currWap
+            const tempCmp = wapCmps.cmps[source.index]
+            wapCmps.cmps.splice(source.index, 1, wapCmps.cmps[destination.index])
+            wapCmps.cmps.splice(destination.index, 1, tempCmp)
+            await this.props.updateWap(wapCmps)
             return
         }
     }

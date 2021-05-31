@@ -92,6 +92,7 @@ export function addCmp(wapObj, cmpObj) {
                 wap
             }
             dispatch(action)
+            return wap
         } catch (err) {
             throw new Error('Had probelm trying to addCmp', err)
         }

@@ -4,7 +4,7 @@ export function AddCmpBar() {
 
 
     return (
-        <Droppable droppableId="2" isCombineEnabled>
+        <Droppable droppableId="2">
             {(provided, snapshot) => (
                 <div className="add-bar flex column"
                     ref={provided.innerRef}

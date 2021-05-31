@@ -14,7 +14,7 @@ export function WapSection({
     isDraggingOver
 }) {
     return (
-        <Draggable className="section" draggableId={cmp.id} index={idx}  >
+        <Draggable className="section" draggableId={cmp.id} index={idx} type="section"  >
             {(provided, snapshot) => (
                 <div
                     ref={provided.innerRef}
