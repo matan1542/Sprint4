@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ChromePicker } from 'react-color';
+import { CirclePicker } from 'react-color';
 
 import FormatColorTextIcon from '@material-ui/icons/FormatColorText';
 import FormatColorFillIcon from '@material-ui/icons/FormatColorFill';
@@ -41,7 +41,7 @@ export class EditColor extends (Component) {
         {showColorPicker &&
           <React.Fragment>
             <div className='colorpicker-cover' onClick={this.toggleColorPicker} />
-            <ChromePicker color={this.props.val} onChange={this.handleColorChange} />
+            <CirclePicker color={this.props.val} onChange={this.handleColorChange} />
           </React.Fragment>}
       </div>
     )
