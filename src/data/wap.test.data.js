@@ -11,10 +11,12 @@ export const wap = [
                 "info": {
                     "style": {
                         "backgroundColor": "#101010",
-                        "padding": "10px 20px",
+                        "paddingInline": "10px",
+                        "paddingBlock": "10px",
                         "alignItems": "center",
                         "justifyContent": "space-between",
-                        "flexDirection": "row"
+                        "flexDirection": "row",
+                        "alignContent": "unset",
                     }
                 },
                 "cmps": [
@@ -98,6 +100,7 @@ export const wap = [
                     "txt": "",
                     "style": {
                         "backgroundImage": "url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
+                        "backgroundColor": "",
                         "flexDirection": "column",
                         "padding": "10px",
                         "alignItems": "center",
