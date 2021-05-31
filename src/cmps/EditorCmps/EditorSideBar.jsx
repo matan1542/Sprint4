@@ -1,19 +1,17 @@
 import { Component } from "react";
-// import { DragDropContext } from "react-beautiful-dnd";
 import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 export class EditorSideBar extends Component {
 
     DynamicCmp = (props) => {
-        // console.log('this.props.currCmp',this.props.currCmp)
         switch (this.props.editorStatus) {
             case 'add':
                 return <AddCmpBar addCmp={this.props.addCmp}
-                getCmpById={this.props.getCmpById} 
-                currCmp={this.props.currCmp}
-                changeCmpsIds={this.props.changeCmpsIds}
-                currWap={this.props.currWap}
-                cmps={this.props.cmps}/>
+                    getCmpById={this.props.getCmpById}
+                    currCmp={this.props.currCmp}
+                    changeCmpsIds={this.props.changeCmpsIds}
+                    currWap={this.props.currWap}
+                    cmps={this.props.cmps} />
             case 'edit':
                 return <EditCmpBar
                     currCmp={this.props.currCmp}
@@ -25,7 +23,6 @@ export class EditorSideBar extends Component {
     }
 
     render() {
-        // console.log('editorStatus:', this.props.editorStatus)
         return (
             <div className="editor-side-bar flex column">
                 <nav className="side-bar-nav flex">
