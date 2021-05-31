@@ -47,6 +47,7 @@ export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
               label="alignContent"
               size="small"
             >
+                <MenuItem value="unset">None</MenuItem>
                 <MenuItem value="center">Center</MenuItem>
                 <MenuItem value="flex-start">Begining</MenuItem>
                 <MenuItem value="flex-end">End</MenuItem>
