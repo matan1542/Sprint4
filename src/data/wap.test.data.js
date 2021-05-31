@@ -11,6 +11,7 @@ export const wap = [
                 "info": {
                     "style": {
                         "backgroundColor": "#101010",
+                        "backgroundImage": "",
                         "paddingInline": "10px",
                         "paddingBlock": "10px",
                         "alignItems": "center",
@@ -101,11 +102,13 @@ export const wap = [
                     "style": {
                         "backgroundImage": "url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
                         "backgroundColor": "",
-                        "flexDirection": "column",
-                        "padding": "10px",
+                        "paddingInline": "10px",
+                        "paddingBlock": "10px",
+                        "flexDirection": "row",
                         "alignItems": "center",
                         "justifyContent": "center",
-                        "minHeight": "300px"
+                        "alignContent": "unset",
+                        "minHeight": "300px",
                     }
                 },
                 "cmps": [
@@ -153,6 +156,14 @@ export const wap = [
                     "txt": "",
                     "style": {
                         "backgroundColor": "#000",
+                        "backgroundImage": "",
+                        "paddingInline": "10px",
+                        "paddingBlock": "10px",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "alignContent": "unset",
+                        "minHeight": "",
                     }
                 },
                 "cmps": [
@@ -195,10 +206,14 @@ export const wap = [
 
                     "style": {
                         "backgroundColor": "#484848",
-                        "textAlign": "center",
+                        "backgroundImage": "",
+                        "paddingInline": "0px",
+                        "paddingBlock": "0px",
+                        "flexDirection": "row",
                         "alignItems": "center",
                         "justifyContent": "center",
-                        "height": "30px",
+                        "alignContent": "unset",
+                        "minHeight": "",
                     }
                 },
                 "cmps": [
