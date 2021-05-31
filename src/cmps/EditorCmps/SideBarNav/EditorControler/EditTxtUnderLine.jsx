@@ -13,8 +13,8 @@ export function EditTxtUnderLine({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-        <div className={"txt-decoration flex space-between"}>
+        <span className={"txt-decoration"}>
             <Button onClick={onToggleStyle}><FormatUnderlinedIcon /></Button>
-        </div>
+        </span>
     )
 }
