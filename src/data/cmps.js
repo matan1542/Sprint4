@@ -1,6 +1,8 @@
 export const cmp = [
+
     {
         "id": "wc01",
+        "sectionType": "header-section",
         "type": "wap-section",
         "info": {
             "style": {
@@ -23,8 +25,7 @@ export const cmp = [
                         "backgroundColor": "#101010",
                         "padding": "10px",
                         "borderRadius": "15px",
-                        "textAlign": "center",
-                        "letterSpacing": "0px"
+                        "textAlign": "center"
                     }
                 },
                 "cmps": []
@@ -46,8 +47,7 @@ export const cmp = [
                                 "color": "#ffffff",
                                 "backgroundColor": "inherit",
                                 "border": "0px",
-                                "marginLeft": "10px",
-                                "letterSpacing": "0px"
+                                "marginLeft": "10px"
                             }
                         }
                     },
@@ -61,8 +61,7 @@ export const cmp = [
                                 "color": "#ffffff",
                                 "backgroundColor": "inherit",
                                 "border": "0px",
-                                "marginLeft": "10px",
-                                "letterSpacing": "0px"
+                                "marginLeft": "10px"
                             }
                         }
                     },
@@ -76,8 +75,7 @@ export const cmp = [
                                 "color": "#ffffff",
                                 "backgroundColor": "inherit",
                                 "border": "0px",
-                                "marginLeft": "10px",
-                                "letterSpacing": "0px"
+                                "marginLeft": "10px"
                             }
                         }
                     }
@@ -87,6 +85,7 @@ export const cmp = [
     },
     {
         "id": "wc05",
+        "sectionType": "hero-section",
         "type": "wap-section",
         "info": {
             "txt": "",
@@ -113,8 +112,7 @@ export const cmp = [
                         "marginBottom": "10px",
                         "borderRadius": "15px",
                         "textAlign": "center",
-                        "fontFamily": "cursive",
-                        "letterSpacing": "0px"
+                        "fontFamily": "cursive"
                     }
                 },
                 "cmps": []
@@ -131,8 +129,7 @@ export const cmp = [
                         "border": "3px solid black",
                         "color": "white",
                         "fontSize": "35px",
-                        "fontFamily": "math",
-                        "letterSpacing": "0px"
+                        "fontFamily": "math"
                     }
                 }
             },

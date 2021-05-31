@@ -6,12 +6,12 @@ export class EditorSideBar extends Component {
     DynamicCmp = (props) => {
         switch (this.props.editorStatus) {
             case 'add':
-                return (
-                    <AddCmpBar addCmp={this.props.addCmp}
-                        getCmpById={this.props.getCmpById}
-                        currCmp={this.props.currCmp}
-                        changeCmpsIds={this.props.changeCmpsIds}
-                        currWap={this.props.currWap} />)
+                return <AddCmpBar addCmp={this.props.addCmp}
+                    getCmpById={this.props.getCmpById}
+                    currCmp={this.props.currCmp}
+                    changeCmpsIds={this.props.changeCmpsIds}
+                    currWap={this.props.currWap}
+                    cmps={this.props.cmps} />
             case 'edit':
                 return <EditCmpBar
                     currCmp={this.props.currCmp}
