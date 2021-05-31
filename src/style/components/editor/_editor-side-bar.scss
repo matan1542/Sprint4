@@ -1,6 +1,6 @@
 .editor-side-bar {
   position: relative;
-  font-family: raleway;
+  
   background-color: $clr7;
   width: 15%;
   min-width: 16rem;
@@ -17,6 +17,7 @@
     button {
       border: none;
       background-color: inherit;
+      font-family: raleway;
       flex: auto;
       min-height: 45px;
       font-size: em(30px);
