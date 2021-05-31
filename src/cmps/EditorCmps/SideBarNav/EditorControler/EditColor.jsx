@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ChromePicker } from 'react-color';
-import { Button } from '@material-ui/core';
+
+import FormatColorTextIcon from '@material-ui/icons/FormatColorText';
+import FormatColorFillIcon from '@material-ui/icons/FormatColorFill';
 
 export class EditColor extends (Component) {
   state = {
@@ -31,6 +33,7 @@ export class EditColor extends (Component) {
     return (
       <div className='flex space-between mb-2'>
         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
+        {this.props.att === 'color' ? <FormatColorTextIcon/> : <FormatColorFillIcon/>}
         <button variant="contained" style={{ backgroundColor: this.state.color, marginRight: '20px'}}
           title={this.props.name} onClick={this.toggleColorPicker}>
           <i className={this.props.icon}></i>

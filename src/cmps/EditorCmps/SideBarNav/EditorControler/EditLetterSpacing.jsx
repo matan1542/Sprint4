@@ -48,11 +48,8 @@ useEffect(() => {
     <div className={classes.root}>
       <Grid container spacing={0} alignItems="center">
         <Typography id="input-slider" gutterBottom>
-            Text Size
+            Letter Spacing
         </Typography>
-        <Grid item>
-          <TextFormatIcon />
-        </Grid>
         <Grid item xs>
           <Slider
             value={typeof value === 'number' ? value : 0}

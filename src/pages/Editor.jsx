@@ -62,7 +62,7 @@ export class _Editor extends Component {
     }
 
     onDragEnd = async res => {
-        const { destination, source, draggableId, combine } = res
+        const { destination, source, draggableId } = res
         if (!destination) {
             return
         }

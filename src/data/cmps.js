@@ -22,7 +22,8 @@ export const cmp = [{
                     "backgroundColor": "#101010",
                     "padding": "10px",
                     "borderRadius": "15px",
-                    "textAlign": "center"
+                    "textAlign": "center",
+                    "letterSpacing": "0px"
                 }
             },
             "cmps": []
@@ -44,7 +45,8 @@ export const cmp = [{
                             "color": "#ffffff",
                             "backgroundColor": "inherit",
                             "border": "0px",
-                            "marginLeft": "10px"
+                            "marginLeft": "10px",
+                            "letterSpacing": "0px"
                         }
                     }
                 },
@@ -58,7 +60,8 @@ export const cmp = [{
                             "color": "#ffffff",
                             "backgroundColor": "inherit",
                             "border": "0px",
-                            "marginLeft": "10px"
+                            "marginLeft": "10px",
+                            "letterSpacing": "0px"
                         }
                     }
                 },
@@ -72,7 +75,8 @@ export const cmp = [{
                             "color": "#ffffff",
                             "backgroundColor": "inherit",
                             "border": "0px",
-                            "marginLeft": "10px"
+                            "marginLeft": "10px",
+                            "letterSpacing": "0px"
                         }
                     }
                 }
@@ -108,7 +112,8 @@ export const cmp = [{
                     "marginBottom": "10px",
                     "borderRadius": "15px",
                     "textAlign": "center",
-                    "fontFamily": "cursive"
+                    "fontFamily": "cursive",
+                    "letterSpacing": "0px"
                 }
             },
             "cmps": []
@@ -125,7 +130,8 @@ export const cmp = [{
                     "border": "3px solid black",
                     "color": "white",
                     "fontSize": "35px",
-                    "fontFamily": "math"
+                    "fontFamily": "math",
+                    "letterSpacing": "0px"
                 }
             }
         },
