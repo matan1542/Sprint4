@@ -18,25 +18,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
+export function EditAlignItems({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [alignContent, setAlignContent] = React.useState('');
+  const [alignItems, setAlignItems] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
-    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignContent:`${value}`}}}
+    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignItems:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setAlignContent(event.target.value);
+    setAlignItems(event.target.value);
   };
 
 
   return (
     <div className={classes.root}>
-      <Grid container alignContent="start">
-        <Box display="flex" alignContent='flex-start' flexDirection='column'>
+      <Grid container alignItems="start">
+        <Box display="flex" alignItems='flex-start' flexDirection='column'>
           <Typography id="input-slider" gutterBottom>
-            Align Content
+            Align Items
           </Typography>
           
         <Grid item>
@@ -45,9 +45,9 @@ export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={alignContent}
+              value={alignItems}
               onChange={handleChange}
-              label="alignContent"
+              label="alignItems"
               size="small"
             >
                 <MenuItem value="unset">None</MenuItem>

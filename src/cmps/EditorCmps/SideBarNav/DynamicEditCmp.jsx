@@ -7,6 +7,7 @@ import { EditBackgroundImg } from './EditorControler/EditBackgroundImg'
 import { EditPadding } from './EditorControler/EditPadding'
 import { EditJustifyContent } from './EditorControler/EditJustifyContent'
 import { EditAlignContent } from './EditorControler/EditAlignContent'
+import { EditAlignItems } from './EditorControler/EditAlignItems'
 import { EditAlignText } from './EditorControler/EditAlignText'
 import {EditTextDecoration} from './EditorControler/EditTextDecoration'
 import { EditTextShadow } from './EditorControler/EditTextShadow'
@@ -39,6 +40,8 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
             return <EditJustifyContent val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "alignContent":
             return <EditAlignContent val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "alignItems":
+            return <EditAlignItems val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "textDecoration":
             return <EditTextDecoration onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp}/>
         case "textShadow":

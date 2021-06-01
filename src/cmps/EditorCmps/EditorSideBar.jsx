@@ -53,7 +53,6 @@ export class EditorSideBar extends Component {
     
 
     render() {
-        console.log(this.props.editorStatus === 'edit')
         return (
             <div className="editor-side-bar flex column">
                 <ThemeProvider theme={theme}>
