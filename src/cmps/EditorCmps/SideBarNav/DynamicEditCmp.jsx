@@ -11,6 +11,7 @@ import { EditAlignText } from './EditorControler/EditAlignText'
 import { EditTxtUnderLine } from './EditorControler/EditTxtUnderLine'
 import { EditTxtBold } from './EditorControler/EditTxtBold'
 import { EditTxtItalic } from './EditorControler/EditTxtItalic'
+import { EditTextShadow } from './EditorControler/EditTextShadow'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
     switch (attribute) {
@@ -44,6 +45,8 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
             return <EditTxtBold onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "fontStyle":
             return <EditTxtItalic onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "textShadow":
+            return <EditTextShadow onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         default: return null
     }
 }
