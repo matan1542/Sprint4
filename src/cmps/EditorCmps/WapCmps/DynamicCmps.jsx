@@ -7,6 +7,7 @@ import { WapCard } from "./WapCards";
 
 import { Component } from "react";
 import { WapForm } from "./WapForm";
+import {WapVideo} from "./WapVideo"
 export class DynamicCmps extends Component {
   getCmp = () => {
     const {
@@ -45,6 +46,8 @@ export class DynamicCmps extends Component {
             idx={idx}
           />
         );
+      case "wap-video":
+        return <WapVideo cmp={cmp}  onCmpFocus={onCmpFocus}/>
       case "wap-card":
         return (
           <WapCard

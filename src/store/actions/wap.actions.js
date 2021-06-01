@@ -5,6 +5,7 @@ export function loadWaps() { // Action Creator
     return async dispatch => {
         try {
             const waps = await wapService.query()
+            console.log('waps', waps)
             const action = {
                 type: 'SET_WAPS',
                 waps
@@ -22,6 +23,7 @@ export function loadCmps() {
     return async dispatch => {
         try {
             const cmps = await cmpService.query()
+            console.log('cmps', cmps)
             const action = {
                 type: 'SET_CMPS',
                 cmps: cmps[0].cmps
