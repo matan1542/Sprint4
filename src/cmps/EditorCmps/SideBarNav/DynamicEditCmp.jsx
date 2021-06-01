@@ -10,8 +10,10 @@ import { EditAlignContent } from './EditorControler/EditAlignContent'
 import { EditAlignText } from './EditorControler/EditAlignText'
 import {EditTextDecoration} from './EditorControler/EditTextDecoration'
 import { EditTextShadow } from './EditorControler/EditTextShadow'
+import { EditWidth } from './EditorControler/EditWidth'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
+    // console.log(attribute, value)
     switch (attribute) {
         case "textAlign":
             return <EditAlignText onUpdateCurrCmp={onUpdateCurrCmp} att={attribute} currCmp={currCmp} />
@@ -40,7 +42,9 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
         case "textDecoration":
             return <EditTextDecoration onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp}/>
         case "textShadow":
-            return <EditTextShadow onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+            return <EditTextShadow val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "width":
+            return <EditWidth val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         default: return null
     }
 }

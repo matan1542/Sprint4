@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function EditTextShadow({val ,onUpdateCurrCmp ,currCmp }) {
+export function EditTextShadow({ val, onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
   const [textShadow, setTextShadow] = React.useState('');
 
