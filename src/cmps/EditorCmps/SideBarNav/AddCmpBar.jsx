@@ -26,6 +26,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
         setExpanded(isExpanded ? panel : false);
       };
     const classes = useStyles();
+    const sections = ['Header','Section','Hero','Footer','Form']
 
     return (
         <div className={classes.root}>
@@ -35,32 +36,22 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        <Accordion expanded={expanded === 'panel1a'} onChange={handleChange('panel1a')}>
+                        {sections.map((section,idx)=>{
+                            return (
+                                <Accordion expanded={expanded === `panel${idx}a`} onChange={handleChange(`panel${idx}a`)}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
+                                aria-controls={`panel${idx}a-content`}
+                                id={`panel${idx}a-header`}
                             >
-                                <Typography className={classes.heading}>Headers</Typography>
+                                <Typography className={classes.heading}>{section}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <AddCmpList cmps={cmps} sectionType="header-section" />
-                                {/* <li value='wc05' onClick={onAddCmp}>Hero</li>
-                <li value='wc023' onClick={onAddCmp}>Form</li> */}
+                                <AddCmpList cmps={cmps} sectionType={`${section}-section`}/>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion expanded={expanded === 'panel2a'} onChange={handleChange('panel2a')}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls="panel2a-content"
-                                id="panel2a-header"
-                            >
-                                <Typography className={classes.heading}>Heros</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <AddCmpList cmps={cmps} sectionType="hero-section" />
-                            </AccordionDetails>
-                        </Accordion>
+                            )
+                        })}
                         {provided.placeholder}
                     </div>
                 )}

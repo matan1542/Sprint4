@@ -73,12 +73,14 @@ export class _Editor extends Component {
     cmpId = [...cmpId];
     cmpId.shift();
     cmpId = cmpId.join("");
-    const cmp = await this.props.cmps[0].cmps.find(cmp => cmp.id === cmpId);
+    const cmp = await this.props.cmps.find(cmp => cmp.id === cmpId);
+    console.log('wap',cmp)
+
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(currWap, updatedCmp, idx);
     return wap;
   };
-
+  
   onDragEnd = async (res) => {
     const { destination, source, draggableId, /* type */ } = res;
     if (!destination) {
