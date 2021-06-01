@@ -5,16 +5,16 @@ import { Droppable } from "react-beautiful-dnd";
 export class EditorWapSections extends Component {
   render() {
     const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap } = this.props;
-    console.log('wap',wap)
+    console.log("🚀 ~ file: EditorWapSections.jsx ~ line 8 ~ EditorWapSections ~ render ~ wap", wap)
     if (!wap) return <div>Loading...</div>;
     return (
       <Droppable className="section" droppableId="1" isCombineEnabled>
         {(provided, snapshot) => (
           <div
-          ref={provided.innerRef}
-          {...provided.droppableProps}
-          style={{ backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
-            {/* {wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>} */}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            style={{ backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
+            {wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>}
             {wap.cmps.map((cmp, idx) => {
               return (
                 <DynamicCmps

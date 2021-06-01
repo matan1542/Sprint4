@@ -19,7 +19,7 @@ export class _Editor extends Component {
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
-    await this.setCurrWap('60b5f9cdb38fddf7af36aa90');
+    await this.setCurrWap('5e28393890dd7201a06d4e44');
   }
 
   setCurrWap = async (wapId) => {
@@ -29,7 +29,7 @@ export class _Editor extends Component {
       return wap._id === wapId
     })
     if (!currWap) currWap = wapService.create()
-    this.setState({ currWap })
+    await this.setState({ currWap })
   }
 
   onCmpFocus = (ev, currCmp) => {
@@ -124,8 +124,8 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap } = this.state;
-    const { addCmp, changeCmpsIds, updateWap, cmps } =
-      this.props;
+    console.log("🚀 ~ file: Editor.jsx ~ line 129 ~ _Editor ~ render ~ currWap", currWap)
+    const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
       <section className="app-editor flex space-between">
@@ -140,7 +140,7 @@ export class _Editor extends Component {
             currWap={currWap}
             changeCmpsIds={changeCmpsIds}
             onDragEnd={this.onDragEnd}
-            cmps={cmps[0].cmps}
+            cmps={cmps}
           />
           <div className="editor-wap">
             <EditorWapSections
