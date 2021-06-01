@@ -1,0 +1,16 @@
+.wap-btn { 
+    min-height: 45px;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.wap-cards{
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.wap-nav {
+    justify-content: space-around;
+}

@@ -3,6 +3,7 @@ import { WapBtn } from "./WapBtn";
 import { WapSection } from "./WapSection";
 import { WapNav } from "./WapNav";
 import { WapImg } from "./WapImg";
+import { WapCards } from "./WapCards";
 
 import { Component } from "react";
 import { WapForm } from "./WapForm";
@@ -35,6 +36,18 @@ export class DynamicCmps extends Component {
       case "wap-nav":
         return (
           <WapNav
+            cmp={cmp}
+            wap={wap}
+            updateWap={updateWap}
+            onCmpFocus={onCmpFocus}
+            onUpdateCurrCmp={onUpdateCurrCmp}
+            onDeleteCmp={onDeleteCmp}
+            idx={idx}
+          />
+        );
+      case "wap-cards":
+        return (
+          <WapCards
             cmp={cmp}
             wap={wap}
             updateWap={updateWap}
