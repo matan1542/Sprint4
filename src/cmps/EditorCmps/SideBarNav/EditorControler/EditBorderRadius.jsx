@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   }
 });
 
-export function EditFontSize({ val, onUpdateCurrCmp, currCmp }) {
+export function EditBorderRadius({ val, onUpdateCurrCmp, currCmp }) {
   val = +(val.replace('px', ''))
   const classes = useStyles();
   const [value, setValue] = React.useState(val);
@@ -20,7 +20,7 @@ export function EditFontSize({ val, onUpdateCurrCmp, currCmp }) {
     setValue(val)
   }, [val])
   const handleSliderChange = async (event, newValue) => {
-    const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, fontSize: `${newValue}px` } } }
+    const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, borderRadius: `${newValue}px` } } }
     await onUpdateCurrCmp(cmp)
     setValue(newValue);
   };
@@ -30,13 +30,13 @@ export function EditFontSize({ val, onUpdateCurrCmp, currCmp }) {
     <div className={classes.root}>
         <Box display='flex' alignItems='flex-start' flexDirection='column'>
         <Typography id="input-slider" >
-          Text Size
+          Radius
         </Typography>
           <Slider
             value={typeof value === 'number' ? value : 0}
             min={0}
             step={1}
-            max={100}
+            max={50}
             onChange={handleSliderChange}
             aria-labelledby="input-slider"
             valueLabelDisplay="auto"

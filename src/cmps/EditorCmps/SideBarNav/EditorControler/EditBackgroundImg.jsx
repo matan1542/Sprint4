@@ -45,7 +45,9 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
         if (!fileState.file) return
         setLoading({ isLoding: true })
         const url = await uploadImg(fileState.file)
-        const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } }
+
+        const cmp = (currCmp.type !== "wap-img") ? { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } } :
+            { ...currCmp, info: { ...currCmp.info, src: `${url}` } }
         await onUpdateCurrCmp(cmp)
         setLoading({ isLoding: false })
     }
@@ -58,7 +60,8 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
 
     const onSelectPhoto = async (url) => {
         setLoading({ isLoding: true })
-        const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } }
+        const cmp = (currCmp.type !== "wap-img") ? { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, backgroundImage: `url(${url})` } } } :
+            { ...currCmp, info: { ...currCmp.info, src: `${url}` } }
         await onUpdateCurrCmp(cmp)
         setLoading({ isLoding: false })
     }
@@ -76,7 +79,7 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
                         />
                     </Button>
                     <Button type="submit">Save image</Button>
-                    <Button type="button" onClick={removeBackgroundImg}>Remove image</Button>
+                    {currCmp.type !== "wap-img" && <Button type="button" onClick={removeBackgroundImg}>Remove image</Button>}
                 </ButtonGroup>
             </form>
             <TextField label="Type to search" id="standard-basic"

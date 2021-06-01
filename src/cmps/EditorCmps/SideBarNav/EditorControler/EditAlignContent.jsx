@@ -10,11 +10,11 @@ import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(0),
+    margin: theme.spacing(1),
     minWidth: 150,
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(0),
   },
 }));
 
@@ -24,7 +24,7 @@ export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
 
   const handleChange = async(event) => {
     const value = event.target.value;
-    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignItems:`${value}`}}}
+    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignContent:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
     setAlignContent(event.target.value);
@@ -33,10 +33,10 @@ export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={0} alignItems="center">
-        <Box display="flex" alignItems="center">
+      <Grid container alignContent="start">
+        <Box display="flex" alignContent='flex-start' flexDirection='column'>
           <Typography id="input-slider" gutterBottom>
-            Align Items
+            Align Content
           </Typography>
           
         <Grid item>

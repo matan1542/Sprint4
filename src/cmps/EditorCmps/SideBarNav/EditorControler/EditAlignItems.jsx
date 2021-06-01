@@ -10,7 +10,7 @@ import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    marginBottom: theme.spacing(1),
+    margin: theme.spacing(1),
     minWidth: 150,
   },
   selectEmpty: {
@@ -18,47 +18,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
+export function EditAlignItems({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [justifyContent, setJustifyContent] = React.useState('');
+  const [alignItems, setAlignItems] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
-    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,justifyContent:`${value}`}}}
+    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignItems:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setJustifyContent(event.target.value);
+    setAlignItems(event.target.value);
   };
 
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={0} alignItems="center">
-       <Box display="flex" alignItems='flex-start' flexDirection='column'>
-         <Box mr={2} >
+      <Grid container alignItems="start">
+        <Box display="flex" alignItems='flex-start' flexDirection='column'>
           <Typography id="input-slider" gutterBottom>
-            Justify Content
+            Align Items
           </Typography>
-          </Box>
+          
         <Grid item>
           <FormControl variant="outlined" size="small" className={classes.formControl}>
             <InputLabel id="demo-simple-select-outlined-label">{val}</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={justifyContent}
+              value={alignItems}
               onChange={handleChange}
-              label="JustifyContent"
+              label="alignItems"
               size="small"
             >
-                <MenuItem value="unset">Unset</MenuItem>
+                <MenuItem value="unset">None</MenuItem>
                 <MenuItem value="center">Center</MenuItem>
                 <MenuItem value="flex-start">Begining</MenuItem>
                 <MenuItem value="flex-end">End</MenuItem>
-                <MenuItem value="space-around">Space Around</MenuItem>            
-                <MenuItem value="space-between">Space between</MenuItem>            
-                <MenuItem value="space-evenly">Space evenly</MenuItem>            
-            </Select>
+              </Select>
           </FormControl>
         </Grid>
         </Box>

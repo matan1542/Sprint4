@@ -10,14 +10,15 @@ export const wap = [
                 "type": "wap-section",
                 "info": {
                     "style": {
-                        "backgroundColor": "#101010",
                         "backgroundImage": "",
+                        "backgroundColor": "#101010",
                         "paddingInline": "10px",
                         "paddingBlock": "10px",
+                        "flexDirection": "row",
                         "alignItems": "center",
                         "justifyContent": "space-between",
-                        "flexDirection": "row",
                         "alignContent": "unset",
+                        "minHeight": ""
                     }
                 },
                 "cmps": [
@@ -34,11 +35,14 @@ export const wap = [
                                 "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "#101010",
+                                "fontFamily": "cursive",
                                 "textShadow": "",
-                                "letterSpacing": "0px",
                                 "paddingInline": "10px",
                                 "paddingBlock": "10px",
-                                "borderRadius": "15px",
+                                "letterSpacing": "0px",
+                                "borderWidth": "0px",
+                                "borderColor": "0px",
+                                "borderRadius": "0px",
                             }
                         },
                         "cmps": []
@@ -47,7 +51,12 @@ export const wap = [
                         "id": "wc012",
                         "type": "wap-nav",
                         "info": {
-                            "style": {},
+                            "style": {
+                                "flexDirection": "row",
+                                "alignItems": "center",
+                                "justifyContent": "space-around",
+                                "alignContent": "unset"        
+                            },
                         },
                         "cmps": [
                             {
@@ -64,14 +73,14 @@ export const wap = [
                                         "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
+                                        "fontFamily": "none",
                                         "textShadow": "",
                                         "paddingInline": "10px",
                                         "paddingBlock": "10px",
-                                        "borderRadius": "15px",
-                                        "fontFamily": "none",
                                         "letterSpacing": "0px",
-                                        "border": "0px",
-
+                                        "borderWidth": "0px",
+                                        "borderColor": "0px",
+                                        "borderRadius": "15px",
                                     }
                                 }
                             },
@@ -80,7 +89,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "News",
-                                    "action": "",
+                                    "action": { "link": "url" },
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
@@ -89,13 +98,14 @@ export const wap = [
                                         "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
+                                        "fontFamily": "none",
                                         "textShadow": "",
                                         "paddingInline": "10px",
                                         "paddingBlock": "10px",
-                                        "borderRadius": "15px",
-                                        "fontFamily": "none",
                                         "letterSpacing": "0px",
-                                        "border": "0px",
+                                        "borderWidth": "0px",
+                                        "borderColor": "0px",
+                                        "borderRadius": "15px"                          
                                     }
                                 }
                             },
@@ -104,7 +114,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "About",
-                                    "action": "",
+                                    "action": { "link": "url" },
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
@@ -113,13 +123,14 @@ export const wap = [
                                         "fontStyle": "",
                                         "color": "#ffffff",
                                         "backgroundColor": "inherit",
+                                        "fontFamily": "none",
                                         "textShadow": "",
                                         "paddingInline": "10px",
                                         "paddingBlock": "10px",
-                                        "borderRadius": "15px",
-                                        "fontFamily": "none",
                                         "letterSpacing": "0px",
-                                        "border": "0px",
+                                        "borderWidth": "0px",
+                                        "borderColor": "0px",
+                                        "borderRadius": "15px"
                                     }
                                 }
                             }
@@ -131,14 +142,13 @@ export const wap = [
                 "id": "wc05",
                 "type": "wap-section",
                 "info": {
-                    "txt": "",
                     "style": {
                         "backgroundImage": "url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
                         "backgroundColor": "",
                         "paddingInline": "10px",
                         "paddingBlock": "10px",
-                        "flexDirection": "column",
-                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "alignItems": "flex-end",
                         "justifyContent": "center",
                         "alignContent": "unset",
                         "minHeight": "300px",
@@ -158,11 +168,11 @@ export const wap = [
                                 "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "#00000087",
+                                "fontFamily": "cursive",
                                 "textShadow": "",
                                 "paddingInline": "10px",
                                 "paddingBlock": "20px",
                                 "borderRadius": "15px",
-                                "fontFamily": "cursive",
                                 "letterSpacing": "0px"
                             }
                         },
@@ -173,7 +183,7 @@ export const wap = [
                         "type": "wap-btn",
                         "info": {
                             "txt": "Click to Enter!",
-                            "action": "",
+                            "action":  { "link": "url" },
                             "style": {
                                 "textAlign": "center",
                                 "textDecoration": "",
@@ -181,14 +191,15 @@ export const wap = [
                                 "fontStyle": "",
                                 "color": "white",
                                 "backgroundColor": "inherit",
+                                "fontFamily": "math",
                                 "textShadow": "",
                                 "fontSize": "35px",
                                 "paddingInline": "10px",
                                 "paddingBlock": "20px",
-                                "fontFamily": "math",
-                                "borderRadius": "15px",
                                 "letterSpacing": "0px",
-                                "border": "3px solid black",
+                                "borderWidth": "3px",
+                                "borderColor": "black",
+                                "borderRadius": "15px"
                             }
                         }
                     }
@@ -198,10 +209,9 @@ export const wap = [
                 "id": "wc06",
                 "type": "wap-section",
                 "info": {
-                    "txt": "",
                     "style": {
-                        "backgroundColor": "#000",
                         "backgroundImage": "",
+                        "backgroundColor": "#000",
                         "paddingInline": "10px",
                         "paddingBlock": "10px",
                         "flexDirection": "row",
@@ -224,12 +234,11 @@ export const wap = [
                                 "fontWeight": "",
                                 "fontStyle": "",
                                 "color": "#ffffff",
-                                "padding": "10px",
                                 "backgroundColor": "",
+                                "fontFamily": "cursive",
                                 "textShadow": "",
                                 "paddingInline": "10px",
                                 "paddingBlock": "10px",
-                                "fontFamily": "cursive",
                                 "borderRadius": "15px",
                                 "letterSpacing": "0px"
                             }
@@ -249,10 +258,10 @@ export const wap = [
                                 "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "",
+                                "fontFamily": "cursive",
                                 "textShadow": "",
                                 "paddingInline": "10px",
                                 "paddingBlock": "10px",
-                                "fontFamily": "cursive",
                                 "borderRadius": "15px",
                                 "letterSpacing": "0px"
                             }
@@ -265,10 +274,9 @@ export const wap = [
                 "id": "wc077",
                 "type": "wap-section",
                 "info": {
-
                     "style": {
-                        "backgroundColor": "#484848",
                         "backgroundImage": "",
+                        "backgroundColor": "#484848",
                         "paddingInline": "0px",
                         "paddingBlock": "0px",
                         "flexDirection": "row",
@@ -280,7 +288,7 @@ export const wap = [
                 },
                 "cmps": [
                     {
-                        "id": "wc062",
+                        "id": "wc0678",
                         "type": "wap-text",
                         "info": {
                             "txt": "©2021 Developer",
@@ -292,15 +300,117 @@ export const wap = [
                                 "fontStyle": "",
                                 "color": "#ffffff",
                                 "backgroundColor": "",
+                                "fontFamily": "math",
                                 "textShadow": "",
                                 "paddingInline": "5px",
                                 "paddingBlock": "5px",
-                                "fontFamily": "math",
                                 "borderRadius": "15px",
                                 "letterSpacing": "0px"
                             }
                         },
                         "cmps": []
+                    }
+                ]
+            },
+            {
+                "id": "wc088",
+                "type": "wap-section",
+                "info": {
+                    "style": {
+                        "backgroundImage": "",
+                        "backgroundColor": "#484848",
+                        "paddingInline": "0px",
+                        "paddingBlock": "0px",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "alignContent": "unset",
+                        "minHeight": "",
+                    }
+                },
+                "cmps": [
+                    {
+                        "id": "wc081",
+                        "type": "wap-card",
+                        "info": {
+                            "style": {
+                                "backgroundImage": "",
+                                "backgroundColor": "#fff",
+                                "paddingInline": "0px",
+                                "paddingBlock": "0px",
+                                "flexDirection": "column",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "alignContent": "unset",
+                                "borderRadius": "15px",
+                                "minHeight": "",        
+                            }
+                        },
+                        "cmps": [
+                            {
+                                "id": "wc093",
+                                "type": "wap-img",
+                                "info": {
+                                    "src": "https://robohash.org/WeBuild",
+                                    "style": {
+                                        "width": "100px",
+                                        "backgroundColor": "",
+                                        "paddingInline": "5px",
+                                        "paddingBlock": "5px",
+                                        "borderRadius": "15px",
+                                    }
+                                },
+                                "cmps": []
+                            },
+                            {
+                                "id": "wc0923",
+                                "type": "wap-text",
+                                "info": {
+                                    "txt": "Title",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "textAlign": "left",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
+                                        "color": "#ffffff",
+                                        "backgroundColor": "",
+                                        "fontFamily": "math",
+                                        "textShadow": "",
+                                        "paddingInline": "5px",
+                                        "paddingBlock": "5px",
+                                        "borderRadius": "15px",
+                                        "letterSpacing": "0px"
+                                    }
+                                },
+                                "cmps": []
+                            },
+                            {
+                                "id": "wc05932",
+                                "type": "wap-btn",
+                                "info": {
+                                    "txt": "Click here!",
+                                    "action":  { "link": "url" },
+                                    "style": {
+                                        "textAlign": "center",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
+                                        "color": "white",
+                                        "backgroundColor": "inherit",
+                                        "fontFamily": "math",
+                                        "textShadow": "",
+                                        "fontSize": "18px",
+                                        "paddingInline": "10px",
+                                        "paddingBlock": "20px",
+                                        "letterSpacing": "0px",
+                                        "borderWidth": "3px",
+                                        "borderColor": "black",
+                                        "borderRadius": "15px"
+                                    }
+                                }
+                            }
+                        ]
                     }
                 ]
             }

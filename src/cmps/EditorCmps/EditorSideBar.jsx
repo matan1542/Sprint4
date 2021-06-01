@@ -58,8 +58,8 @@ export class EditorSideBar extends Component {
                 <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <nav className="side-bar-nav flex">
-                    <button onClick={() => this.props.onAdd()}>Add</button>
-                    <button onClick={() => this.props.onEdit()}>Edit</button>
+                    <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
+                    <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
                 </nav>
                 <div className="editor-sections-list"> 
                 {this.DynamicCmp()}

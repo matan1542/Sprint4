@@ -10,9 +10,10 @@ export class EditorWapSections extends Component {
       <Droppable className="section" droppableId="1" isCombineEnabled>
         {(provided, snapshot) => (
           <div
-            ref={provided.innerRef}
-            {...provided.droppableProps}
-            style={{ backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
+          ref={provided.innerRef}
+          {...provided.droppableProps}
+          style={{ backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
+            {wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>}
             {wap.cmps.map((cmp, idx) => {
               return (
                 <DynamicCmps

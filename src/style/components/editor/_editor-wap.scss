@@ -1,5 +1,23 @@
+.app-editor{
+        height: 89.5vh;
+        overflow: hidden;
+}
 .editor-wap {
     flex: auto;
     padding: 5px;
     width: 85%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.editor-wap-empty {
+    width: 95%;
+    height: 70vh;
+    border: 5px dashed gray;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    color: gray;
+    margin: 0 auto;
 }

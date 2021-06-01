@@ -13,8 +13,6 @@ export function EditTxtBold({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-        <span className={"txt-decoration"}>
             <Button onClick={onToggleStyle}><FormatBoldIcon /></Button>
-        </span>
     )
 }

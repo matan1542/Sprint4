@@ -8,6 +8,7 @@ export class EditCmpBar extends Component {
     if (!currCmp?.info) return <div>Please select any Component</div>
     return (
       <div className="edit-bar flex column">
+        <h3>Editing <span>{currCmp.type.split('-')[1]}</span></h3>
         <EditCmpStyleList
           style={currCmp.info.style}
           currCmp={currCmp}

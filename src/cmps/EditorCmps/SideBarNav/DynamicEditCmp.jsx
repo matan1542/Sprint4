@@ -7,12 +7,16 @@ import { EditBackgroundImg } from './EditorControler/EditBackgroundImg'
 import { EditPadding } from './EditorControler/EditPadding'
 import { EditJustifyContent } from './EditorControler/EditJustifyContent'
 import { EditAlignContent } from './EditorControler/EditAlignContent'
+import { EditAlignItems } from './EditorControler/EditAlignItems'
 import { EditAlignText } from './EditorControler/EditAlignText'
-import { EditTxtUnderLine } from './EditorControler/EditTxtUnderLine'
-import { EditTxtBold } from './EditorControler/EditTxtBold'
-import { EditTxtItalic } from './EditorControler/EditTxtItalic'
+import { EditTextDecoration} from './EditorControler/EditTextDecoration'
+import { EditTextShadow } from './EditorControler/EditTextShadow'
+import { EditWidth } from './EditorControler/EditWidth'
+import { EditBorderRadius} from './EditorControler/EditBorderRadius'
+import { EditBorderWidth} from './EditorControler/EditBorderWidth'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
+    console.log(attribute, value)
     switch (attribute) {
         case "textAlign":
             return <EditAlignText onUpdateCurrCmp={onUpdateCurrCmp} att={attribute} currCmp={currCmp} />
@@ -38,12 +42,18 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
             return <EditJustifyContent val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "alignContent":
             return <EditAlignContent val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "alignItems":
+            return <EditAlignItems val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "textDecoration":
-            return <EditTxtUnderLine onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
-        case "fontWeight":
-            return <EditTxtBold onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
-        case "fontStyle":
-            return <EditTxtItalic onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+            return <EditTextDecoration onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp}/>
+        case "textShadow":
+            return <EditTextShadow val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "width":
+            return <EditWidth val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "borderRadius":
+            return <EditBorderRadius val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
+        case "borderWidth":
+            return <EditBorderWidth val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         default: return null
     }
 }
