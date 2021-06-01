@@ -30,24 +30,6 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
         style: cmp.info.style,
 
       }, cmp.info.txt)}
-      {/* <pre
-        onKeyUp={handleChange}
-        onBlur={({ target }) => {
-          target.contentEditable = false;
-          onUpdateCurrCmp(cmpTxt);
-          // onUpdateWap();
-        }}
-        suppressContentEditableWarning={true}
-        onClick={(ev) => {
-          onCmpFocus(ev, cmp);
-          ev.target.contentEditable = true;
-          ev.target.onFocus = true;
-        }}
-        className="wap-text"
-        name="txt"
-        style={cmp.info.style}>
-        {cmp.info.txt}
-      </pre> */}
     </>
   );
 };

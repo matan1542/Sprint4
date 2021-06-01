@@ -10,6 +10,7 @@
     display: flex;
 }
 
-.wap-nav {
-    justify-content: space-around;
+nav.wap-section .wap-el:hover {
+    transition: 0.3;
+    background-color: rgba(255, 255, 255, 0.082);
 }
