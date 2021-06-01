@@ -20,7 +20,7 @@
         background-size: cover;
     }
     .btn-start {
-        background-color: rgba(135, 206, 250, 0.548);
+        mix-blend-mode: multiply;
         color: $clr5;
         padding: 30px 10px;
         border-radius: 50px;
