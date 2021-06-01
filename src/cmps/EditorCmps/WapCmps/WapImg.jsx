@@ -2,8 +2,26 @@
 
 import React from 'react'
 
-export function WapImg({ src, style }) {
+import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
+
+export function WapImg({ 
+    onClickFunc,
+    cmp,
+    onDeleteCmp,
+    onCmpFocus,
+    onUpdateCurrCmp,
+  }) {
     return (
-        <img className="wap-el wap-img" src={src} style={style} alt="" />
+        <div className="wap-el">
+            <img onClick={(ev) => {onCmpFocus(ev, cmp);
+                    ev.target.onFocus = true;
+                }}
+                className="wap-img" 
+                src={cmp.info.src} style={cmp.info.style} alt="img" 
+            />
+            <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
+                <DeleteForeverOutlinedIcon />
+            </button>
+        </div>
     )
 }

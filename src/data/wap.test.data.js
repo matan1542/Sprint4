@@ -80,7 +80,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "News",
-                                    "action": "",
+                                    "action": {"link": "url"},
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
@@ -104,7 +104,7 @@ export const wap = [
                                 "type": "wap-btn",
                                 "info": {
                                     "txt": "About",
-                                    "action": "",
+                                    "action": {"link": "url"},
                                     "style": {
                                         "fontSize": "16px",
                                         "textAlign": "center",
@@ -173,7 +173,7 @@ export const wap = [
                         "type": "wap-btn",
                         "info": {
                             "txt": "Click to Enter!",
-                            "action": "",
+                            "action":  {"link": "url"   },
                             "style": {
                                 "textAlign": "center",
                                 "textDecoration": "",
@@ -280,7 +280,7 @@ export const wap = [
                 },
                 "cmps": [
                     {
-                        "id": "wc062",
+                        "id": "wc0678",
                         "type": "wap-text",
                         "info": {
                             "txt": "©2021 Developer",
@@ -298,6 +298,40 @@ export const wap = [
                                 "fontFamily": "math",
                                 "borderRadius": "15px",
                                 "letterSpacing": "0px"
+                            }
+                        },
+                        "cmps": []
+                    }
+                ]
+            },
+            {
+                "id": "wc088",
+                "type": "wap-section",
+                "info": {
+                    "style": {
+                        "backgroundColor": "#484848",
+                        "backgroundImage": "",
+                        "paddingInline": "0px",
+                        "paddingBlock": "0px",
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "alignContent": "unset",
+                        "minHeight": "",
+                    }
+                },
+                "cmps": [
+                    {
+                        "id": "wc081",
+                        "type": "wap-img",
+                        "info": {
+                            "src": "https://robohash.org/WeBuild",
+                            "style": {
+                                "width": "100px",
+                                "backgroundColor": "",
+                                "paddingInline": "5px",
+                                "paddingBlock": "5px",
+                                "borderRadius": "15px",
                             }
                         },
                         "cmps": []
