@@ -11,7 +11,7 @@ export const EditBtn = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
 
       onUpdateCurrCmp(state);
     }
-  }, [state]);
+  }, [onUpdateCurrCmp, state]);
 
   const handleChange = ({ target }) => {
     const field = target.attributes.name.value
