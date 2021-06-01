@@ -15,7 +15,6 @@ import {
 } from "../store/actions/wap.actions.js";
 import { DragDropContext } from "react-beautiful-dnd";
 import { cmpService } from "../services/cmp.service.js";
-import { utilService } from "../services/utils.js";
 // import { wapService } from "../services/wap.service";
 
 export class _Editor extends Component {
@@ -62,7 +61,7 @@ export class _Editor extends Component {
   };
 
   onDragEnd = async (res) => {
-    const { destination, source, draggableId, type } = res;
+    const { destination, source, draggableId, /* type */ } = res;
     if (!destination) {
       return;
     }

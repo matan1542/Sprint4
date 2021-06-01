@@ -1,10 +1,9 @@
 import { uploadImg } from '../../../../services/cloudinery.service.js'
 import { suggestImgs } from '../../../../services/search.imgs.service.js'
 
-import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, ButtonGroup, TextField } from '@material-ui/core'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const _ = require("lodash");
 
@@ -93,7 +92,7 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
 
             {searchState.imgs.length > 0 &&
                 <div className="flex column">
-                    {searchState.imgs.map(img => <img key={img.url} className='img-sample mb-2' src={img.url} onClick={() => onSelectPhoto(img.url)} />)}
+                    {searchState.imgs.map(img => <img key={img.url} alt="" className='img-sample mb-2' src={img.url} onClick={() => onSelectPhoto(img.url)} />)}
                 </div>
             }
 

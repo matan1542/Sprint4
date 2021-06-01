@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
+// import Input from '@material-ui/core/Input';
 import TextFormatIcon from '@material-ui/icons/TextFormat';
 
 const useStyles = makeStyles({
@@ -12,17 +12,17 @@ const useStyles = makeStyles({
   }
 });
 
-export function EditFontSize({val, onUpdateCurrCmp,currCmp}) {
-  val = +(val.replace('px',''))
+export function EditFontSize({ val, onUpdateCurrCmp, currCmp }) {
+  val = +(val.replace('px', ''))
   const classes = useStyles();
   const [value, setValue] = React.useState(val);
 
-useEffect(() => {
-  setValue(val)
-}, [val])
-  const handleSliderChange = async(event, newValue) => {
-  const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,fontSize:`${newValue}px`}}}
-   await onUpdateCurrCmp(cmp)
+  useEffect(() => {
+    setValue(val)
+  }, [val])
+  const handleSliderChange = async (event, newValue) => {
+    const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, fontSize: `${newValue}px` } } }
+    await onUpdateCurrCmp(cmp)
     setValue(newValue);
   };
 
@@ -31,7 +31,7 @@ useEffect(() => {
     <div className={classes.root}>
       <Grid container spacing={1} alignItems="center">
         <Typography id="input-slider" gutterBottom>
-            Text Size
+          Text Size
         </Typography>
         <Grid item>
           <TextFormatIcon />
