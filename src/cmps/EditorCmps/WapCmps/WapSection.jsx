@@ -52,7 +52,7 @@ export function WapSection({
 
 
                         <div className="wap-section-tool">
-                            <button className="wap-el-btn-edit" onClick={() => console.log('edit')}><EditOutlinedIcon /></button>
+                            <button className="wap-el-btn-edit" onClick={() => onCmpFocus(cmp)}><EditOutlinedIcon /></button>
                             <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}><DeleteForeverOutlinedIcon /></button>
                         </div>
                     </div>

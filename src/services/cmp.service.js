@@ -1,14 +1,14 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 import { utilService } from './utils'
-const STORAGE_KEY = 'cmps'
+const STORAGE_KEY = 'cmp'
 export const cmpService = {
     query,
     changeIds,
 }
 
 function query() {
-    return httpService.get('cmp')
+    return httpService.get(STORAGE_KEY)
 }
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
