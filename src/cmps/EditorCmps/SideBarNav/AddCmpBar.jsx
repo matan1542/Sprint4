@@ -24,9 +24,9 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
     const [expanded, setExpanded] = useState(false);
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
-      };
+    };
     const classes = useStyles();
-    const sections = ['Header','Section','Hero','Footer','Form']
+    const sections = ['Header', 'Section', 'Hero', 'Footer', 'Form', 'Video']
 
     return (
         <div className={classes.root}>
@@ -36,20 +36,20 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        {sections.map((section,idx)=>{
+                        {sections.map((section, idx) => {
                             return (
                                 <Accordion expanded={expanded === `panel${idx}a`} onChange={handleChange(`panel${idx}a`)}>
-                            <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls={`panel${idx}a-content`}
-                                id={`panel${idx}a-header`}
-                            >
-                                <Typography className={classes.heading}>{section}</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <AddCmpList cmps={cmps} sectionType={`${section}-section`}/>
-                            </AccordionDetails>
-                        </Accordion>
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls={`panel${idx}a-content`}
+                                        id={`panel${idx}a-header`}
+                                    >
+                                        <Typography className={classes.heading}>{section}</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <AddCmpList cmps={cmps} sectionType={`${section}-section`} />
+                                    </AccordionDetails>
+                                </Accordion>
                             )
                         })}
                         {provided.placeholder}
