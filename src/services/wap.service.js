@@ -1,4 +1,6 @@
-import { storageService } from './async-storage.service.js'
+import { storageService } from './async-storage.service'
+import { httpService } from './http.service'
+
 const _ = require('lodash');
 
 
@@ -10,12 +12,9 @@ const STORAGE_KEY = 'waps'
 
 export const wapService = {
     query,
-    getById,
     save,
     remove,
-    // getCmpById,
-    // saveCmp,
-    // removeCmp,
+    create,
     getTarget,
     updateTarget,
     deleteTarget,
@@ -25,13 +24,20 @@ export const wapService = {
 
 
 
-function query() {
-    return storageService.query(STORAGE_KEY)
+async function query() {
+    return await httpService.get('wap')
 }
 
-async function getById(wapId) {
-    return await storageService.get(STORAGE_KEY, wapId)
+async function create() {
+    const wap =
+    {
+        "imgUrl": "http://res.cloudinary.com/webify/image/upload/v1580021948/coffe_yi0yzf.png",
+        "createdBy": "5e26e0b718a0891d4c995527",
+        cmps: []
+    }
+    return wap
 }
+
 
 function remove(wapId) {
     return storageService.remove(STORAGE_KEY, wapId)

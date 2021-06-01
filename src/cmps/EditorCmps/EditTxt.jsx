@@ -1,36 +1,41 @@
 import { useEffect, useRef, useState } from "react";
+import React from 'react'
 
-export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
-  const [state, setState] = useState(cmp);
-  const ref = useRef(true);
+export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element }) => {
+  const [cmpTxt, setCmpTxt] = useState(cmp.info.txt);
 
-  useEffect(() => {
-    if (ref.current) {
-      ref.current = false;
-    } else {
-
-      onUpdateCurrCmp(state);
-    }
-  }, [state]);
 
   const handleChange = ({ target }) => {
     const field = target.attributes.name.value
     const value = target.innerText
-    setState(state => ({
-      ...state,
-      info: {
-        ...state.info,
-        [field]: value
-      }
-    }))
-  };
+    setCmpTxt(value)
+  }
   return (
     <>
-      <p
+      {React.createElement(element, {
+        onKeyUp: handleChange,
+        onBlur: ({ target }) => {
+          target.contentEditable = false;
+          onUpdateCurrCmp(cmpTxt);
+          // onUpdateWap();
+        },
+        suppressContentEditableWarning: true,
+        onClick: (ev) => {
+          onCmpFocus(ev, cmp);
+          ev.target.contentEditable = true;
+          ev.target.onFocus = true;
+        },
+        className: "wap-text",
+        name: "txt",
+        style: cmp.info.style,
+
+      }, cmp.info.txt)}
+      {/* <pre
         onKeyUp={handleChange}
         onBlur={({ target }) => {
           target.contentEditable = false;
-          onUpdateWap();
+          onUpdateCurrCmp(cmpTxt);
+          // onUpdateWap();
         }}
         suppressContentEditableWarning={true}
         onClick={(ev) => {
@@ -41,8 +46,8 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
         className="wap-text"
         name="txt"
         style={cmp.info.style}>
-        {state.info.txt}
-      </p>
+        {cmp.info.txt}
+      </pre> */}
     </>
   );
 };

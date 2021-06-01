@@ -4,43 +4,60 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import {
   loadWaps,
-  getById,
-  setCurrCmp,
-  updateCurrCmp,
-  deleteCmp,
-  updateWap,
   loadCmps,
-  changeCmpsIds,
-  addCmp,
 } from "../store/actions/wap.actions.js";
 import { DragDropContext } from "react-beautiful-dnd";
 import { cmpService } from "../services/cmp.service.js";
-// import { wapService } from "../services/wap.service";
+import { wapService } from "../services/wap.service";
 
 export class _Editor extends Component {
   state = {
     editorStatus: "add",
+    currWap: null,
+    currCmp: null
   };
   async componentDidMount() {
-    // this.props.loadWaps();
-    await this.props.loadCmps();
-    await this.props.getById("5e28393890dd7201a06d4e44");
+    if (!this.props.waps) await this.props.loadWaps()
+    if (!this.props.cmps) await this.props.loadCmps()
+    await this.setCurrWap('60b5f9cdb38fddf7af36aa90');
   }
+
+  setCurrWap = async (wapId) => {
+    let currWap
+    if (!wapId) currWap = await wapService.create()
+    else currWap = this.props.waps.find(wap => {
+      return wap._id === wapId
+    })
+    if (!currWap) currWap = wapService.create()
+    this.setState({ currWap })
+  }
+
+  onCmpFocus = (ev, currCmp) => {
+    ev.stopPropagation();
+    this.setState(prevState => ({
+      ...prevState,
+      currCmp
+    }), () => this.onEdit())
+  }
+
   onDeleteCmp = async (cmpId) => {
-    await this.props.deleteCmp(this.props.currWap, cmpId);
-    this.props.setCurrCmp(null);
+    const currWap = await wapService.deleteTarget(this.state.currWap, cmpId);
+    this.setState(prevState => ({
+      ...prevState,
+      currWap,
+      currCmp: null
+    }))
   };
 
-  onCmpFocus = async (ev, cmp) => {
-    ev.stopPropagation();
-    await this.props.setCurrCmp(cmp);
-    this.onEdit();
-  };
-  onUpdateCurrCmp = async (cmp) => {
-    const copyCmp = { ...cmp };
+  onUpdateCurrCmp = async (currCmp) => {
+    const copyCmp = { ...currCmp };
     delete copyCmp.id;
-    await this.props.updateCurrCmp(this.props.currWap, cmp.id, copyCmp);
-    await this.props.setCurrCmp(cmp);
+    const currWap = await wapService.updateTarget(this.state.currWap, currCmp.id, copyCmp)
+    this.setState(prevState => ({
+      ...prevState,
+      currCmp,
+      currWap
+    }))
   };
 
   onEdit = () => {
@@ -51,12 +68,13 @@ export class _Editor extends Component {
   };
 
   onAddCmp = async (cmpId, idx) => {
+    const { currWap } = this.state
     cmpId = [...cmpId];
     cmpId.shift();
     cmpId = cmpId.join("");
-    const cmp = await cmpService.getCmpsById(cmpId);
-    const updatedCmp = await this.props.changeCmpsIds(cmp);
-    const wap = await this.props.addCmp(this.props.currWap, updatedCmp, idx);
+    const cmp = await this.props.cmps[0].cmps.find(cmp => cmp.id === cmpId);
+    const updatedCmp = await cmpService.changeIds(cmp);
+    const wap = await wapService.addCmp(currWap, updatedCmp, idx);
     return wap;
   };
 
@@ -84,23 +102,29 @@ export class _Editor extends Component {
     // }
 
     if (source.droppableId === "1" && destination.droppableId === "1") {
-      const wapCmps = this.props.currWap;
+      const wapCmps = this.state.currWap;
       const tempCmp = wapCmps.cmps[source.index];
       wapCmps.cmps.splice(source.index, 1, wapCmps.cmps[destination.index]);
       wapCmps.cmps.splice(destination.index, 1, tempCmp);
-      await this.props.updateWap(wapCmps);
+      this.setState(prevState => ({
+        ...prevState,
+        currWap: wapCmps
+      }))
       return;
     }
     if (source.droppableId === "2" && destination.droppableId === "1") {
       const wap = await this.onAddCmp(draggableId, destination.index);
-      await this.props.updateWap(wap);
+      this.setState(prevState => ({
+        ...prevState,
+        currWap: wap
+      }))
       return;
     }
   };
 
   render() {
-    const { editorStatus } = this.state;
-    const { currCmp, currWap, addCmp, changeCmpsIds, updateWap, cmps } =
+    const { editorStatus, currCmp, currWap } = this.state;
+    const { addCmp, changeCmpsIds, updateWap, cmps } =
       this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
@@ -116,7 +140,7 @@ export class _Editor extends Component {
             currWap={currWap}
             changeCmpsIds={changeCmpsIds}
             onDragEnd={this.onDragEnd}
-            cmps={cmps}
+            cmps={cmps[0].cmps}
           />
           <div className="editor-wap">
             <EditorWapSections
@@ -138,20 +162,11 @@ function mapStateToProps(state) {
   return {
     waps: state.wapModule.waps,
     cmps: state.wapModule.cmps,
-    currWap: state.wapModule.currWap,
-    currCmp: state.wapModule.currCmp,
   };
 }
 const mapDispatchToProps = {
   loadWaps,
-  getById,
-  setCurrCmp,
-  updateCurrCmp,
-  deleteCmp,
-  updateWap,
   loadCmps,
-  changeCmpsIds,
-  addCmp,
 };
 
 export const Editor = connect(mapStateToProps, mapDispatchToProps)(_Editor);

@@ -1,16 +1,16 @@
 
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import ReduxThunk from 'redux-thunk';
-// import {appReducer} from './reducers/app.reducer.js'
 import { wapReducer } from './reducers/wap.reducer.js'
-// import { wapReducer } from './reducers/user.reducer.js'
+import { userReducer } from './reducers/user.reducer'
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 const rootReducer = combineReducers({
-    wapModule: wapReducer
+    wapModule: wapReducer,
+    userModule: userReducer
 })
 
 
