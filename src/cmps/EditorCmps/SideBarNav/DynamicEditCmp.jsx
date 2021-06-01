@@ -16,7 +16,7 @@ import { EditBorderRadius} from './EditorControler/EditBorderRadius'
 import { EditBorderWidth} from './EditorControler/EditBorderWidth'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
-    console.log(attribute, value)
+    //      console.log(attribute, value)
     switch (attribute) {
         case "textAlign":
             return <EditAlignText onUpdateCurrCmp={onUpdateCurrCmp} att={attribute} currCmp={currCmp} />
