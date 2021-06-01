@@ -29,3 +29,23 @@ a {
     border-bottom:2px solid cornflowerblue;
     }
 }
+
+// Scroll
+::-webkit-scrollbar {
+    width: 5px;
+    &-track {
+        width: 5px;
+        box-shadow: inset 0 0 5px grey; 
+        background-color: #c0d3ff;
+        border-radius: 7px;
+    }
+    &-thumb {
+        width: 13px;
+        border-radius: 7px;
+        background-color: #00657c;
+        background-image: linear-gradient(-86deg, #0004ff 0%, #004352 100%);
+        &:hover {
+            background-image: linear-gradient(-86deg, #0004ff 100%, #004352 0%);
+        }
+    }
+}
