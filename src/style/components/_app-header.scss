@@ -1,23 +1,21 @@
 header {
     background: $clr7;
-    // background: linear-gradient(0deg, rgba(216,255,255,0) 0%, rgba(188,207,255,1) 91%);
     width: 100%;
     .app-header {
         padding: 0px 20px;
         margin: 0 auto;
-        height: 70px;
+        height: 45px;
         box-shadow: 2px 0 4px 0;
         margin-bottom: 1px;
         .app-logo {
-            width: 250px;
+            width: 190px;
         } 
         nav a {
             color: #3f7aae;
             font-weight: bold;
             margin-left: 30px;
             transition: .3s;
-            padding: 10px 10px 5px;
-            border-radius: 0 15px ; 
+            padding: 10px 10px 5px; 
             &:hover {
                 background-color: #87bae791;
             }
