@@ -8,7 +8,7 @@ export function Home() {
   // }
 
   return (
-    <div className="home flex column align-center">
+    <div className="home flex column align-center justify-center">
       <div className="home-hero flex column align-center">
         <h2>Welcome to</h2>
         <h1>WeBuild</h1>
