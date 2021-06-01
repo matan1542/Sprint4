@@ -13,7 +13,6 @@ export function WapTxt({
   updateWap,
   wap,
 }) {
-  // console.log('cmp.info.style:', cmp.info.style)
   return (
     <div className="wap-el">
       <EditTxt

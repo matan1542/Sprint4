@@ -1,5 +1,5 @@
 import { EditorWapCmps } from "../EditorWapCmps";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Draggable, /* Droppable */ } from "react-beautiful-dnd";
 
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';

@@ -15,7 +15,6 @@ import {
 } from "../store/actions/wap.actions.js";
 import { DragDropContext } from "react-beautiful-dnd";
 import { cmpService } from "../services/cmp.service.js";
-import { utilService } from "../services/utils.js";
 // import { wapService } from "../services/wap.service";
 
 export class _Editor extends Component {
@@ -62,7 +61,7 @@ export class _Editor extends Component {
   };
 
   onDragEnd = async (res) => {
-    const { destination, source, draggableId, type } = res;
+    const { destination, source, draggableId, /* type */ } = res;
     if (!destination) {
       return;
     }
@@ -80,7 +79,6 @@ export class _Editor extends Component {
     //   const tempCmp = tempCmps.cmps[source.index]
     //   tempCmps.cmps.splice(source.index, 1, tempCmps.cmps[destination.index]);
     // tempCmps.cmps.splice(destination.index, 1, tempCmp);
-    // console.log("🚀 ~ file: Editor.jsx ~ line 86 ~ _Editor ~ onDragEnd= ~ tempCmps", tempCmps)
     // await this.props.updateWap(wapCmps);
     //   return;
     // }
@@ -101,7 +99,6 @@ export class _Editor extends Component {
   };
 
   render() {
-    // console.log(this.state.editorStatus)
     const { editorStatus } = this.state;
     const { currCmp, currWap, addCmp, changeCmpsIds, updateWap, cmps } =
       this.props;

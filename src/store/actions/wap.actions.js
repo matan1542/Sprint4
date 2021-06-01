@@ -86,7 +86,6 @@ export function addCmp(wapObj, cmpObj, idx) {
     return async dispatch => {
         try {
             const wap = await wapService.addCmp(wapObj, cmpObj, idx)
-            console.log('wap',wap)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap
@@ -103,12 +102,9 @@ export function addCmp(wapObj, cmpObj, idx) {
 
 
 export function updateCurrCmp(wapObj, id, updateData) {
-    // console.log('causing problems updateCurrCmp', wapObj)
-    // console.log('updateData', updateData, 'id', id)
     return async dispatch => {
         try {
             const wap = await wapService.updateTarget(wapObj, id, updateData)
-            // console.log('wapObj', updateData)
             const action = {
                 type: 'SET_CURR_WAP',
                 wap
@@ -138,7 +134,6 @@ export function updateWap(wapObj) {
 export function deleteCmp(wapObj, passedId) {
     return async dispatch => {
         try {
-            // console.log('wapObj', wapObj, 'passedId', passedId)
             const wap = await wapService.deleteTarget(wapObj, passedId)
             const action = {
                 type: 'SET_CURR_WAP',
@@ -150,81 +145,3 @@ export function deleteCmp(wapObj, passedId) {
         }
     }
 }
-// export function setToys(toys) {
-//     return dispatch => {
-//         const action = {
-//             type: 'SET_TOYS',
-//             toys
-//         }
-//         dispatch(action);
-//     }
-// }
-
-
-// export function removeToy(toyId) { // Action Creator
-//     console.log(toyId)
-//     return async dispatch => {
-//         try {
-//             await toyService.remove(toyId)
-//             const action = {
-//                 type: 'REMOVE_TOY',
-//                 toyId
-//             }
-//             dispatch(action)
-//         } catch (err) {
-//             console.log('Error on toyActions in remove :', err);
-//         }
-
-//     }
-// }
-
-// export function setSelectedToy(toy) {
-//     console.log('setSelected', toy)
-//     return dispatch => {
-//         const action = {
-//             type: 'SET_SELECTED_TOY',
-//             toy
-//         }
-//         dispatch(action)
-//     }
-// }
-
-// export function saveToy(toy) { // Action Creator
-//     return async dispatch => {
-//         try {
-//             const savedToy = await toyService.save(toy)
-//             const action = {
-//                 type: 'ADD_TOY',
-//                 toy: savedToy
-//             }
-//             dispatch(action)
-//         } catch (err) {
-//             console.log('Error in toyActions on save :', err);
-//         }
-//     }
-// }
-// export function setFilterBy(filterBy) {
-//     return dispatch => {
-//         const action = {
-//             type: 'SET_FILTER_BY',
-//             filterBy
-//         }
-//         dispatch(action)
-//     }
-// }
-
-// export function updateToy(toy) { // Action Creator
-//     return async dispatch => {
-//         try {
-//             const savedToy = await toyService.save(toy)
-//             const action = {
-//                 type: 'UPDATE_TOY',
-//                 toy: savedToy.updateToy,
-//                 idx: savedToy.idx
-//             }
-//             dispatch(action)
-//         } catch (err) {
-//             console.log('Error in toyActions on update :', err);
-//         }
-//     }
-// }
