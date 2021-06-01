@@ -10,6 +10,7 @@ export function loadWaps() { // Action Creator
                 waps
             }
             dispatch(action);
+            return waps
         } catch (err) {
             throw new Error('Error in loadWaps  :', err)
         }
@@ -23,7 +24,7 @@ export function loadCmps() {
             const cmps = await cmpService.query()
             const action = {
                 type: 'SET_CMPS',
-                cmps
+                cmps: cmps[0].cmps
             }
             dispatch(action);
         } catch (err) {
