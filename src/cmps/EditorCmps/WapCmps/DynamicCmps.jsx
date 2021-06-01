@@ -7,7 +7,7 @@ import { WapCard } from "./WapCards";
 
 import { Component } from "react";
 import { WapForm } from "./WapForm";
-import {WapVideo} from "./WapVideo"
+import { WapVideo } from "./WapVideo"
 export class DynamicCmps extends Component {
   getCmp = () => {
     const {
@@ -32,8 +32,14 @@ export class DynamicCmps extends Component {
             idx={idx}
           />
         );
-      // case 'wap-form':
-      //     return <WapForm cmp={cmp} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />
+      case 'wap-video':
+        return (
+          <WapVideo
+            onCmpFocus={onCmpFocus}
+            onDeleteCmp={onDeleteCmp}
+            cmp={cmp}
+          />
+        )
       case "wap-nav":
         return (
           <WapNav
@@ -47,7 +53,7 @@ export class DynamicCmps extends Component {
           />
         );
       case "wap-video":
-        return <WapVideo cmp={cmp}  onCmpFocus={onCmpFocus}/>
+        return <WapVideo cmp={cmp} onCmpFocus={onCmpFocus} />
       case "wap-card":
         return (
           <WapCard
