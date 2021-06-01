@@ -72,7 +72,6 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     return (
         <>
             <form onSubmit={onSubmitForm} className={classes.btnGroup}>
-                {loadingState.isLoding && <small>loading...</small>}
                 <ButtonGroup size="small" variant="text" color="inherit" aria-label="text primary button group">
                     <Button component="label">
                         Upload Image
@@ -90,6 +89,7 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
                 className={classes.btnGroup}
                 value={searchState.term}
                 onChange={_.debounce(fileToSearch, 500)} />
+            {loadingState.isLoding && <small>loading...</small>}
 
             {searchState.imgs.length > 0 &&
                 <div className="flex column">
