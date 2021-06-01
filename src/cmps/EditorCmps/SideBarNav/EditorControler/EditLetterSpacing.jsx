@@ -6,7 +6,7 @@ import Slider from '@material-ui/core/Slider';
 import Box from '@material-ui/core/Box';
 const useStyles = makeStyles({
   root: {
-    width: 200,
+    width: 150,
   },
 });
 
@@ -25,14 +25,11 @@ useEffect(() => {
   };
   return (
     <div className={classes.root}>
-      <Grid container>
-      <Box mr={2}>
+      <Box display="flex" alignItems='flex-start' flexDirection='column'>
         <Typography id="input-slider" gutterBottom>
             Letter Spacing
         </Typography>
-        </Box>
         
-        <Grid item xs>
           <Slider
             value={typeof value === 'number' ? value : 0}
             min={0}
@@ -42,8 +39,7 @@ useEffect(() => {
             aria-labelledby="input-slider"
             valueLabelDisplay="auto"
           />
-        </Grid>
-      </Grid>
+          </Box>
     </div>
   );
 }

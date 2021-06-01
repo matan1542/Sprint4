@@ -5,10 +5,11 @@ import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 // import Input from '@material-ui/core/Input';
 import TextFormatIcon from '@material-ui/icons/TextFormat';
+import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: 200,
+    width: 150,
   }
 });
 
@@ -29,14 +30,10 @@ export function EditFontSize({ val, onUpdateCurrCmp, currCmp }) {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={1} alignItems="center">
-        <Typography id="input-slider" gutterBottom>
+        <Box display='flex' alignItems='flex-start' flexDirection='column'>
+        <Typography id="input-slider" >
           Text Size
         </Typography>
-        <Grid item>
-          <TextFormatIcon />
-        </Grid>
-        <Grid item xs>
           <Slider
             value={typeof value === 'number' ? value : 0}
             min={0}
@@ -46,8 +43,7 @@ export function EditFontSize({ val, onUpdateCurrCmp, currCmp }) {
             aria-labelledby="input-slider"
             valueLabelDisplay="auto"
           />
-        </Grid>
-      </Grid>
+        </Box>
     </div>
   );
 }

@@ -11,7 +11,8 @@ export const cmp = [
                 "padding": "10px",
                 "alignItems": "center",
                 "flexDirection": "row",
-                "justifyContent": "space-between"
+                "justifyContent": "space-between",
+                "fontFamily": "cursive"
             }
         },
         "cmps": [
