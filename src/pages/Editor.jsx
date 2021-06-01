@@ -53,6 +53,7 @@ export class _Editor extends Component {
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const currWap = await wapService.updateTarget(this.state.currWap, currCmp.id, copyCmp)
+    console.log('currWap', currWap)
     this.setState(prevState => ({
       ...prevState,
       currCmp,

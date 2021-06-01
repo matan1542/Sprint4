@@ -49,6 +49,7 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
         case "textShadow":
             return <EditTextShadow val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "width":
+            if(currCmp.type === 'wap-video') return <div></div>
             return <EditWidth val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "borderRadius":
             return <EditBorderRadius val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />

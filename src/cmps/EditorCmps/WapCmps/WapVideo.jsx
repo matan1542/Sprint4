@@ -7,8 +7,9 @@ export function WapVideo({onCmpFocus,onDeleteCmp,cmp}) {
   return (
     <div className="player-wrapper" style={{...cmp.info.style}}>
       <ReactPlayer
+        controls={true}
         className="react-player"
-        url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+        url={cmp.info.url}
         width="100%"
         height="100%"
       />
