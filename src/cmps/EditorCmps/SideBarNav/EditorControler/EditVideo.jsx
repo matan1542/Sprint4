@@ -15,12 +15,12 @@ export function EditVideo({ onUpdateCurrCmp, currCmp }) {
   return (
     <Box display="flex" alignItems="flex-start" flexDirection="column">
       <Box display="flex">
-        <Typography>Video Search</Typography>
+        <Typography>Video Url</Typography>
       </Box>
       <form onSubmit={onSubmit}>
         <TextField
           id="outlined-basic"
-          label="Outlined"
+          label="Search url"
           onChange={handleChange}
           value={state.info.url}
           variant="outlined"
