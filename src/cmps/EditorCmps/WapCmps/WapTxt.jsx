@@ -13,12 +13,22 @@ export function WapTxt({
   updateWap,
   wap,
 }) {
+
+
+  const onUpdateCmp = (cmpTxt) => {
+    console.log(cmpTxt);
+    cmp.info.txt = cmpTxt
+    onUpdateCurrCmp(cmp)
+
+  }
+
   return (
     <div className="wap-el">
       <EditTxt
+        element="pre"
         cmp={cmp}
         onUpdateWap={() => { updateWap(wap) }}
-        onUpdateCurrCmp={onUpdateCurrCmp}
+        onUpdateCurrCmp={onUpdateCmp}
         onCmpFocus={onCmpFocus}
       />
       {cmp.cmps && (

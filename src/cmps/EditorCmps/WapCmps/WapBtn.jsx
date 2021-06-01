@@ -2,6 +2,7 @@ import React from "react";
 import { EditBtn } from "../EditBtn"
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 import { EditorWapCmps } from "../EditorWapCmps";
+import { EditTxt } from "../EditTxt";
 
 
 export function WapBtn({
@@ -13,12 +14,20 @@ export function WapBtn({
   wap,
   updateWap,
 }) {
+
+  const onUpdateCmp = (cmpTxt) => {
+    console.log(cmpTxt);
+    cmp.info.txt = cmpTxt
+    onUpdateCurrCmp(cmp)
+
+  }
   return (
     <div className="wap-el">
-      {<EditBtn cmp={cmp}
+      {<EditTxt cmp={cmp}
         onUpdateWap={() => { updateWap(wap) }}
-        onUpdateCurrCmp={onUpdateCurrCmp}
-        onCmpFocus={onCmpFocus} />}
+        onUpdateCurrCmp={onUpdateCmp}
+        onCmpFocus={onCmpFocus}
+        element="button" />}
       <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
         <DeleteForeverOutlinedIcon />
       </button>

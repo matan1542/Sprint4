@@ -1,22 +1,19 @@
 import { storageService } from './async-storage.service'
+import { httpService } from './http.service'
 import { utilService } from './utils'
 const STORAGE_KEY = 'cmps'
 export const cmpService = {
     query,
     changeIds,
-    getCmpsById
 }
 
 function query() {
-    return storageService.query(STORAGE_KEY)
-}
-
-function getCmpsById(cmpId) {
-    return storageService.get(STORAGE_KEY, cmpId);
+    return httpService.get('cmp')
 }
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
 async function changeIds(primeCmp) {
+    console.log("🚀 ~ file: cmp.service.js ~ line 16 ~ changeIds ~ primeCmp", primeCmp)
     primeCmp.id = utilService.makeId()
     if (!primeCmp?.cmps) return primeCmp
     const res = await changeIdsToCmps(primeCmp)

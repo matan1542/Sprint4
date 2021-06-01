@@ -30,7 +30,7 @@ export const cmp = [
                         "textAlign": "center",
                         "textDecoration": "unset",
                         "fontWeight": "unset",
-                        "fontStyle": "unset",
+                        "fontStyle": "unset"
                     }
                 },
                 "cmps": []
@@ -117,7 +117,10 @@ export const cmp = [
                         "marginBottom": "10px",
                         "borderRadius": "15px",
                         "textAlign": "center",
-                        "fontFamily": "cursive"
+                        "fontFamily": "cursive",
+                        "textDecoration": "unset",
+                        "fontWeight": "unset",
+                        "fontStyle": "unset"
                     }
                 },
                 "cmps": []
