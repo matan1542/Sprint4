@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import React from 'react'
 
 export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element }) => {
@@ -6,7 +6,7 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
 
 
   const handleChange = ({ target }) => {
-    const field = target.attributes.name.value
+    //const field = target.attributes.name.value
     const value = target.innerText
     setCmpTxt(value)
   }

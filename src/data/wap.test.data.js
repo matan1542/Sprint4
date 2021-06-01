@@ -413,6 +413,37 @@ export const wap = [
                         ]
                     }
                 ]
+            },
+            {
+                "id" : "wc13201",
+                "type" : "wap-section",
+                "info" : {
+                    "style" : {
+                        "backgroundImage" : "",
+                        "backgroundColor" : "#101010",
+                        "paddingInline" : "10px",
+                        "paddingBlock" : "10px",
+                        "flexDirection" : "row",
+                        "alignItems" : "center",
+                        "justifyContent" : "space-between",
+                        "alignContent" : "unset",
+                        "minHeight": "",
+
+                    }
+                },
+                "cmps" : [ 
+                    {
+                        "id" : "213d22",
+                        "type" : "wap-video",
+                        "info" : {
+                            "url" : "https://www.youtube.com/watch?v=Q56AbrEr6JU",
+                            "style" : {
+                                "width": "100%",
+                                "height": "100%"
+                            }
+                        }
+                    }
+                ]
             }
         ],
         "isPublic": true
