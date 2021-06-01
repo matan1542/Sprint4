@@ -13,8 +13,6 @@ export function EditTxtItalic({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-        <span className={"txt-decoration"}>
             <Button onClick={onToggleStyle}><FormatItalicIcon /></Button>
-        </span>
     )
 }

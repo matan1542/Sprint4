@@ -10,11 +10,11 @@ import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(0),
+    marginBottom: theme.spacing(1),
     minWidth: 150,
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(0),
   },
 }));
 
@@ -34,7 +34,7 @@ export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
   return (
     <div className={classes.root}>
       <Grid container spacing={0} alignItems="center">
-      <Box display="flex" alignItems="center">
+      <Box display="flex" alignItems='flex-start' flexDirection='column'>
         <Grid item>
           <Box mr={1}>
           <Typography id="input-slider" gutterBottom>

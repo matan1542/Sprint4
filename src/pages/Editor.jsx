@@ -19,7 +19,7 @@ import { cmpService } from "../services/cmp.service.js";
 
 export class _Editor extends Component {
   state = {
-    editorStatus: "add",
+    editorStatus: "add"
   };
   async componentDidMount() {
     // this.props.loadWaps();

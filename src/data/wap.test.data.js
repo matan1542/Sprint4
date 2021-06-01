@@ -18,6 +18,7 @@ export const wap = [
                         "justifyContent": "space-between",
                         "flexDirection": "row",
                         "alignContent": "unset",
+                        "fontFamily": "cursive"
                     }
                 },
                 "cmps": [
