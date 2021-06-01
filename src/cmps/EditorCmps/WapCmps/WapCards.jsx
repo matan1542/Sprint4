@@ -1,9 +1,10 @@
-
-
 import React from 'react'
 import { EditorWapCmps } from "../EditorWapCmps";
 
-export function WapCards({ 
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+
+export function WapCard({ 
     onClickFunc,
     cmp,
     onDeleteCmp,
@@ -13,8 +14,14 @@ export function WapCards({
     updateWap
   }) {
     return (
-        <div className="wap-cards flex">
+        <div className="wap-section wap-card" 
+            onClick={(ev) => onCmpFocus(ev, cmp)}
+            style={cmp.info.style}>
             {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}
+            <div className="wap-section-tool">
+                <button className="wap-el-btn-edit" onClick={() => console.log('edit')}><EditOutlinedIcon /></button>
+                <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}><DeleteForeverOutlinedIcon /></button>
+            </div>
         </div>
     )
 }

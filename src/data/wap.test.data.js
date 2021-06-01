@@ -331,18 +331,86 @@ export const wap = [
                 "cmps": [
                     {
                         "id": "wc081",
-                        "type": "wap-img",
+                        "type": "wap-card",
                         "info": {
-                            "src": "https://robohash.org/WeBuild",
                             "style": {
-                                "width": "100px",
-                                "backgroundColor": "",
-                                "paddingInline": "5px",
-                                "paddingBlock": "5px",
+                                "backgroundImage": "",
+                                "backgroundColor": "#fff",
+                                "paddingInline": "0px",
+                                "paddingBlock": "0px",
+                                "flexDirection": "column",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "alignContent": "unset",
                                 "borderRadius": "15px",
+                                "minHeight": "",        
                             }
                         },
-                        "cmps": []
+                        "cmps": [
+                            {
+                                "id": "wc093",
+                                "type": "wap-img",
+                                "info": {
+                                    "src": "https://robohash.org/WeBuild",
+                                    "style": {
+                                        "width": "100px",
+                                        "backgroundColor": "",
+                                        "paddingInline": "5px",
+                                        "paddingBlock": "5px",
+                                        "borderRadius": "15px",
+                                    }
+                                },
+                                "cmps": []
+                            },
+                            {
+                                "id": "wc0923",
+                                "type": "wap-text",
+                                "info": {
+                                    "txt": "Title",
+                                    "style": {
+                                        "fontSize": "14px",
+                                        "textAlign": "left",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
+                                        "color": "#ffffff",
+                                        "backgroundColor": "",
+                                        "fontFamily": "math",
+                                        "textShadow": "",
+                                        "paddingInline": "5px",
+                                        "paddingBlock": "5px",
+                                        "borderRadius": "15px",
+                                        "letterSpacing": "0px"
+                                    }
+                                },
+                                "cmps": []
+                            },
+                            {
+                                "id": "wc05932",
+                                "type": "wap-btn",
+                                "info": {
+                                    "txt": "Click here!",
+                                    "action":  { "link": "url" },
+                                    "style": {
+                                        "textAlign": "center",
+                                        "textDecoration": "",
+                                        "fontWeight": "",
+                                        "fontStyle": "",
+                                        "color": "white",
+                                        "backgroundColor": "inherit",
+                                        "fontFamily": "math",
+                                        "textShadow": "",
+                                        "fontSize": "18px",
+                                        "paddingInline": "10px",
+                                        "paddingBlock": "20px",
+                                        "letterSpacing": "0px",
+                                        "borderWidth": "3px",
+                                        "borderColor": "black",
+                                        "borderRadius": "15px"
+                                    }
+                                }
+                            }
+                        ]
                     }
                 ]
             }
