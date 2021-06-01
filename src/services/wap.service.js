@@ -75,15 +75,13 @@ async function getTarget(targetWap, id) {
 }
 
 async function addCmp(wap, cmp, idx) {
-    // console.log('wap',wap)
     try {
-    const oneWapHalf = wap.cmps.slice(0,idx)
-    oneWapHalf.push(cmp);
-    const otherWapHalf = wap.cmps.slice(idx) 
-    const wapObj = {...wap,cmps:[...oneWapHalf.concat(otherWapHalf)]} 
-    //  const wapObj = { ...wap, cmps: [...wap.cmps.slice(0, idx),cmp, ...wap.cmps.slice(idx)] }
-    //  console.log('wapObj',wapObj)
-    //  save(wapObj)
+        const oneWapHalf = wap.cmps.slice(0, idx)
+        oneWapHalf.push(cmp);
+        const otherWapHalf = wap.cmps.slice(idx)
+        const wapObj = { ...wap, cmps: [...oneWapHalf.concat(otherWapHalf)] }
+        //  const wapObj = { ...wap, cmps: [...wap.cmps.slice(0, idx),cmp, ...wap.cmps.slice(idx)] }
+        //  save(wapObj)
         return wapObj
     } catch (err) {
         throw new Error('Had problem from service in addCmp', err)
@@ -94,7 +92,6 @@ async function deleteTarget(wap, passedId) {
     try {
         wap.cmps.forEach((target, index) => {
             if (target.id === passedId) {
-                console.log(index)
                 wap.cmps.splice(index, 1)
             }
             if (target.cmps) {      // condition for checking Nesting

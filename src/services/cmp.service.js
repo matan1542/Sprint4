@@ -12,17 +12,14 @@ function query() {
 }
 
 function getCmpsById(cmpId) {
-    console.log('cmpId', cmpId)
     return storageService.get(STORAGE_KEY, cmpId);
 }
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
 async function changeIds(primeCmp) {
-    console.log('primeCmp', primeCmp)
     primeCmp.id = utilService.makeId()
-    if (!primeCmp?.cmps ) return primeCmp
+    if (!primeCmp?.cmps) return primeCmp
     const res = await changeIdsToCmps(primeCmp)
-    // console.log("🚀 ~ file: cmp.service.js ~ line 25 ~ changeIds ~ res", res)
     return res
     function changeIdsToCmps(cmp) {
         cmp.cmps.forEach((target, index) => {

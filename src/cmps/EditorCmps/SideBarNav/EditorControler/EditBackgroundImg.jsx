@@ -33,11 +33,6 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     const [fileState, setFile] = useState(file)
     const [searchState, setSearch] = useState(searchFile)
 
-    // useEffect(() => {
-    //     console.log('!!!!!!');
-    //     _.debounce(fileToSearch(searchState.term), 500)
-    // }, [searchState])
-
     const fileToSearch = async ({ target }) => {
         setLoading({ isLoding: true })
         const imgs = await suggestImgs(target.value)

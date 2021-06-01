@@ -5,7 +5,7 @@ import Slider from '@material-ui/core/Slider';
 
 
 const useStyles = makeStyles((theme) => ({
-    
+
   root: {
     width: 150,
   },
@@ -14,21 +14,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export  function EditPadding({att,val,onUpdateCurrCmp ,currCmp}) {
-    val = +(val.replace('px',''))
-    const [pad,setPadding] = useState(val);
+export function EditPadding({ att, val, onUpdateCurrCmp, currCmp }) {
+  val = +(val.replace('px', ''))
+  const [pad, setPadding] = useState(val);
   const classes = useStyles();
 
-  const onHandleChange = async(event, newValue)=>{
-    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,[att]:`${newValue}px`}}}
-      await onUpdateCurrCmp(cmp)
+  const onHandleChange = async (event, newValue) => {
+    const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, [att]: `${newValue}px` } } }
+    await onUpdateCurrCmp(cmp)
     setPadding(newValue);
   }
-//   console.log('att line 26', val)
   return (
     <div className={classes.root}>
       <Typography id="discrete-slider-always" gutterBottom>
-        {(att==="paddingInline")? "Side Spacing": "Set Length"}
+        {(att === "paddingInline") ? "Side Spacing" : "Set Length"}
       </Typography>
       <Slider
         value={pad}

@@ -13,5 +13,6 @@ export async function uploadImg(file) {
         return response.url
     } catch (err) {
         console.log(err)
+        throw new Error(err)
     }
 }

@@ -10,7 +10,6 @@ export const EditBtn = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
     } else {
 
       onUpdateCurrCmp(state);
-      //   console.log('cmp',cmp)
     }
   }, [state]);
 
@@ -25,7 +24,6 @@ export const EditBtn = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
       }
     }))
   };
-  // console.log('txtToEdit', txtToEdit);
   return (
     <>
       <button

@@ -10,7 +10,6 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap }) => {
     } else {
 
       onUpdateCurrCmp(state);
-      //   console.log('cmp',cmp)
     }
   }, [state]);
 

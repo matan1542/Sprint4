@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 
 export function Home() {
 
-  // const handleChange=(ev)=>{
-  //     console.log(ev.target.innerText);
-  // }
 
   return (
     <div className="home flex column align-center justify-center">

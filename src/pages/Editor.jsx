@@ -79,7 +79,6 @@ export class _Editor extends Component {
     //   const tempCmp = tempCmps.cmps[source.index]
     //   tempCmps.cmps.splice(source.index, 1, tempCmps.cmps[destination.index]);
     // tempCmps.cmps.splice(destination.index, 1, tempCmp);
-    // console.log("🚀 ~ file: Editor.jsx ~ line 86 ~ _Editor ~ onDragEnd= ~ tempCmps", tempCmps)
     // await this.props.updateWap(wapCmps);
     //   return;
     // }
@@ -100,7 +99,6 @@ export class _Editor extends Component {
   };
 
   render() {
-    // console.log(this.state.editorStatus)
     const { editorStatus } = this.state;
     const { currCmp, currWap, addCmp, changeCmpsIds, updateWap, cmps } =
       this.props;
