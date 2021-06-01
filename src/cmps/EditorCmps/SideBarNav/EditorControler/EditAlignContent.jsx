@@ -10,7 +10,7 @@ import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(0),
     minWidth: 150,
   },
   selectEmpty: {
