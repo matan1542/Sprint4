@@ -30,6 +30,7 @@
             flex-direction: column !important;
             nav {
                 flex-direction: row !important;
+                justify-content: space-between !important;
             }
         }
     }
@@ -40,9 +41,12 @@
         margin: 0 auto;
         flex: 0 1 auto;
         .wap-section{
-            flex-direction: row !important;
+            flex-direction: column !important;
             nav {
                 flex-direction: column !important;
+            }
+            &:first-of-type {
+                flex-direction: row;
             }
         }
     }
