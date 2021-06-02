@@ -1,22 +1,36 @@
-import React, { Component } from "react";
+import React, { Component, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { loadWaps, loadCmps } from "../store/actions/wap.actions.js";
 import { Features } from "../cmps/Home/Features.jsx";
 import Header from "../cmps/Home/Header.jsx";
 
-class _Home extends Component {
-  async componentDidMount() {
+function _Home({waps,cmps,loadWaps,loadCmps}){
+  
+  useEffect(()=>{
+   async function handleDidMount(){
     try {
-      if (!this.props.waps) await this.props.loadWaps();
-      if (!this.props.cmps) await this.props.loadCmps();
-    } catch (err) {
-      console.log(err);
-      throw new Error(err);
+          if (!waps) await loadWaps();
+          if (!cmps) await loadCmps();
+        } catch (err) {
+          console.log(err);
+          throw new Error(err);
+        }
     }
-  }
+    handleDidMount()
+  })
+  // async componentDidMount() {
+  //   try {
+  //     if (!this.props.waps) await this.props.loadWaps();
+  //     if (!this.props.cmps) await this.props.loadCmps();
+  //   } catch (err) {
+  //     console.log(err);
+  //     throw new Error(err);
+  //   }
+  // }
 
-  render() {
+  
+   
     return (
       <React.Fragment>
         <Header />
@@ -24,7 +38,7 @@ class _Home extends Component {
         {/* <Footer /> */}
       </React.Fragment>
     );
-  }
+ 
 }
 
 function mapStateToProps(state) {
