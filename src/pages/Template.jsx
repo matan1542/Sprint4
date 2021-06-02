@@ -12,11 +12,9 @@ class _Templates extends Component {
         const { waps } = this.props
         if (!waps) return <div>Loading...</div>
         return (
-            <section className="tempalte-section">
-                <h1>Templates page</h1>
-                <section className="template-list">
-                    {waps.map((wap, idx) => <img key={idx} alt="" src={wap.imgUrl}></img>)}
-                </section>
+            <section className="template-section">
+
+                {waps.map((wap, idx) => <img className="template-img" key={idx} alt="" src={wap.imgUrl}></img>)}
             </section>
         )
     }

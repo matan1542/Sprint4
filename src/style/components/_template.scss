@@ -1,10 +1,17 @@
-.tempalte-section {
+.template-section {
+    margin-top: rem(10px);
     display: grid;
     grid-template-columns:
         minmax(2rem, 1fr)
         minmax(auto, $normal-breakpoint)
         minmax(2rem, 1fr);
     gap: rem(10px) rem(10px);
+
+    .template-img {
+        max-width: 240px;
+        border: rem(0.5px) solid black;
+        cursor: pointer;
+    }
 
     > * {
         grid-column: 2;
@@ -15,9 +22,9 @@
     }
 }
 
-.template-list {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-auto-flow: dense;
-}
+// .template-list {
+//     display: grid;
+//     grid-gap: 20px;
+//     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+//     grid-auto-flow: dense;
+// }
