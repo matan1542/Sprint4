@@ -13,9 +13,8 @@ function query() {
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
 async function changeIds(primeCmp) {
-    console.log("🚀 ~ file: cmp.service.js ~ line 16 ~ changeIds ~ primeCmp", primeCmp)
-    primeCmp.id = utilService.makeId()
-    if (!primeCmp?.cmps) return primeCmp
+    primeCmp.id = utilService.makeId(10)
+    if (!primeCmp.cmps) return primeCmp
     const res = await changeIdsToCmps(primeCmp)
     return res
     function changeIdsToCmps(cmp) {

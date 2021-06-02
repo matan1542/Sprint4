@@ -5,7 +5,6 @@ import { Droppable } from "react-beautiful-dnd";
 export class EditorWapSections extends Component {
   render() {
     const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap } = this.props;
-    console.log("🚀 ~ file: EditorWapSections.jsx ~ line 8 ~ EditorWapSections ~ render ~ wap", wap)
     if (!wap) return <div>Loading...</div>;
     return (
       <Droppable className="section" droppableId="1" isCombineEnabled>

@@ -53,7 +53,6 @@ export class _Editor extends Component {
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const currWap = await wapService.updateTarget(this.state.currWap, currCmp.id, copyCmp)
-    console.log('currWap', currWap)
     this.setState(prevState => ({
       ...prevState,
       currCmp,
@@ -73,14 +72,13 @@ export class _Editor extends Component {
     cmpId = [...cmpId];
     cmpId.shift();
     cmpId = cmpId.join("");
-    const cmp = await this.props.cmps.find(cmp => cmp.id === cmpId);
-    console.log('wap',cmp)
-
+    const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
+    const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(currWap, updatedCmp, idx);
     return wap;
   };
-  
+
   onDragEnd = async (res) => {
     const { destination, source, draggableId, /* type */ } = res;
     if (!destination) {

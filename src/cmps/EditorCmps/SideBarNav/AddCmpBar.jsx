@@ -38,7 +38,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
                     >
                         {sections.map((section, idx) => {
                             return (
-                                <Accordion expanded={expanded === `panel${idx}a`} onChange={handleChange(`panel${idx}a`)}>
+                                <Accordion key={idx} expanded={expanded === `panel${idx}a`} onChange={handleChange(`panel${idx}a`)}>
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon />}
                                         aria-controls={`panel${idx}a-content`}
