@@ -19,6 +19,7 @@
     font-size: xx-large;
     color: gray;
     margin: 0 auto;
+    text-align: center;
 }
 .editor-wap-size{
     height:100%;
@@ -49,6 +50,50 @@
             }
             &.wap-header {
                 flex-direction: row !important;
+            }
+        }
+    }
+}
+
+.editor-wap-size {
+    &.large-view {
+        flex: 0 1 auto;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    &.medium-view {
+        flex: 0 1 auto;
+        padding: 5px;
+        max-width: 768px;
+        margin: 0 auto;
+        + .editor-wap {
+            margin: 0 auto;
+            flex: 0 1 auto;
+            .wap-section{
+                flex-direction: column !important;
+                nav {
+                    flex-direction: row !important;
+                    justify-content: space-between !important;
+                }
+            }
+        }
+    }
+    &.small-view {
+        flex: 0 1 auto;
+        padding: 5px;
+        max-width: 425px;
+        margin: 0 auto;
+        + .editor-wap {
+            margin: 0 auto;
+            flex: 0 1 auto;
+            .wap-section{
+                flex-direction: column !important;
+                nav {
+                    flex-direction: column !important;
+                }
+                &.wap-header {
+                    flex-direction: row !important;
+                }
             }
         }
     }
