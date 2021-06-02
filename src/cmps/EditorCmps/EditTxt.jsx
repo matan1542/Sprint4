@@ -25,7 +25,6 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
       :
 
       <>
-        {console.log('!!!!!!!!!!!')}
         {React.createElement(element, {
           onKeyUp: handleChange,
           onBlur: ({ target }) => {

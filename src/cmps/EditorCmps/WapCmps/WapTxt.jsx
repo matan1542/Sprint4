@@ -15,12 +15,10 @@ export function WapTxt({
 
 
   const onUpdateCmp = (cmpTxt) => {
-    console.log(cmpTxt);
     cmp.info.txt = cmpTxt
     onUpdateCurrCmp(cmp)
 
   }
-  console.log("🚀 ~ file: WapTxt.jsx ~ line 25 ~ isEdit", isEdit)
 
   if (!isEdit) {
     return (

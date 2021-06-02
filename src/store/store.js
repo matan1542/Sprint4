@@ -3,6 +3,7 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import ReduxThunk from 'redux-thunk';
 import { wapReducer } from './reducers/wap.reducer.js'
 import { userReducer } from './reducers/user.reducer'
+import { userMsgReducer } from './reducers/user.msg.reducer'
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -10,7 +11,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     wapModule: wapReducer,
-    userModule: userReducer
+    userModule: userReducer,
+    userMsgModule: userMsgReducer
 })
 
 

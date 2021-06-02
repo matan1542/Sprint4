@@ -20,8 +20,6 @@ export class DynamicCmps extends Component {
       wap,
       isEdit
     } = this.props;
-    console.log("🚀 ~ file: DynamicCmps.jsx ~ line 23 ~ DynamicCmps ~ wap", wap)
-    console.log("🚀 ~ file: DynamicCmps.jsx ~ line 23 ~ DynamicCmps ~ isEdit", isEdit)
     switch (cmp.type) {
       case "wap-section":
         return (

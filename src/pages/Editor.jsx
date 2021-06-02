@@ -6,9 +6,12 @@ import {
   loadWaps,
   loadCmps,
 } from "../store/actions/wap.actions.js";
+import { setMsg } from '../store/actions/user.msg.actions.js'
 import { DragDropContext } from "react-beautiful-dnd";
 import { cmpService } from "../services/cmp.service.js";
 import { wapService } from "../services/wap.service";
+
+import { UserMsg } from "../cmps/UserMsg.jsx"
 
 export class _Editor extends Component {
   state = {
@@ -85,14 +88,28 @@ export class _Editor extends Component {
   };
 
   onSaveWap = async () => {
-    const newWap = { ...this.state.currWap }
-    if (newWap._id) delete newWap._id
-    const savedWap = await wapService.save(newWap)
-    await this.props.loadWaps()
-    this.setState(prevState => ({
-      ...prevState,
-      currWap: savedWap[0]
-    }))
+    try {
+      this.props.setMsg('Saving...', 'success')
+      const newWap = { ...this.state.currWap }
+      if (newWap._id) delete newWap._id
+      const savedWap = await wapService.save(newWap)
+      await this.props.loadWaps()
+      this.props.setMsg('Saved!', 'success')
+      setTimeout(() => {
+        this.props.setMsg('', 'success')
+      }, 3000)
+      this.setState(prevState => ({
+        ...prevState,
+        currWap: savedWap[0]
+      }))
+    } catch (err) {
+      console.log(err);
+      this.props.setMsg('There was a problam. please try again later!', 'success')
+      setTimeout(() => {
+        this.props.setMsg('', 'error')
+      }, 3000)
+      throw new Error(err);
+    }
   }
 
   onPublishWap = async () => {
@@ -151,6 +168,7 @@ export class _Editor extends Component {
     if (!currWap) return <div>Loading...</div>;
     return (
       <section className="app-editor flex space-between">
+        <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
             currCmp={currCmp}
@@ -193,6 +211,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   loadWaps,
   loadCmps,
+  setMsg
 };
 
 export const Editor = connect(mapStateToProps, mapDispatchToProps)(_Editor);
