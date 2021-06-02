@@ -6,8 +6,6 @@ import { setMsg } from '../store/actions/user.msg.actions.js'
 
 class _UserMsg extends Component {
     render() {
-        console.log('this.props.msg', this.props.msg);
-        console.log('this.props.type', this.props.type);
         return (
             <>
                 {this.props.msg &&

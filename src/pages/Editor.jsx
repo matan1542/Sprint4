@@ -8,14 +8,8 @@ import { wapService } from "../services/wap.service";
 import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 
-import {
-  loadWaps,
-  loadCmps,
-} from "../store/actions/wap.actions.js";
+import { loadWaps, loadCmps, } from "../store/actions/wap.actions.js";
 import { setMsg } from '../store/actions/user.msg.actions.js'
-import { DragDropContext } from "react-beautiful-dnd";
-import { cmpService } from "../services/cmp.service.js";
-import { wapService } from "../services/wap.service";
 
 import { UserMsg } from "../cmps/UserMsg.jsx"
 
@@ -30,6 +24,7 @@ export class _Editor extends Component {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
+
   }
 
   setCurrWap = async (wapId) => {
@@ -96,6 +91,13 @@ export class _Editor extends Component {
 
   onSaveWap = async () => {
     try {
+      if (!this.state.currWap.cmps.length) {
+        this.props.setMsg('You can\'t save empty Wap', 'error')
+        await setTimeout(() => {
+          this.props.setMsg('', 'error')
+        }, 3000)
+        return
+      }
       this.props.setMsg('Saving...', 'success')
       const newWap = { ...this.state.currWap }
       if (newWap._id) delete newWap._id
@@ -111,7 +113,7 @@ export class _Editor extends Component {
       }))
     } catch (err) {
       console.log(err);
-      this.props.setMsg('There was a problam. please try again later!', 'success')
+      this.props.setMsg('There was a problam. please try again later!', 'error')
       setTimeout(() => {
         this.props.setMsg('', 'error')
       }, 3000)
@@ -120,7 +122,21 @@ export class _Editor extends Component {
   }
 
   onPublishWap = async () => {
-    if (!this.state.currWap._id) return
+    console.log("🚀 ~ file: Editor.jsx ~ line 23 ~ _Editor ~ currWap", this.state.currWap)
+    if (!this.state.currWap._id) {
+      this.props.setMsg('Please save wap before publish', 'error')
+      await setTimeout(() => {
+        this.props.setMsg('', 'error')
+      }, 3000)
+      return
+    }
+    if (!this.state.currWap.cmps.length) {
+      this.props.setMsg('You can\'t publish empty Wap', 'error')
+      await setTimeout(() => {
+        this.props.setMsg('', 'error')
+      }, 3000)
+      return
+    }
     const newWap = { ...this.state.currWap }
     this.props.history.push(`/publish/${newWap._id}`)
   }
