@@ -21,8 +21,8 @@
     margin: 0 auto;
     text-align: center;
 }
-.editor-wap-size {
-    height: 100%;
+.editor-wap-size{
+    min-height: 100%;
 }
 
 @media screen and (max-width: $editor-narrow-breakpoint) {
