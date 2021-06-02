@@ -5,6 +5,8 @@ import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
 import { Box, Button, createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 
+import { SelectResponsiveView } from "../EditorCmps/SelectResponsiveView";
+
 // const raleway = {
 //   fontFamily: 'Raleway',
 //   fontStyle: 'normal',
@@ -57,6 +59,7 @@ export class EditorSideBar extends Component {
             <div className="editor-side-bar flex column">
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
+                    <SelectResponsiveView handleChange={this.props.handleChange}/>
                     <nav className="side-bar-nav flex">
                         <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
                         <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
