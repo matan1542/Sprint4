@@ -8,11 +8,10 @@ import { wapService } from "../services/wap.service";
 import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 
-import {
-  loadWaps,
-  loadCmps,
-} from "../store/actions/wap.actions.js";
+import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js";
+import { setMsg } from '../store/actions/user.msg.actions.js'
 
+import { UserMsg } from "../cmps/UserMsg.jsx"
 
 export class _Editor extends Component {
   state = {
@@ -25,15 +24,21 @@ export class _Editor extends Component {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
+
   }
 
-  setCurrWap = async (wapId) => {
+  componentWillUnmount() {
+    this.props.setWapToEdit(null)
+  }
+
+
+  setCurrWap = async () => {
     let currWap
-    if (!wapId) currWap = await wapService.create()
-    else currWap = this.props.waps.find(wap => {
-      return wap._id === wapId
-    })
-    if (!currWap) currWap = wapService.create()
+    if (!this.props.wapToEdit) currWap = await wapService.create()
+    else {
+      currWap = { ...this.props.wapToEdit }
+      delete currWap._id
+    }
     currWap.isEdit = true
     await this.setState({ currWap })
   }
@@ -90,18 +95,52 @@ export class _Editor extends Component {
   };
 
   onSaveWap = async () => {
-    const newWap = { ...this.state.currWap }
-    if (newWap._id) delete newWap._id
-    const savedWap = await wapService.save(newWap)
-    await this.props.loadWaps()
-    this.setState(prevState => ({
-      ...prevState,
-      currWap: savedWap[0]
-    }))
+    try {
+      if (!this.state.currWap.cmps.length) {
+        this.props.setMsg('You can\'t save empty Wap', 'error')
+        await setTimeout(() => {
+          this.props.setMsg('', 'error')
+        }, 3000)
+        return
+      }
+      this.props.setMsg('Saving...', 'success')
+      const newWap = { ...this.state.currWap }
+      const savedWap = await wapService.save(newWap)
+      await this.props.loadWaps()
+      this.props.setMsg('Saved!', 'success')
+      setTimeout(() => {
+        this.props.setMsg('', 'success')
+      }, 3000)
+      this.setState(prevState => ({
+        ...prevState,
+        currWap: savedWap[0]
+      }))
+    } catch (err) {
+      console.log(err);
+      this.props.setMsg('There was a problam. please try again later!', 'error')
+      setTimeout(() => {
+        this.props.setMsg('', 'error')
+      }, 3000)
+      throw new Error(err);
+    }
   }
 
   onPublishWap = async () => {
-    if (!this.state.currWap._id) return
+    console.log("🚀 ~ file: Editor.jsx ~ line 23 ~ _Editor ~ currWap", this.state.currWap)
+    if (!this.state.currWap._id) {
+      this.props.setMsg('Please save wap before publish', 'error')
+      await setTimeout(() => {
+        this.props.setMsg('', 'error')
+      }, 3000)
+      return
+    }
+    if (!this.state.currWap.cmps.length) {
+      this.props.setMsg('You can\'t publish empty Wap', 'error')
+      await setTimeout(() => {
+        this.props.setMsg('', 'error')
+      }, 3000)
+      return
+    }
     const newWap = { ...this.state.currWap }
     this.props.history.push(`/publish/${newWap._id}`)
   }
@@ -155,9 +194,9 @@ export class _Editor extends Component {
     const field = target.name
     const value = target.type === 'number' ? +target.value : target.value
     this.setState(prevState => ((field === 'type') ? { [field]: value } : {
-            ...prevState,
-            [field]: value
-        }
+      ...prevState,
+      [field]: value
+    }
     ))
     console.log(this.state)
   }
@@ -168,8 +207,9 @@ export class _Editor extends Component {
     if (!currWap) return <div>Loading...</div>;
     return (
       <section className="app-editor flex space-between">
+        <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
-          
+
           <EditorSideBar
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
@@ -195,6 +235,8 @@ export class _Editor extends Component {
               onUpdateCurrCmp={this.onUpdateCurrCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
+              
+
             />
           </div>
         </DragDropContext>
@@ -207,11 +249,14 @@ function mapStateToProps(state) {
   return {
     waps: state.wapModule.waps,
     cmps: state.wapModule.cmps,
+    wapToEdit: state.wapModule.wapToEdit
   };
 }
 const mapDispatchToProps = {
   loadWaps,
   loadCmps,
+  setMsg,
+  setWapToEdit
 };
 
 export const Editor = connect(mapStateToProps, mapDispatchToProps)(_Editor);

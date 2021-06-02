@@ -23,7 +23,7 @@ export function WapTxt({
     return (
       <div className="wap-el">
         <EditTxt
-          element="pre"
+          element="span"
           cmp={cmp}
           isEdit={isEdit}
         />
@@ -42,7 +42,7 @@ export function WapTxt({
   return (
     <div className="wap-el">
       <EditTxt
-        element="pre"
+        element="span"
         cmp={cmp}
         onUpdateWap={() => { updateWap(wap) }}
         onUpdateCurrCmp={onUpdateCmp}
