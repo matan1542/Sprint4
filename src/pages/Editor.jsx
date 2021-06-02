@@ -84,6 +84,7 @@ export class _Editor extends Component {
     cmpId.shift();
     cmpId = cmpId.join("");
     const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
+    // console.log('cmpToUpdate',)
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(currWap, updatedCmp, idx);

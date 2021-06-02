@@ -12,17 +12,17 @@ function query() {
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
 async function changeIds(primeCmp) {
-    primeCmp.id = utilService.makeId(10)
+    primeCmp.id = utilService.makeId()
     if (!primeCmp.cmps) return primeCmp
-    const res = await changeIdsToCmps(primeCmp)
-    return res
+    await changeIdsToCmps(primeCmp)
+    console.log('changeId',primeCmp)
+    return primeCmp
     function changeIdsToCmps(cmp) {
         cmp.cmps.forEach((target, index) => {
-            target.id = utilService.makeId();
+            target.id = utilService.makeId()
             if (target.cmps) {      // condition for checking Nesting
                 changeIdsToCmps(target)
             }
         })
-        return cmp
     }
 }
