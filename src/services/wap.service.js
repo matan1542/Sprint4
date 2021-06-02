@@ -48,7 +48,9 @@ async function save(wap) {
         const newWap = await httpService.put('wap', wap)
         return newWap
     } else {
-        return httpService.post('wap', wap)
+        const savedWap = await httpService.post('wap', wap)
+        console.log("🚀 ~ file: wap.service.js ~ line 52 ~ save ~ savedWap", savedWap)
+        return savedWap
     }
 }
 
