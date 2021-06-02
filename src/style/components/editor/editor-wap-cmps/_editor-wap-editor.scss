@@ -2,6 +2,42 @@
     width: 85%;
 }
 
+.choose-responsive-view {
+    display: flex;
+    float: left;
+    height: auto;
+    padding: 0 0px;
+    align-self: center;
+}
+.choose-responsive-view:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.choose-responsive-view:not(:checked) > label {
+    float:right;
+    width:2em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:1.25rem;
+    color:#ccc;
+    margin:5px;
+}
+
+.choose-responsive-view > input:checked + label {
+    color: #3d3d3d;    
+}
+.choose-responsive-view:not(:checked) > label:hover,
+.choose-responsive-view:not(:checked) > label:hover label {
+    color: $clr1;  
+}
+.choose-responsive-view > input:checked + label:hover,
+.choose-responsive-view > input:checked + label:hover label,
+.choose-responsive-view > input:checked label:hover,
+.choose-responsive-view > input:checked label:hover label,
+.choose-responsive-view > label:hover ~ input:checked label {
+    color: $clr1;
+}
 // .editor-wap.large {
 //     border: 5px solid red;
 //     @media screen and (max-width : $narrow-breakpoint) {
