@@ -16,7 +16,7 @@ export function WapSection({
 }) {
     if (!isEdit) {
         return (
-            <div className="wap-section publish"
+            <div className={`wap-section publish wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()}`}
                 style={{ ...cmp.info.style }}>
                 {cmp.cmps && (
                     <EditorWapCmps
@@ -37,7 +37,7 @@ export function WapSection({
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                     >
-                        <div className="wap-section"
+                        <div className={`wap-section wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()}`}
                             style={{
                                 ...cmp.info.style, backgroundColor: snapshot.isDragging ?
                                     'skyblue' : cmp.info.style.backgroundColor

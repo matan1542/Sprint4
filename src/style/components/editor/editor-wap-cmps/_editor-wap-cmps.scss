@@ -46,6 +46,11 @@
     position: relative;
     display: flex;
     transition: 0.3;
+    max-width: 100%;
+    pre {
+        max-width: 100%;
+        overflow: hidden;
+    }
     :first-child{
         width: 100%;
     }

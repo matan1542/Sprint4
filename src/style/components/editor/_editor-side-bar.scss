@@ -1,15 +1,14 @@
 .editor-side-bar {
   position: relative;
   background-color: $clr7;
-  width: 17%;
-  min-width: 17rem;
+  min-width: 272px;
+  max-width: 272px;
   align-items: center;
   padding: 10px;
   height: 80vh;
   box-shadow: 0 3px 6px rgba(0, 0, 100, 0.15);
   border-radius: 1rem;
   margin: 0 8px;
-
   .side-bar-nav {
     align-items: center;
     width: 100%;

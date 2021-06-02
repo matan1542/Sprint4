@@ -8,7 +8,6 @@
     width: 85%;
     overflow-y: auto;
     overflow-x: hidden;
-
 }
 .editor-wap-empty {
     width: 95%;
@@ -22,3 +21,37 @@
     color: gray;
     margin: 0 auto;
 }
+
+@media screen and (max-width : $editor-narrow-breakpoint) {
+    .editor-wap {
+        margin: 0 auto;
+        flex: 0 1 auto;
+        .wap-section{
+            flex-direction: column !important;
+            nav {
+                flex-direction: row !important;
+                justify-content: space-between !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : $editor-mobile-breakpoint) {
+    .editor-wap {
+        margin: 0 auto;
+        flex: 0 1 auto;
+        .wap-section{
+            flex-direction: column !important;
+            nav {
+                flex-direction: column !important;
+            }
+            &.wap-header {
+                flex-direction: row !important;
+            }
+        }
+    }
+}
+//     @media screen and (max-width : $mobile-breakpoint) {
+//         border: 5px solid grey;
+//     }
+// }
