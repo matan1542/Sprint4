@@ -10,7 +10,9 @@
     display: flex;
 }
 
-nav.wap-section .wap-el:hover {
-    transition: 0.3;
-    background-color: rgba(255, 255, 255, 0.082);
+nav.wap-section .wap-el {
+    transition: .3s;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.082);
+    }
 }

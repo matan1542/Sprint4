@@ -3,6 +3,7 @@
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: 0.3;
     .wap-section-tool {
         position: absolute;
         top: 0;
@@ -44,6 +45,7 @@
 .wap-el {
     position: relative;
     display: flex;
+    transition: 0.3;
     :first-child{
         width: 100%;
     }
