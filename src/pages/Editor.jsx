@@ -23,6 +23,7 @@ export class _Editor extends Component {
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
+    console.log(this.state.currCmp)
     await this.setCurrWap();
 
   }
@@ -86,13 +87,12 @@ export class _Editor extends Component {
     // console.log('cmpToUpdate',)
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
-    console.log("🚀 ~ file: Editor.jsx ~ line 87 ~ _Editor ~ onAddCmp= ~ updatedCmp", updatedCmp)
+    console.log("onAddCmp= ~ updatedCmp", updatedCmp)
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
     this.setState(prevState => ({
       ...prevState,
       currWap: wap
     }))
-    return wap;
   };
 
   onSaveWap = async () => {
@@ -181,12 +181,8 @@ export class _Editor extends Component {
       return;
     }
     if (source.droppableId === "2" && destination.droppableId === "1") {
-      const wap = await this.onAddCmp(draggableId, destination.index);
-      // this.setState(prevState => ({
-      //   ...prevState,
-      //   currWap: wap
-      // }))
-      return;
+      await this.onAddCmp(draggableId, destination.index);
+     
     }
   };
 
@@ -202,7 +198,6 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
-    console.log("🚀 ~ file: Editor.jsx ~ line 203 ~ _Editor ~ render ~ currWap", currWap)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
