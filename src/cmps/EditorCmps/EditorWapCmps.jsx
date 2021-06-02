@@ -5,7 +5,7 @@ import { DynamicCmps } from "./WapCmps/DynamicCmps";
 export class EditorWapCmps extends Component {
 
   render() {
-    const { cmp, wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap } = this.props;
+    const { cmp, wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap,isEdit} = this.props;
 
     return (
       <Fragment>
@@ -26,6 +26,7 @@ export class EditorWapCmps extends Component {
               updateWap={updateWap}
               onUpdateCurrCmp={onUpdateCurrCmp}
               onDeleteCmp={onDeleteCmp}
+              isEdit={isEdit}
             />
             //     </div>
             //   )}
