@@ -1,4 +1,3 @@
-import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 import { utilService } from './utils'
 const STORAGE_KEY = 'cmp'

@@ -20,16 +20,16 @@ import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 // };
 const theme = createMuiTheme({
     typography: {
-      fontFamily: 'Raleway, Arial',
+        fontFamily: 'Raleway, Arial',
     },
     overrides: {
-      MuiCssBaseline: {
-        '@global': {
-          '@font-face': 'raleway',
+        MuiCssBaseline: {
+            '@global': {
+                '@font-face': 'raleway',
+            },
         },
-      },
     },
-  });
+});
 export class EditorSideBar extends Component {
 
     DynamicCmp = (props) => {
@@ -50,21 +50,22 @@ export class EditorSideBar extends Component {
                 return //...some default error view
         }
     }
-    
+
 
     render() {
         return (
             <div className="editor-side-bar flex column">
                 <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <nav className="side-bar-nav flex">
-                    <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
-                    <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
-                </nav>
-                <div className="editor-sections-list"> 
-                {this.DynamicCmp()}
-                </div>
-                <button className="btn btn-publish">Publish</button>
+                    <CssBaseline />
+                    <nav className="side-bar-nav flex">
+                        <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
+                        <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
+                    </nav>
+                    <div className="editor-sections-list">
+                        {this.DynamicCmp()}
+                    </div>
+                    {/* <button className="btn btn-publish">Publish</button> */}
+                    <button className="btn btn-publish" onClick={this.props.saveWap}>Save</button>
                 </ThemeProvider>
             </div>
         )

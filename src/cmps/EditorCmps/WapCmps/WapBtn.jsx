@@ -1,5 +1,4 @@
 import React from "react";
-import { EditBtn } from "../EditBtn"
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 import { EditorWapCmps } from "../EditorWapCmps";
 import { EditTxt } from "../EditTxt";
