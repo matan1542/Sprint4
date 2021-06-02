@@ -106,13 +106,13 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
           />
         );
-        case "wap-gallery":
-         
-          return(
-            <WapImgGallery  cmp={cmp}
+      case "wap-gallery":
+
+        return (
+          <WapImgGallery cmp={cmp}
             isEdit={isEdit} onCmpFocus={onCmpFocus}
-            onDeleteCmp={onDeleteCmp}/>
-          )
+            onDeleteCmp={onDeleteCmp} />
+        )
       default:
         return null;
     }
