@@ -11,14 +11,29 @@ function query() {
 }
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
+// async function changeIds(primeCmp) {
+//     primeCmp.id = utilService.makeId(10)
+//     if (primeCmp.cmps) {
+//         primeCmp.cmps.forEach(cmp => {
+//             cmp = changeIds(cmp)
+//         })
+//     }
+//     return primeCmp
+
+
 async function changeIds(primeCmp) {
-    primeCmp.id = utilService.makeId(10)
-    if (primeCmp.cmps) {
-        primeCmp.cmps.forEach(cmp => {
-            cmp = changeIds(cmp)
-        })
+    console.log('primeCmp:', primeCmp)
+    if (!primeCmp) return;
+    if (primeCmp.id) {
+        primeCmp.id = utilService.makeId(10);
+    } if ((typeof(primeCmp)==='object') && (primeCmp.cmps) && (primeCmp.cmps.constructor===Array)) {
+        for (var i=0; i < primeCmp.cmps.length; i++) {
+            changeIds(primeCmp.cmps[i]);
+        }
     }
-    return primeCmp
+}
+    
+    // updateObjectByID(this.Steps, 11, 'String to be set');
     //     if (!primeCmp.cmps) return primeCmp
     //     const res = await changeIdsToCmps(primeCmp)
     //     return res
@@ -31,4 +46,4 @@ async function changeIds(primeCmp) {
     //         })
     //         return cmp
     //     }
-}
+// }

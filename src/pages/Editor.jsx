@@ -201,7 +201,7 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
-    console.log("🚀 ~ file: Editor.jsx ~ line 203 ~ _Editor ~ render ~ currWap", currWap)
+    // console.log("🚀 ~ file: Editor.jsx ~ line 203 ~ _Editor ~ render ~ currWap", currWap)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
