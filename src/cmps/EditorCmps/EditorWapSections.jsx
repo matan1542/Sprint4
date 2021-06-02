@@ -4,8 +4,25 @@ import { Droppable } from "react-beautiful-dnd";
 
 export class EditorWapSections extends Component {
   render() {
-    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap } = this.props;
+    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit } = this.props;
+    console.log("🚀 ~ file: EditorWapSections.jsx ~ line 8 ~ EditorWapSections ~ render ~ isEdit", isEdit)
     if (!wap) return <div>Loading...</div>;
+    if (!isEdit) {
+      return (
+        <>
+          {wap.cmps.map((cmp) => {
+            return (
+              <DynamicCmps
+                key={cmp.id}
+                cmp={cmp}
+                wap={wap}
+                isEdit={isEdit}
+              />
+            );
+          })}
+        </>
+      )
+    }
     return (
       <Droppable className="section" droppableId="1" isCombineEnabled>
         {(provided, snapshot) => (
@@ -25,6 +42,7 @@ export class EditorWapSections extends Component {
                   onUpdateCurrCmp={onUpdateCurrCmp}
                   onDeleteCmp={onDeleteCmp}
                   updateWap={updateWap}
+                  isEdit={isEdit}
                 />
               );
             })}

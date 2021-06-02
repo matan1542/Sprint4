@@ -18,13 +18,17 @@ export class DynamicCmps extends Component {
       idx,
       updateWap,
       wap,
+      isEdit
     } = this.props;
+    console.log("🚀 ~ file: DynamicCmps.jsx ~ line 23 ~ DynamicCmps ~ wap", wap)
+    console.log("🚀 ~ file: DynamicCmps.jsx ~ line 23 ~ DynamicCmps ~ isEdit", isEdit)
     switch (cmp.type) {
       case "wap-section":
         return (
           <WapSection
             cmp={cmp}
             wap={wap}
+            isEdit={isEdit}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
@@ -38,6 +42,7 @@ export class DynamicCmps extends Component {
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
             cmp={cmp}
+            isEdit={isEdit}
           />
         )
       case "wap-nav":
@@ -45,6 +50,7 @@ export class DynamicCmps extends Component {
           <WapNav
             cmp={cmp}
             wap={wap}
+            isEdit={isEdit}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
@@ -57,6 +63,7 @@ export class DynamicCmps extends Component {
           <WapCard
             cmp={cmp}
             wap={wap}
+            isEdit={isEdit}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
@@ -68,6 +75,7 @@ export class DynamicCmps extends Component {
         return (
           <WapTxt
             cmp={cmp}
+            isEdit={isEdit}
             wap={wap}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
@@ -80,6 +88,7 @@ export class DynamicCmps extends Component {
           <WapBtn
             cmp={cmp}
             wap={wap}
+            isEdit={isEdit}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
@@ -87,12 +96,12 @@ export class DynamicCmps extends Component {
           />
         );
       case "wap-form":
-        return <WapForm />
+        return <WapForm isEdit={wap.isEdit} />
       case "wap-img":
         return (
           <WapImg
             cmp={cmp}
-            wap={wap}
+            isEdit={isEdit}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}

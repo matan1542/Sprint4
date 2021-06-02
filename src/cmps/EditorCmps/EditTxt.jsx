@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from 'react'
 
-export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element }) => {
+export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element, isEdit }) => {
   const [cmpTxt, setCmpTxt] = useState(cmp.info.txt);
 
 
@@ -11,25 +11,41 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
     setCmpTxt(value)
   }
   return (
-    <>
-      {React.createElement(element, {
-        onKeyUp: handleChange,
-        onBlur: ({ target }) => {
-          target.contentEditable = false;
-          onUpdateCurrCmp(cmpTxt);
-          // onUpdateWap();
-        },
-        suppressContentEditableWarning: true,
-        onClick: (ev) => {
-          onCmpFocus(ev, cmp);
-          ev.target.contentEditable = true;
-          ev.target.onFocus = true;
-        },
-        className: "wap-text",
-        name: "txt",
-        style: cmp.info.style,
+    !isEdit ?
+      <>
 
-      }, cmp.info.txt)}
-    </>
-  );
+        {React.createElement(element, {
+          className: "wap-text publish",
+          name: "txt",
+          style: cmp.info.style,
+        }, cmp.info.txt)}
+
+      </>
+
+      :
+
+      <>
+        {console.log('!!!!!!!!!!!')}
+        {React.createElement(element, {
+          onKeyUp: handleChange,
+          onBlur: ({ target }) => {
+            target.contentEditable = false;
+            onUpdateCurrCmp(cmpTxt);
+            // onUpdateWap();
+          },
+          suppressContentEditableWarning: true,
+          onClick: (ev) => {
+            onCmpFocus(ev, cmp);
+            ev.target.contentEditable = true;
+            ev.target.onFocus = true;
+          },
+          className: "wap-text",
+          name: "txt",
+          style: cmp.info.style,
+
+        }, cmp.info.txt)}
+
+      </>
+  )
+
 };
