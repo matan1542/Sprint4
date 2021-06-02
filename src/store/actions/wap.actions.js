@@ -33,3 +33,13 @@ export function loadCmps() {
     }
 }
 
+export function setWapToEdit(wap) {
+    return async dispatch => {
+        const action = {
+            type: 'SET_WAP_TO_EDIT',
+            wapToEdit: wap
+        }
+        dispatch(action)
+    }
+}
+

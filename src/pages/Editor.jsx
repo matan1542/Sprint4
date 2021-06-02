@@ -8,7 +8,7 @@ import { wapService } from "../services/wap.service";
 import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 
-import { loadWaps, loadCmps, } from "../store/actions/wap.actions.js";
+import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js";
 import { setMsg } from '../store/actions/user.msg.actions.js'
 
 import { UserMsg } from "../cmps/UserMsg.jsx"
@@ -27,13 +27,18 @@ export class _Editor extends Component {
 
   }
 
-  setCurrWap = async (wapId) => {
+  componentWillUnmount() {
+    this.props.setWapToEdit(null)
+  }
+
+
+  setCurrWap = async () => {
     let currWap
-    if (!wapId) currWap = await wapService.create()
-    else currWap = this.props.waps.find(wap => {
-      return wap._id === wapId
-    })
-    if (!currWap) currWap = wapService.create()
+    if (!this.props.wapToEdit) currWap = await wapService.create()
+    else {
+      currWap = { ...this.props.wapToEdit }
+      delete currWap._id
+    }
     currWap.isEdit = true
     await this.setState({ currWap })
   }
@@ -100,7 +105,6 @@ export class _Editor extends Component {
       }
       this.props.setMsg('Saving...', 'success')
       const newWap = { ...this.state.currWap }
-      if (newWap._id) delete newWap._id
       const savedWap = await wapService.save(newWap)
       await this.props.loadWaps()
       this.props.setMsg('Saved!', 'success')
@@ -243,12 +247,14 @@ function mapStateToProps(state) {
   return {
     waps: state.wapModule.waps,
     cmps: state.wapModule.cmps,
+    wapToEdit: state.wapModule.wapToEdit
   };
 }
 const mapDispatchToProps = {
   loadWaps,
   loadCmps,
-  setMsg
+  setMsg,
+  setWapToEdit
 };
 
 export const Editor = connect(mapStateToProps, mapDispatchToProps)(_Editor);
