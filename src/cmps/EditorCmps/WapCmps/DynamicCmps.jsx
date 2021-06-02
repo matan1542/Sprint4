@@ -52,8 +52,6 @@ export class DynamicCmps extends Component {
             idx={idx}
           />
         );
-      case "wap-video":
-        return <WapVideo cmp={cmp} onCmpFocus={onCmpFocus} />
       case "wap-card":
         return (
           <WapCard

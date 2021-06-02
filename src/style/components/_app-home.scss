@@ -1,18 +1,42 @@
 .main-hero {
     padding: 110px 10px;
     background-color: #fbfcff;
-    background-image: url(../../assets/img/header-background.jpg);
     background-blend-mode: darken;
     background-repeat: no-repeat;
     background-size: 480px;
+    min-height: 74vh;
     background-position: 90% 90%;
     color: $clr2;
-
     @include for-mobile-layout {
         text-align: center;
         padding: 10px 10px 90px;
         min-height: calc(100vh - #{$navHeight})
     }
+}
+
+.main-hero-img{
+    width: 430px;
+    position: absolute;
+    right: 0;
+    mix-blend-mode: multiply;
+    @include for-mobile-layout {
+        align-self: center;
+        position: unset;
+    }
+    @include for-narrow-layout{
+        align-self: center;
+        position: unset;
+    }
+    @include for-normal-layout{
+        align-self: center;
+        position: unset;
+    }
+    @include for-wide-layout{
+        position: absolute;
+    }
+}
+.hero-content{
+    z-index: 1;
 }
 
 .main-hero-title {
