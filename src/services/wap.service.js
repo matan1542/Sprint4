@@ -45,10 +45,11 @@ function remove(wapId) {
 
 async function save(wap) {
     if (wap._id) {
-        const newWap = await storageService.put(STORAGE_KEY, wap)
-        return newWap
+        const newWap = await httpService.put('wap', wap)
+        console.log("🚀 ~ file: wap.service.js ~ line 49 ~ save ~ newWap", newWap)
+        // return newWap
     } else {
-        return storageService.post(STORAGE_KEY, wap)
+        return httpService.post('wap', wap)
     }
 }
 

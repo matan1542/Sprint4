@@ -79,6 +79,13 @@ export class _Editor extends Component {
     return wap;
   };
 
+  onSaveWap = async () => {
+    const newWap = { ...this.state.currWap }
+    if (newWap._id) delete newWap._id
+    await wapService.save(newWap)
+    await this.props.loadWaps()
+  }
+
   onDragEnd = async (res) => {
     const { destination, source, draggableId, /* type */ } = res;
     if (!destination) {
@@ -138,6 +145,7 @@ export class _Editor extends Component {
             onAdd={this.onAdd}
             addCmp={addCmp}
             currWap={currWap}
+            saveWap={this.onSaveWap}
             changeCmpsIds={changeCmpsIds}
             onDragEnd={this.onDragEnd}
             cmps={cmps}
