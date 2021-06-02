@@ -4,7 +4,7 @@ import { EditorWapCmps } from "../EditorWapCmps";
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 
-export function WapCard({ 
+export function WapCard({
     onClickFunc,
     cmp,
     onDeleteCmp,
@@ -12,9 +12,14 @@ export function WapCard({
     onUpdateCurrCmp,
     wap,
     updateWap
-  }) {
+}) {
+    if (!wap.isEdit) {
+        <div className="wap-section wap-card publish" style={cmp.info.style}>
+            {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} />}
+        </div>
+    }
     return (
-        <div className="wap-section wap-card" 
+        <div className="wap-section wap-card"
             onClick={(ev) => onCmpFocus(ev, cmp)}
             style={cmp.info.style}>
             {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}

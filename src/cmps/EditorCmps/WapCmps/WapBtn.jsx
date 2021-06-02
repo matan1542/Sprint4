@@ -20,9 +20,25 @@ export function WapBtn({
     onUpdateCurrCmp(cmp)
 
   }
+  if (!wap.isEdit) {
+    return (
+      <div className="wap-el publish">
+        {<EditTxt cmp={cmp}
+          isEdit={false}
+          element="button" />}
+        {cmp.cmps && (
+          <EditorWapCmps
+            cmp={cmp}
+            wap={wap}
+          />
+        )}
+      </div>
+    )
+  }
   return (
     <div className="wap-el">
       {<EditTxt cmp={cmp}
+        isEdit={true}
         onUpdateWap={() => { updateWap(wap) }}
         onUpdateCurrCmp={onUpdateCmp}
         onCmpFocus={onCmpFocus}

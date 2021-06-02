@@ -6,6 +6,21 @@ export class EditorWapSections extends Component {
   render() {
     const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap } = this.props;
     if (!wap) return <div>Loading...</div>;
+    if (!wap.isEdit) {
+      return (
+        <>
+          {wap.cmps.map((cmp) => {
+            return (
+              <DynamicCmps
+                key={cmp.id}
+                cmp={cmp}
+                wap={wap}
+              />
+            );
+          })}
+        </>
+      )
+    }
     return (
       <Droppable className="section" droppableId="1" isCombineEnabled>
         {(provided, snapshot) => (

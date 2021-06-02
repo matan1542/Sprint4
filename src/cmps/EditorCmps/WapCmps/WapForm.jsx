@@ -41,8 +41,6 @@ export class WapForm extends Component {
     }
 
     render() {
-        // const { inputs } = this.state
-        // if (!inputs) return <div>Loading...</div>
         const { onSubmit } = this.props
         return (
             <form className="wap-el flex column" onSubmit={onSubmit}>

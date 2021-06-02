@@ -19,7 +19,7 @@ export class _Editor extends Component {
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
-    await this.setCurrWap('5e28393890dd7201a06d4e44');
+    await this.setCurrWap();
   }
 
   setCurrWap = async (wapId) => {
@@ -29,6 +29,7 @@ export class _Editor extends Component {
       return wap._id === wapId
     })
     if (!currWap) currWap = wapService.create()
+    currWap.isEdit = true
     await this.setState({ currWap })
   }
 
@@ -83,7 +84,14 @@ export class _Editor extends Component {
     const newWap = { ...this.state.currWap }
     if (newWap._id) delete newWap._id
     await wapService.save(newWap)
-    await this.props.loadWaps()
+    const savedWap = await this.props.loadWaps()
+    console.log("🚀 ~ file: Editor.jsx ~ line 88 ~ _Editor ~ onSaveWap= ~ savedWap", savedWap)
+  }
+
+  onPublishWap = async () => {
+    if (!this.state.currWap._id) return
+    const newWap = { ...this.state.currWap }
+    this.props.history.push(`/publish/${newWap._id}`)
   }
 
   onDragEnd = async (res) => {
@@ -146,6 +154,7 @@ export class _Editor extends Component {
             addCmp={addCmp}
             currWap={currWap}
             saveWap={this.onSaveWap}
+            onPublish={this.onPublishWap}
             changeCmpsIds={changeCmpsIds}
             onDragEnd={this.onDragEnd}
             cmps={cmps}

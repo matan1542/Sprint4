@@ -13,6 +13,7 @@
 @import "components/app-header.scss";
 @import "components/app-home.scss";
 @import "components/app-footer.scss";
+@import "components/template.scss";
 
 // Editor Components
 
@@ -23,7 +24,6 @@
 @import "components/editor/editor-wap-cmps/editor-wap-video";
 @import "components/editor/editor-wap-cmps/_editor-wap-editor.scss";
 
-
-body{
+body {
    background-color: white;
 }

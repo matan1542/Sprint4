@@ -24,7 +24,7 @@
       &:hover {
         border-bottom: 2px solid $clr4;
       }
-      &.status-marker{
+      &.status-marker {
         border-bottom: 2px solid $clr4;
       }
     }
@@ -37,14 +37,17 @@
     overflow-x: hidden;
     overflow-y: auto;
   }
-  .btn-publish {
+  .btn-section {
     position: absolute;
     bottom: 0;
+    display: flex;
+  }
+  .btn-publish {
     margin-bottom: rem(10px);
     cursor: pointer;
     border-radius: em(10px);
     background-color: inherit;
-    font-size: em(30px);
+    font-size: em(15px);
     border: 2px solid $clr5;
     width: 200px;
     &:hover {
@@ -68,22 +71,21 @@
     &:hover {
       opacity: 0.8;
     }
-    
   }
 }
 
 .img-sample {
   width: 90%;
   border-radius: 10px;
-  transition: .5s;
+  transition: 0.5s;
   &:hover {
     cursor: pointer;
     width: 92%;
   }
 }
 
-.text-decoration{
-  &>*{
-    margin:0;
+.text-decoration {
+  & > * {
+    margin: 0;
   }
 }
