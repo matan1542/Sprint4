@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from 'react'
 
-export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element }) => {
+export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element, isEdit }) => {
   const [cmpTxt, setCmpTxt] = useState(cmp.info.txt);
 
 
@@ -9,6 +9,17 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
     //const field = target.attributes.name.value
     const value = target.innerText
     setCmpTxt(value)
+  }
+  if (!isEdit) {
+    return (
+      <>
+        {React.createElement(element, {
+          className: "wap-text publish",
+          name: "txt",
+          style: cmp.info.style,
+        }, cmp.info.txt)}
+      </>
+    )
   }
   return (
     <>

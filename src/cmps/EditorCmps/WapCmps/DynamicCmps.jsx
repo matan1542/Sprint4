@@ -38,6 +38,7 @@ export class DynamicCmps extends Component {
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
             cmp={cmp}
+            isEdit={wap.isEdit}
           />
         )
       case "wap-nav":
@@ -52,8 +53,6 @@ export class DynamicCmps extends Component {
             idx={idx}
           />
         );
-      case "wap-video":
-        return <WapVideo cmp={cmp} onCmpFocus={onCmpFocus} />
       case "wap-card":
         return (
           <WapCard
@@ -89,12 +88,12 @@ export class DynamicCmps extends Component {
           />
         );
       case "wap-form":
-        return <WapForm />
+        return <WapForm isEdit={wap.isEdit} />
       case "wap-img":
         return (
           <WapImg
             cmp={cmp}
-            wap={wap}
+            isEdit={wap.isEdit}
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}

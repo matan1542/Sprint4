@@ -22,6 +22,27 @@ export function WapTxt({
 
   }
 
+  if (!wap.isEdit) {
+    return (
+      <div className="wap-el">
+        <EditTxt
+          element="pre"
+          cmp={cmp}
+          isEdit={false}
+        />
+        {cmp.cmps && (
+          <EditorWapCmps
+            cmp={cmp}
+            wap={wap}
+          />
+        )}
+        <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
+          <DeleteForeverOutlinedIcon />
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="wap-el">
       <EditTxt

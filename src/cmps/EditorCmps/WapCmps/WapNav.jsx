@@ -5,8 +5,16 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 
 export function WapNav({ onClickFunc, cmp, wap, onDeleteCmp, onCmpFocus, onUpdateCurrCmp, updateWap }) {
+  if (!wap.isEdit) {
+    return (
+      <nav className="wap-section flex w-75 publish"
+        style={cmp.info.style}>
+        {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}
+      </nav>
+    )
+  }
   return (
-    <nav className="wap-section flex w-75" 
+    <nav className="wap-section flex w-75"
       onClick={(ev) => onCmpFocus(ev, cmp)}
       style={cmp.info.style}>
       {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}

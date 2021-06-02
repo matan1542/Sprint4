@@ -1,33 +1,44 @@
-import React, { Component } from "react";
+import React, { Component, useEffect} from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux"
-import { loadWaps, loadCmps } from "../store/actions/wap.actions.js"
+import { connect } from "react-redux";
+import { loadWaps, loadCmps } from "../store/actions/wap.actions.js";
+import { Features } from "../cmps/Home/Features.jsx";
+import Header from "../cmps/Home/Header.jsx";
 
-class _Home extends Component {
-  async componentDidMount() {
+function _Home({waps,cmps,loadWaps,loadCmps}){
+  
+  useEffect(()=>{
+   async function handleDidMount(){
     try {
-      if (!this.props.waps) await this.props.loadWaps()
-      if (!this.props.cmps) await this.props.loadCmps()
-    } catch (err) {
-      console.log(err)
-      throw new Error(err)
+          if (!waps) await loadWaps();
+          if (!cmps) await loadCmps();
+        } catch (err) {
+          console.log(err);
+          throw new Error(err);
+        }
     }
-  }
+    handleDidMount()
+  })
+  // async componentDidMount() {
+  //   try {
+  //     if (!this.props.waps) await this.props.loadWaps();
+  //     if (!this.props.cmps) await this.props.loadCmps();
+  //   } catch (err) {
+  //     console.log(err);
+  //     throw new Error(err);
+  //   }
+  // }
 
-  render() {
+  
+   
     return (
-      <div className="home flex column align-center justify-center">
-        <div className="home-hero flex column align-center">
-          <h2>Welcome to</h2>
-          <h1>WeBuild</h1>
-          <Link to="/editor"><button className="btn btn-start w-75 fs28">Click Start to Build your site</button></Link>
-        </div>
-        {/* <div className="future-card flex"> <h2>Future 1</h2><h2>Img</h2></div>
-      <div className="future-card flex row-reverse"> <h2>Future 2</h2><h2>Img</h2></div>
-      <div className="future-card flex"> <h2>Future 3</h2><h2>Img</h2></div> */}
-      </div>
+      <React.Fragment>
+        <Header />
+        <Features />
+        {/* <Footer /> */}
+      </React.Fragment>
     );
-  }
+ 
 }
 
 function mapStateToProps(state) {
@@ -39,7 +50,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   loadWaps,
-  loadCmps
-}
+  loadCmps,
+};
 
-export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)
+export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home);

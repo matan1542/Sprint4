@@ -64,7 +64,7 @@ export class EditorSideBar extends Component {
                     <div className="editor-sections-list">
                         {this.DynamicCmp()}
                     </div>
-                    {/* <button className="btn btn-publish">Publish</button> */}
+                    <button className="btn btn-publish" onClick={this.props.onPublish}>Publish</button>
                     <button className="btn btn-publish" onClick={this.props.saveWap}>Save</button>
                 </ThemeProvider>
             </div>
