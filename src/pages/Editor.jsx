@@ -190,7 +190,6 @@ export class _Editor extends Component {
   };
 
   handleChange = ({ target }) => {
-    console.log(target)
     const field = target.name
     const value = target.type === 'number' ? +target.value : target.value
     this.setState(prevState => ((field === 'type') ? { [field]: value } : {
@@ -198,7 +197,6 @@ export class _Editor extends Component {
       [field]: value
     }
     ))
-    console.log(this.state)
   }
 
   render() {
