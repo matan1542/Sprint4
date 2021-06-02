@@ -1,20 +1,25 @@
-import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
-import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { Component } from "react";
 import { connect } from "react-redux";
+
+import { DragDropContext } from "react-beautiful-dnd";
+import { cmpService } from "../services/cmp.service.js";
+import { wapService } from "../services/wap.service";
+
+import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
+import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
+
 import {
   loadWaps,
   loadCmps,
 } from "../store/actions/wap.actions.js";
-import { DragDropContext } from "react-beautiful-dnd";
-import { cmpService } from "../services/cmp.service.js";
-import { wapService } from "../services/wap.service";
+
 
 export class _Editor extends Component {
   state = {
     editorStatus: "add",
     currWap: null,
-    currCmp: null
+    currCmp: null,
+    respView: "large-view"
   };
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
@@ -145,6 +150,18 @@ export class _Editor extends Component {
     }
   };
 
+  handleChange = ({ target }) => {
+    console.log(target)
+    const field = target.name
+    const value = target.type === 'number' ? +target.value : target.value
+    this.setState(prevState => ((field === 'type') ? { [field]: value } : {
+            ...prevState,
+            [field]: value
+        }
+    ))
+    console.log(this.state)
+  }
+
   render() {
     const { editorStatus, currCmp, currWap } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
@@ -152,6 +169,7 @@ export class _Editor extends Component {
     return (
       <section className="app-editor flex space-between">
         <DragDropContext onDragEnd={this.onDragEnd}>
+          
           <EditorSideBar
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
@@ -166,6 +184,7 @@ export class _Editor extends Component {
             onDragEnd={this.onDragEnd}
             cmps={cmps}
             isEdit={true}
+            handleChange={this.handleChange}
           />
           <div className="editor-wap">
             <EditorWapSections

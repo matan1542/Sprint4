@@ -1,4 +1,15 @@
-  
+.choose-responsive-view {
+    button {
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        transition: .3s;
+        &:hover {
+            border: 1px solid rgb(26, 26, 26);
+        }
+
+    }
+}  
 .cta-button-1 {
     background: $clr1;
     color: white;
