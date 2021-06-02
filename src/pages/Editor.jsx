@@ -77,15 +77,22 @@ export class _Editor extends Component {
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(currWap, updatedCmp, idx);
+    this.setState(prevState => ({
+      ...prevState,
+      currWap: wap
+    }))
     return wap;
   };
 
   onSaveWap = async () => {
     const newWap = { ...this.state.currWap }
     if (newWap._id) delete newWap._id
-    await wapService.save(newWap)
-    const savedWap = await this.props.loadWaps()
-    console.log("🚀 ~ file: Editor.jsx ~ line 88 ~ _Editor ~ onSaveWap= ~ savedWap", savedWap)
+    const savedWap = await wapService.save(newWap)
+    await this.props.loadWaps()
+    this.setState(prevState => ({
+      ...prevState,
+      currWap: savedWap[0]
+    }))
   }
 
   onPublishWap = async () => {
@@ -130,10 +137,10 @@ export class _Editor extends Component {
     }
     if (source.droppableId === "2" && destination.droppableId === "1") {
       const wap = await this.onAddCmp(draggableId, destination.index);
-      this.setState(prevState => ({
-        ...prevState,
-        currWap: wap
-      }))
+      // this.setState(prevState => ({
+      //   ...prevState,
+      //   currWap: wap
+      // }))
       return;
     }
   };
@@ -158,10 +165,12 @@ export class _Editor extends Component {
             changeCmpsIds={changeCmpsIds}
             onDragEnd={this.onDragEnd}
             cmps={cmps}
+            isEdit={true}
           />
           <div className="editor-wap">
             <EditorWapSections
               wap={currWap}
+              isEdit={true}
               onCmpFocus={this.onCmpFocus}
               currCmp={currCmp}
               onUpdateCurrCmp={this.onUpdateCurrCmp}

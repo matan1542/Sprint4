@@ -11,9 +11,10 @@ export function WapSection({
     idx,
     updateWap,
     wap,
+    isEdit,
     isDraggingOver
 }) {
-    if (!wap.isEdit) {
+    if (!isEdit) {
         return (
             <div className={`wap-section publish wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()}`}
                 style={{ ...cmp.info.style }}>
@@ -21,6 +22,7 @@ export function WapSection({
                     <EditorWapCmps
                         cmp={cmp}
                         wap={wap}
+                        isEdit={isEdit}
                     />
                 )}
             </div>
@@ -56,6 +58,7 @@ export function WapSection({
                                     onUpdateCurrCmp={onUpdateCurrCmp}
                                     updateWap={updateWap}
                                     wap={wap}
+                                    isEdit={isEdit}
                                 />
                                 //             {provided.placeholder}
                                 //         </div>
