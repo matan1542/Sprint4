@@ -45,8 +45,8 @@
             nav {
                 flex-direction: column !important;
             }
-            &:first-of-type {
-                flex-direction: row;
+            &.wap-header {
+                flex-direction: row !important;
             }
         }
     }
