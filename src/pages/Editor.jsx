@@ -202,7 +202,7 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap } = this.state;
+    const { editorStatus, currCmp, currWap, respView } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
@@ -235,7 +235,7 @@ export class _Editor extends Component {
               onUpdateCurrCmp={this.onUpdateCurrCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
-
+              respView={respView}
 
             />
           </div>

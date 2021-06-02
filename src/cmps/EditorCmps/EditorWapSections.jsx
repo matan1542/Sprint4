@@ -4,7 +4,7 @@ import { Droppable } from "react-beautiful-dnd";
 
 export class EditorWapSections extends Component {
   render() {
-    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit } = this.props;
+    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit, respView } = this.props;
     if (!wap) return <div>Loading...</div>;
     if (!isEdit) {
       return (
@@ -27,7 +27,7 @@ export class EditorWapSections extends Component {
         {(provided, snapshot) => (
           <div
             ref={provided.innerRef}
-            className="editor-wap-size"
+            className={`editor-wap-size ${respView}`}
             {...provided.droppableProps}
             style={{height:"100%", backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
             {wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>}
