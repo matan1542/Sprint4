@@ -3,7 +3,7 @@ import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
-import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import { Box, Button, createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 
 // const raleway = {
 //   fontFamily: 'Raleway',
@@ -64,8 +64,12 @@ export class EditorSideBar extends Component {
                     <div className="editor-sections-list">
                         {this.DynamicCmp()}
                     </div>
-                    <button className="btn btn-publish" onClick={this.props.onPublish}>Publish</button>
-                    <button className="btn btn-publish" onClick={this.props.saveWap}>Save</button>
+                    <Box display="flex" mt={3}>
+                        <Box mr={1}>
+                    <Button variant="outlined" color="primary" onClick={this.props.onPublish}>Publish</Button>
+                    </Box>
+                    <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button>
+                    </Box>
                 </ThemeProvider>
             </div>
         )
