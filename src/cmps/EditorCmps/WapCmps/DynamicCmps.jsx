@@ -8,6 +8,7 @@ import { WapCard } from "./WapCards";
 import { Component } from "react";
 import { WapForm } from "./WapForm";
 import { WapVideo } from "./WapVideo"
+import { WapImgGallery } from "./WapImgGallery";
 export class DynamicCmps extends Component {
   getCmp = () => {
     const {
@@ -20,8 +21,7 @@ export class DynamicCmps extends Component {
       wap,
       isEdit
     } = this.props;
-    console.log("🚀 ~ file: DynamicCmps.jsx ~ line 23 ~ DynamicCmps ~ wap", wap)
-    console.log("🚀 ~ file: DynamicCmps.jsx ~ line 23 ~ DynamicCmps ~ isEdit", isEdit)
+    console.log('cmp', cmp)
     switch (cmp.type) {
       case "wap-section":
         return (
@@ -108,6 +108,13 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
           />
         );
+        case "wap-gallery":
+         
+          return(
+            <WapImgGallery  cmp={cmp}
+            isEdit={isEdit} onCmpFocus={onCmpFocus}
+            onDeleteCmp={onDeleteCmp}/>
+          )
       default:
         return null;
     }

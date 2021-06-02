@@ -1,4 +1,4 @@
-import { TextField } from '@material-ui/core'
+import { Button, TextField } from '@material-ui/core'
 import React from 'react'
 import { Component } from 'react'
 
@@ -49,7 +49,7 @@ export class WapForm extends Component {
                 <TextField required type="number" id="outlined-basic" label="Your phone number" name="phoneNumber" placeholder="0501234567" onChange={this.handleChange} />
                 <TextField required id="outlined-basic" label="Subject" name="subject" onChange={this.handleChange} />
                 <TextField required id="outlined-multiline-static" label="Your message" name="msg" multiline rows={5} onChange={this.handleChange} />
-                <button type="submit">Send!</button>
+                <Button variant="outlined" color="primary" type="submit">Send!</Button>
             </form>
         )
     }

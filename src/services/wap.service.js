@@ -106,7 +106,6 @@ async function deleteTarget(wap, passedId) {
                 deleteTarget(target, passedId)
             }
         })
-        save(wap)
         return wap
     } catch (err) {
         throw new Error('Problem in delete function');

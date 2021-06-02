@@ -16,7 +16,6 @@ export function WapBtn({
 }) {
 
   const onUpdateCmp = (cmpTxt) => {
-    console.log(cmpTxt);
     cmp.info.txt = cmpTxt
     onUpdateCurrCmp(cmp)
 

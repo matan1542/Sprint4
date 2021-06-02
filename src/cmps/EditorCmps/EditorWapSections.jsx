@@ -5,7 +5,6 @@ import { Droppable } from "react-beautiful-dnd";
 export class EditorWapSections extends Component {
   render() {
     const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit } = this.props;
-    console.log("🚀 ~ file: EditorWapSections.jsx ~ line 8 ~ EditorWapSections ~ render ~ isEdit", isEdit)
     if (!wap) return <div>Loading...</div>;
     if (!isEdit) {
       return (
