@@ -235,7 +235,7 @@ export class _Editor extends Component {
               onUpdateCurrCmp={this.onUpdateCurrCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
-              
+
 
             />
           </div>
