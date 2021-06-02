@@ -21,10 +21,6 @@ export class DynamicCmps extends Component {
       wap,
       isEdit
     } = this.props;
-<<<<<<< HEAD
-    console.log('cmp', cmp)
-=======
->>>>>>> 83fd2dd5736d7b2c0a7acc7edf6ec49ec877e1c1
     switch (cmp.type) {
       case "wap-section":
         return (
@@ -111,13 +107,13 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
           />
         );
-        case "wap-gallery":
-         
-          return(
-            <WapImgGallery  cmp={cmp}
+      case "wap-gallery":
+
+        return (
+          <WapImgGallery cmp={cmp}
             isEdit={isEdit} onCmpFocus={onCmpFocus}
-            onDeleteCmp={onDeleteCmp}/>
-          )
+            onDeleteCmp={onDeleteCmp} />
+        )
       default:
         return null;
     }
