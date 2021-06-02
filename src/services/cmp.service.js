@@ -18,7 +18,7 @@ async function changeIds(primeCmp) {
             cmp = changeIds(cmp)
         })
     }
-    return primeCmp
+    // return primeCmp
     //     if (!primeCmp.cmps) return primeCmp
     //     const res = await changeIdsToCmps(primeCmp)
     //     return res
@@ -32,3 +32,4 @@ async function changeIds(primeCmp) {
     //         return cmp
     //     }
 }
+
