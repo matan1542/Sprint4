@@ -87,7 +87,7 @@ export class EditColor extends React.Component {
     });
 
     return (
-      <div className="color-picker flex space-between">
+      <div className="color-picker flex space-between mb-3" >
         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
         <div style={ styles.swatch } onClick={ this.handleClick }>
           <div style={ styles.color } />

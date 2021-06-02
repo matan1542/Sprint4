@@ -1,0 +1,19 @@
+  
+.cta-button-1 {
+    background: $clr1;
+    color: white;
+    font-size: rem(20px);
+    border: 0;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 3px rgba(#000, 0.3);
+
+    &:hover {
+        background: darken($clr1, 7%);
+        text-decoration: none;
+    }
+}
