@@ -1,5 +1,4 @@
-import React, { Component, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect} from "react";
 import { connect } from "react-redux";
 import { loadWaps, loadCmps } from "../store/actions/wap.actions.js";
 import { Features } from "../cmps/Home/Features.jsx";
