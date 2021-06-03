@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
+import { Loader } from '../cmps/Loader.jsx';
 
 import { loadWaps, setWapToEdit } from "../store/actions/wap.actions.js";
 
@@ -16,7 +17,7 @@ class _Templates extends Component {
 
     render() {
         const { waps } = this.props
-        if (!waps) return <div>Loading...</div>
+        if (!waps) return <Loader />
         return (
             <section className="template-section">
                 <div className="template-list">

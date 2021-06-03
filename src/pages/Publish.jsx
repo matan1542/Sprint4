@@ -2,6 +2,7 @@ import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { Component } from "react";
 import { connect } from "react-redux";
 import { loadWaps } from "../store/actions/wap.actions.js";
+import { Loader } from "../cmps/Loader";
 export class _Publish extends Component {
     state = {
         currWap: null,
@@ -23,7 +24,7 @@ export class _Publish extends Component {
 
     render() {
         const { currWap } = this.state;
-        if (!currWap) return <div>Loading...</div>;
+        if (!currWap) return <Loader />
         return (
             <section className="app-publish flex space-between">
                 <div className="editor-wap">

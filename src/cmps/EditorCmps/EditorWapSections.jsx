@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { DynamicCmps } from "./WapCmps/DynamicCmps";
 import { Droppable } from "react-beautiful-dnd";
+import { Loader } from "../Loader"
 
 export class EditorWapSections extends Component {
   render() {
     const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit, respView } = this.props;
-    if (!wap) return <div>Loading...</div>;
+    if (!wap) return <Loader />;
     if (!isEdit) {
       return (
         <>
