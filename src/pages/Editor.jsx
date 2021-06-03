@@ -64,7 +64,8 @@ export class _Editor extends Component {
   onUpdateCurrCmp = async (currCmp) => {
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
-    const currWap = await wapService.updateTarget(this.state.currWap, currCmp.id, copyCmp)
+    const copyWap = { ...this.state.currWap }
+    const currWap = await wapService.updateTarget(copyWap, currCmp.id, copyCmp)
     this.setState(prevState => ({
       ...prevState,
       currCmp,
@@ -80,6 +81,7 @@ export class _Editor extends Component {
   };
 
   onAddCmp = async (cmpId, idx) => {
+    console.log("🚀 ~ file: Editor.jsx ~ line 83 ~ _Editor ~ onAddCmp= ~ cmpId", cmpId)
     // console.log('cmpId',cmpId)
     const { currWap } = this.state
     const wapToSave = { ...currWap }

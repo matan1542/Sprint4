@@ -86,7 +86,7 @@ async function addCmp(wap, cmp, idx) {
         const oneWapHalf = wap.cmps.slice(0, idx)
         oneWapHalf.push(cmp);
         const otherWapHalf = wap.cmps.slice(idx)
-        const wapObj = { ...wap, cmps: [...oneWapHalf.concat(otherWapHalf)] }
+        const wapObj = { ...wap, cmps: [...oneWapHalf.concat(...otherWapHalf)] }
         //  const wapObj = { ...wap, cmps: [...wap.cmps.slice(0, idx),cmp, ...wap.cmps.slice(idx)] }
         //  save(wapObj)
         return wapObj

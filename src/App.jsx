@@ -9,14 +9,14 @@ import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 import { Component } from "react";
 
-export  class App extends Component {
+export class App extends Component {
   render() {
     return (
       <div className="App flex column">
         <Provider store={store}>
           <Router>
             <Header />
-  
+
             <main>
               {routes.map((route) => (
                 <Route
@@ -27,14 +27,14 @@ export  class App extends Component {
                 />
               ))}
             </main>
-  
+
             {/* <Footer /> */}
           </Router>
         </Provider>
       </div>
     );
   }
- 
+
 }
 
 
