@@ -38,4 +38,5 @@ async function changeIds(primeCmp) {
             changeIds(primeCmp.cmps[i]);
         }
     }
+    return primeCmp;
 }

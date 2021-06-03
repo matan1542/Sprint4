@@ -87,7 +87,7 @@ export class _Editor extends Component {
     const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
-
+    console.log('updatedCmp',updatedCmp)
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
     this.setState(prevState => ({
       ...prevState,
@@ -197,7 +197,6 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
-    console.log("🚀 ~ file: Editor.jsx ~ line 201 ~ _Editor ~ render ~ currWap", currWap)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
