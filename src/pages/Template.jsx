@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 
+
 import { loadWaps, setWapToEdit } from "../store/actions/wap.actions.js";
+import {TemplatePreview} from "../cmps/TemplatePreview"
 
 
 class _Templates extends Component {
@@ -20,7 +22,11 @@ class _Templates extends Component {
         return (
             <section className="template-section">
                 <div className="template-list">
-                    {waps.map((wap, idx) => <img className="template-img" key={idx} onClick={() => this.setWapToEditor(wap)} alt="" src={wap.imgUrl}></img>)}
+                    {waps.map((wap, idx) =>{
+                        return(
+                            <TemplatePreview key={idx} wap={wap} setWapToEditor={this.setWapToEditor}/>
+                        )
+                    })}
                 </div>
             </section>
         )
