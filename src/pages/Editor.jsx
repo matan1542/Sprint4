@@ -26,7 +26,6 @@ export class _Editor extends Component {
     await this.setCurrWap();
 
   }
-  componentWillReceiveProps(newProps) { console.log(newProps); }
 
   componentWillUnmount() {
     this.props.setWapToEdit(null)
@@ -64,7 +63,8 @@ export class _Editor extends Component {
   onUpdateCurrCmp = async (currCmp) => {
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
-    const currWap = await wapService.updateTarget(this.state.currWap, currCmp.id, copyCmp)
+    const copyWap = { ...this.state.currWap }
+    const currWap = await wapService.updateTarget(copyWap, currCmp.id, copyCmp)
     this.setState(prevState => ({
       ...prevState,
       currCmp,
@@ -80,6 +80,7 @@ export class _Editor extends Component {
   };
 
   onAddCmp = async (cmpId, idx) => {
+    console.log("🚀 ~ file: Editor.jsx ~ line 83 ~ _Editor ~ onAddCmp= ~ cmpId", cmpId)
     // console.log('cmpId',cmpId)
     const { currWap } = this.state
     const wapToSave = { ...currWap }
@@ -87,7 +88,7 @@ export class _Editor extends Component {
     const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
-    console.log('updatedCmp',updatedCmp)
+    console.log('updatedCmp', updatedCmp)
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
     this.setState(prevState => ({
       ...prevState,
@@ -197,6 +198,7 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
+    console.log("🚀 ~ file: Editor.jsx ~ line 200 ~ _Editor ~ render ~ currWap", currWap)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
