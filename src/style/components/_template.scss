@@ -9,6 +9,7 @@
 
     .template-img {
         max-width: 240px;
+        // max-height: 240px;
         border: rem(0.5px) solid black;
         cursor: pointer;
     }
@@ -21,7 +22,7 @@
         }
     }
 }
-.img-cmp{
+.img-cmp {
     width: 100%;
 }
 
