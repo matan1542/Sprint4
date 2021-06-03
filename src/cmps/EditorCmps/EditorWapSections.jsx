@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { DynamicCmps } from "./WapCmps/DynamicCmps";
 import { Droppable } from "react-beautiful-dnd";
+import { Loader } from "../Loader"
 
 export class EditorWapSections extends Component {
   render() {
     const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit, respView } = this.props;
-    if (!wap) return <div>Loading...</div>;
+    if (!wap) return <Loader />;
     if (!isEdit) {
       return (
         <>
@@ -30,7 +31,7 @@ export class EditorWapSections extends Component {
             className={`editor-wap-size ${respView}`}
             {...provided.droppableProps}
             style={{ backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
-            {wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>}
+            {wap.cmps && wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>}
             {wap.cmps.map((cmp, idx) => {
               return (
                 <DynamicCmps

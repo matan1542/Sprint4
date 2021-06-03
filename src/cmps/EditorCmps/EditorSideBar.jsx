@@ -2,6 +2,8 @@ import { Component } from "react";
 import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 
+import UndoIcon from '@material-ui/icons/Undo';
+
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
 import { Box, Button, createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 
@@ -59,19 +61,20 @@ export class EditorSideBar extends Component {
             <div className="editor-side-bar flex column">
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
-                    <SelectResponsiveView handleChange={this.props.handleChange}/>
+                    <SelectResponsiveView handleChange={this.props.handleChange} />
                     <nav className="side-bar-nav flex">
                         <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
                         <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
+                        <UndoIcon className={`undo ${this.props.undoWaps.length > 1 && 'undo-active'}`} onClick={this.props.onUndoWap} />
                     </nav>
                     <div className="editor-sections-list">
                         {this.DynamicCmp()}
                     </div>
                     <Box display="flex" mt={3}>
                         <Box mr={1}>
-                    <Button variant="outlined" color="primary" onClick={this.props.onPublish}>Publish</Button>
-                    </Box>
-                    <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button>
+                            <Button variant="outlined" color="primary" onClick={this.props.onPublish}>Publish</Button>
+                        </Box>
+                        <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button>
                     </Box>
                 </ThemeProvider>
             </div>

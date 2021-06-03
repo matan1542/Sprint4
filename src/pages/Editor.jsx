@@ -1,24 +1,27 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-
 import { DragDropContext } from "react-beautiful-dnd";
+
 import { cmpService } from "../services/cmp.service.js";
 import { wapService } from "../services/wap.service";
-
-import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
-import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 
 import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js";
 import { setMsg } from '../store/actions/user.msg.actions.js'
 
+import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
+import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx"
+import { Loader } from "../cmps/Loader.jsx";
+
+
 
 export class _Editor extends Component {
   state = {
     editorStatus: "add",
     currWap: null,
     currCmp: null,
-    respView: "large-view"
+    respView: "large-view",
+    undoWaps: []
   };
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
@@ -41,7 +44,8 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
-    await this.setState({ currWap })
+    const undoWaps = [{ ...currWap }]
+    await this.setState({ ...this.state, currWap, undoWaps })
   }
 
   onCmpFocus = (ev, currCmp) => {
@@ -62,6 +66,10 @@ export class _Editor extends Component {
   };
 
   onUpdateCurrCmp = async (currCmp) => {
+    const undoWaps = [...this.state.undoWaps]
+    console.log("🚀 ~ file: Editor.jsx ~ line 73 ~ _Editor ~ onUpdateCurrCmp= ~ undoWaps", undoWaps)
+    undoWaps.push({ ...this.state.currWap })
+    console.log("🚀 ~ file: Editor.jsx ~ line 77 ~ _Editor ~ onUpdateCurrCmp= ~ undoWaps", undoWaps)
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const copyWap = { ...this.state.currWap }
@@ -69,7 +77,8 @@ export class _Editor extends Component {
     this.setState(prevState => ({
       ...prevState,
       currCmp,
-      currWap
+      currWap,
+      undoWaps
     }))
   };
 
@@ -88,11 +97,25 @@ export class _Editor extends Component {
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
+    const undoWaps = [...this.state.undoWaps]
+    undoWaps.push({ ...this.state.currWap })
     this.setState(prevState => ({
       ...prevState,
-      currWap: wap
+      currWap: wap,
+      undoWaps
     }))
   };
+
+  onUndoWap = () => {
+    if (!this.state.undoWaps.length) return;
+    const wap = this.state.undoWaps.pop()
+    const currWap = { ...wap }
+    this.setState(prevState => ({
+      ...prevState,
+      currWap,
+      undoWaps: [...this.state.undoWaps]
+    }))
+  }
 
   onSaveWap = async () => {
     try {
@@ -195,15 +218,18 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView } = this.state;
+    const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
+    console.log("🚀 ~ file: Editor.jsx ~ line 220 ~ _Editor ~ render ~ undoWaps", undoWaps)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
-    if (!currWap) return <div>Loading...</div>;
+    if (!currWap) return <Loader />
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
 
           <EditorSideBar
+            onUndoWap={this.onUndoWap}
+            undoWaps={undoWaps}
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
             editorStatus={editorStatus}

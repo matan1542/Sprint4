@@ -3,7 +3,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import { loadWaps } from "../store/actions/wap.actions.js";
 import { Loader } from "../cmps/Loader";
-export class _Publish extends Component {
+export class _Preview extends Component {
     state = {
         currWap: null,
     };
@@ -49,4 +49,4 @@ const mapDispatchToProps = {
 }
 
 
-export const Publish = connect(mapStateToProps, mapDispatchToProps)(_Publish);
+export const Preview = connect(mapStateToProps, mapDispatchToProps)(_Preview);
