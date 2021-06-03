@@ -42,7 +42,7 @@ export const wap = [
                                 "letterSpacing": "0px",
                                 "borderWidth": "0px",
                                 "borderColor": "0px",
-                                "borderRadius": "0px",
+                                "borderRadius": "0px"
                             }
                         },
                         "cmps": []
