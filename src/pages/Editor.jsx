@@ -24,7 +24,6 @@ export class _Editor extends Component {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
-
   }
   // componentWillReceiveProps(newProps) { console.log(newProps); }
 
