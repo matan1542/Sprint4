@@ -45,8 +45,14 @@
             nav {
                 flex-direction: column !important;
             }
+            img {
+                width: 100% !important;
+            }
+            .wap-card {
+                align-items: center !important;
+            }
             &.wap-header {
-                flex-direction: row !important;
+                flex-direction: column !important;
             }
         }
     }
