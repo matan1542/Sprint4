@@ -37,7 +37,7 @@ export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
        <Box display="flex" alignItems='flex-start' flexDirection='column'>
          <Box mr={2} >
           <Typography id="input-slider" gutterBottom>
-            Justify Content
+            Align position
           </Typography>
           </Box>
         <Grid item>
