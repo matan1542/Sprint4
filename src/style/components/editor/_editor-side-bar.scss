@@ -5,10 +5,10 @@
   max-width: 272px;
   align-items: center;
   padding: 10px;
-  height: 80vh;
+  height: 87vh;
   box-shadow: 0 3px 6px rgba(0, 0, 100, 0.15);
   border-radius: 0px 0px 1rem 0px;
-  margin: 0 8px;
+  margin: 0 8px 8px;
   .side-bar-nav {
     align-items: center;
     width: 100%;
@@ -42,19 +42,18 @@
     bottom: 0;
     display: flex;
   }
-  .btn-publish {
-    margin-bottom: rem(10px);
-    cursor: pointer;
-    border-radius: em(10px);
-    background-color: inherit;
-    font-size: em(15px);
-    border: 2px solid $clr5;
-    width: 200px;
-    &:hover {
-      background-color: $clr5;
-      color: $clr7;
-    }
-  }
+}
+
+.btn-publish {
+  background-color: deepskyblue;  
+  color: white;
+  // box-shadow: 0 0 3px 6px rgb(0 0 100 / 15%);
+  mix-blend-mode: multiply;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 50px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .add-cmp-list {

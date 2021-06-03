@@ -58,25 +58,29 @@ export class EditorSideBar extends Component {
 
     render() {
         return (
-            <div className="editor-side-bar flex column">
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
-                    <SelectResponsiveView handleChange={this.props.handleChange} />
-                    <nav className="side-bar-nav flex">
-                        <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
-                        <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
-                        <UndoIcon className={`undo ${this.props.undoWaps.length > 1 && 'undo-active'}`} onClick={this.props.onUndoWap} />
-                    </nav>
-                    <div className="editor-sections-list">
-                        {this.DynamicCmp()}
-                    </div>
-                    <Box display="flex" mt={3}>
-                        <Box mr={1}>
-                            <Button variant="outlined" color="primary" onClick={this.props.onPublish}>Publish</Button>
-                        </Box>
-                        <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button>
-                    </Box>
-                </ThemeProvider>
+            <div className="editor-side">
+                <div className="editor-side-bar flex column mb-4">
+                    <ThemeProvider theme={theme}>
+                        <CssBaseline />
+                        <SelectResponsiveView handleChange={this.props.handleChange} />
+                        <nav className="side-bar-nav flex">
+                            <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
+                            <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
+                            <UndoIcon className={`undo ${this.props.undoWaps.length > 1 && 'undo-active'}`} onClick={this.props.onUndoWap} />
+                        </nav>
+                        <div className="editor-sections-list">
+                            {this.DynamicCmp()}
+                        </div>
+                    </ThemeProvider>
+                </div>
+                <div className="editor-publish w-100 flex space-around wrap" >
+                    
+                    {/* <Button variant="outlined" color="primary" onClick={this.props.onPublish}>Publish</Button> */}
+                    <button className="btn-publish" color="primary" onClick={this.props.onPublish}>Publish</button>
+                
+                    {/* <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button> */}
+                    <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button>
+                </div>
             </div>
         )
     }
