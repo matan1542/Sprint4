@@ -21,7 +21,7 @@
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-auto-flow: dense;
     .template-img {
-        max-width: 240px;
+        width: 240px;
         // max-height: 240px;
         border: rem(0.5px) solid black;
         cursor: pointer;
