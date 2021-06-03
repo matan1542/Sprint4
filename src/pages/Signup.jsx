@@ -20,7 +20,6 @@ export default function SignUp({ ...props }) {
         password: "",
     };
     const validate = (values) => {
-        console.log("MyForm ~ values", values);
         const errors = {};
         if (!values.email) {
             errors.email = "Required";
@@ -34,7 +33,6 @@ export default function SignUp({ ...props }) {
     };
 
     const onSubmit = (values, { setSubmitting }) => {
-        console.log("submittes");
         const user = {
             fullname: values.firstName + " " + values.lastName,
             email: values.email,

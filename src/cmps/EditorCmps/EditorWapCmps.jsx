@@ -6,7 +6,6 @@ export class EditorWapCmps extends Component {
 
   render() {
     const { cmp, wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit } = this.props;
-    console.log("🚀 ~ file: EditorWapCmps.jsx ~ line 9 ~ EditorWapCmps ~ render ~ isEdit", isEdit)
 
     return (
       <Fragment>
