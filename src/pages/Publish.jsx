@@ -29,6 +29,7 @@ export class _Publish extends Component {
                 <div className="editor-wap">
                     <EditorWapSections
                         wap={currWap}
+                        isEdit={false}
                     />
                 </div>
             </section>

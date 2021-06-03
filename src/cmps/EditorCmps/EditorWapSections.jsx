@@ -10,6 +10,7 @@ export class EditorWapSections extends Component {
       return (
         <>
           {wap.cmps.map((cmp) => {
+            console.log("🚀 ~ file: EditorWapSections.jsx ~ line 10 ~ EditorWapSections ~ render ~ isEdit", isEdit)
             return (
               <DynamicCmps
                 key={cmp.id}
