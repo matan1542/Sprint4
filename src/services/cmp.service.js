@@ -12,97 +12,32 @@ function query() {
 }
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
-async function changeIds(primeCmp) {
-    primeCmp.id = utilService.makeId()
-    if (!primeCmp.cmps) return primeCmp
-    await changeIdsToCmps(primeCmp)
-
-    console.log("🚀 ~ file: cmp.service.js ~ line 37 ~ changeIds ~ primeCmp", primeCmp)
-    return primeCmp
-    function changeIdsToCmps(cmp) {
-        cmp.cmps.forEach((target, index) => {
-            target.id = utilService.makeId()
-            if (target.cmps) {      // condition for checking Nesting
-                changeIdsToCmps(target)
-            }
-        })
-    }
-}
-
-// for (let idx in primeCmp.cmps) {
-//     primeCmp.cmps[idx].id = utilService.makeId()
-//     if (primeCmp.cmps[idx].cmps) {      // condition for checking Nesting
-//         changeIds(primeCmp.cmps[idx])
-//     }
-// }
-
-
 // async function changeIds(primeCmp) {
-//     primeCmp.id = utilService.makeId(10)
-//     if (primeCmp.cmps) {
-//         primeCmp.cmps.forEach(cmp => {
-//             cmp = changeIds(cmp)
-//         })
-//     }
-//     return primeCmp
-
-
-// async function changeIds(primeCmp) {
-//     console.log('primeCmp:', primeCmp)
-//     if (!primeCmp.cmps) return primeCmp;
-//     if (primeCmp.id) {
-//         primeCmp.id = utilService.makeId(10);
-//     } if ((typeof (primeCmp) === 'object') && (primeCmp.cmps) && (primeCmp.cmps.constructor === Array)) {
-//         for (var i = 0; i < primeCmp.cmps.length; i++) {
-//             changeIds(primeCmp.cmps[i]);
-//         }
-//     }
-// }
-
-    // updateObjectByID(this.Steps, 11, 'String to be set');
-    //     if (!primeCmp.cmps) return primeCmp
-    //     const res = await changeIdsToCmps(primeCmp)
-    //     return res
-    //     function changeIdsToCmps(cmp) {
-    //         cmp.cmps.forEach((target, index) => {
-    //             target.id = utilService.makeId();
-    //             if (target.cmps) {      // condition for checking Nesting
-    //                 changeIdsToCmps(target)
-    //             }
-    //         })
-    //         return cmp
-    //     }
-// }
-//     console.log('changeId',primeCmp)
 //     primeCmp.id = utilService.makeId()
+//     let cmps = [];
 //     if (!primeCmp.cmps) return primeCmp
-//     await changeIdsToCmps(primeCmp)
-//     console.log('After change ids',primeCmp)
-
-//     return primeCmp
-//     function changeIdsToCmps(cmp) {
-//         cmp.cmps.forEach((target, index) => {
-//             target.id = utilService.makeId()
-//             if (target.cmps) {      // condition for checking Nesting
-//                 changeIdsToCmps(target)
-//             }
-//         })
-//     }
-// }
-
-
-
-// async function changeIds(cmp) {
-//     const res = await changeIdsToCmps(cmp)
+//     const res = await changeIdsToCmps(primeCmp)
 //     return res
-//     function changeIdsToCmps(target) {
-//         try {
-//             target.id = utilService.makeId()
-//             return (target.cmps || [])
-//                 .map(cmp => changeIdsToCmps(cmp))
-//                 .filter(res => _.isObject(res))[0];
-//         } catch (err) {
-//             throw new Error(err)
-//         }
+//     function changeIdsToCmps(cmp) {
+//             cmp.cmps.forEach((target, index) => {
+//                 target.id = utilService.makeId();
+//                 if (target.cmps) {      // condition for checking Nesting
+//                   return changeIdsToCmps(target)
+//                 }
+//             })
+//             return cmp
+  
 //     }
 // }
+
+async function changeIds(primeCmp) {
+    if (!primeCmp) return;
+    if (primeCmp.id) {
+        primeCmp.id = utilService.makeId();
+    } if ((typeof(primeCmp)==='object') && (primeCmp.cmps) && (primeCmp.cmps.constructor===Array)) {
+        for (var i=0; i < primeCmp.cmps.length; i++) {
+            changeIds(primeCmp.cmps[i]);
+        }
+    }
+    return primeCmp;
+}
