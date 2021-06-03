@@ -22,6 +22,7 @@ async function changeIds(primeCmp) {
             changeIds(primeCmp.cmps[idx])
         }
     }
+
     console.log("🚀 ~ file: cmp.service.js ~ line 37 ~ changeIds ~ primeCmp", primeCmp)
     return primeCmp
     // function changeIdsToCmps(cmp) {
