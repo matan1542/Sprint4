@@ -11,7 +11,7 @@ function query() {
     return httpService.get(STORAGE_KEY)
 }
 
-//Change all the Ids that been rendered to the page to avoid same id on elements
+// Change all the Ids that been rendered to the page to avoid same id on elements
 // async function changeIds(primeCmp) {
 //     primeCmp.id = utilService.makeId()
 //     let cmps = [];
@@ -39,6 +39,7 @@ async function changeIds(primeCmp) {
             changeIds(primeCmp.cmps[i]);
         }
     }
+    console.log(primeCmp)
     return primeCmp;
 }
 

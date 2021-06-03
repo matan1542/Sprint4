@@ -21,7 +21,7 @@ export function WapTxt({
   }
   if (!isEdit) {
     return (
-      <div className="wap-el">
+      <div className="wap-el publish">
         <EditTxt
           element="span"
           cmp={cmp}
