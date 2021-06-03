@@ -81,7 +81,7 @@ export class DynamicCmps extends Component {
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
-            onDeleteCmp={onDeleteCmp}/>
+            onDeleteCmp={onDeleteCmp} />
         );
       case "wap-btn":
         return (

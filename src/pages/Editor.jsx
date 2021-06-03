@@ -1,17 +1,19 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-
 import { DragDropContext } from "react-beautiful-dnd";
+
 import { cmpService } from "../services/cmp.service.js";
 import { wapService } from "../services/wap.service";
-
-import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
-import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 
 import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js";
 import { setMsg } from '../store/actions/user.msg.actions.js'
 
+import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
+import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx"
+import { Loader } from "../cmps/Loader.jsx";
+
+
 
 export class _Editor extends Component {
   state = {
@@ -196,7 +198,7 @@ export class _Editor extends Component {
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
-    if (!currWap) return <div>Loading...</div>;
+    if (!currWap) return <Loader />
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
