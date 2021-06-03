@@ -6,7 +6,7 @@ import { loadWaps, setWapToEdit } from "../store/actions/wap.actions.js";
 
 class _Templates extends Component {
     async componentDidMount() {
-        if (!this.props.waps) await this.props.loadWaps()
+        await this.props.loadWaps()
     }
 
     setWapToEditor = async (wapId) => {
@@ -19,8 +19,9 @@ class _Templates extends Component {
         if (!waps) return <div>Loading...</div>
         return (
             <section className="template-section">
-
-                {waps.map((wap, idx) => <img className="template-img" key={idx} onClick={() => this.setWapToEditor(wap)} alt="" src={wap.imgUrl}></img>)}
+                <div className="template-list">
+                    {waps.map((wap, idx) => <img className="template-img" key={idx} onClick={() => this.setWapToEditor(wap)} alt="" src={wap.imgUrl}></img>)}
+                </div>
             </section>
         )
     }

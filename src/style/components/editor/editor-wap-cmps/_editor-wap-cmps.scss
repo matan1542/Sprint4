@@ -26,6 +26,10 @@
             border-radius: 10px;
         }
     }
+    &.publish:hover{
+        outline: none;
+
+    }
     &:hover {
         outline: 1px dashed $clr3;
         z-index: 1;
@@ -68,6 +72,10 @@
         transition: .3s;
         border-radius: 10px;
     }
+     &.publish:hover{
+        outline: none;
+
+     }
     &:hover {
         outline: 1px dashed $clr3;
         z-index: 1;
@@ -81,4 +89,5 @@
             }
         }
     }
+ 
 }

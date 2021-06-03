@@ -4,7 +4,6 @@
         minmax(2rem, 1fr)
         minmax(auto, $normal-breakpoint)
         minmax(2rem, 1fr);
-    gap: rem(10px) rem(10px);
 
     > * {
         grid-column: 2;
@@ -13,4 +12,11 @@
             grid-column: 1 / -1;
         }
     }
+}
+
+.template-list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-flow: dense;
 }
