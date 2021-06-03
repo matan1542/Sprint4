@@ -2,8 +2,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { setMsg } from '../store/actions/user.msg.actions.js'
-
 class _UserMsg extends Component {
     render() {
         return (

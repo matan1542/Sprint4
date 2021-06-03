@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route,withRouter } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import "./style/style.scss";
 
@@ -11,7 +11,6 @@ import { Component } from "react";
 
 export  class App extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="App flex column">
         <Provider store={store}>

@@ -26,7 +26,7 @@ export class _Editor extends Component {
     await this.setCurrWap();
 
   }
-  componentWillReceiveProps(newProps) { console.log(newProps); }
+  // componentWillReceiveProps(newProps) { console.log(newProps); }
 
   componentWillUnmount() {
     this.props.setWapToEdit(null)
@@ -86,7 +86,6 @@ export class _Editor extends Component {
     cmpId = cmpId.substring(1)
     const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
     const cmp = { ...cmpToUpdate }
-    console.log('cmp before change',cmp)
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
     this.setState(prevState => ({

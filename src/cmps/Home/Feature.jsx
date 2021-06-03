@@ -1,7 +1,7 @@
 import { useInView } from "react-intersection-observer";
 
 export  function Feature({children}) {
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         /* Optional options */
         triggerOnce: false,
         threshold: 0

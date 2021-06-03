@@ -7,7 +7,6 @@ export const userService = {
     login,
     logout,
     signup,
-    getLoggedinUser
 }
 
 function login(credentials) {

@@ -1,6 +1,4 @@
-let localLoggedinUser = null
-if (sessionStorage.loggedinUser) localLoggedinUser = JSON.parse(sessionStorage.loggedinUser)
-console.log()
+// if (sessionStorage.loggedinUser) localLoggedinUser = JSON.parse(sessionStorage.loggedinUser)
 const initialState = {
     loggedInUser: null,
     users: []
