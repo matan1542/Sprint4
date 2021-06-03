@@ -80,8 +80,6 @@ export class _Editor extends Component {
   };
 
   onAddCmp = async (cmpId, idx) => {
-    console.log("🚀 ~ file: Editor.jsx ~ line 83 ~ _Editor ~ onAddCmp= ~ cmpId", cmpId)
-    // console.log('cmpId',cmpId)
     const { currWap } = this.state
     const wapToSave = { ...currWap }
     cmpId = cmpId.substring(1)
