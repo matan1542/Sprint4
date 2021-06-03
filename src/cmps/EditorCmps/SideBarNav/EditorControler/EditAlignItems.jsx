@@ -33,7 +33,7 @@ export function EditAlignItems({val ,onUpdateCurrCmp ,currCmp }) {
 
   return (
     <div className={classes.root}>
-      <Grid container alignItems="start">
+      <Grid container alignItems="flex-start">
         <Box display="flex" alignItems='flex-start' flexDirection='column'>
           <Typography id="input-slider" gutterBottom>
             Align Items
