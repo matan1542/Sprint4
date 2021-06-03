@@ -23,7 +23,6 @@ export class _Editor extends Component {
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
-    console.log(this.state.currCmp)
     await this.setCurrWap();
 
   }
@@ -80,14 +79,14 @@ export class _Editor extends Component {
   };
 
   onAddCmp = async (cmpId, idx) => {
+    // console.log('cmpId',cmpId)
     const { currWap } = this.state
     const wapToSave = { ...currWap }
     cmpId = cmpId.substring(1)
     const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
-    // console.log('cmpToUpdate',)
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
-    console.log("onAddCmp= ~ updatedCmp", updatedCmp)
+
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
     this.setState(prevState => ({
       ...prevState,

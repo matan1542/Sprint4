@@ -1,6 +1,5 @@
 import { httpService } from './http.service'
 import { utilService } from './utils'
-const _ = require('lodash')
 const STORAGE_KEY = 'cmp'
 export const cmpService = {
     query,
@@ -13,34 +12,18 @@ function query() {
 
 //Change all the Ids that been rendered to the page to avoid same id on elements
 async function changeIds(primeCmp) {
-    console.log('changeId',primeCmp)
     primeCmp.id = utilService.makeId()
+    let cmps = [];
     if (!primeCmp.cmps) return primeCmp
-    await changeIdsToCmps(primeCmp)
-    console.log('After change ids',primeCmp)
-
-    return primeCmp
+    const res = await changeIdsToCmps(primeCmp)
+    console.log('res',res)
+    return res
     function changeIdsToCmps(cmp) {
-        cmp.cmps.forEach((target, index) => {
-            target.id = utilService.makeId()
-            if (target.cmps) {      // condition for checking Nesting
+           return cmp.cmps?.map((target, index) => {
+                target.id = utilService.makeId();
                 changeIdsToCmps(target)
-            }
-        })
+               return target
+            })
+           
     }
 }
-
-// async function changeIds(cmp) {
-//     const res = await changeIdsToCmps(cmp)
-//     return res
-//       function changeIdsToCmps(target) {
-//         try {
-//             target.id = utilService.makeId()
-//             return (target.cmps || [])
-//                 .map(cmp => changeIdsToCmps(cmp))
-//                 .filter(res => _.isObject(res))[0];
-//         } catch (err) {
-//             throw new Error(err)
-//         }
-//     }
-// }
