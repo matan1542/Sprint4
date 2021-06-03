@@ -6,18 +6,17 @@ export function AddCmpList({ cmps, sectionType }) {
     <ul className="clean-list">
       {cmps
         .filter((cmp) => cmp.sectionType === sectionType)
-        .map((cmp,idx) => {
+        .map((cmp, idx) => {
           return (<Draggable draggableId={`${idx}${cmp.id}`} key={cmp.id} index={idx}>
-          {(provided, snapshot) => (
+            {(provided, snapshot) => (
               <div
-                  ref={provided.innerRef}
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}>
-                   { console.log(cmp)}
-                <li key={idx} value={cmp.id}> <img src={cmp.url} alt="type"/> </li>
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}>
+                <li key={idx} value={cmp.id}> <img className="add-list-img" src={cmp.url} alt="type" />{sectionType}  </li>
               </div>
-          )}
-      </Draggable>)
+            )}
+          </Draggable>)
         })}
     </ul>
   );

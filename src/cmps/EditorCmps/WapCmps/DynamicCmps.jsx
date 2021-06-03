@@ -19,7 +19,8 @@ export class DynamicCmps extends Component {
       idx,
       updateWap,
       wap,
-      isEdit
+      isEdit,
+      respView
     } = this.props;
     switch (cmp.type) {
       case "wap-section":
@@ -33,6 +34,7 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
             onDeleteCmp={onDeleteCmp}
             idx={idx}
+            respView={respView}
           />
         );
       case 'wap-video':

@@ -1,5 +1,6 @@
 import { httpService } from './http.service'
 import { utilService } from './utils'
+//const _ = require('lodash')
 const STORAGE_KEY = 'cmp'
 export const cmpService = {
     query,
