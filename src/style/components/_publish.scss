@@ -14,9 +14,3 @@
 //     }
 // }
 
-.template-list {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-auto-flow: dense;
-}
