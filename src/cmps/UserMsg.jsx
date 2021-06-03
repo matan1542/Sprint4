@@ -10,7 +10,7 @@ class _UserMsg extends Component {
             <>
                 {this.props.msg &&
                     <div className="user-msg">
-                        {this.props.msg}
+                      <p>{this.props.msg}</p>  
                     </div>
                 }
             </>
