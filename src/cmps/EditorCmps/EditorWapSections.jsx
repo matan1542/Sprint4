@@ -43,6 +43,7 @@ export class EditorWapSections extends Component {
                   onDeleteCmp={onDeleteCmp}
                   updateWap={updateWap}
                   isEdit={isEdit}
+                  respView={respView}
                 />
               );
             })}

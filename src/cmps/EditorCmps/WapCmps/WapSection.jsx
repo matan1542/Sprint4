@@ -12,7 +12,8 @@ export function WapSection({
     updateWap,
     wap,
     isEdit,
-    isDraggingOver
+    isDraggingOver,
+    respView
 }) {
     if (!isEdit) {
         return (
@@ -37,7 +38,7 @@ export function WapSection({
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                     >
-                        <div className={`wap-section wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()}`}
+                        <div className={`wap-section wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()} `}
                             style={{
                                 ...cmp.info.style, backgroundColor: snapshot.isDragging ?
                                     'skyblue' : cmp.info.style.backgroundColor
