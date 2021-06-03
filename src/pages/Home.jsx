@@ -6,7 +6,7 @@ import { Features } from "../cmps/Home/Features.jsx";
 import Header from "../cmps/Home/Header.jsx";
 
 function _Home({waps,cmps,loadWaps,loadCmps}){
-  
+ 
   useEffect(()=>{
    async function handleDidMount(){
     try {
