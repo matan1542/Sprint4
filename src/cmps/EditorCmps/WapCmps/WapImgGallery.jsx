@@ -9,7 +9,7 @@ export function WapImgGallery({cmp,
         console.log('cmpss', cmp)
         if(!isEdit){
             return(
-                <ul className="clean-list flex wrap">
+                <ul className="clean-list flex wrap publish">
                 { cmp.info.urls.map((url,idx)=>{
                     return <li key={idx}> <WapImg  cmp={cmp}
                     isEdit={isEdit}/></li>

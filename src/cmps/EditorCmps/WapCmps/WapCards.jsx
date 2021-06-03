@@ -14,7 +14,7 @@ export function WapCard({
     updateWap,
     isEdit
 }) {
-    if (isEdit) {
+    if (!isEdit) {
         <div className="wap-section wap-card publish" style={cmp.info.style}>
             {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} />}
         </div>
