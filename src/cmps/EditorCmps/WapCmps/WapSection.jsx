@@ -14,7 +14,10 @@ export function WapSection({
     isEdit,
     isDraggingOver,
     respView
-}) {
+}) 
+{
+    
+        console.log("🚀 ~ file: DynamicCmps.jsx ~ line 68 ~ DynamicCmps ~ isEdit", isEdit)
     if (!isEdit) {
         return (
             <div className={`wap-section publish wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()}`}

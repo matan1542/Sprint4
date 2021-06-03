@@ -27,7 +27,7 @@ export function WapCard({
             style={cmp.info.style}>
             {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}
             <div className="wap-section-tool">
-                <button className="wap-el-btn-edit" onClick={() => console.log('edit')}><EditOutlinedIcon /></button>
+                <button className="wap-el-btn-edit" onClick={(ev) => onCmpFocus(ev, cmp)}><EditOutlinedIcon /></button>
                 <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}><DeleteForeverOutlinedIcon /></button>
             </div>
         </div>
