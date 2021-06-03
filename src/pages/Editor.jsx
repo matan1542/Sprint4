@@ -27,6 +27,7 @@ export class _Editor extends Component {
     await this.setCurrWap();
 
   }
+  componentWillReceiveProps(newProps) { console.log(newProps); }
 
   componentWillUnmount() {
     this.props.setWapToEdit(null)
@@ -197,6 +198,7 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
+    console.log("🚀 ~ file: Editor.jsx ~ line 201 ~ _Editor ~ render ~ currWap", currWap)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
