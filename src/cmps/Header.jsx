@@ -32,7 +32,7 @@ import { Component } from 'react';
     
                     <nav>
                         <NavLink exact to="/"> Home </NavLink>
-                        <NavLink to="/template">Template</NavLink>
+                        <NavLink to="/template">Templates</NavLink>
                         <NavLink to="/editor">Editor</NavLink>
                     </nav>
                 </div>
