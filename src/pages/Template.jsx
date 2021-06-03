@@ -6,7 +6,7 @@ import { loadWaps, setWapToEdit } from "../store/actions/wap.actions.js";
 
 class _Templates extends Component {
     async componentDidMount() {
-        if (!this.props.waps) await this.props.loadWaps()
+        await this.props.loadWaps()
     }
 
     setWapToEditor = async (wapId) => {

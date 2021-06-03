@@ -21,9 +21,6 @@
     margin: 0 auto;
     text-align: center;
 }
-.editor-wap-size{
-    min-height: 100%;
-}
 
 @media screen and (max-width: $editor-narrow-breakpoint) {
     .editor-wap {
@@ -56,6 +53,7 @@
 }
 
 .editor-wap-size {
+    min-height: 100%;
     &.large-view {
         flex: 0 1 auto;
         padding: 5px;
@@ -66,14 +64,13 @@
         padding: 5px;
         max-width: 768px;
         margin: 0 auto;
-        .wap-section{
+        .wap-section {
             flex-direction: column !important;
             nav {
                 flex-direction: row !important;
                 justify-content: space-between !important;
             }
         }
-    
     }
     &.small-view {
         flex: 0 1 auto;
@@ -90,6 +87,9 @@
             }
         }
     }
+}
+.editor-wap-size {
+    min-height: 100%;
 }
 //     @media screen and (max-width : $mobile-breakpoint) {
 //         border: 5px solid grey;
