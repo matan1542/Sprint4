@@ -26,6 +26,7 @@ export class _Editor extends Component {
     await this.setCurrWap();
 
   }
+  componentWillReceiveProps(newProps) { console.log(newProps); }
 
   componentWillUnmount() {
     this.props.setWapToEdit(null)
@@ -126,7 +127,6 @@ export class _Editor extends Component {
   }
 
   onPublishWap = async () => {
-    console.log("🚀 ~ file: Editor.jsx ~ line 23 ~ _Editor ~ currWap", this.state.currWap)
     if (!this.state.currWap._id) {
       this.props.setMsg('Please save wap before publish', 'error')
       await setTimeout(() => {
@@ -181,7 +181,7 @@ export class _Editor extends Component {
     }
     if (source.droppableId === "2" && destination.droppableId === "1") {
       await this.onAddCmp(draggableId, destination.index);
-     
+
     }
   };
 
@@ -197,6 +197,7 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView } = this.state;
+    console.log("🚀 ~ file: Editor.jsx ~ line 201 ~ _Editor ~ render ~ currWap", currWap)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <div>Loading...</div>;
     return (
