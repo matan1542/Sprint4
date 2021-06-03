@@ -93,3 +93,12 @@
 .add-list-img {
   width: 100%;
 }
+
+.undo {
+  color: #939ea8;
+  cursor: not-allowed;
+  &.undo-active {
+    color: black;
+    cursor: pointer;
+  }
+}

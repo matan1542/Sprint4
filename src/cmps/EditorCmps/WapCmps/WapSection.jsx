@@ -14,13 +14,11 @@ export function WapSection({
     isEdit,
     isDraggingOver,
     respView
-}) 
-{
-    
-        console.log("🚀 ~ file: DynamicCmps.jsx ~ line 68 ~ DynamicCmps ~ isEdit", isEdit)
+}) {
+
     if (!isEdit) {
         return (
-            <div className={`wap-section publish wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()}`}
+            <div className={`wap-section publish wap-${cmp.sectionType.split('-', 1)[0].toLowerCase().split('-', 1)[0].toLowerCase()}`}
                 style={{ ...cmp.info.style }}>
                 {cmp.cmps && (
                     <EditorWapCmps
@@ -41,7 +39,7 @@ export function WapSection({
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                     >
-                        <div className={`wap-section wap-${cmp.sectionType.split('-',1)[0].toLowerCase().split('-',1)[0].toLowerCase()} `}
+                        <div className={`wap-section wap-${cmp.sectionType.split('-', 1)[0].toLowerCase().split('-', 1)[0].toLowerCase()} `}
                             style={{
                                 ...cmp.info.style, backgroundColor: snapshot.isDragging ?
                                     'skyblue' : cmp.info.style.backgroundColor
@@ -72,7 +70,7 @@ export function WapSection({
 
 
                             <div className="wap-section-tool">
-                                <button className="wap-el-btn-edit" onClick={(ev) => onCmpFocus(ev,cmp)}><EditOutlinedIcon /></button>
+                                <button className="wap-el-btn-edit" onClick={(ev) => onCmpFocus(ev, cmp)}><EditOutlinedIcon /></button>
                                 <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}><DeleteForeverOutlinedIcon /></button>
                             </div>
                         </div>
