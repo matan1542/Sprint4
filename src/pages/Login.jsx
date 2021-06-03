@@ -11,11 +11,9 @@ import Container from "@material-ui/core/Container";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 export function Login({ ...props }) {
-    console.log(props);
     const initialValues = { email: "", password: "" };
 
     const validate = (values) => {
-        // console.log("MyForm ~ values", values);
         const errors = {};
         if (!values.email) {
             errors.email = "Required";
@@ -29,7 +27,6 @@ export function Login({ ...props }) {
     };
 
     const onSubmit = (values, { setSubmitting }) => {
-        console.log("submittes");
 
         setTimeout(() => {
             setSubmitting(false);

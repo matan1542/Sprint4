@@ -14,11 +14,12 @@ export function WapCard({
     updateWap,
     isEdit
 }) {
-    console.log("🚀 ~ file: WapCards.jsx ~ line 17 ~ isEdit", isEdit)
     if (!isEdit) {
-        <div className="wap-section wap-card publish" style={cmp.info.style}>
-            {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} />}
-        </div>
+        return (
+            < div className="wap-section wap-card publish" style={cmp.info.style} >
+                {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} />}
+            </div >
+        )
     }
     return (
         <div className="wap-section wap-card"

@@ -9,14 +9,13 @@ import { EditJustifyContent } from './EditorControler/EditJustifyContent'
 import { EditAlignContent } from './EditorControler/EditAlignContent'
 import { EditAlignItems } from './EditorControler/EditAlignItems'
 import { EditAlignText } from './EditorControler/EditAlignText'
-import { EditTextDecoration} from './EditorControler/EditTextDecoration'
+import { EditTextDecoration } from './EditorControler/EditTextDecoration'
 import { EditTextShadow } from './EditorControler/EditTextShadow'
 import { EditWidth } from './EditorControler/EditWidth'
-import { EditBorderRadius} from './EditorControler/EditBorderRadius'
-import { EditBorderWidth} from './EditorControler/EditBorderWidth'
+import { EditBorderRadius } from './EditorControler/EditBorderRadius'
+import { EditBorderWidth } from './EditorControler/EditBorderWidth'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
-    //      console.log(attribute, value)
     switch (attribute) {
         case "textAlign":
             return <EditAlignText onUpdateCurrCmp={onUpdateCurrCmp} att={attribute} currCmp={currCmp} />
@@ -45,11 +44,11 @@ export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
         case "alignItems":
             return <EditAlignItems val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "textDecoration":
-            return <EditTextDecoration onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp}/>
+            return <EditTextDecoration onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "textShadow":
             return <EditTextShadow val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "width":
-            if(currCmp.type === 'wap-video') return <div></div>
+            if (currCmp.type === 'wap-video') return <div></div>
             return <EditWidth val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />
         case "borderRadius":
             return <EditBorderRadius val={value} onUpdateCurrCmp={onUpdateCurrCmp} currCmp={currCmp} />

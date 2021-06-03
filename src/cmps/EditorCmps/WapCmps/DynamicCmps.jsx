@@ -60,7 +60,6 @@ export class DynamicCmps extends Component {
           />
         );
       case "wap-card":
-        console.log("🚀 ~ file: DynamicCmps.jsx ~ line 68 ~ DynamicCmps ~ isEdit", isEdit)
         return (
           <WapCard
             cmp={cmp}
