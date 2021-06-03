@@ -13,7 +13,7 @@ export function AddCmpList({ cmps, sectionType }) {
                   ref={provided.innerRef}
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}>
-                    
+                   { console.log(cmp)}
                 <li key={idx} value={cmp.id}> <img src={cmp.url} alt="type"/> </li>
               </div>
           )}
