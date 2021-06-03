@@ -8,6 +8,7 @@ import { Header } from "./cmps/Header.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 
+
 export function App() {
   return (
     <div className="App flex column">
