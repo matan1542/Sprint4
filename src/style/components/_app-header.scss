@@ -23,6 +23,9 @@
     background-color: #fff;
     position: fixed;
     z-index: 3;
+    @include for-tablet-layout {
+        padding: 0;
+    }
     ul {
         margin: 0;
         padding: 0;
