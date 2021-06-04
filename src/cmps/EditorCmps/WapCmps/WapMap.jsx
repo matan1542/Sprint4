@@ -2,7 +2,7 @@
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
-function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp,google }) {
+function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp, google }) {
   const pos = {
     lat: cmp.info.lat,
     lng: cmp.info.lng,
@@ -28,7 +28,7 @@ function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp,google }) {
           ...cmp.info.style,
         }}
         containerStyle={
-         { ...cmp.info.style}
+          { ...cmp.info.style }
         }
       >
         <Marker position={pos} name={"branch location"} />
