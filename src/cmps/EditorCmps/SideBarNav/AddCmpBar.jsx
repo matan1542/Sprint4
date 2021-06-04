@@ -26,7 +26,7 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
         setExpanded(isExpanded ? panel : false);
     };
     const classes = useStyles();
-    const sections = ['Header', 'Section', 'Hero', 'Cards', 'Footer', 'Text', 'Image', 'Form', 'Video', 'Gallery']
+    const sections = ['Header', 'Section', 'Hero', 'Cards', 'Footer', 'Text', 'Image', 'Form', 'Video', 'Gallery','Map']
     // const sections = ['Header', 'Hero', 'Text', 'Image', 'Form', 'Video', 'Gallery', 'Footer',]
 
     return (
