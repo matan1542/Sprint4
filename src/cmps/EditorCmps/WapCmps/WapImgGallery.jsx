@@ -16,14 +16,15 @@ export function WapImgGallery({ cmp,
         )
     }
     return (
-        <ul className="clean-list flex wrap">
+        <>
             {cmp.cmps.map((cmp, idx) => {
-                return <li key={idx}><WapImg cmp={cmp}
+                return <WapImg key={idx} cmp={cmp}
                     onDeleteCmp={onDeleteCmp}
                     onCmpFocus={onCmpFocus}
-                    isEdit={isEdit} /></li>
+                    isEdit={isEdit} />
             })}
-        </ul>
+        </>
     )
 }
+
 

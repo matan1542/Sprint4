@@ -24,6 +24,36 @@
 }
 
 @font-face {
-    src: url(../../assets/fonts/Opensans/OpenSans-Regular.ttf);
     font-family: OpenSans;
+    src: url(../../assets/fonts/Opensans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: staatliches;
+    src: url(../../assets/fonts/Staatliches/Staatliches-Regular.ttf);
+}
+
+@font-face {
+    font-family: pacifico;
+    src: url(../../assets/fonts/Paifico/Pacifico-Regular.ttf);
+}
+
+@font-face {
+    font-family: nutino;
+    src: url(../../assets/fonts/Nunito/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: futura;
+    src: url(../../assets/fonts/Futura/Futura-Light.otf);
+}
+
+@font-face {
+    font-family: courgette;
+    src: url(../../assets/fonts/Courgette/Courgette-Regular.ttf);
+}
+
+@font-face {
+    font-family: rubik;
+    src: url(../../assets/fonts/Robik/Rubik-Regular.ttf);
 }
