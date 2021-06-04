@@ -5,10 +5,11 @@
   max-width: 272px;
   align-items: center;
   padding: 10px;
-  height: 87vh;
+  height: 85vh;
   box-shadow: 0 3px 6px rgba(0, 0, 100, 0.15);
   border-radius: 0px 0px 1rem 0px;
   margin: 0 8px 8px;
+
   .side-bar-nav {
     align-items: center;
     width: 100%;
@@ -30,7 +31,7 @@
   }
   .editor-sections-list {
     padding: 40px 0 0 10px;
-    height: 77%;
+    height: 100%;
     width: 100%;
     margin-top: 3px;
     font-family: raleway;
@@ -43,17 +44,24 @@
     display: flex;
   }
 }
+.editor-publish{
+  width: 272px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  padding-bottom:5px ;
+}
 
 .btn-publish {
-  background-color: deepskyblue;  
-  color: white;
-  // box-shadow: 0 0 3px 6px rgb(0 0 100 / 15%);
-  mix-blend-mode: multiply;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 50px;
-  font-weight: bold;
-  font-size: 20px;
+    border: 1px solid #3f7aae;
+    color: cornflowerblue; 
+    background-color: inherit;
+    font-family: Raleway, Arial;
+    // box-shadow: 0 0 3px 6px rgb(0 0 100 / 15%);
+    border-radius: 6px;
+    padding: 10px 50px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .add-cmp-list {

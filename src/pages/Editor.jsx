@@ -65,8 +65,7 @@ export class _Editor extends Component {
   };
 
   onUpdateCurrCmp = async (currCmp) => {
-    const undoWaps = [...this.state.undoWaps]
-    undoWaps.push({ ...this.state.currWap })
+    const undoWaps = await this.onAddUndo()
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const copyWap = { ...this.state.currWap }
@@ -94,8 +93,7 @@ export class _Editor extends Component {
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
-    const undoWaps = [...this.state.undoWaps]
-    undoWaps.push({ ...this.state.currWap })
+    const undoWaps = await this.onAddUndo()
     this.setState(prevState => ({
       ...prevState,
       currWap: wap,
@@ -104,14 +102,23 @@ export class _Editor extends Component {
   };
 
   onUndoWap = () => {
-    if (!this.state.undoWaps.length) return;
-    const wap = this.state.undoWaps.pop()
+    if (this.state.undoWaps.length <= 1) return;
+    const undoWaps = [...this.state.undoWaps]
+    const wap = undoWaps.pop()
     const currWap = { ...wap }
     this.setState(prevState => ({
       ...prevState,
       currWap,
-      undoWaps: [...this.state.undoWaps]
+      undoWaps: [...undoWaps]
     }))
+  }
+
+  onAddUndo = () => {
+    console.log('this.state.currWap', this.state.currWap);
+    const wapToAdd = JSON.parse(JSON.stringify(this.state.currWap))
+    const undoWaps = this.state.undoWaps
+    undoWaps.push(wapToAdd)
+    return Promise.resolve(undoWaps)
   }
 
   onSaveWap = async () => {
