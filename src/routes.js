@@ -7,7 +7,7 @@ import { Preview } from './pages/Preview.jsx'
 export const routes = [
     {
         path: '/preview/:wapId',
-        component: Publish
+        component: Preview
     },
     {
         path: '/publish/:wapId',
