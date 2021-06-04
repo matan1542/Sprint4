@@ -52,6 +52,7 @@
     display: flex;
     transition: 0.3;
     max-width: 100%;
+    * { border-style: solid;}
     pre {
         max-width: 100%;
         overflow: hidden;
@@ -71,6 +72,7 @@
         display: none;
         transition: .3s;
         border-radius: 10px;
+        *{border:none}
     }
      &.publish:hover{
         outline: none;
