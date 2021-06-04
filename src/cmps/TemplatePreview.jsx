@@ -5,7 +5,6 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import {Link} from "react-router-dom"
 export function TemplatePreview({ wap, setWapToEditor }) {
     const [hoverState,setHover] = useState(false)
-  console.log(wap.name);
   const toggleHover = ()=>{
       setHover(!hoverState);
   }
@@ -29,7 +28,7 @@ export function TemplatePreview({ wap, setWapToEditor }) {
                 <h2 onClick={() => setWapToEditor(wap)}>
                     Edit
                 </h2>
-                 <div className="template-preview-preview flex align-center"><Link className="decoration-none" style={{color:"#fff"}} to={`/publish/${wap._id}`}>  <VisibilityIcon className="mr-1"/> Demo</Link></div>               
+                 <div className="template-preview-preview flex align-center"><Link className="decoration-none" style={{color:"#fff"}} to={`/preview/${wap._id}`}>  <VisibilityIcon className="mr-1"/> Demo</Link></div>               
             </div>
         </div>
       </div>

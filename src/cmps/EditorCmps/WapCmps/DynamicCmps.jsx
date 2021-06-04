@@ -9,6 +9,7 @@ import { Component } from "react";
 import { WapForm } from "./WapForm";
 import { WapVideo } from "./WapVideo"
 import { WapImgGallery } from "./WapImgGallery";
+import { WapMap } from "./WapMap";
 export class DynamicCmps extends Component {
   getCmp = () => {
     const {
@@ -23,6 +24,15 @@ export class DynamicCmps extends Component {
       respView
     } = this.props;
     switch (cmp.type) {
+      case "wap-map":
+        return (
+          <WapMap  cmp={cmp}
+          isEdit={isEdit}
+          updateWap={updateWap}
+          onCmpFocus={onCmpFocus}
+          onDeleteCmp={onDeleteCmp}
+          onUpdateCurrCmp={onUpdateCurrCmp}/>
+        )
       case "wap-section":
         return (
           <WapSection
@@ -34,9 +44,8 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
             onDeleteCmp={onDeleteCmp}
             idx={idx}
-            respView={respView}
-          />
-        );
+            respView={respView}/>
+        )
       case 'wap-video':
         return (
           <WapVideo

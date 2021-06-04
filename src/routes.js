@@ -2,7 +2,6 @@ import { Home } from './pages/Home.jsx'
 import { Templates } from './pages/Template.jsx'
 import { Editor } from './pages/Editor.jsx'
 import { Publish } from './pages/Publish.jsx'
-import { Preview } from './pages/Preview.jsx'
 
 export const routes = [
     {
