@@ -44,7 +44,7 @@ export function WapBtn({
         onUpdateWap={() => { updateWap(wap) }}
         onUpdateCurrCmp={onUpdateCmp}
         onCmpFocus={onCmpFocus}
-        element="button" />}
+        element="span" />}
       <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
         <DeleteForeverOutlinedIcon />
       </button>
