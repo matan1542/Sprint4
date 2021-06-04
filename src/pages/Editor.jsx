@@ -67,9 +67,7 @@ export class _Editor extends Component {
 
   onUpdateCurrCmp = async (currCmp) => {
     const undoWaps = [...this.state.undoWaps]
-    console.log("🚀 ~ file: Editor.jsx ~ line 73 ~ _Editor ~ onUpdateCurrCmp= ~ undoWaps", undoWaps)
     undoWaps.push({ ...this.state.currWap })
-    console.log("🚀 ~ file: Editor.jsx ~ line 77 ~ _Editor ~ onUpdateCurrCmp= ~ undoWaps", undoWaps)
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const copyWap = { ...this.state.currWap }
@@ -219,7 +217,6 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
-    console.log("🚀 ~ file: Editor.jsx ~ line 220 ~ _Editor ~ render ~ undoWaps", undoWaps)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
     return (
