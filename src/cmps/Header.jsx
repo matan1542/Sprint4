@@ -27,21 +27,21 @@ class _Header extends Component {
         if (this.state.isPublish) return <div></div>
         // 
         return (
-            <header className="app-header align-center"> 
-                    <Link to="/"><Logo className="app-logo" /></Link>
+            <header className="app-header align-center">
+                <Link to="/"><Logo className="app-logo" /></Link>
 
-                    {/* <nav>
+                {/* <nav>
                         <NavLink exact to="/"> Home </NavLink>
                         <NavLink to="/template">Templates</NavLink>
                         <NavLink to="/editor">Editor</NavLink>
                     </nav> */}
-                    <input class="menu-btn" type="checkbox" id="menu-btn" />
-                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                    <ul class="menu">
-                        <li><NavLink exact to="/"> Home </NavLink></li>
-                        <li><NavLink to="/template">Templates</NavLink></li>
-                        <li><NavLink to="/editor">Editor</NavLink></li>
-                    </ul>                    
+                <input className="menu-btn" type="checkbox" id="menu-btn" />
+                <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+                <ul className="menu">
+                    <li><NavLink exact to="/"> Home </NavLink></li>
+                    <li><NavLink to="/template">Templates</NavLink></li>
+                    <li><NavLink to="/editor">Editor</NavLink></li>
+                </ul>
             </header>
         )
     }

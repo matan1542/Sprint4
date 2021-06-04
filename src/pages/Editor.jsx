@@ -118,25 +118,10 @@ export class _Editor extends Component {
 
   onSaveWap = async () => {
     try {
-      if (!this.state.currWap.cmps.length) {
-        this.props.setMsg('You can\'t save empty Wap', 'error')
-        await setTimeout(() => {
-          this.props.setMsg('', 'error')
-        }, 3000)
-        return
-      }
-      this.props.setMsg('Saving...', 'success')
       const newWap = { ...this.state.currWap }
       const savedWap = await wapService.save(newWap)
       await this.props.loadWaps()
-      this.props.setMsg('Saved!', 'success')
-      setTimeout(() => {
-        this.props.setMsg('', 'success')
-      }, 3000)
-      this.setState(prevState => ({
-        ...prevState,
-        currWap: savedWap[0]
-      }))
+      return Promise.resolve(savedWap[0])
     } catch (err) {
       console.log(err);
       this.props.setMsg('There was a problam. please try again later!', 'error')
@@ -148,21 +133,14 @@ export class _Editor extends Component {
   }
 
   onPublishWap = async () => {
-    if (!this.state.currWap._id) {
-      this.props.setMsg('Please save wap before publish', 'error')
-      await setTimeout(() => {
-        this.props.setMsg('', 'error')
-      }, 3000)
-      return
-    }
     if (!this.state.currWap.cmps.length) {
-      this.props.setMsg('You can\'t publish empty Wap', 'error')
+      this.props.setMsg('You can\'t publish empty Website', 'error')
       await setTimeout(() => {
         this.props.setMsg('', 'error')
       }, 3000)
       return
     }
-    const newWap = { ...this.state.currWap }
+    const newWap = await this.onSaveWap()
     this.props.history.push(`/publish/${newWap._id}`)
   }
 
