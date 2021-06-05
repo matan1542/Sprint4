@@ -1,26 +1,3 @@
-//   render() {
-//     const { showColorPicker } = this.state;
-//     return (
-//       <div className='flex space-between mb-2'>
-//         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
-
-//         <button variant="contained" 
-//           style={{ backgroundColor: this.state.color, marginRight: '20px'}}
-//           title={this.props.name} 
-//           onClick={this.toggleColorPicker}>
-//         {this.props.att === 'color' ? <FormatColorTextIcon/> : <FormatColorFillIcon/>}
-//         </button>
-
-//         {showColorPicker &&
-//           <React.Fragment>
-//             <div className='colorpicker-cover' style={zIndex="1"}/>
-//             <ChromePicker color={this.props.val} onChange={this.handleColorChange} onClick={this.toggleColorPicker}/>
-//           </React.Fragment>}
-//       </div>
-//     )
-//   }
-// }
-
 import React from 'react'
 import reactCSS from 'reactcss'
 import { SketchPicker } from 'react-color'

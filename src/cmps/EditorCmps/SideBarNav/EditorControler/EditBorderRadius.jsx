@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-// import Input from '@material-ui/core/Input';
 import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -28,20 +27,20 @@ export function EditBorderRadius({ val, onUpdateCurrCmp, currCmp }) {
 
   return (
     <div className={classes.root}>
-        <Box display='flex' alignItems='flex-start' flexDirection='column'>
+      <Box display='flex' alignItems='flex-start' flexDirection='column'>
         <Typography id="input-slider" >
           Radius
         </Typography>
-          <Slider
-            value={typeof value === 'number' ? value : 0}
-            min={0}
-            step={1}
-            max={50}
-            onChange={handleSliderChange}
-            aria-labelledby="input-slider"
-            valueLabelDisplay="auto"
-          />
-        </Box>
+        <Slider
+          value={typeof value === 'number' ? value : 0}
+          min={0}
+          step={1}
+          max={50}
+          onChange={handleSliderChange}
+          aria-labelledby="input-slider"
+          valueLabelDisplay="auto"
+        />
+      </Box>
     </div>
   );
 }
