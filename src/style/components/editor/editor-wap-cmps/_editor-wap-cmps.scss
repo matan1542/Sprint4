@@ -109,11 +109,11 @@
     li a {
         display: block;
         padding: 10px 20px;
-        border-right: 1px solid #f4f4f4;
         color: #3f7aae;
+        border-bottom: none;
         text-decoration: none;
         &:hover {
-            background-color: darken($clr7, 10%);
+            background-color: darken($clr8, 5%);
         }
     }
     .wap-logo {
@@ -142,6 +142,17 @@
                 position: relative;
                 transition: background 0.2s ease-out;
                 width: 18px;
+                &:before, &:after {
+                    background: #3f7aae;
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    position: absolute;
+                    transition: all 0.2s ease-out;
+                    width: 100%;                
+                }
+                &:before {top: 5px;}
+                &:after {top: -5px;}
             }
         }
         &-btn {
@@ -149,61 +160,49 @@
             &:hover {
                 background-color: darken($clr7, 10%);
             }
+            &:checked ~ .wap-nav-menu {
+                max-height: 500px;
+                width: 120%;
+            }
+            &:checked ~ .wap-nav-menu-icon .navicon {
+                background: transparent;
+            }
+            &:checked ~ .wap-nav-menu-icon .navicon:before {
+                transform: rotate(-45deg);
+            }
+            &:checked ~ .wap-nav-menu-icon .navicon:after {
+                transform: rotate(45deg);
+            }
+            &:checked ~ .wap-nav-menu-icon:not(.steps) .navicon:before {
+                top: 0;
+            }
+            &:checked ~ .wap-nav-menu-icon:not(.steps) .navicon:after {
+                top: 0;
+            }
+            top: 0;
         }
     }
-}
-
-.wap-section .wap-nav-menu-icon .navicon:before,
-.wap-section .wap-nav-menu-icon .navicon:after {
-    background: #3f7aae;
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all 0.2s ease-out;
-    width: 100%;
-}
-.wap-section .wap-nav-menu-icon .navicon:before {
-    top: 5px;
-}
-.wap-section .wap-nav-menu-icon .navicon:after {
-    top: -5px;
-}
-.wap-section .wap-nav-menu-btn:checked ~ .wap-nav-menu {
-    max-height: 240px;
-}
-.wap-section .wap-nav-menu-btn:checked ~ .wap-nav-menu-icon .navicon {
-    background: transparent;
-}
-.wap-section .wap-nav-menu-btn:checked ~ .wap-nav-menu-icon .navicon:before {
-    transform: rotate(-45deg);
-}
-
-.wap-section .wap-nav-menu-btn:checked ~ .wap-nav-menu-icon .navicon:after {
-    transform: rotate(45deg);
-}
-
-.wap-section .wap-nav-menu-btn:checked ~ .wap-nav-menu-icon:not(.steps) .navicon:before,
-.wap-section .wap-nav-menu-btn:checked ~ .wap-nav-menu-icon:not(.steps) .navicon:after {
-    top: 0;
 }
 
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-    .wap-section li {
+    .wap-header { 
+        li {
         float: left;
-    }
-    .wap-section li a {
-        padding: 5px 30px;
-    }
-    .wap-section .wap-nav-menu {
-        padding: 11px 15px 4px;
-        clear: none;
-        float: right;
-        max-height: none;
-    }
-    .wap-section .wap-nav-menu-icon {
-        display: none;
+            a {
+                padding: 5px 0px;
+            }
+        }
+        .wap-nav-menu {
+            padding: 11px 15px 4px;
+            clear: none;
+            float: right;
+            max-height: none;
+            width: auto !important;
+            &-icon {
+                display: none;
+            }
+        }
     }
 }

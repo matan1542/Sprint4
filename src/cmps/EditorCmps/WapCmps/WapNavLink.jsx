@@ -24,7 +24,7 @@ export function WapNavLink({
   if (!isEdit) {
     return (
       <li className="wap-el publish">
-        <NavLink to="/">  
+        <NavLink to={`/publish/${cmp.info.action.link}`}>  
           {<EditTxt cmp={cmp}
             isEdit={false}
             element="button" />}

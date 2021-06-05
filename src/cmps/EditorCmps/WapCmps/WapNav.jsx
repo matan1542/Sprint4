@@ -7,14 +7,18 @@ import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined'
 export function WapNav({ onClickFunc, cmp, wap, onDeleteCmp, onCmpFocus, onUpdateCurrCmp, updateWap, isEdit }) {
   if (!isEdit) {
     return (
-      <ul className="wap-section wap-nav-menu publish flex w-75"
-        style={cmp.info.style}>
-        {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}
-      </ul>
+      <div className="flex align-center column w-100">    
+        <input className="wap-nav-menu-btn" type="checkbox" id="wap-nav-menu-btn" />
+        <label className="wap-nav-menu-icon" htmlFor="wap-nav-menu-btn"><span className="navicon"></span></label>      
+        <ul className="wap-section wap-nav-menu publish flex"
+          style={cmp.info.style}>
+          {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}
+        </ul>
+      </div>
     )
   }
   return (
-    <ul className="wap-section wap-nav-menu flex w-75"
+    <ul className="wap-section wap-nav-menu flex"
       onClick={(ev) => onCmpFocus(ev, cmp)}
       style={cmp.info.style}>
       {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}

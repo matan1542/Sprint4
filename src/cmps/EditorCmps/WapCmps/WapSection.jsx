@@ -15,14 +15,15 @@ export function WapSection({
   isDraggingOver,
   respView,
 }) {
+  let cmpType = cmp.sectionType
+  .split("-", 1)[0]
+  .toLowerCase()
+  .split("-", 1)[0]
+  .toLowerCase() 
   if (!isEdit) {
     return (
       <div
-        className={`wap-section publish wap-${cmp.sectionType
-          .split("-", 1)[0]
-          .toLowerCase()
-          .split("-", 1)[0]
-          .toLowerCase()}`}
+        className={`wap-section publish wap-${cmpType}`}
         style={{ ...cmp.info.style }}
       >
         {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} />}
@@ -43,11 +44,7 @@ export function WapSection({
             {...provided.dragHandleProps}
           >
             <div
-              className={`wap-section wap-${cmp.sectionType
-                .split("-", 1)[0]
-                .toLowerCase()
-                .split("-", 1)[0]
-                .toLowerCase()} `}
+              className={`wap-section wap-${cmpType} `}
               style={{
                 ...cmp.info.style,
                 backgroundColor: snapshot.isDragging
@@ -56,7 +53,6 @@ export function WapSection({
               }}
               onClick={(ev) => onCmpFocus(ev, cmp)}
             >
-              
               {cmp.cmps && (
                 <EditorWapCmps
                   cmp={cmp}
