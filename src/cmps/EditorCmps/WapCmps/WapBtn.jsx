@@ -5,7 +5,6 @@ import { EditTxt } from "../EditTxt";
 
 
 export function WapBtn({
-  onClickFunc,
   cmp,
   onDeleteCmp,
   onCmpFocus,

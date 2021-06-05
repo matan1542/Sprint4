@@ -27,7 +27,6 @@ export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
     };
     const classes = useStyles();
     const sections = ['Header', 'Section', 'Hero', 'Cards', 'Footer', 'Text', 'Image', 'Form', 'Video', 'Gallery', 'Map']
-    // const sections = ['Header', 'Hero', 'Text', 'Image', 'Form', 'Video', 'Gallery', 'Footer',]
 
     return (
         <div className={classes.root}>

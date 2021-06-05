@@ -11,12 +11,6 @@ export class EditorWapCmps extends Component {
       <Fragment>
         {cmp.cmps.map((cmp, idx) => {
           return (
-            // <Draggable key={cmp.id} draggableId={cmp.id} index={idx}>
-            //   {(provided) => (
-            //     <div className="cmp"
-            //       {...provided.dragHandleProps}
-            //       {...provided.draggableProps}
-            //       ref={provided.innerRef} >
             <DynamicCmps
               key={cmp.id}
               idx={idx}
@@ -28,9 +22,6 @@ export class EditorWapCmps extends Component {
               onDeleteCmp={onDeleteCmp}
               isEdit={isEdit}
             />
-            //     </div>
-            //   )}
-            // </Draggable>
           );
         })}
       </Fragment>
