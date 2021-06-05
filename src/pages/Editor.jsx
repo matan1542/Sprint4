@@ -114,7 +114,6 @@ export class _Editor extends Component {
   }
 
   onAddUndo = () => {
-    console.log('this.state.currWap', this.state.currWap);
     const wapToAdd = JSON.parse(JSON.stringify(this.state.currWap))
     const undoWaps = this.state.undoWaps
     undoWaps.push(wapToAdd)

@@ -3,7 +3,7 @@ import { suggestImgs } from '../../../../services/search.imgs.service.js'
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, ButtonGroup, TextField } from '@material-ui/core'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const _ = require("lodash");
 
@@ -33,6 +33,10 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     const [fileState, setFile] = useState(file)
     const [searchState, setSearch] = useState(searchFile)
 
+    useEffect(() => {
+        onSubmitForm()
+    }, [fileState])
+
     const fileToSearch = async ({ target }) => {
         setLoading({ isLoding: true })
         const imgs = await suggestImgs(target.value)
@@ -41,7 +45,6 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
     }
 
     const onSubmitForm = async (ev) => {
-        ev.preventDefault()
         if (!fileState.file) return
         setLoading({ isLoding: true })
         const url = await uploadImg(fileState.file)
@@ -68,20 +71,17 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
 
     return (
         <>
-            <form onSubmit={onSubmitForm} className={classes.btnGroup}>
-                <ButtonGroup size="small" variant="text" color="inherit" aria-label="text primary button group">
-                    <Button component="label">
-                        Upload Image
+            <ButtonGroup size="small" variant="text" color="inherit" aria-label="text primary button group">
+                <Button component="label">
+                    Upload new Image
                     <input
-                            type="file"
-                            onChange={({ target }) => setFile({ file: target.files[0] })}
-                            hidden
-                        />
-                    </Button>
-                    <Button type="submit">Save image</Button>
-                    {currCmp.type !== "wap-img" && <Button type="button" onClick={removeBackgroundImg}>Remove image</Button>}
-                </ButtonGroup>
-            </form>
+                        type="file"
+                        onChange={({ target }) => setFile({ file: target.files[0] })}
+                        hidden
+                    />
+                </Button>
+                {currCmp.type !== "wap-img" && <Button type="button" onClick={removeBackgroundImg}>Remove image</Button>}
+            </ButtonGroup>
             <TextField label="Type to search" id="standard-basic"
                 className={classes.btnGroup}
                 value={searchState.term}
