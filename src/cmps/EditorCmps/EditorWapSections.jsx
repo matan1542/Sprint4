@@ -1,12 +1,9 @@
-import React, { Component } from "react";
 import { DynamicCmps } from "./WapCmps/DynamicCmps";
 import { Droppable } from "react-beautiful-dnd";
 import { Loader } from "../Loader"
 
-export class EditorWapSections extends Component {
-  render() {
-    const { wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit, respView } = this.props;
-    if (!wap) return <Loader />;
+export function EditorWapSections({wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit, respView})  {
+    if (!wap) return <Loader />
     if (!isEdit) {
       return (
         <>
@@ -16,8 +13,7 @@ export class EditorWapSections extends Component {
                 key={cmp.id}
                 cmp={cmp}
                 wap={wap}
-                isEdit={isEdit}
-              />
+                isEdit={isEdit}/>
             );
           })}
         </>
@@ -54,7 +50,7 @@ export class EditorWapSections extends Component {
       </Droppable>
 
     );
-  }
+ 
 }
 
 

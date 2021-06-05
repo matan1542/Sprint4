@@ -25,12 +25,9 @@ class _Header extends Component {
     }
     render() {
         if (this.state.isPublish) return <div></div>
-        // 
         return (
             <header className="app-header align-center">
                 <Link to="/"><Logo className="app-logo" /></Link>
-
-
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
                 <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
                 <ul className="menu">

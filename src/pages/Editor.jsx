@@ -1,17 +1,18 @@
-import { Component } from "react";
-import { connect } from "react-redux";
-import { DragDropContext } from "react-beautiful-dnd";
+import { Component } from "react"
+import { connect } from "react-redux"
+import { DragDropContext } from "react-beautiful-dnd"
 
-import { cmpService } from "../services/cmp.service.js";
-import { wapService } from "../services/wap.service";
+import { cmpService } from "../services/cmp.service.js"
+import { wapService } from "../services/wap.service"
 
-import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js";
+import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js"
 import { setMsg } from '../store/actions/user.msg.actions.js'
+// import { ScreenCapture } from 'react-screen-capture'
 
-import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
-import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
+import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar"
+import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections"
 import { UserMsg } from "../cmps/UserMsg.jsx"
-import { Loader } from "../cmps/Loader.jsx";
+import { Loader } from "../cmps/Loader.jsx"
 
 
 
@@ -22,6 +23,7 @@ export class _Editor extends Component {
     currCmp: null,
     respView: "large-view",
   };
+  
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
@@ -171,12 +173,10 @@ export class _Editor extends Component {
     const { editorStatus, currCmp, currWap, respView } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
-    // if (window.innerWidth <= 450) return <h1 className="mobile-msg">Editor dosen't support mobile device</h1>
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
-
           <EditorSideBar
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
@@ -191,8 +191,7 @@ export class _Editor extends Component {
             onDragEnd={this.onDragEnd}
             cmps={cmps}
             isEdit={true}
-            handleChange={this.handleChange}
-          />
+            handleChange={this.handleChange}/>
           <div className="editor-wap">
             <EditorWapSections
               wap={currWap}
@@ -202,9 +201,7 @@ export class _Editor extends Component {
               onUpdateCurrCmp={this.onUpdateCurrCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
-              respView={respView}
-
-            />
+              respView={respView}/>
           </div>
         </DragDropContext>
       </section>

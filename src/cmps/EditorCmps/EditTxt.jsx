@@ -6,7 +6,6 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
 
 
   const handleChange = ({ target }) => {
-    //const field = target.attributes.name.value
     const value = target.innerText
     setCmpTxt(value)
   }

@@ -1,5 +1,5 @@
 import { EditorWapCmps } from "../EditorWapCmps";
-import { Draggable /* Droppable */ } from "react-beautiful-dnd";
+import { Draggable } from "react-beautiful-dnd";
 
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
@@ -58,13 +58,6 @@ export function WapSection({
             >
               
               {cmp.cmps && (
-                // <Droppable type="section" direction={(cmp.info.style.flexDirection === 'row' || cmp.info.style.flexDirection === 'row-reverse') ? 'horizontal' : 'vertical'}
-                //     droppableId={cmp.id} isCombineEnabled>
-                //     {(provided) => (
-                //         <div
-                //             ref={provided.innerRef}
-                //             {...provided.droppableProps}
-                //         >
                 <EditorWapCmps
                   cmp={cmp}
                   onCmpFocus={onCmpFocus}
@@ -74,10 +67,6 @@ export function WapSection({
                   wap={wap}
                   isEdit={isEdit}
                 />
-                //             {provided.placeholder}
-                //         </div>
-                //     )}
-                // </Droppable>
               )}
 
               <div className="wap-section-tool">
