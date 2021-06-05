@@ -5,7 +5,7 @@ import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 import UndoIcon from '@material-ui/icons/Undo';
 
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
-import { Box, Button, createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import {createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 
 import { SelectResponsiveView } from "../EditorCmps/SelectResponsiveView";
 
