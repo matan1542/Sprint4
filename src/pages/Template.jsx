@@ -22,6 +22,7 @@ class _Templates extends Component {
         if (!waps) return <Loader />
         return (
             <section className="template-section">
+                <h2 className="title-template">Select a template or create a site from scratch</h2>
                 <div className="template-list">
                     {waps.map((wap, idx) =>{
                         return(
