@@ -3,7 +3,7 @@
 //     return (
 //       <div className='flex space-between mb-2'>
 //         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
-        
+
 //         <button variant="contained" 
 //           style={{ backgroundColor: this.state.color, marginRight: '20px'}}
 //           title={this.props.name} 
@@ -35,7 +35,7 @@ export class EditColor extends React.Component {
       a: '1',
     },
   };
-  
+
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker })
   };
@@ -45,11 +45,11 @@ export class EditColor extends React.Component {
   };
 
   handleChange = async (color) => {
-    const { currCmp, onUpdateCurrCmp, att} = this.props
+    const { currCmp, onUpdateCurrCmp, att } = this.props
     this.setState({ color: color.rgb })
     const { r, g, b, a } = color.rgb
     const value = `rgba(${r},${g},${b},${a})`
-    const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style, [att]:`${value}`}}}
+    const cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, [att]: `${value}` } } }
     await onUpdateCurrCmp(cmp)
 
   };
@@ -62,7 +62,7 @@ export class EditColor extends React.Component {
           width: '36px',
           height: '14px',
           borderRadius: '2px',
-          background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+          background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
         },
         swatch: {
           padding: '5px',
@@ -85,17 +85,16 @@ export class EditColor extends React.Component {
         },
       },
     });
-
     return (
       <div className="color-picker flex space-between mb-3" >
         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
-        <div style={ styles.swatch } onClick={ this.handleClick }>
-          <div style={ styles.color } />
+        <div style={styles.swatch} onClick={this.handleClick}>
+          <div style={styles.color} />
         </div>
-        { this.state.displayColorPicker ? <div style={ styles.popover }>
-          <div style={ styles.cover } onClick={ this.handleClose }/>
-          <SketchPicker color={ this.state.color } onChange={ this.handleChange } />
-        </div> : null }
+        { this.state.displayColorPicker ? <div style={styles.popover}>
+          <div style={styles.cover} onClick={this.handleClose} />
+          <SketchPicker color={this.state.color} onChange={this.handleChange} />
+        </div> : null}
 
       </div>
     )

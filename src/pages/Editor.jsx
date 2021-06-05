@@ -202,6 +202,7 @@ export class _Editor extends Component {
     const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
+    if (window.innerWidth <= 450) return <h1 className="mobile-msg">Editor dosen't support mobile device</h1>
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
