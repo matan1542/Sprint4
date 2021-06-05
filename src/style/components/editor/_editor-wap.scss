@@ -58,7 +58,7 @@
     }
 }
 
-@media screen and (max-width: $editor-mobile-breakpoint) {
+@media screen and (max-width: $editor-mobile-breakpoint) {   
     .editor-wap {
         margin: 0 auto;
         flex: 0 1 auto;
@@ -87,6 +87,33 @@
             padding-inline: 20px !important;
             padding-block: 10px !important;
         }
+    }
+    .app-editor {
+        flex-direction: column !important;
+        justify-content: flex-start ;
+    }
+    .editor-side{
+        flex-direction: row !important;  
+        &-bar { 
+            flex-direction: row !important;
+            height: 100px;
+            min-width: 100%; 
+            margin: 0;
+            border-radius: 0px;
+        }
+        .editor-sections-list {
+            padding: 0;
+        }
+        .side-bar-nav {
+            display: none;
+        }
+        .add-bar {
+            flex-direction: row !important;
+        }
+            //     flex-wrap: wrap !important;
+        //     width: 100% !important;
+        //     height: 200px !important;
+        // }
     }
 }
 

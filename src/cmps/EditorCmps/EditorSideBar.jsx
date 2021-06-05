@@ -58,7 +58,7 @@ export class EditorSideBar extends Component {
 
     render() {
         return (
-            <div className="editor-side">
+            <div className="editor-side flex column">
                 <div className="editor-side-bar flex column mb-4">
                     <ThemeProvider theme={theme}>
                         <CssBaseline />
