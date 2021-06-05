@@ -72,15 +72,11 @@ export class EditorSideBar extends Component {
                             {this.DynamicCmp()}
                         </div>
                     </ThemeProvider>
-                </div>
-                <div className="editor-publish w-100 flex space-around wrap" >
-
-                    {/* <Button variant="outlined" color="primary" onClick={this.props.onPublish}>Publish</Button> */}
+                    <div className="editor-publish w-100 flex space-around wrap" >
                     <button className="btn-publish" color="primary" onClick={this.props.onPublish}>Publish</button>
-
-                    {/* <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button> */}
-                    {/* <Button variant="outlined" color="primary" onClick={this.props.saveWap}>Save</Button> */}
                 </div>
+                </div>
+                
             </div>
         )
     }
