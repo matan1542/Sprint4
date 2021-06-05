@@ -1,17 +1,18 @@
-import { Component } from "react";
-import { connect } from "react-redux";
-import { DragDropContext } from "react-beautiful-dnd";
+import { Component } from "react"
+import { connect } from "react-redux"
+import { DragDropContext } from "react-beautiful-dnd"
 
-import { cmpService } from "../services/cmp.service.js";
-import { wapService } from "../services/wap.service";
+import { cmpService } from "../services/cmp.service.js"
+import { wapService } from "../services/wap.service"
 
-import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js";
+import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js"
 import { setMsg } from '../store/actions/user.msg.actions.js'
+// import { ScreenCapture } from 'react-screen-capture'
 
-import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
-import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
+import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar"
+import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections"
 import { UserMsg } from "../cmps/UserMsg.jsx"
-import { Loader } from "../cmps/Loader.jsx";
+import { Loader } from "../cmps/Loader.jsx"
 
 
 
@@ -21,12 +22,15 @@ export class _Editor extends Component {
     currWap: null,
     currCmp: null,
     respView: "large-view",
-    undoWaps: []
+    undoWaps: [],
+    screenCapture: ''
   };
+  
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
+   
   }
   // componentWillReceiveProps(newProps) { console.log(newProps); }
 
@@ -226,7 +230,7 @@ export class _Editor extends Component {
             isEdit={true}
             handleChange={this.handleChange}
           />
-          <div className="editor-wap">
+          <div className="editor-wap" >
             <EditorWapSections
               wap={currWap}
               isEdit={true}

@@ -1,6 +1,5 @@
 /* eslint-disable default-case */
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
-import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp, google }) {
   const pos = {
