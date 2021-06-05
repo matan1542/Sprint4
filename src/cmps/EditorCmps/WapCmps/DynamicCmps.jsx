@@ -2,6 +2,7 @@ import { WapTxt } from "./WapTxt";
 import { WapBtn } from "./WapBtn";
 import { WapSection } from "./WapSection";
 import { WapNav } from "./WapNav";
+import { WapNavLink } from "./WapNavLink";
 import { WapImg } from "./WapImg";
 import { WapCard } from "./WapCards";
 
@@ -66,6 +67,18 @@ export class DynamicCmps extends Component {
             onUpdateCurrCmp={onUpdateCurrCmp}
             onDeleteCmp={onDeleteCmp}
             idx={idx}
+          />
+        );
+      case "wap-nav-link":
+        return (
+          <WapNavLink
+            cmp={cmp}
+            wap={wap}
+            isEdit={isEdit}
+            updateWap={updateWap}
+            onCmpFocus={onCmpFocus}
+            onDeleteCmp={onDeleteCmp}
+            onUpdateCurrCmp={onUpdateCurrCmp}
           />
         );
       case "wap-card":

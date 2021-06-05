@@ -30,11 +30,7 @@ class _Header extends Component {
             <header className="app-header align-center">
                 <Link to="/"><Logo className="app-logo" /></Link>
 
-                {/* <nav>
-                        <NavLink exact to="/"> Home </NavLink>
-                        <NavLink to="/template">Templates</NavLink>
-                        <NavLink to="/editor">Editor</NavLink>
-                    </nav> */}
+
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
                 <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
                 <ul className="menu">
