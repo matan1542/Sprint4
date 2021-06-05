@@ -3,7 +3,7 @@ import { Droppable } from "react-beautiful-dnd";
 import { Loader } from "../Loader"
 
 export function EditorWapSections({wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit, respView})  {
-    if (!wap) return <Loader />;
+    if (!wap) return <Loader />
     if (!isEdit) {
       return (
         <>
@@ -13,8 +13,7 @@ export function EditorWapSections({wap, onCmpFocus, onDeleteCmp, onUpdateCurrCmp
                 key={cmp.id}
                 cmp={cmp}
                 wap={wap}
-                isEdit={isEdit}
-              />
+                isEdit={isEdit}/>
             );
           })}
         </>

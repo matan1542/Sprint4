@@ -172,12 +172,10 @@ export class _Editor extends Component {
     const { editorStatus, currCmp, currWap, respView } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
-    // if (window.innerWidth <= 450) return <h1 className="mobile-msg">Editor dosen't support mobile device</h1>
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
-
           <EditorSideBar
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
@@ -192,9 +190,8 @@ export class _Editor extends Component {
             onDragEnd={this.onDragEnd}
             cmps={cmps}
             isEdit={true}
-            handleChange={this.handleChange}
-          />
-          <div className="editor-wap" >
+            handleChange={this.handleChange}/>
+          <div className="editor-wap">
             <EditorWapSections
               wap={currWap}
               isEdit={true}
@@ -203,9 +200,7 @@ export class _Editor extends Component {
               onUpdateCurrCmp={this.onUpdateCurrCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
-              respView={respView}
-
-            />
+              respView={respView}/>
           </div>
         </DragDropContext>
       </section>
