@@ -102,18 +102,23 @@
             border-radius: 0px;
         }
         .editor-sections-list {
-            padding: 0;
+            padding: 6px;
+            height: 100px;
+            min-width: 61vw;
+            .edit-empty {
+                margin: 25px auto;
+                // font-size: 15px;
+            }
         }
         .side-bar-nav {
             display: none;
         }
-        .add-bar {
-            flex-direction: row !important;
+        .editor-publish {
+            padding:5px;
+            button {
+                padding: 10px 15px;
+            }
         }
-            //     flex-wrap: wrap !important;
-        //     width: 100% !important;
-        //     height: 200px !important;
-        // }
     }
 }
 

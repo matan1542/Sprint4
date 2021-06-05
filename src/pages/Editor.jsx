@@ -27,7 +27,7 @@ export class _Editor extends Component {
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
     var screenView = ((window.innerWidth <= 555) ? 'small-view' : (window.innerWidth <= 815) ? 'medium-view' : 'large-view')
-    this.setState({respView: screenView})
+    this.setState({respView: screenView, editorStatus: "edit"})
   }
   // componentWillReceiveProps(newProps) { console.log(newProps); }
 
