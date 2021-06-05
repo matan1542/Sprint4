@@ -66,17 +66,16 @@ export class EditorSideBar extends Component {
                         <nav className="side-bar-nav flex">
                             <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
                             <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
-                            <UndoIcon className={`undo ${this.props.undoWaps.length > 1 && 'undo-active'}`} onClick={this.props.onUndoWap} />
                         </nav>
                         <div className="editor-sections-list">
                             {this.DynamicCmp()}
                         </div>
                     </ThemeProvider>
                     <div className="editor-publish w-100 flex space-around wrap" >
-                    <button className="btn-publish" color="primary" onClick={this.props.onPublish}>Publish</button>
+                        <button className="btn-publish" color="primary" onClick={this.props.onPublish}>Publish</button>
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
         )
     }

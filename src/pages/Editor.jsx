@@ -21,7 +21,6 @@ export class _Editor extends Component {
     currWap: null,
     currCmp: null,
     respView: "large-view",
-    undoWaps: []
   };
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
@@ -43,8 +42,7 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
-    const undoWaps = [{ ...currWap }]
-    await this.setState({ ...this.state, currWap, undoWaps })
+    await this.setState({ ...this.state, currWap })
   }
 
   onCmpFocus = (ev, currCmp) => {
@@ -65,7 +63,6 @@ export class _Editor extends Component {
   };
 
   onUpdateCurrCmp = async (currCmp) => {
-    const undoWaps = await this.onAddUndo()
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const copyWap = { ...this.state.currWap }
@@ -74,7 +71,6 @@ export class _Editor extends Component {
       ...prevState,
       currCmp,
       currWap,
-      undoWaps
     }))
   };
 
@@ -93,32 +89,12 @@ export class _Editor extends Component {
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
     const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
-    const undoWaps = await this.onAddUndo()
     this.setState(prevState => ({
       ...prevState,
       currWap: wap,
-      undoWaps
     }))
   };
 
-  onUndoWap = () => {
-    if (this.state.undoWaps.length <= 1) return;
-    const undoWaps = [...this.state.undoWaps]
-    const wap = undoWaps.pop()
-    const currWap = { ...wap }
-    this.setState(prevState => ({
-      ...prevState,
-      currWap,
-      undoWaps: [...undoWaps]
-    }))
-  }
-
-  onAddUndo = () => {
-    const wapToAdd = JSON.parse(JSON.stringify(this.state.currWap))
-    const undoWaps = this.state.undoWaps
-    undoWaps.push(wapToAdd)
-    return Promise.resolve(undoWaps)
-  }
 
   onSaveWap = async () => {
     try {
@@ -149,7 +125,7 @@ export class _Editor extends Component {
   }
 
   onDragEnd = async (res) => {
-    const { destination, source, draggableId, /* type */ } = res;
+    const { destination, source, draggableId } = res;
     if (!destination) {
       return;
     }
@@ -160,16 +136,6 @@ export class _Editor extends Component {
       return;
     }
     if (source.droppableId === "1" && destination.droppableId === "2") return;
-
-    // if (type === 'section') {
-    //   const wapCmps = this.props.currWap;
-    //   const tempCmps = wapCmps.cmps.find(cmp => cmp.id === source.droppableId)
-    //   const tempCmp = tempCmps.cmps[source.index]
-    //   tempCmps.cmps.splice(source.index, 1, tempCmps.cmps[destination.index]);
-    // tempCmps.cmps.splice(destination.index, 1, tempCmp);
-    // await this.props.updateWap(wapCmps);
-    //   return;
-    // }
 
     if (source.droppableId === "1" && destination.droppableId === "1") {
       const wapCmps = this.state.currWap;
@@ -199,7 +165,7 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
+    const { editorStatus, currCmp, currWap, respView } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
     if (window.innerWidth <= 450) return <h1 className="mobile-msg">Editor dosen't support mobile device</h1>
@@ -209,8 +175,6 @@ export class _Editor extends Component {
         <DragDropContext onDragEnd={this.onDragEnd}>
 
           <EditorSideBar
-            onUndoWap={this.onUndoWap}
-            undoWaps={undoWaps}
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
             editorStatus={editorStatus}
