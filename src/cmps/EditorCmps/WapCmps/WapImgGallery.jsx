@@ -7,12 +7,12 @@ export function WapImgGallery({ cmp,
     isEdit }) {
     if (!isEdit) {
         return (
-            <ul className="clean-list flex wrap publish">
-                { cmp.info.urls.map((url, idx) => {
-                    return <li key={idx}> <WapImg cmp={cmp}
-                        isEdit={isEdit} /></li>
+            <>
+                { cmp.cmps.map((cmp, idx) => {
+                    return <WapImg key={idx} cmp={cmp}
+                        isEdit={isEdit} />
                 })}
-            </ul>
+            </>
         )
     }
     return (
