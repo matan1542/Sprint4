@@ -5,6 +5,7 @@ import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
 import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 import UndoIcon from '@material-ui/icons/Undo';
+import PublishIcon from '@material-ui/icons/Publish';
 
 import { SelectResponsiveView } from "../EditorCmps/SelectResponsiveView";
 
@@ -59,7 +60,7 @@ export class EditorSideBar extends Component {
                         </div>
                     </ThemeProvider>
                     <div className="editor-publish w-100 flex space-around wrap" >
-                        <button className="btn-publish" color="primary" onClick={this.props.onPublish}>Publish</button>
+                        <button className="btn-publish" color="primary" onClick={this.props.onPublish}>{(window.innerWidth < 555) ? <PublishIcon /> : 'Publish'}</button>
                     </div>
                 </div>
 

@@ -69,6 +69,7 @@
             }
             img {
                 width: 100% !important;
+                min-width: unset !important;
                 border-radius: 0px !important;
                 padding-inline: 0px !important;
             }
@@ -78,10 +79,6 @@
             &.wap-header {
                 flex-direction: column !important;
             }
-        }
-        .wap-text {
-            width: 100% !important;
-            padding-inline: 0px !important;
         }
         button.wap-text {
             padding-inline: 20px !important;
@@ -157,8 +154,14 @@
             }
             img {
                 width: 100% !important;
+                min-width: unset !important;
                 border-radius: 0px !important;
                 padding-inline: 0px !important;
+            }
+            .wap-text {
+                margin: 10px !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
             }
             .wap-card {
                 align-items: center !important;
