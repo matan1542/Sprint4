@@ -50,7 +50,6 @@ export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
               id="demo-simple-select-outlined"
               value={flexDirection}
               onChange={handleChange}
-              label="FlexDirection"
               size="small"
             >
               <MenuItem value={val}>{val}</MenuItem>
