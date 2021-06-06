@@ -74,12 +74,12 @@ export function WapSection({
                 >
                   <EditOutlinedIcon />
                 </button>
-                <button
+                {/* <button
                   className="wap-el-btn-del"
                   onClick={() => onCloneCmp(cmp)}
                 >
                   <FileCopyOutlinedIcon />
-                </button>
+                </button> */}
                 <button
                   className="wap-el-btn-del"
                   onClick={() => onDeleteCmp(cmp.id)}

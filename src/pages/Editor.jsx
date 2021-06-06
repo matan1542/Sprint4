@@ -204,7 +204,6 @@ export class _Editor extends Component {
 
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
-    console.log("🚀 ~ file: Editor.jsx ~ line 182 ~ _Editor ~ render ~ undoWaps", undoWaps)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
     return (
