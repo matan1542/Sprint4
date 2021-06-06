@@ -21,16 +21,17 @@ export class _Editor extends Component {
     editorStatus: "add",
     currWap: null,
     currCmp: null,
+    undoWaps: [],
     respView: "large-view",
   };
-  
+
   async componentDidMount() {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
     let screenView = ((window.innerWidth <= 555) ? 'small-view' : (window.innerWidth <= 815) ? 'medium-view' : 'large-view')
     let status = ((window.innerWidth <= 555) ? 'edit' : 'add')
-    this.setState({respView: screenView, editorStatus: status})
+    this.setState({ respView: screenView, editorStatus: status })
   }
   // componentWillReceiveProps(newProps) { console.log(newProps); }
 
@@ -47,7 +48,9 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
-    await this.setState({ ...this.state, currWap })
+    const { undoWaps } = this.state
+    undoWaps.push(JSON.parse(JSON.stringify(currWap)))
+    await this.setState({ ...this.state, currWap, undoWaps })
   }
 
   onCmpFocus = (ev, currCmp) => {
@@ -59,10 +62,12 @@ export class _Editor extends Component {
   }
 
   onDeleteCmp = async (cmpId) => {
+    const undoWaps = await this.addUndoWap()
     const currWap = await wapService.deleteTarget(this.state.currWap, cmpId);
     this.setState(prevState => ({
       ...prevState,
       currWap,
+      undoWaps,
       currCmp: null
     }))
   };
@@ -75,7 +80,7 @@ export class _Editor extends Component {
     this.setState(prevState => ({
       ...prevState,
       currCmp,
-      currWap,
+      currWap
     }))
   };
 
@@ -87,18 +92,41 @@ export class _Editor extends Component {
   };
 
   onAddCmp = async (cmpId, idx) => {
+    const undoWaps = await this.addUndoWap()
     const { currWap } = this.state
     const wapToSave = { ...currWap }
     cmpId = cmpId.substring(1)
     const cmpToUpdate = await this.props.cmps.find(cmp => cmp.id === cmpId);
     const cmp = { ...cmpToUpdate }
     const updatedCmp = await cmpService.changeIds(cmp);
-    const wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
+    let wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
+    wap = JSON.parse(JSON.stringify(wap))
     this.setState(prevState => ({
       ...prevState,
       currWap: wap,
+      undoWaps
     }))
   };
+
+  onUndoWap = () => {
+    if (this.state.undoWaps.length < 2) return
+    const undoWaps = JSON.parse(JSON.stringify(this.state.undoWaps))
+    const currWap = JSON.parse(JSON.stringify(undoWaps.pop()))
+    console.log("🚀 ~ file: Editor.jsx ~ line 140 ~ _Editor ~ undoWaps", undoWaps)
+    console.log("🚀 ~ file: Editor.jsx ~ line 138 ~ _Editor ~ currWap", currWap)
+    this.setState(prevState => ({
+      ...prevState,
+      currWap,
+      undoWaps
+    }))
+  }
+
+  addUndoWap = () => {
+    const wap = JSON.parse(JSON.stringify(this.state.currWap))
+    const undoWaps = JSON.parse(JSON.stringify(this.state.undoWaps))
+    undoWaps.push(wap)
+    return Promise.resolve(undoWaps)
+  }
 
 
   onSaveWap = async () => {
@@ -128,6 +156,7 @@ export class _Editor extends Component {
     const newWap = await this.onSaveWap()
     this.props.history.push(`/publish/${newWap._id}`)
   }
+
 
   onDragEnd = async (res) => {
     const { destination, source, draggableId } = res;
@@ -170,7 +199,8 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView } = this.state;
+    const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
+    console.log("🚀 ~ file: Editor.jsx ~ line 182 ~ _Editor ~ render ~ undoWaps", undoWaps)
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap) return <Loader />
     return (
@@ -178,6 +208,8 @@ export class _Editor extends Component {
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
+            onUndoWap={this.onUndoWap}
+            undoWaps={undoWaps}
             currCmp={currCmp}
             onUpdateCurrCmp={this.onUpdateCurrCmp}
             editorStatus={editorStatus}
@@ -191,7 +223,7 @@ export class _Editor extends Component {
             onDragEnd={this.onDragEnd}
             cmps={cmps}
             isEdit={true}
-            handleChange={this.handleChange}/>
+            handleChange={this.handleChange} />
           <div className="editor-wap">
             <EditorWapSections
               wap={currWap}
@@ -201,7 +233,7 @@ export class _Editor extends Component {
               onUpdateCurrCmp={this.onUpdateCurrCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
-              respView={respView}/>
+              respView={respView} />
           </div>
         </DragDropContext>
       </section>
