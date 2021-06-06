@@ -55,6 +55,8 @@ export function WapSection({
               }}
               onClick={(ev) => onCmpFocus(ev, cmp)}
             >
+              {/* {cmp.type === 'wap-nav' && <input className="wap-nav-menu-btn" type="checkbox" id="wap-nav-menu-btn" />}
+              {cmp.type === 'wap-nav' && <label className="wap-nav-menu-icon" htmlFor="wap-nav-menu-btn"><span className="navicon"></span></label>} */}
               {cmp.cmps && (
                 <EditorWapCmps
                   cmp={cmp}
