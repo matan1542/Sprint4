@@ -40,7 +40,9 @@
         }
    .template-preview{
        margin-bottom:20px;
-       
+       .scratch-template{
+           height:100%;
+       }
        .template-preview-header{
            display:flex;
            align-items: center;

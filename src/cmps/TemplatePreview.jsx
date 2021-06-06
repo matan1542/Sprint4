@@ -3,11 +3,13 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { Link } from "react-router-dom"
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 export function TemplatePreview({ wap, setWapToEditor }) {
   const [hoverState, setHover] = useState(false)
   const toggleHover = () => {
     setHover(!hoverState);
   }
+  const matches = useMediaQuery('(min-width:600px)');
   return (
     <div className="template-preview">
       <div className="template-preview-header">
@@ -22,7 +24,7 @@ export function TemplatePreview({ wap, setWapToEditor }) {
           alt=""
           src={wap.imgUrl}
         ></img>
-        <div className={`template-preview-cover ${hoverState ? 'in-view' : 'out-view'}`} >
+        <div className={`template-preview-cover ${(hoverState || !matches) ? 'in-view' : 'out-view'}`} >
           <div className="template-preview-choose">
             <ArrowRightAltIcon className="icon-arrow" style={{ fontSize: "50px" }} onClick={() => setWapToEditor(wap)} />
             <h2 onClick={() => setWapToEditor(wap)}>
@@ -38,3 +40,5 @@ export function TemplatePreview({ wap, setWapToEditor }) {
     </div>
   );
 }
+
+
