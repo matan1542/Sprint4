@@ -5,7 +5,6 @@ import { WapNav } from "./WapNav";
 import { WapNavLink } from "./WapNavLink";
 import { WapImg } from "./WapImg";
 import { WapCard } from "./WapCards";
-import { LinearWithValueLabel } from "./WapProg"
 
 import { Component } from "react";
 import { WapForm } from "./WapForm";
@@ -147,16 +146,6 @@ export class DynamicCmps extends Component {
           <WapImgGallery cmp={cmp}
             isEdit={isEdit} onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp} />
-        );
-      case "wap-progress":
-        return (
-          <LinearWithValueLabel cmp={cmp}
-            wap={wap}
-            isEdit={isEdit}
-            updateWap={updateWap}
-            onCmpFocus={onCmpFocus}
-            onDeleteCmp={onDeleteCmp}
-            onUpdateCurrCmp={onUpdateCurrCmp} />
         );
       default:
         return null;
