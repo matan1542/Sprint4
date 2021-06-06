@@ -23,6 +23,7 @@ export class _Editor extends Component {
     currCmp: null,
     undoWaps: [],
     respView: "large-view",
+    isLodaing:false
   };
 
   async componentDidMount() {
@@ -157,7 +158,9 @@ export class _Editor extends Component {
       }, 3000)
       return
     }
+    this.setState({isLodaing: true})
     const newWap = await this.onSaveWap()
+    this.setState({isLodaing: false})
     this.props.history.push(`/publish/${newWap._id}`)
   }
 
@@ -203,9 +206,9 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
+    const { editorStatus, currCmp, currWap, respView, undoWaps,isLodaing } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
-    if (!currWap) return <Loader />
+    if (!currWap || isLodaing) return <Loader />
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
