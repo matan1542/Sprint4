@@ -9,8 +9,14 @@ import { TemplatePreview } from "../cmps/TemplatePreview";
 import { Link } from "react-router-dom";
 
 class _Templates extends Component {
+  state = {
+    waps: null
+  }
   async componentDidMount() {
     await this.props.loadWaps();
+    const waps = this.props.waps.filter(wap => wap.isPublic === true)
+    console.log("🚀 ~ file: Template.jsx ~ line 18 ~ _Templates ~ componentDidMount ~ waps", waps)
+    this.setState({ waps })
   }
 
   setWapToEditor = async (wapId) => {
@@ -19,7 +25,7 @@ class _Templates extends Component {
   };
 
   render() {
-    const { waps } = this.props;
+    const waps = this.props.waps.filter(wap => wap.isPublic === true)
     if (!waps) return <Loader />;
     return (
       <section className="template-section">
@@ -32,7 +38,7 @@ class _Templates extends Component {
             style={{ color: "#fff" }}
             to={`/editor`}
           >
-            <div className="template-preview" style={{height:"100%"}}>
+            <div className="template-preview" style={{ height: "100%" }}>
               <div className="template-preview-header">
                 <MoreHorizIcon fontSize="large" style={{ color: "white" }} />
                 <p className="template-preview-header-text">
