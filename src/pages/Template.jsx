@@ -25,7 +25,7 @@ class _Templates extends Component {
   };
 
   render() {
-    const waps = this.props.waps.filter(wap => wap.isPublic === true)
+    // const waps = this.props.waps.filter(wap => wap.isPublic === true)
     if (!waps) return <Loader />;
     return (
       <section className="template-section">
