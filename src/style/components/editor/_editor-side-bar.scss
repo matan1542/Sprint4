@@ -4,11 +4,11 @@
   min-width: 272px;
   max-width: 272px;
   align-items: center;
-  padding: 10px;
+  padding-right: 10px;
   height: 100%;
   box-shadow: 0 3px 6px rgba(0, 0, 100, 0.15);
   border-radius: 0px 0px 1rem 0px;
-  margin: 0px 8px 0px 0px;
+  margin: 0 0 8px;
 
   .side-bar-nav {
     align-items: center;
@@ -30,12 +30,16 @@
     }
   }
   .editor-sections-list {
+    padding: 20px 0 0 10px;
     height: 80vh;
     width: 100%;
     margin-top: 3px;
     font-family: raleway;
     overflow-x: hidden;
     overflow-y: auto;
+    .edit-bar{
+      padding-left: 10px;
+    }
   }
   .btn-section {
     position: absolute;
