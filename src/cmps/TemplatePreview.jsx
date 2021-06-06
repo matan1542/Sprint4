@@ -22,8 +22,7 @@ export function TemplatePreview({ wap, setWapToEditor }) {
           className="template-img"
           onClick={() => setWapToEditor(wap)}
           alt=""
-          src={wap.imgUrl}
-        ></img>
+          src={wap.imgUrl}></img>
         <div className={`template-preview-cover ${(hoverState || !matches) ? 'in-view' : 'out-view'}`} >
           <div className="template-preview-choose">
             <ArrowRightAltIcon className="icon-arrow" style={{ fontSize: "50px" }} onClick={() => setWapToEditor(wap)} />
