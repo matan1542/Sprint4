@@ -18,6 +18,7 @@ export class DynamicCmps extends Component {
       onCmpFocus,
       onUpdateCurrCmp,
       cmp,
+      onCloneCmp,
       onDeleteCmp,
       idx,
       updateWap,
@@ -32,6 +33,7 @@ export class DynamicCmps extends Component {
           isEdit={isEdit}
           updateWap={updateWap}
           onCmpFocus={onCmpFocus}
+          onCloneCmp={onCloneCmp}
           onDeleteCmp={onDeleteCmp}
           onUpdateCurrCmp={onUpdateCurrCmp}/>
         )
@@ -44,6 +46,7 @@ export class DynamicCmps extends Component {
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
+            onCloneCmp={onCloneCmp}
             onDeleteCmp={onDeleteCmp}
             idx={idx}
             respView={respView}/>
@@ -53,6 +56,7 @@ export class DynamicCmps extends Component {
           <WapVideo
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
+            onCloneCmp={onCloneCmp}
             cmp={cmp}
             isEdit={isEdit}
           />
@@ -64,6 +68,7 @@ export class DynamicCmps extends Component {
             wap={wap}
             isEdit={isEdit}
             updateWap={updateWap}
+            onCloneCmp={onCloneCmp}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
             onDeleteCmp={onDeleteCmp}
@@ -77,6 +82,7 @@ export class DynamicCmps extends Component {
             wap={wap}
             isEdit={isEdit}
             updateWap={updateWap}
+            onCloneCmp={onCloneCmp}
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
             onUpdateCurrCmp={onUpdateCurrCmp}
@@ -89,6 +95,7 @@ export class DynamicCmps extends Component {
             wap={wap}
             isEdit={isEdit}
             updateWap={updateWap}
+            onCloneCmp={onCloneCmp}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
             onDeleteCmp={onDeleteCmp}
@@ -96,6 +103,7 @@ export class DynamicCmps extends Component {
           />
         );
       case "wap-text":
+        // console.log('cmp.parentID:', cmp)
         return (
           <WapTxt
             cmp={cmp}
@@ -104,6 +112,7 @@ export class DynamicCmps extends Component {
             updateWap={updateWap}
             onCmpFocus={onCmpFocus}
             onUpdateCurrCmp={onUpdateCurrCmp}
+            onCloneCmp={onCloneCmp}
             onDeleteCmp={onDeleteCmp} />
         );
       case "wap-btn":
@@ -113,6 +122,7 @@ export class DynamicCmps extends Component {
             wap={wap}
             isEdit={isEdit}
             updateWap={updateWap}
+            onCloneCmp={onCloneCmp}
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
             onUpdateCurrCmp={onUpdateCurrCmp}
@@ -126,6 +136,7 @@ export class DynamicCmps extends Component {
             cmp={cmp}
             isEdit={isEdit}
             updateWap={updateWap}
+            onCloneCmp={onCloneCmp}
             onCmpFocus={onCmpFocus}
             onDeleteCmp={onDeleteCmp}
             onUpdateCurrCmp={onUpdateCurrCmp}

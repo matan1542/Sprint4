@@ -18,6 +18,7 @@ export const wapService = {
     getTarget,
     updateTarget,
     deleteTarget,
+    cloneTarget,
     addCmp
 }
 
@@ -109,4 +110,8 @@ async function deleteTarget(wap, passedId) {
     } catch (err) {
         throw new Error('Problem in delete function');
     }
+}
+
+async function cloneTarget(cmp, parentId){
+    console.log("cmp: ",cmp, "parent: ", parentId)
 }

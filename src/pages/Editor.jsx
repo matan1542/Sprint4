@@ -79,6 +79,10 @@ export class _Editor extends Component {
     }))
   };
 
+  onCloneCmp = async (cmp, idx) => {
+    await wapService.cloneTarget(cmp, idx);
+  };
+
   onEdit = () => {
     this.setState({ editorStatus: "edit" });
   };
@@ -199,6 +203,7 @@ export class _Editor extends Component {
               onCmpFocus={this.onCmpFocus}
               currCmp={currCmp}
               onUpdateCurrCmp={this.onUpdateCurrCmp}
+              onCloneCmp={this.onCloneCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
               respView={respView}/>

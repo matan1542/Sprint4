@@ -12,7 +12,11 @@ export class EditColor extends React.Component {
       a: '1',
     },
   };
-
+  componentDidMount() {
+    // const color = this.props.currCmp.info.style[this.props.att]
+    // console.log('color', color.toHex())
+    // this.setState({...this.state, color: this.props.currCmp.info.style.att})
+  }
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker })
   };

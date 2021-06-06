@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import { EditorWapCmps } from "../EditorWapCmps";
 import { EditTxt } from "../EditTxt";
 
@@ -8,6 +9,7 @@ export function WapTxt({
   onCmpFocus,
   onUpdateCurrCmp,
   onDeleteCmp,
+  onCloneCmp,
   updateWap,
   wap,
   isEdit
@@ -63,6 +65,13 @@ export function WapTxt({
       <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
         <DeleteForeverOutlinedIcon />
       </button>
+        {/* <button
+          className="wap-el-btn-del"
+          onClick={() => onCloneCmp(cmp, cmp.parentId)}
+        >
+          <FileCopyOutlinedIcon />
+        </button>
+       */}
     </div>
   );
 }
