@@ -4,6 +4,7 @@ import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
 import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import UndoIcon from '@material-ui/icons/Undo';
 
 import { SelectResponsiveView } from "../EditorCmps/SelectResponsiveView";
 
@@ -51,6 +52,7 @@ export class EditorSideBar extends Component {
                         <nav className="side-bar-nav flex">
                             <button className={`${this.props.editorStatus === 'add' && 'status-marker'}`} onClick={() => this.props.onAdd()}>Add</button>
                             <button className={`${this.props.editorStatus === 'edit' && 'status-marker'}`} onClick={() => this.props.onEdit()}>Edit</button>
+                            <UndoIcon className={`undo ${this.props.undoWaps.length > 1 && 'undo-active'}`} onClick={this.props.onUndoWap} />
                         </nav>
                         <div className="editor-sections-list">
                             {this.DynamicCmp()}

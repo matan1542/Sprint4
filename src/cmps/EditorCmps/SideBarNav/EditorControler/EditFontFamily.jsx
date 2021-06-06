@@ -49,7 +49,6 @@ export function EditFontFamily({val ,onUpdateCurrCmp ,currCmp }) {
               id="demo-simple-select-outlined"
               value={fontFamily}
               onChange={handleChange}
-              label="Font"
               size="small"
             >
               <MenuItem value={val}>{val}</MenuItem>

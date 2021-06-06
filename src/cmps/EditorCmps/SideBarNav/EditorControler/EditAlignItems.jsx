@@ -47,7 +47,6 @@ export function EditAlignItems({val ,onUpdateCurrCmp ,currCmp }) {
               id="demo-simple-select-outlined"
               value={alignItems}
               onChange={handleChange}
-              label="alignItems"
               size="small"
             >
                 <MenuItem value="unset">None</MenuItem>

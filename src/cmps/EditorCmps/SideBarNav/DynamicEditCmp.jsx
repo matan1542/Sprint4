@@ -14,9 +14,12 @@ import { EditTextShadow } from './EditorControler/EditTextShadow'
 import { EditWidth } from './EditorControler/EditWidth'
 import { EditBorderRadius } from './EditorControler/EditBorderRadius'
 import { EditBorderWidth } from './EditorControler/EditBorderWidth'
+import { EditNavLink } from './EditorControler/EditNavLink'
 
 export function DynamicEditCmp({ attribute, value, currCmp, onUpdateCurrCmp }) {
     switch (attribute) {
+        case "navLink":
+            return <EditNavLink cmp={currCmp} onUpdateCurrCmp={onUpdateCurrCmp} />
         case "textAlign":
             return <EditAlignText onUpdateCurrCmp={onUpdateCurrCmp} att={attribute} currCmp={currCmp} />
         case "paddingInline":

@@ -48,7 +48,6 @@ export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
               id="demo-simple-select-outlined"
               value={justifyContent}
               onChange={handleChange}
-              label="JustifyContent"
               size="small"
             >
                 <MenuItem value="unset">Unset</MenuItem>
