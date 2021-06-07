@@ -57,21 +57,19 @@ export function WapTxt({
           wap={wap}
           updateWap={updateWap}
           onCmpFocus={onCmpFocus}
+          onCloneCmp={onCloneCmp}
           onUpdateCurrCmp={onUpdateCurrCmp}
           onDeleteCmp={onDeleteCmp}
           isEdit={isEdit}
         />
       )}
-      <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
-        <DeleteForeverOutlinedIcon />
-      </button>
-        {/* <button
-          className="wap-el-btn-del"
-          onClick={() => onCloneCmp(cmp, cmp.parentId)}
-        >
-          <FileCopyOutlinedIcon />
-        </button>
-       */}
+      <div className="wap-el-tool">
+          <button className="wap-el-btn-del"  onClick={() => onCloneCmp(cmp, wap)}>
+            <FileCopyOutlinedIcon />
+          </button>
+          
+          <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}><DeleteForeverOutlinedIcon /></button>
+      </div>
     </div>
   );
 }

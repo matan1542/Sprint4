@@ -94,7 +94,9 @@ export class _Editor extends Component {
     if (cmp.parentId === 'main') {
       currWap.cmps.splice(cmp.idx, 0, clonedCmp)
     } else {
+      // console.log('cmp.parentId:', cmp, cmp.parentId)
       const parent  = await wapService.getTarget(currWap, cmp.parentId)
+      // console.log(parent);
       parent.cmps.splice(cmp.idx, 0, clonedCmp)
     }
     this.setState(prevState => ({
