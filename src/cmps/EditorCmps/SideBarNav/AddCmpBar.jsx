@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function AddCmpBar({ addCmp, changeCmpsIds, currWap, cmps }) {
-    const startExpanded = `panel1a`
+    const startExpanded = `panel0a`
     const [expanded, setExpanded] = useState(startExpanded);
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);

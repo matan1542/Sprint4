@@ -10,6 +10,7 @@ export function AddCmpList({ cmps, sectionType }) {
           return (<Draggable draggableId={`${idx}${cmp.id}`} key={cmp.id} index={idx}>
             {(provided, snapshot) => (
               <div
+              className="sections-imgs-card"
                 ref={provided.innerRef}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}>
