@@ -22,7 +22,7 @@
   right: 0;
   mix-blend-mode: multiply;
   @include for-mobile-layout {
-    width: 350px;
+    width: 320px;
     align-self: center;
     position: unset;
   }
