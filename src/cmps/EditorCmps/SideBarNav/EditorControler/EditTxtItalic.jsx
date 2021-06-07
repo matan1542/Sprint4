@@ -13,6 +13,6 @@ export function EditTxtItalic({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-        <Button onClick={onToggleStyle}><FormatItalicIcon /></Button>
+        <Button onClick={onToggleStyle}>{currCmp.info.style.fontStyle === 'italic' ? <FormatItalicIcon style={{ backgroundColor: 'rgb(230,230,230)', borderRadius: '2px' }} /> : <FormatItalicIcon />}</Button>
     )
 }

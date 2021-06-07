@@ -13,6 +13,6 @@ export function EditTxtBold({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-        <Button onClick={onToggleStyle}><FormatBoldIcon /></Button>
+        <Button onClick={onToggleStyle}>{currCmp.info.style.fontWeight === 'bold' ? <FormatBoldIcon style={{ backgroundColor: 'rgb(230,230,230)', borderRadius: '2px' }} /> : <FormatBoldIcon />}</Button>
     )
 }
