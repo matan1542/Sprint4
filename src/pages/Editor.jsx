@@ -4,7 +4,8 @@ import { DragDropContext } from "react-beautiful-dnd"
 
 import { cmpService } from "../services/cmp.service.js"
 import { wapService } from "../services/wap.service.js"
-import {utilService} from "../services/utils.js"
+import { socketService } from '../services/socket.service.js'
+import { utilService } from "../services/utils.js"
 
 import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js"
 import { setMsg } from '../store/actions/user.msg.actions.js'
@@ -34,12 +35,20 @@ export class _Editor extends Component {
     console.log(this.state.currWap)
     let screenView = ((window.innerWidth <= 555) ? 'small-view' : (window.innerWidth <= 815) ? 'medium-view' : 'large-view')
     let status = ((window.innerWidth <= 555) ? 'edit' : 'add')
+    socketService.setup()
+    socketService.emit('editor id', this.state.currWap.sessionId)
+    socketService.on('update wap', this.updateSocketWap)
     this.setState({ respView: screenView, editorStatus: status })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    socketService.emit('edit wap', prevState.currWap)
   }
   // componentWillReceiveProps(newProps) { console.log(newProps); }
 
   componentWillUnmount() {
     this.props.setWapToEdit(null)
+    socketService.terminate()
   }
 
 
@@ -51,11 +60,20 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
-    if(!currWap.sessionId) currWap.sessionId = utilService.makeId()
-    this.props.history.push(`/editor/${currWap.sessionId}`)
+    if (!currWap.sessionId && !this.props.match.params.id){
+      currWap.sessionId = utilService.makeId()
+      this.props.history.push(`/editor/${currWap.sessionId}`)
+    } 
     const { undoWaps } = this.state
     undoWaps.push(JSON.parse(JSON.stringify(currWap)))
     await this.setState({ ...this.state, currWap, undoWaps })
+  }
+
+  updateSocketWap = (currWap) => {
+    this.setState(prevState => ({
+      ...prevState,
+      currWap
+    }))
   }
 
   onCmpFocus = (ev, currCmp) => {
@@ -69,6 +87,7 @@ export class _Editor extends Component {
   onDeleteCmp = async (cmpId) => {
     const undoWaps = await this.addUndoWap()
     const currWap = await wapService.deleteTarget(this.state.currWap, cmpId);
+
     this.setState(prevState => ({
       ...prevState,
       currWap,
@@ -99,7 +118,7 @@ export class _Editor extends Component {
       currWap.cmps.splice(cmp.idx, 0, clonedCmp)
     } else {
       // console.log('cmp.parentId:', cmp, cmp.parentId)
-      const parent  = await wapService.getTarget(currWap, cmp.parentId)
+      const parent = await wapService.getTarget(currWap, cmp.parentId)
       // console.log(parent);
       parent.cmps.splice(cmp.idx, 0, clonedCmp)
     }
@@ -108,7 +127,7 @@ export class _Editor extends Component {
       currWap,
       undoWaps
     }))
-  
+
   };
 
   onEdit = () => {
@@ -128,6 +147,7 @@ export class _Editor extends Component {
     const updatedCmp = await cmpService.changeIds(cmp);
     let wap = await wapService.addCmp(wapToSave, updatedCmp, idx);
     wap = JSON.parse(JSON.stringify(wap))
+    socketService.emit('change wap', wap)
     this.setState(prevState => ({
       ...prevState,
       currWap: wap,

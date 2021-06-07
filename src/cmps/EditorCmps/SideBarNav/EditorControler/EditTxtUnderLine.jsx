@@ -13,6 +13,6 @@ export function EditTxtUnderLine({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-        <Button onClick={onToggleStyle}><FormatUnderlinedIcon /></Button>
+        <Button onClick={onToggleStyle}>{currCmp.info.style.textDecoration === 'underline' ? <FormatUnderlinedIcon style={{ backgroundColor: 'rgb(230,230,230)', borderRadius: '2px' }} /> : <FormatUnderlinedIcon />}</Button>
     )
 }

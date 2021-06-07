@@ -18,23 +18,26 @@
 }
 
 .main-hero-img {
-  width: 430px;
   position: absolute;
   right: 0;
   mix-blend-mode: multiply;
   @include for-mobile-layout {
+    width: 320px;
     align-self: center;
     position: unset;
   }
   @include for-narrow-layout {
+    width: 430px;
     align-self: center;
     position: unset;
   }
   @include for-normal-layout {
+    // width: 430px;
     align-self: center;
     position: unset;
   }
   @include for-wide-layout {
+    // width: 430px;
     position: absolute;
   }
 }
@@ -88,13 +91,13 @@
   font-size: rem(19px);
   font-family: OpenSans;
   &.out-view {
-      opacity:0;
+    opacity: 0;
     transform: translateX(-100%);
   }
   &.in-view {
-    transition: ease-in ;
-    opacity:1;
-    transition:0.8s;
+    transition: ease-in;
+    opacity: 1;
+    transition: 0.8s;
     // transition: fad-in 0.8s;
     transform: translateX(1px);
   }

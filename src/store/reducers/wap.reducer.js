@@ -3,7 +3,6 @@
 const initialState = {
     waps: null,
     cmps: null,
-    currCmp: null,
     wapToEdit: null
 };
 export function wapReducer(state = initialState, action) {
