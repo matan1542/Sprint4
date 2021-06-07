@@ -133,6 +133,7 @@ export class DynamicCmps extends Component {
         return (
           <WapImg
             cmp={cmp}
+            wap={wap}
             isEdit={isEdit}
             updateWap={updateWap}
             onCloneCmp={onCloneCmp}
@@ -144,7 +145,9 @@ export class DynamicCmps extends Component {
       case "wap-gallery":
         return (
           <WapImgGallery cmp={cmp}
-            isEdit={isEdit} onCmpFocus={onCmpFocus}
+            isEdit={isEdit} 
+            onCmpFocus={onCmpFocus}
+            onCloneCmp={onCloneCmp}
             onDeleteCmp={onDeleteCmp} />
         );
       default:
