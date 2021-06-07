@@ -10,7 +10,6 @@ export function TemplatePreview({ wap, setWapToEditor }) {
     setHover(!hoverState);
   }
   const matches = useMediaQuery('(min-width:600px)');
-  if (!wap.isPublic) return
   return (
     <div className="template-preview">
       <div className="template-preview-header">

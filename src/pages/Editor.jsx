@@ -23,6 +23,7 @@ export class _Editor extends Component {
     currCmp: null,
     undoWaps: [],
     respView: "large-view",
+    isLodaing: false
   };
 
   async componentDidMount() {
@@ -73,6 +74,7 @@ export class _Editor extends Component {
   };
 
   onUpdateCurrCmp = async (currCmp) => {
+    const undoWaps = await this.addUndoWap()
     const copyCmp = { ...currCmp };
     delete copyCmp.id;
     const copyWap = { ...this.state.currWap }
@@ -80,7 +82,8 @@ export class _Editor extends Component {
     this.setState(prevState => ({
       ...prevState,
       currCmp,
-      currWap
+      currWap,
+      undoWaps
     }))
   };
 
@@ -130,8 +133,6 @@ export class _Editor extends Component {
     if (this.state.undoWaps.length < 2) return
     const undoWaps = JSON.parse(JSON.stringify(this.state.undoWaps))
     const currWap = JSON.parse(JSON.stringify(undoWaps.pop()))
-    console.log("🚀 ~ file: Editor.jsx ~ line 140 ~ _Editor ~ undoWaps", undoWaps)
-    console.log("🚀 ~ file: Editor.jsx ~ line 138 ~ _Editor ~ currWap", currWap)
     this.setState(prevState => ({
       ...prevState,
       currWap,
@@ -171,7 +172,9 @@ export class _Editor extends Component {
       }, 3000)
       return
     }
+    this.setState({ isLodaing: true })
     const newWap = await this.onSaveWap()
+    this.setState({ isLodaing: false })
     this.props.history.push(`/publish/${newWap._id}`)
   }
 
@@ -217,9 +220,9 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps } = this.state;
+    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
-    if (!currWap) return <Loader />
+    if (!currWap || isLodaing) return <Loader />
     return (
       <section className="app-editor flex space-between">
         <UserMsg />
