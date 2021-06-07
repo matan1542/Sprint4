@@ -5,7 +5,7 @@ import { Button } from '@material-ui/core'
 export function EditTxtItalic({ onUpdateCurrCmp, currCmp }) {
     const onToggleStyle = async () => {
         let cmp
-        if (currCmp.info.style.fontStyle === 'unset') {
+        if (currCmp.info.style.fontStyle === 'unset' || currCmp.info.style.fontStyle === '') {
             cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, fontStyle: `italic` } } }
         } else {
             cmp = { ...currCmp, info: { ...currCmp.info, style: { ...currCmp.info.style, fontStyle: `unset` } } }
@@ -13,6 +13,6 @@ export function EditTxtItalic({ onUpdateCurrCmp, currCmp }) {
         await onUpdateCurrCmp(cmp)
     }
     return (
-            <Button onClick={onToggleStyle}><FormatItalicIcon /></Button>
+        <Button onClick={onToggleStyle}><FormatItalicIcon /></Button>
     )
 }
