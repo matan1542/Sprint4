@@ -2,7 +2,6 @@ import { EditorWapCmps } from "../EditorWapCmps";
 import { Draggable } from "react-beautiful-dnd";
 
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
-import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 export function WapSection({
   cmp,
