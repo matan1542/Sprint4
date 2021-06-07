@@ -13,9 +13,13 @@ export class EditColor extends React.Component {
     },
   };
   componentDidMount() {
-    // const color = this.props.currCmp.info.style[this.props.att]
-    // console.log('color', color.toHex())
-    // this.setState({...this.state, color: this.props.currCmp.info.style.att})
+      // console.log('att:',this.prop.att, this.props.currCmp.info.style[this.props.att])
+      // let color = this.props.currCmp.info.style[this.props.att]
+      // if(color){
+      //   color = color.split('(')[1].split(')')[0].split(',')
+      //   const colorRgb = {r: color[0], g: color[1], b: color[2], a: color[3]}
+      //   this.setState({...this.state, color: colorRgb })
+      // }
   }
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker })
@@ -26,6 +30,7 @@ export class EditColor extends React.Component {
   };
 
   handleChange = async (color) => {
+    console.log('@@@@ color:', color)
     const { currCmp, onUpdateCurrCmp, att } = this.props
     this.setState({ color: color.rgb })
     const { r, g, b, a } = color.rgb
@@ -66,6 +71,8 @@ export class EditColor extends React.Component {
         },
       },
     });
+    console.log('this.state.color:', this.state.color)
+    console.log('styles.color', styles.color.background);
     return (
       <div className="color-picker flex space-between mb-3" >
         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
