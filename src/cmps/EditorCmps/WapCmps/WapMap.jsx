@@ -7,7 +7,7 @@ function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp, google }) {
     lng: cmp.info.lng,
   };
   return (
-    <div className="wap-el wap-section" style={{ ...cmp.info.style, zIndex: "4" }} onClick={(ev) => onCmpFocus(ev, cmp)}>
+    <div className="wap-section wap-section" style={{ ...cmp.info.style, zIndex: "4" }} onClick={(ev) => onCmpFocus(ev, cmp)}>
       <div className="wap-section-tool" style={{ width: "30px" }}>
         <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
           <DeleteForeverOutlinedIcon />

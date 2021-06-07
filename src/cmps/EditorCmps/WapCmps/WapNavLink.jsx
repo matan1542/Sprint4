@@ -1,8 +1,8 @@
 import React from "react";
+import FileCopyOutlinedIcon from "@material-ui/icons/FileCopyOutlined"
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 import { EditorWapCmps } from "../EditorWapCmps";
 import { EditTxt } from "../EditTxt";
-import { NavLink } from "react-router-dom";
 
 
 export function WapNavLink({
@@ -11,6 +11,7 @@ export function WapNavLink({
   onDeleteCmp,
   onCmpFocus,
   onUpdateCurrCmp,
+  onCloneCmp,
   wap,
   updateWap,
   isEdit
@@ -48,9 +49,20 @@ export function WapNavLink({
         onUpdateCurrCmp={onUpdateCmp}
         onCmpFocus={onCmpFocus}
         element="span" />}
-      <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
-        <DeleteForeverOutlinedIcon />
-      </button>
+      <div className="wap-el-tool">
+              <button
+                className="wap-el-btn-del"
+                onClick={() => onCloneCmp(cmp, wap)}
+              >
+                <FileCopyOutlinedIcon />
+              </button>
+              <button
+                className="wap-el-btn-del"
+                onClick={() => onDeleteCmp(cmp.id)}
+              >
+                <DeleteForeverOutlinedIcon />
+              </button>
+      </div>
       {cmp.cmps && (
         <EditorWapCmps
           cmp={cmp}

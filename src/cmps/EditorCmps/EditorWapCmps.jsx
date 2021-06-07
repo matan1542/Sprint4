@@ -6,11 +6,12 @@ export class EditorWapCmps extends Component {
 
   render() {
     const { cmp, wap, onCmpFocus, onCloneCmp, onDeleteCmp, onUpdateCurrCmp, updateWap, isEdit } = this.props;
-    const parentID = cmp.id
+    const parentId = cmp.id
     return (
       <Fragment>
         {cmp.cmps.map((cmp, idx) => {
-          cmp.parentId = parentID
+          cmp.idx = idx
+          cmp.parentId = parentId
           return (
             <DynamicCmps
               key={cmp.id}
