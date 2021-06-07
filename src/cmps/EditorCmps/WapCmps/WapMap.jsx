@@ -32,7 +32,8 @@ function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp, google }) {
       >
         <Marker position={pos} name={"branch location"} />
       </Map>
-
+      <div className="Map-cover">
+      </div>
     </div>
   );
 }
