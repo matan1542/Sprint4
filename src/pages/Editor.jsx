@@ -84,8 +84,22 @@ export class _Editor extends Component {
     }))
   };
 
-  onCloneCmp = async (cmp, idx) => {
-    await wapService.cloneTarget(cmp, idx);
+  onCloneCmp = async (cmp, currWap) => {
+    console.log('cmp:', cmp)
+    const undoWaps = await this.addUndoWap()
+    const clonedCmp = await cmpService.changeIds(cmp)
+    if (cmp.parentId === 'main') {
+      currWap.cmps.splice(cmp.idx, 0, clonedCmp)
+    } else {
+      const parent  = await wapService.getTarget(currWap, cmp.parentId)
+      parent.cmps.splice(cmp.idx, 0, clonedCmp)
+    }
+    this.setState(prevState => ({
+      ...prevState,
+      currWap,
+      undoWaps
+    }))
+  
   };
 
   onEdit = () => {

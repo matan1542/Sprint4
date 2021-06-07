@@ -4,7 +4,7 @@ import { EditorWapCmps } from "../EditorWapCmps";
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 
-export function WapNav({ onClickFunc, cmp, wap, onDeleteCmp, onCmpFocus, onUpdateCurrCmp, updateWap, isEdit }) {
+export function WapNav({ onClickFunc, cmp, wap, onDeleteCmp, onCloneCmp, onCmpFocus, onUpdateCurrCmp, updateWap, isEdit }) {
   if (!isEdit) {
     return (
       <div className="flex align-center column w-100">    
@@ -21,7 +21,7 @@ export function WapNav({ onClickFunc, cmp, wap, onDeleteCmp, onCmpFocus, onUpdat
     <ul className="wap-section wap-nav-menu flex"
       onClick={(ev) => onCmpFocus(ev, cmp)}
       style={cmp.info.style}>
-      {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onDeleteCmp={onDeleteCmp} />}
+      {cmp.cmps && <EditorWapCmps cmp={cmp} wap={wap} isEdit={isEdit} updateWap={updateWap} onCmpFocus={onCmpFocus} onUpdateCurrCmp={onUpdateCurrCmp} onCloneCmp={onCloneCmp} onDeleteCmp={onDeleteCmp} />}
       <div className="wap-section-tool">
         <button className="wap-el-btn-edit" onClick={(ev) => onCmpFocus(ev, cmp)}><EditOutlinedIcon /></button>
         <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}><DeleteForeverOutlinedIcon /></button>

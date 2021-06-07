@@ -2,6 +2,8 @@ import { EditorWapCmps } from "../EditorWapCmps";
 import { Draggable } from "react-beautiful-dnd";
 
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
+import FileCopyOutlinedIcon from "@material-ui/icons/FileCopyOutlined";
+
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 export function WapSection({
   cmp,
@@ -63,6 +65,7 @@ export function WapSection({
                   onDeleteCmp={onDeleteCmp}
                   onUpdateCurrCmp={onUpdateCurrCmp}
                   updateWap={updateWap}
+                  onCloneCmp={onCloneCmp}
                   wap={wap}
                   isEdit={isEdit}
                 />
@@ -75,12 +78,12 @@ export function WapSection({
                 >
                   <EditOutlinedIcon />
                 </button>
-                {/* <button
+                <button
                   className="wap-el-btn-del"
-                  onClick={() => onCloneCmp(cmp)}
+                  onClick={() => onCloneCmp(cmp, wap)}
                 >
                   <FileCopyOutlinedIcon />
-                </button> */}
+                </button>
                 <button
                   className="wap-el-btn-del"
                   onClick={() => onDeleteCmp(cmp.id)}

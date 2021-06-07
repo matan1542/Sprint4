@@ -28,7 +28,10 @@ export function EditorWapSections({wap, onCmpFocus, onCloneCmp,onDeleteCmp, onUp
             {...provided.droppableProps}
             style={{ backgroundColor: snapshot.isDraggingOver ? 'rgb(207, 204, 204)' : 'whitesmoke' }}>
             {wap.cmps && wap.cmps.length === 0 && <div className="editor-wap-empty">Drag here some sections to start</div>}
+            
             {wap.cmps.map((cmp, idx) => {
+              cmp.idx = idx
+              cmp.parentId = 'main'
               return (
                 <DynamicCmps
                   key={cmp.id}
