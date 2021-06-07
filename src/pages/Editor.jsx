@@ -60,8 +60,10 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
-    if (!currWap.sessionId) currWap.sessionId = utilService.makeId()
-    this.props.history.push(`/editor/${currWap.sessionId}`)
+    if (!currWap.sessionId && !this.props.match.params.id){
+      currWap.sessionId = utilService.makeId()
+      this.props.history.push(`/editor/${currWap.sessionId}`)
+    } 
     const { undoWaps } = this.state
     undoWaps.push(JSON.parse(JSON.stringify(currWap)))
     await this.setState({ ...this.state, currWap, undoWaps })
