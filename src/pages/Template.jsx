@@ -14,8 +14,8 @@ class _Templates extends Component {
   }
 
   setWapToEditor = async (wapId) => {
-    await this.props.setWapToEdit(wapId);
-    this.props.history.push("/editor");
+   const sessionWap = await this.props.setWapToEdit(wapId);
+    this.props.history.push(`/editor/${sessionWap.sessionId}`);
   };
 
   render() {

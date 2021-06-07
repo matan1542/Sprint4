@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from 'react'
 
-export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element, isEdit }) => {
+export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus,url, onUpdateWap,type, element, isEdit }) => {
   const [cmpTxt, setCmpTxt] = useState(cmp.info.txt);
 
 
@@ -15,6 +15,9 @@ export const EditTxt = ({ cmp, onUpdateCurrCmp, onCmpFocus, onUpdateWap, element
 
         {React.createElement(element, {
           className: "wap-text publish",
+         onClick:()=>{
+           if(type==='link') window.location.href = 'https://www.google.com'
+         },
           name: "txt",
           style: cmp.info.style,
         }, cmp.info.txt)}

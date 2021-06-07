@@ -16,6 +16,7 @@ export function EditNavLink({ cmp, onUpdateCurrCmp }) {
         cmpToUpdate.info.action.link = urlState.link
         onUpdateCurrCmp(cmpToUpdate)
     }
+    
 
     return (
         <div className="edit-link">

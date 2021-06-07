@@ -1,5 +1,6 @@
 import { wapService } from '../../services/wap.service.js'
 import { cmpService } from '../../services/cmp.service.js'
+import { utilService } from '../../services/utils.js'
 
 export function loadWaps() { // Action Creator
     return async dispatch => {
@@ -35,11 +36,13 @@ export function loadCmps() {
 
 export function setWapToEdit(wap) {
     return async dispatch => {
+        if(wap) wap.sessionId = utilService.makeId();
         const action = {
             type: 'SET_WAP_TO_EDIT',
             wapToEdit: wap
         }
         dispatch(action)
+        return wap
     }
 }
 

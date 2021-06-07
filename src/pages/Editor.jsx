@@ -3,7 +3,8 @@ import { connect } from "react-redux"
 import { DragDropContext } from "react-beautiful-dnd"
 
 import { cmpService } from "../services/cmp.service.js"
-import { wapService } from "../services/wap.service"
+import { wapService } from "../services/wap.service.js"
+import {utilService} from "../services/utils.js"
 
 import { loadWaps, loadCmps, setWapToEdit } from "../store/actions/wap.actions.js"
 import { setMsg } from '../store/actions/user.msg.actions.js'
@@ -30,6 +31,7 @@ export class _Editor extends Component {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
+    console.log(this.state.currWap)
     let screenView = ((window.innerWidth <= 555) ? 'small-view' : (window.innerWidth <= 815) ? 'medium-view' : 'large-view')
     let status = ((window.innerWidth <= 555) ? 'edit' : 'add')
     this.setState({ respView: screenView, editorStatus: status })
@@ -49,6 +51,8 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
+    if(!currWap.sessionId) currWap.sessionId = utilService.makeId()
+    this.props.history.push(`/editor/${currWap.sessionId}`)
     const { undoWaps } = this.state
     undoWaps.push(JSON.parse(JSON.stringify(currWap)))
     await this.setState({ ...this.state, currWap, undoWaps })

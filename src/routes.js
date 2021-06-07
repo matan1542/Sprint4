@@ -13,13 +13,14 @@ export const routes = [
         component: Publish
     },
     {
+        path: '/editor/:id?',
+        component: Editor,
+    },
+    {
         path: '/template',
         component: Templates,
     },
-    {
-        path: '/editor',
-        component: Editor,
-    },
+   
     {
         path: '/',
         component: Home,

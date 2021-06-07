@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import FileCopyOutlinedIcon from "@material-ui/icons/FileCopyOutlined"
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
@@ -22,13 +23,20 @@ export function WapNavLink({
     onUpdateCurrCmp(cmp)
 
   }
+  const redirectPage = (ev)=>{
+    ev.preventDefault()
+    console.log('target.value',ev.target.value)
+    window.location.href = ev.target.value;
+}
   if (!isEdit) {
     return (
       <li className="wap-el publish">
-        <a href={(cmp.info.action.link) ? cmp.info.action.link : '#'}>   
+        <a value={(cmp.info.action.link) ? cmp.info.action.link : '#'} onClick={redirectPage}>   
           {<EditTxt cmp={cmp}
             isEdit={false}
-            element="button" />}
+            element="button"
+            type="link"
+            url={(cmp.info.action.link) ? cmp.info.action.link : '#'} />}
           {cmp.cmps && (
             <EditorWapCmps
               cmp={cmp}

@@ -64,8 +64,8 @@
          
        }
        .template-preview-img{
-             position: relative;
-             width: 240px;
+             @include aspect-ratio(16,14);
+             object-position: top;
              .template-preview-cover{
                  display: flex;
                  padding-top: rem(50px);
@@ -119,10 +119,11 @@
            .template-img {
                display: flex;
                justify-content: center;
+               object-position: top;
                width: 100%;
                // max-height: 240px;
                cursor: pointer;
-               height: 300px;
+               height: 100%;
                transition: .3s;
                // &:hover {
                //     width: 250px;
