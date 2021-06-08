@@ -19,7 +19,6 @@ import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
-import { MousePointer } from '../cmps/MousePointer.jsx'
 import React from "react";
 
 export class _Editor extends Component {
