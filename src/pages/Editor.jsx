@@ -136,15 +136,14 @@ export class _Editor extends Component {
   };
 
   onCloneCmp = async (cmp, currWap) => {
-    console.log("cmp:", cmp);
+    console.log("cmp:", cmp, "cmp.parentId" , cmp.parentId);
     const undoWaps = await this.addUndoWap();
     const clonedCmp = await cmpService.changeIds(cmp);
     if (cmp.parentId === "main") {
       currWap.cmps.splice(cmp.idx, 0, clonedCmp);
     } else {
-      // console.log('cmp.parentId:', cmp, cmp.parentId)
       const parent = await wapService.getTarget(currWap, cmp.parentId);
-      // console.log(parent);
+      console.log(parent);
       parent.cmps.splice(cmp.idx, 0, clonedCmp);
     }
     this.setState((prevState) => ({
@@ -308,7 +307,6 @@ export class _Editor extends Component {
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
       this.state;
-    console.log('window.innerWidth', window.innerWidth);
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
     return (
