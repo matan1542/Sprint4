@@ -79,9 +79,22 @@ export class EditColor extends React.Component {
         },
       },
     });
+    let label = ''
+    switch(this.props.att) {
+      case 'color': 
+        label = 'color' 
+        break
+      case 'backgroundColor': 
+        label = 'Background Color' 
+        break
+      case 'borderColor': 
+        label ='Border Color'
+        break
+      default: label = 'err'
+    }
     return (
       <div className="color-picker flex space-between mb-3" >
-        <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
+        <label>{label}</label>
         <div style={styles.swatch} onClick={this.handleClick}>
           <div style={styles.color} />
         </div>
