@@ -6,6 +6,7 @@ import { cmpService } from "../services/cmp.service.js";
 import { wapService } from "../services/wap.service.js";
 import { socketService } from "../services/socket.service.js";
 import { utilService } from "../services/utils.js";
+import EditIcon from '@material-ui/icons/Edit';
 
 import {
   loadWaps,
@@ -18,12 +19,8 @@ import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
-<<<<<<< HEAD
 import { MousePointer } from '../cmps/MousePointer.jsx'
-import { prev } from "cheerio/lib/api/traversing";
 import React from "react";
-=======
->>>>>>> 16fccb204c2a9ac84c5b4b9a517255e6dfc75824
 
 export class _Editor extends Component {
   state = {
@@ -295,10 +292,15 @@ export class _Editor extends Component {
   // }}
 
   onUpdateMousePos = (newPos) => {
-    console.log(this.mouseRef);
+    this.mouseRef.current.style.position = 'absolute';
+    this.mouseRef.current.style.display = 'block';
+    this.mouseRef.current.style.zIndex = 100;
+    this.mouseRef.current.style.left = newPos.x + 'px';
+    this.mouseRef.current.style.top = newPos.y + 'px';
   }
 
   onMovingMouse = (ev) => {
+    if (window.innerWidth < 555) return
     const pos = { x: ev.clientX, y: ev.clientY }
     socketService.emit('mouse move', pos)
   }
@@ -306,11 +308,12 @@ export class _Editor extends Component {
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
       this.state;
+    console.log('window.innerWidth', window.innerWidth);
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
     return (
       <section className="app-editor flex space-between" onMouseMove={this.onMovingMouse}>
-        <MousePointer ref={this.mouseRef} />
+        <EditIcon ref={this.mouseRef} style={{ display: 'none' }} />
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
