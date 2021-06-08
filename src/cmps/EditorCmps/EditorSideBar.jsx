@@ -60,6 +60,8 @@ export class EditorSideBar extends Component {
                         </div>
                     </ThemeProvider>
                     <div className="editor-publish w-100 flex space-around wrap" >
+                        <label htmlFor="invite">Copy and send to edit together!</label>
+                        <input type="text" id="invite" defaultValue={this.props.userUrl} disabled />
                         <button className="btn-publish" color="primary" onClick={this.props.onPublish}>{(window.innerWidth < 555) ? <PublishIcon /> : 'Publish'}</button>
                     </div>
                 </div>
