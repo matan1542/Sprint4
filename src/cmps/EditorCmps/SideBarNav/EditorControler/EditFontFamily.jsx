@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,16 +19,12 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditFontFamily({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [fontFamily, setFontFamily] = React.useState('');
-
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,fontFamily:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setFontFamily(event.target.value);
   };
-
 
   return (
     <div className={classes.root}>
@@ -42,23 +37,28 @@ export function EditFontFamily({val ,onUpdateCurrCmp ,currCmp }) {
         <Grid item>
           
           <FormControl variant="outlined" size="small" className={classes.formControl}>
-            
-            <InputLabel id="demo-simple-select-outlined-label">Font</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
-              id="demo-simple-select-outlined"
-              value={fontFamily}
+              id="demo-simple-select-required"
+              value={val}
               onChange={handleChange}
               size="small"
             >
-              <MenuItem value={val}>{val}</MenuItem>
                 <MenuItem value="Ariel">Ariel</MenuItem>
                 <MenuItem value="New Time David">New Time David</MenuItem>
                 <MenuItem value="roboto">Roboto</MenuItem>
                 <MenuItem value="caveat">Caveat</MenuItem>
                 <MenuItem value="montserrat_alternates">Montserrat</MenuItem>
                 <MenuItem value="amatic_sc">Amatic</MenuItem>
-                <MenuItem value="cursive">Cursive</MenuItem>
+                <MenuItem value="raleway">Raleway</MenuItem>
+                <MenuItem value="source_code_pro">Source Code</MenuItem>
+                <MenuItem value="OpenSans">OpenSans</MenuItem>
+                <MenuItem value="staatliches">Staatliches</MenuItem>
+                <MenuItem value="pacifico">Pacifico</MenuItem>
+                <MenuItem value="nutino">Nutino</MenuItem>
+                <MenuItem value="futura">Futura</MenuItem>
+                <MenuItem value="courgette">Courgette</MenuItem>
+                <MenuItem value="rubik">Rubik</MenuItem>
             
             </Select>
            
