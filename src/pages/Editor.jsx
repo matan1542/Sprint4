@@ -61,6 +61,7 @@ export class _Editor extends Component {
   componentWillUnmount() {
     this.props.setWapToEdit(null);
     socketService.off("update wap", this.updateSocketWap);
+    socketService.off("mouse_position_update", this.onUpdateMousePos)
     socketService.terminate();
   }
 
