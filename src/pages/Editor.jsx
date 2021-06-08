@@ -32,7 +32,6 @@ export class _Editor extends Component {
     if (!this.props.waps) await this.props.loadWaps()
     if (!this.props.cmps) await this.props.loadCmps()
     await this.setCurrWap();
-    console.log(this.state.currWap)
     let screenView = ((window.innerWidth <= 555) ? 'small-view' : (window.innerWidth <= 815) ? 'medium-view' : 'large-view')
     let status = ((window.innerWidth <= 555) ? 'edit' : 'add')
     socketService.setup()
