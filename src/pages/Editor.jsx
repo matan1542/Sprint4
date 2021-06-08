@@ -20,7 +20,7 @@ import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
 import React from "react";
-import { makeStyles, Modal } from "@material-ui/core";
+import {Modal} from "../cmps/Modal"
 export class _Editor extends Component {
   state = {
     editorStatus: "add",
@@ -29,7 +29,7 @@ export class _Editor extends Component {
     undoWaps: [],
     respView: "large-view",
     isLodaing: false,
-    isShown:true
+    isShown:false
   };
 
   async componentDidMount() {
@@ -296,10 +296,7 @@ export class _Editor extends Component {
     const pos = { x: ev.clientX, y: ev.clientY }
     socketService.emit('mouse move', pos)
   }
-  closeModal = () => {
-    this.setState({ isShown: false });
-    
-  };
+  
   onOutSideClick = (ev) => {
     if (ev.target.classList.contains("modal-container")) {
       this.setState({ isShown: false });
@@ -319,7 +316,7 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing, userUrl, isModalOpen } =
+    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing, userUrl} =
       this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
@@ -367,16 +364,8 @@ export class _Editor extends Component {
         
       
       </section>
-      <Modal
-      open={this.state.isOpen}
-      onClose={this.handleClose}
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
-    >
-      <div className="modal-copy-link">
-        <h2>I am here to explain</h2>
-      </div>
-    </Modal></>
+      {this.state.isShown && <Modal onOutSideClick={this.onOutSideClick} closeModal={this.closeModal} userUrl={this.state.userUrl}/>}
+      </>
     );
   }
 }

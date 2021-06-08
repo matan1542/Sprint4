@@ -3,7 +3,7 @@ import { AddCmpBar } from "./SideBarNav/AddCmpBar"
 import { EditCmpBar } from "./SideBarNav/EditCmpBar"
 
 // import RalewayWoff2 from '../../assets/fonts/Raleway/Raleway-Regular.ttf';
-import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import { Button, createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 import UndoIcon from '@material-ui/icons/Undo';
 import PublishIcon from '@material-ui/icons/Publish';
 
@@ -62,8 +62,7 @@ export class EditorSideBar extends Component {
                     <div className="editor-publish w-100 flex space-around wrap" >
                         {window.innerWidth > 555 &&
                             <>
-                                <label htmlFor="invite">Copy and send to edit together!</label>
-                                <input type="text" id="invite" defaultValue={this.props.userUrl} disabled />
+                            <Button  color="primary" onClick={() => this.props.openModal()}>Work together now!</Button>
                             </>}
                         <button className="btn-publish" color="primary" onClick={this.props.onPublish}>{(window.innerWidth < 555) ? <PublishIcon /> : 'Publish'}</button>
                     </div>
