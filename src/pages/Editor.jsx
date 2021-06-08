@@ -60,10 +60,10 @@ export class _Editor extends Component {
       delete currWap._id
     }
     currWap.isEdit = true
-    if (!currWap.sessionId && !this.props.match.params.id){
+    if (!currWap.sessionId && !this.props.match.params.id) {
       currWap.sessionId = utilService.makeId()
       this.props.history.push(`/editor/${currWap.sessionId}`)
-    } 
+    }
     const { undoWaps } = this.state
     undoWaps.push(JSON.parse(JSON.stringify(currWap)))
     await this.setState({ ...this.state, currWap, undoWaps })
@@ -245,12 +245,17 @@ export class _Editor extends Component {
     ))
   }
 
+  onMovingMouse = (ev) => {
+    const pos = { x: ev.clientX, y: ev.clientY }
+    socketService.emit('mouse move', pos)
+  }
+
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } = this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />
     return (
-      <section className="app-editor flex space-between">
+      <section className="app-editor flex space-between" onMouseMove={this.onMovingMouse}>
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
