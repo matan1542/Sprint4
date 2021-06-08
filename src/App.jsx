@@ -4,7 +4,6 @@ import "./style/style.scss";
 
 import { routes } from "./routes.js";
 import { Header } from "./cmps/Header.jsx";
-// import { Footer } from "./cmps/Footer.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 import { Component } from "react";
@@ -28,7 +27,6 @@ export class App extends Component {
               ))}
             </main>
 
-            {/* <Footer /> */}
           </Router>
         </Provider>
       </div>

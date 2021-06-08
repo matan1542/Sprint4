@@ -280,16 +280,6 @@ export class _Editor extends Component {
     );
   };
 
-  // onChangeMouse=(ev)=>{
-  //   var prevMouseX, prevMouseY;
-  //   var intervalID = window.setInterval(function(){
-  //      ... you get your mouse coordinates
-
-  //      if (prevMouseX !== x || !prevMouseY !== y) {
-  //         socket.emit('mouse_position', {mx : x, my : y});
-  //      }
-  //   }, 500);
-  // }}
 
   onUpdateMousePos = (newPos) => {
     this.mouseRef.current.style.position = 'absolute';
