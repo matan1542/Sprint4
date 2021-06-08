@@ -29,7 +29,7 @@ export function EditBorderRadius({ val, onUpdateCurrCmp, currCmp }) {
     <div className={classes.root}>
       <Box display='flex' alignItems='flex-start' flexDirection='column'>
         <Typography id="input-slider" >
-          Radius
+          Box Radius
         </Typography>
         <Slider
           value={typeof value === 'number' ? value : 0}

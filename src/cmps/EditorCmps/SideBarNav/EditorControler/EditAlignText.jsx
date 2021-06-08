@@ -15,7 +15,7 @@ export function EditAlignText({ currCmp, att, onUpdateCurrCmp }) {
         <div>
             <Box display="flex" alignItems="center" >
                 <Typography>
-                    Text align
+                    Text Align
                 </Typography>
                 <Box display="flex" ml={1} width={110} justifyContent="space-between">
                     <FormatAlignLeftIcon color={(val === 'start') ? "primary" : "inherit"} 

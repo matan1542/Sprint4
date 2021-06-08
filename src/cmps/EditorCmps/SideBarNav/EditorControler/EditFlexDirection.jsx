@@ -47,10 +47,10 @@ export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
               onChange={handleChange}
               size="small"
             >
-                <MenuItem value="column">Column</MenuItem>
-                <MenuItem value="column-reverse">Column Reverse</MenuItem>
-                <MenuItem value="row">Row</MenuItem>
-                <MenuItem value="row-reverse">Row Reverse</MenuItem>            
+                <MenuItem value="column">Vertical</MenuItem>
+                <MenuItem value="column-reverse">Vertical Reverse</MenuItem>
+                <MenuItem value="row">Horizontal</MenuItem>
+                <MenuItem value="row-reverse">Horizontal Reverse</MenuItem>            
             </Select>
           </FormControl>
          </Grid>

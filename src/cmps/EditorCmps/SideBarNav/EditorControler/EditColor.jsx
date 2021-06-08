@@ -1,6 +1,7 @@
 import React from 'react'
 import reactCSS from 'reactcss'
 import { SketchPicker } from 'react-color'
+import { Typography } from '@material-ui/core';
 
 export class EditColor extends React.Component {
   state = {
@@ -82,7 +83,7 @@ export class EditColor extends React.Component {
     let label = ''
     switch(this.props.att) {
       case 'color': 
-        label = 'color' 
+        label = 'Text Color' 
         break
       case 'backgroundColor': 
         label = 'Background Color' 
@@ -94,7 +95,9 @@ export class EditColor extends React.Component {
     }
     return (
       <div className="color-picker flex space-between mb-3" >
-        <label>{label}</label>
+        <Typography>
+          {label}
+        </Typography>
         <div style={styles.swatch} onClick={this.handleClick}>
           <div style={styles.color} />
         </div>

@@ -27,7 +27,7 @@ export function EditPadding({ att, val, onUpdateCurrCmp, currCmp }) {
   return (
     <div className={classes.root}>
       <Typography id="discrete-slider-always" gutterBottom>
-        {(att === "paddingInline") ? "Side Spacing" : "Set Length"}
+        {(att === "paddingInline") ? "Side Spacing" : "Vertical Spacing"}
       </Typography>
       <Slider
         value={pad}
