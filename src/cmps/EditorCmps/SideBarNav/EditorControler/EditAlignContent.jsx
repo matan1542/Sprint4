@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,16 +19,13 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [alignContent, setAlignContent] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignContent:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setAlignContent(event.target.value);
   };
-
 
   return (
     <div className={classes.root}>
@@ -44,7 +40,7 @@ export function EditAlignContent({val ,onUpdateCurrCmp ,currCmp }) {
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={alignContent}
+              value={val}
               onChange={handleChange}
               size="small"
             >

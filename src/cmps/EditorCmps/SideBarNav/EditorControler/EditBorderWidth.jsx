@@ -29,7 +29,7 @@ export function EditBorderWidth({ val, onUpdateCurrCmp, currCmp }) {
     <div className={classes.root}>
         <Box display='flex' alignItems='flex-start' flexDirection='column'>
         <Typography id="input-slider" >
-          Border width
+          Border Width
         </Typography>
           <Slider
             value={typeof value === 'number' ? value : 0}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,16 +19,12 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditTextShadow({ val, onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [textShadow, setTextShadow] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,textShadow:`${value}`}}}
     await onUpdateCurrCmp(cmp)
-  
-    setTextShadow(event.target.value);
   };
-
 
   return (
     <div className={classes.root}>
@@ -47,13 +42,11 @@ export function EditTextShadow({ val, onUpdateCurrCmp ,currCmp }) {
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={textShadow}
+              value={val}
               onChange={handleChange}
-              label="Font"
               size="small"
             >
-              <MenuItem value={val}>{val}</MenuItem>
-                <MenuItem value="0">None</MenuItem>
+                <MenuItem value="none">None</MenuItem>
                 <MenuItem value="rgb(209 201 202) 1px 1px 2px">Light</MenuItem>
                 <MenuItem value="rgb(183 176 177) 3px 2px 3px">Medium</MenuItem>
                 <MenuItem value="rgb(183 176 177) 5px 5px 3px">Strong</MenuItem>

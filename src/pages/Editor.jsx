@@ -83,15 +83,17 @@ export class _Editor extends Component {
     }
     const { undoWaps } = this.state;
     undoWaps.push(JSON.parse(JSON.stringify(currWap)));
-    this.setState({ ...this.state, currWap, undoWaps }, () => {
-      socketService.emit('update wap', this.state.currWap)
+    const userUrl = window.location.href
+    this.setState({ ...this.state, currWap, undoWaps, userUrl }, () => {
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
-  updateSocketWap = (currWap) => {
+  updateSocketWap = (data) => {
     this.setState((prevState) => ({
       ...prevState,
-      currWap,
+      currWap: data.currWap,
+      undoWaps: data.undoWaps
     }));
   };
 
@@ -116,7 +118,7 @@ export class _Editor extends Component {
       undoWaps,
       currCmp: null,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -132,20 +134,19 @@ export class _Editor extends Component {
       currWap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
   onCloneCmp = async (cmp, currWap) => {
-    console.log("cmp:", cmp);
+    console.log("cmp:", cmp, "cmp.parentId", cmp.parentId);
     const undoWaps = await this.addUndoWap();
     const clonedCmp = await cmpService.changeIds(cmp);
     if (cmp.parentId === "main") {
       currWap.cmps.splice(cmp.idx, 0, clonedCmp);
     } else {
-      // console.log('cmp.parentId:', cmp, cmp.parentId)
       const parent = await wapService.getTarget(currWap, cmp.parentId);
-      // console.log(parent);
+      console.log(parent);
       parent.cmps.splice(cmp.idx, 0, clonedCmp);
     }
     this.setState((prevState) => ({
@@ -153,7 +154,7 @@ export class _Editor extends Component {
       currWap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -180,7 +181,7 @@ export class _Editor extends Component {
       currWap: wap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -193,7 +194,7 @@ export class _Editor extends Component {
       currWap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -259,7 +260,7 @@ export class _Editor extends Component {
         ...prevState,
         currWap: wapCmps,
       }), () => {
-        socketService.emit('update wap', this.state.currWap)
+        socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
       });
       return;
     }
@@ -310,8 +311,15 @@ export class _Editor extends Component {
     this.setState({ isShown: true });
   }
 
+  toggleModal = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      isModalOpen: !this.state.isModalOpen
+    }))
+  }
+
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
+    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing, userUrl, isModalOpen } =
       this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
@@ -322,6 +330,8 @@ export class _Editor extends Component {
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
+            userUrl={userUrl}
+            toggleModal={this.toggleModal}
             onUndoWap={this.onUndoWap}
             undoWaps={undoWaps}
             currCmp={currCmp}
