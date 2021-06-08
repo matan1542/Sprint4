@@ -8,6 +8,7 @@ export function EditorWapSections({wap, onCmpFocus, onCloneCmp,onDeleteCmp, onUp
       return (
         <>
           {wap.cmps.map((cmp) => {
+            console.log("cmp: ", cmp.type)
             return (
               <DynamicCmps
                 key={cmp.id}

@@ -20,7 +20,7 @@ import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
 import React from "react";
-
+import { makeStyles, Modal } from "@material-ui/core";
 export class _Editor extends Component {
   state = {
     editorStatus: "add",
@@ -29,6 +29,7 @@ export class _Editor extends Component {
     undoWaps: [],
     respView: "large-view",
     isLodaing: false,
+    isShown:true
   };
 
   async componentDidMount() {
@@ -294,14 +295,28 @@ export class _Editor extends Component {
     const pos = { x: ev.clientX, y: ev.clientY }
     socketService.emit('mouse move', pos)
   }
+  closeModal = () => {
+    this.setState({ isShown: false });
+    
+  };
+  onOutSideClick = (ev) => {
+    if (ev.target.classList.contains("modal-container")) {
+      this.setState({ isShown: false });
+
+      
+    }
+  };
+  openModal = () => {
+    this.setState({ isShown: true });
+  }
 
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
       this.state;
-    console.log('window.innerWidth', window.innerWidth);
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
     return (
+      <> 
       <section className="app-editor flex space-between" onMouseMove={this.onMovingMouse}>
         <EditIcon ref={this.mouseRef} style={{ display: 'none' }} />
         <UserMsg />
@@ -323,6 +338,7 @@ export class _Editor extends Component {
             cmps={cmps}
             isEdit={true}
             handleChange={this.handleChange}
+            openModal={this.openModal}
           />
           <div className="editor-wap" >
             <EditorWapSections
@@ -334,11 +350,23 @@ export class _Editor extends Component {
               onCloneCmp={this.onCloneCmp}
               onDeleteCmp={this.onDeleteCmp}
               updateWap={updateWap}
-              respView={respView}
-            />
+              respView={respView}/>
           </div>
+         
         </DragDropContext>
+        
+      
       </section>
+      <Modal
+      open={this.state.isOpen}
+      onClose={this.handleClose}
+      aria-labelledby="simple-modal-title"
+      aria-describedby="simple-modal-description"
+    >
+      <div className="modal-copy-link">
+        <h2>I am here to explain</h2>
+      </div>
+    </Modal></>
     );
   }
 }

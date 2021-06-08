@@ -1,428 +1,2081 @@
 {
-    "_id": "5e28393890dd7201a06d4e44",
-    "name": "HairDresser Baluta Marketing Site",
-    "imgUrl": "http://res.cloudinary.com/webify/image/upload/v1580021948/coffe_yi0yzf.png",
-    "createdBy": "5e26e0b718a0891d4c995527",
-    "cmps": [
+    "_id" : ObjectId("60b9dc0ffd582d24385b160f"),
+    "imgUrl" : "https://res.cloudinary.com/triplen91/image/upload/v1622886292/Screen_Shot_2021-06-05_at_12.44.31_x7nmff.png",
+    "name" : "Personal Portfolio",
+    "cmps" : [ 
         {
-            "id": "wc01",
-            "type": "wap-section",
-            "info": {
-                "style": {
-                    "backgroundImage": "",
-                    "backgroundColor": "#101010",
-                    "paddingInline": "10px",
-                    "paddingBlock": "10px",
-                    "flexDirection": "row",
-                    "alignItems": "center",
-                    "justifyContent": "space-between",
-                    "alignContent": "unset",
-                    "minHeight": ""
+            "id" : "Cabellos1",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "url(https://images.unsplash.com/photo-1591961310354-91ca99664c65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
+                    "backgroundColor" : "#484848",
+                    "minWidth" : "100%",
+                    "minHeight" : "700px",
+                    "paddingInline" : "",
+                    "paddingBlock" : "10px",
+                    "flexDirection" : "column",
+                    "alignItems" : "center",
+                    "justifyContent" : "space-between",
+                    "alignContent" : "unset"
                 }
             },
-            "cmps": [
+            "cmps" : [ 
                 {
-                    "id": "wc011",
-                    "type": "wap-text",
-                    "info": {
-                        "txt": "Logo",
-                        "style": {
-                            "fontSize": "24px",
-                            "textAlign": "center",
-                            "textDecoration": "",
-                            "fontWeight": "",
-                            "fontStyle": "",
-                            "color": "#ffffff",
-                            "backgroundColor": "#101010",
-                            "fontFamily": "cursive",
-                            "textShadow": "",
-                            "paddingInline": "10px",
-                            "paddingBlock": "10px",
-                            "letterSpacing": "0px",
-                            "borderWidth": "0px",
-                            "borderColor": "0px",
-                            "borderRadius": "0px"
+                    "id" : "Cabellos11",
+                    "sectionType" : "Header-section",
+                    "type" : "wap-section",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "90%",
+                            "minHeight" : "",
+                            "paddingInline" : "0px",
+                            "paddingBlock" : "48px",
+                            "flexDirection" : "row",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset"
                         }
                     },
-                    "cmps": []
-                },
-                {
-                    "id": "wc012",
-                    "type": "wap-nav",
-                    "info": {
-                        "style": {
-                            "flexDirection": "row",
-                            "alignItems": "center",
-                            "justifyContent": "space-around",
-                            "alignContent": "unset"
-                        }
-                    },
-                    "cmps": [
+                    "cmps" : [ 
                         {
-                            "id": "wc0121",
-                            "type": "wap-btn",
-                            "info": {
-                                "txt": "Home",
-                                "action": {
-                                    "link": "url"
-                                },
-                                "style": {
-                                    "fontSize": "16px",
-                                    "textAlign": "center",
-                                    "textDecoration": "",
-                                    "fontWeight": "",
-                                    "fontStyle": "",
-                                    "color": "#ffffff",
-                                    "backgroundColor": "inherit",
-                                    "fontFamily": "none",
-                                    "textShadow": "",
-                                    "paddingInline": "10px",
-                                    "paddingBlock": "10px",
-                                    "letterSpacing": "0px",
-                                    "borderWidth": "0px",
-                                    "borderColor": "0px",
-                                    "borderRadius": "15px"
+                            "id" : "CabeloT1",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Cabello",
+                                "style" : {
+                                    "fontSize" : "45px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "bold",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "roboto",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "9px",
+                                    "paddingBlock" : "10px",
+                                    "letterSpacing" : "0px",
+                                    "borderWidth" : "0px",
+                                    "borderColor" : "rgba(0,0,0,1)",
+                                    "borderRadius" : "0px"
                                 }
-                            }
-                        },
+                            },
+                            "cmps" : []
+                        }, 
                         {
-                            "id": "wc0123",
-                            "type": "wap-btn",
-                            "info": {
-                                "txt": "News",
-                                "action": {
-                                    "link": "url"
-                                },
-                                "style": {
-                                    "fontSize": "16px",
-                                    "textAlign": "center",
-                                    "textDecoration": "",
-                                    "fontWeight": "",
-                                    "fontStyle": "",
-                                    "color": "#ffffff",
-                                    "backgroundColor": "inherit",
-                                    "fontFamily": "none",
-                                    "textShadow": "",
-                                    "paddingInline": "10px",
-                                    "paddingBlock": "10px",
-                                    "letterSpacing": "0px",
-                                    "borderWidth": "0px",
-                                    "borderColor": "0px",
-                                    "borderRadius": "15px"
+                            "id" : "CabeloN1",
+                            "type" : "wap-nav",
+                            "info" : {
+                                "style" : {}
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabeloB12",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "Home",
+                                        "action" : {
+                                            "link" : "60b9dc0ffd582d24385b160f"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontFamily" : "roboto",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB13",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "About",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontFamily" : "roboto",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB3",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "Service",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontFamily" : "roboto",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB4",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "Resume",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontFamily" : "roboto",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB5",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "Portfolio",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontFamily" : "roboto",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB6",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "Blog",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontFamily" : "roboto",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB7",
+                                    "type" : "wap-nav-link",
+                                    "info" : {
+                                        "txt" : "Contact",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "navLink" : "",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontSize" : "20px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontFamily" : "roboto",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "10px",
+                                            "paddingBlock" : "10px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "15px"
+                                        }
+                                    }
                                 }
-                            }
-                        },
-                        {
-                            "id": "wc0122",
-                            "type": "wap-btn",
-                            "info": {
-                                "txt": "About",
-                                "action": {
-                                    "link": "url"
-                                },
-                                "style": {
-                                    "fontSize": "16px",
-                                    "textAlign": "center",
-                                    "textDecoration": "",
-                                    "fontWeight": "",
-                                    "fontStyle": "",
-                                    "color": "#ffffff",
-                                    "backgroundColor": "inherit",
-                                    "fontFamily": "none",
-                                    "textShadow": "",
-                                    "paddingInline": "10px",
-                                    "paddingBlock": "10px",
-                                    "letterSpacing": "0px",
-                                    "borderWidth": "0px",
-                                    "borderColor": "0px",
-                                    "borderRadius": "15px"
-                                }
-                            }
+                            ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "id": "wc05",
-            "type": "wap-section",
-            "info": {
-                "style": {
-                    "backgroundImage": "url(https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)",
-                    "backgroundColor": "",
-                    "paddingInline": "10px",
-                    "paddingBlock": "10px",
-                    "flexDirection": "row",
-                    "alignItems": "flex-end",
-                    "justifyContent": "center",
-                    "alignContent": "unset",
-                    "minHeight": "300px"
-                }
-            },
-            "cmps": [
+                }, 
                 {
-                    "id": "wc051",
-                    "type": "wap-text",
-                    "info": {
-                        "txt": "Welcome to my first webApp",
-                        "style": {
-                            "fontSize": "30px",
-                            "textAlign": "center",
-                            "textDecoration": "",
-                            "fontWeight": "",
-                            "fontStyle": "",
-                            "color": "#ffffff",
-                            "backgroundColor": "#00000087",
-                            "fontFamily": "cursive",
-                            "textShadow": "",
-                            "paddingInline": "10px",
-                            "paddingBlock": "20px",
-                            "borderRadius": "15px",
-                            "letterSpacing": "0px"
+                    "id" : "CabelloC8",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "60%",
+                            "minHeight" : "",
+                            "paddingInline" : "19px",
+                            "paddingBlock" : "15px",
+                            "flexDirection" : "column",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
                         }
                     },
-                    "cmps": []
-                },
+                    "cmps" : [ 
+                        {
+                            "id" : "CabeloT2",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Welcome to my website",
+                                "style" : {
+                                    "fontSize" : "20px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "staatliches",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "5px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabeloT3",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "I'm Angel Cabello",
+                                "style" : {
+                                    "fontSize" : "40px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "bold",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "roboto",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabeloT4",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Social Media bar TBA",
+                                "style" : {
+                                    "fontSize" : "16px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "roboto",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "100px",
+                                    "paddingBlock" : "10px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabelloC11",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "40%",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-around",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabeloB8",
+                                    "type" : "wap-btn",
+                                    "info" : {
+                                        "txt" : "View Work",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "#f55422",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontFamily" : "roboto",
+                                            "textShadow" : "none",
+                                            "fontSize" : "18px",
+                                            "paddingInline" : "35px",
+                                            "paddingBlock" : "19px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "30px"
+                                        }
+                                    }
+                                }, 
+                                {
+                                    "id" : "CabeloB9",
+                                    "type" : "wap-btn",
+                                    "info" : {
+                                        "txt" : "Hire Me",
+                                        "action" : {
+                                            "link" : "url"
+                                        },
+                                        "style" : {
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "#f55422",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontFamily" : "roboto",
+                                            "textShadow" : "none",
+                                            "fontSize" : "18px",
+                                            "paddingInline" : "35px",
+                                            "paddingBlock" : "19px",
+                                            "letterSpacing" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(0,0,0,1)",
+                                            "borderRadius" : "30px"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }, 
                 {
-                    "id": "wc0511",
-                    "type": "wap-btn",
-                    "info": {
-                        "txt": "Click to Enter!",
-                        "action": {
-                            "link": "url"
+                    "id" : "CabeloB10",
+                    "type" : "wap-btn",
+                    "info" : {
+                        "txt" : "V",
+                        "action" : {
+                            "link" : "url"
                         },
-                        "style": {
-                            "textAlign": "center",
-                            "textDecoration": "",
-                            "fontWeight": "",
-                            "fontStyle": "",
-                            "color": "white",
-                            "backgroundColor": "inherit",
-                            "fontFamily": "math",
-                            "textShadow": "",
-                            "fontSize": "35px",
-                            "paddingInline": "10px",
-                            "paddingBlock": "20px",
-                            "letterSpacing": "0px",
-                            "borderWidth": "3px",
-                            "borderColor": "black",
-                            "borderRadius": "15px"
+                        "style" : {
+                            "textAlign" : "center",
+                            "textDecoration" : "",
+                            "fontWeight" : "",
+                            "fontStyle" : "",
+                            "color" : "rgba(255,255,255,1)",
+                            "backgroundColor" : "rgba(192,192,192,1)",
+                            "minWidth" : "16px",
+                            "minHeight" : "16px",
+                            "fontFamily" : "roboto",
+                            "textShadow" : "none",
+                            "fontSize" : "18px",
+                            "paddingInline" : "20px",
+                            "paddingBlock" : "13px",
+                            "letterSpacing" : "0px",
+                            "borderWidth" : "0px",
+                            "borderColor" : "rgba(0,0,0,1)",
+                            "borderRadius" : "50px"
                         }
                     }
                 }
             ]
-        },
+        }, 
         {
-            "id": "wc06",
-            "type": "wap-section",
-            "info": {
-                "style": {
-                    "backgroundImage": "",
-                    "backgroundColor": "#000",
-                    "paddingInline": "10px",
-                    "paddingBlock": "10px",
-                    "flexDirection": "row",
-                    "alignItems": "center",
-                    "justifyContent": "center",
-                    "alignContent": "unset",
-                    "minHeight": ""
+            "id" : "Cabellos2",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#11141b",
+                    "minWidth" : "100%",
+                    "minHeight" : "100px",
+                    "paddingInline" : "",
+                    "paddingBlock" : "10px",
+                    "flexDirection" : "column",
+                    "alignItems" : "center",
+                    "justifyContent" : "center",
+                    "alignContent" : "unset"
                 }
             },
-            "cmps": [
+            "cmps" : [ 
                 {
-                    "id": "wc061",
-                    "type": "wap-text",
-                    "info": {
-                        "txt": "Welcome to my first WebApp that have been created in 5 minutes by the WeBuild Editor, I'm so happy now that I have my own site.",
-                        "style": {
-                            "fontSize": "16px",
-                            "textAlign": "left",
-                            "textDecoration": "",
-                            "fontWeight": "",
-                            "fontStyle": "",
-                            "color": "#ffffff",
-                            "backgroundColor": "",
-                            "fontFamily": "cursive",
-                            "textShadow": "",
-                            "paddingInline": "10px",
-                            "paddingBlock": "10px",
-                            "borderRadius": "15px",
-                            "letterSpacing": "0px"
+                    "id" : "CabeloT10",
+                    "type" : "wap-text",
+                    "info" : {
+                        "txt" : "About Me",
+                        "style" : {
+                            "fontSize" : "40px",
+                            "textAlign" : "center",
+                            "textDecoration" : "underline",
+                            "fontWeight" : "bold",
+                            "fontStyle" : "",
+                            "color" : "rgba(255,255,255,1)",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "16px",
+                            "minHeight" : "16px",
+                            "fontFamily" : "rubik",
+                            "textShadow" : "none",
+                            "paddingInline" : "5px",
+                            "paddingBlock" : "5px",
+                            "borderRadius" : "0px",
+                            "letterSpacing" : "0px"
                         }
                     },
-                    "cmps": []
-                },
-                {
-                    "id": "wc062",
-                    "type": "wap-text",
-                    "info": {
-                        "txt": "Important info about myself, I have never learn to code and I dont wish to learn... this site gave me the best and simple platform to build my dreamed WebApp!",
-                        "style": {
-                            "fontSize": "16px",
-                            "textAlign": "left",
-                            "textDecoration": "",
-                            "fontWeight": "",
-                            "fontStyle": "",
-                            "color": "#ffffff",
-                            "backgroundColor": "",
-                            "fontFamily": "cursive",
-                            "textShadow": "",
-                            "paddingInline": "10px",
-                            "paddingBlock": "10px",
-                            "borderRadius": "15px",
-                            "letterSpacing": "0px"
-                        }
-                    },
-                    "cmps": []
+                    "cmps" : []
                 }
             ]
-        },
+        }, 
         {
-            "id": "wc077",
-            "type": "wap-section",
-            "info": {
-                "style": {
-                    "backgroundImage": "",
-                    "backgroundColor": "#484848",
-                    "paddingInline": "0px",
-                    "paddingBlock": "0px",
-                    "flexDirection": "row",
-                    "alignItems": "center",
-                    "justifyContent": "center",
-                    "alignContent": "unset",
-                    "minHeight": ""
+            "id" : "Cabellos3",
+            "sectionType" : "Image-section",
+            "type" : "wap-section",
+            "info" : {
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#11141b ",
+                    "minWidth" : "100%",
+                    "minHeight" : "",
+                    "paddingInline" : "40px",
+                    "paddingBlock" : "20px",
+                    "flexDirection" : "row",
+                    "alignItems" : "center",
+                    "justifyContent" : "space-evenly",
+                    "alignContent" : "unset"
                 }
             },
-            "cmps": [
+            "cmps" : [ 
                 {
-                    "id": "wc0678",
-                    "type": "wap-text",
-                    "info": {
-                        "txt": "©️2021 Developer",
-                        "style": {
-                            "fontSize": "14px",
-                            "textAlign": "left",
-                            "textDecoration": "",
-                            "fontWeight": "",
-                            "fontStyle": "",
-                            "color": "#ffffff",
-                            "backgroundColor": "",
-                            "fontFamily": "math",
-                            "textShadow": "",
-                            "paddingInline": "5px",
-                            "paddingBlock": "5px",
-                            "borderRadius": "15px",
-                            "letterSpacing": "0px"
+                    "id" : "CabelloIm1",
+                    "type" : "wap-img",
+                    "info" : {
+                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622809549/x4ezdragclk3a4heivqa.jpg",
+                        "style" : {
+                            "minWidth" : "435px",
+                            "minHeight" : "435px",
+                            "backgroundColor" : "rgba(0,0,0,1)",
+                            "paddingInline" : "0px",
+                            "paddingBlock" : "0px",
+                            "borderWidth" : "15px",
+                            "borderColor" : "rgba(255,255,255,1)",
+                            "borderRadius" : "5px"
                         }
                     },
-                    "cmps": []
-                }
-            ]
-        },
-        {
-            "id": "wc088",
-            "type": "wap-section",
-            "info": {
-                "style": {
-                    "backgroundImage": "",
-                    "backgroundColor": "#484848",
-                    "paddingInline": "0px",
-                    "paddingBlock": "0px",
-                    "flexDirection": "row",
-                    "alignItems": "center",
-                    "justifyContent": "center",
-                    "alignContent": "unset",
-                    "minHeight": ""
-                }
-            },
-            "cmps": [
+                    "cmps" : []
+                }, 
                 {
-                    "id": "wc081",
-                    "type": "wap-card",
-                    "info": {
-                        "style": {
-                            "backgroundImage": "",
-                            "backgroundColor": "#fff",
-                            "paddingInline": "0px",
-                            "paddingBlock": "0px",
-                            "flexDirection": "column",
-                            "alignItems": "center",
-                            "justifyContent": "center",
-                            "alignContent": "unset",
-                            "borderRadius": "15px",
-                            "minHeight": ""
+                    "id" : "CabelloC10",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "16px",
+                            "minHeight" : "440px",
+                            "paddingInline" : "5px",
+                            "paddingBlock" : "5px",
+                            "flexDirection" : "column",
+                            "alignItems" : "flex-start",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
                         }
                     },
-                    "cmps": [
+                    "cmps" : [ 
                         {
-                            "id": "wc093",
-                            "type": "wap-img",
-                            "info": {
-                                "src": "https://robohash.org/WeBuild",
-                                "style": {
-                                    "width": "100px",
-                                    "backgroundColor": "",
-                                    "paddingInline": "5px",
-                                    "paddingBlock": "5px",
-                                    "borderRadius": "15px"
+                            "id" : "CabelloC21",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "flexDirection" : "column",
+                                    "alignItems" : "flex-start",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
                                 }
                             },
-                            "cmps": []
-                        },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloC23",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "flexDirection" : "row",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT5",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "I am ",
+                                                "style" : {
+                                                    "fontSize" : "24px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "roboto",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT6",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Cabello",
+                                                "style" : {
+                                                    "fontSize" : "24px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,0,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "roboto",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "id" : "CabeloT7",
+                                    "type" : "wap-text",
+                                    "info" : {
+                                        "txt" : "WEB DEVELOPER & PHOTOGRAPHER",
+                                        "style" : {
+                                            "fontSize" : "13px",
+                                            "textAlign" : "center",
+                                            "textDecoration" : "",
+                                            "fontWeight" : "",
+                                            "fontStyle" : "",
+                                            "color" : "rgba(255,255,255,1)",
+                                            "backgroundColor" : "rgba(255,255,255,0)",
+                                            "minWidth" : "16px",
+                                            "minHeight" : "16px",
+                                            "fontFamily" : "rubik",
+                                            "textShadow" : "none",
+                                            "paddingInline" : "5px",
+                                            "paddingBlock" : "5px",
+                                            "borderRadius" : "15px",
+                                            "letterSpacing" : "3px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }
+                            ]
+                        }, 
                         {
-                            "id": "wc0923",
-                            "type": "wap-text",
-                            "info": {
-                                "txt": "Title",
-                                "style": {
-                                    "fontSize": "14px",
-                                    "textAlign": "left",
-                                    "textDecoration": "",
-                                    "fontWeight": "",
-                                    "fontStyle": "",
-                                    "color": "#ffffff",
-                                    "backgroundColor": "",
-                                    "fontFamily": "math",
-                                    "textShadow": "",
-                                    "paddingInline": "5px",
-                                    "paddingBlock": "5px",
-                                    "borderRadius": "15px",
-                                    "letterSpacing": "0px"
+                            "id" : "CabeloT8",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat.",
+                                "style" : {
+                                    "fontSize" : "14px",
+                                    "textAlign" : "left",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "ariel",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
                                 }
                             },
-                            "cmps": []
-                        },
+                            "cmps" : []
+                        }, 
                         {
-                            "id": "wc05932",
-                            "type": "wap-btn",
-                            "info": {
-                                "txt": "Click here!",
-                                "action": {
-                                    "link": "url"
+                            "id" : "CabeloT9",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat.",
+                                "style" : {
+                                    "fontSize" : "14px",
+                                    "textAlign" : "left",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "ariel",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabeloB11",
+                            "type" : "wap-btn",
+                            "info" : {
+                                "txt" : "DOWNLOAD MY CV",
+                                "action" : {
+                                    "link" : "url"
                                 },
-                                "style": {
-                                    "textAlign": "center",
-                                    "textDecoration": "",
-                                    "fontWeight": "",
-                                    "fontStyle": "",
-                                    "color": "white",
-                                    "backgroundColor": "inherit",
-                                    "fontFamily": "math",
-                                    "textShadow": "",
-                                    "fontSize": "18px",
-                                    "paddingInline": "10px",
-                                    "paddingBlock": "20px",
-                                    "letterSpacing": "0px",
-                                    "borderWidth": "3px",
-                                    "borderColor": "black",
-                                    "borderRadius": "15px"
+                                "style" : {
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255, 255, 255, 0.07)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "fontSize" : "14px",
+                                    "paddingInline" : "35px",
+                                    "paddingBlock" : "19px",
+                                    "letterSpacing" : "0px",
+                                    "borderWidth" : "0px",
+                                    "borderColor" : "rgba(0,0,0,1)",
+                                    "borderRadius" : "0px"
                                 }
                             }
                         }
                     ]
                 }
             ]
+        }, 
+        {
+            "id" : "Cabellos4",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#0c0f16",
+                    "minWidth" : "100%",
+                    "minHeight" : "100px",
+                    "paddingInline" : "",
+                    "paddingBlock" : "10px",
+                    "flexDirection" : "column",
+                    "alignItems" : "center",
+                    "justifyContent" : "center",
+                    "alignContent" : "unset"
+                }
+            },
+            "cmps" : [ 
+                {
+                    "id" : "CabeloT11",
+                    "type" : "wap-text",
+                    "info" : {
+                        "txt" : "My Service",
+                        "style" : {
+                            "fontSize" : "40px",
+                            "textAlign" : "center",
+                            "textDecoration" : "underline",
+                            "fontWeight" : "bold",
+                            "fontStyle" : "",
+                            "color" : "rgba(255,255,255,1)",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "16px",
+                            "minHeight" : "16px",
+                            "fontFamily" : "rubik",
+                            "textShadow" : "none",
+                            "paddingInline" : "5px",
+                            "paddingBlock" : "5px",
+                            "borderRadius" : "0px",
+                            "letterSpacing" : "0px"
+                        }
+                    },
+                    "cmps" : []
+                }
+            ]
+        }, 
+        {
+            "id" : "Cabellos5",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#0c0f16",
+                    "minWidth" : "100%",
+                    "minHeight" : "200px",
+                    "paddingInline" : "40",
+                    "paddingBlock" : "20px",
+                    "flexDirection" : "row",
+                    "alignItems" : "center",
+                    "justifyContent" : "center",
+                    "alignContent" : "unset"
+                }
+            },
+            "cmps" : [ 
+                {
+                    "id" : "CabeloC3",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "#151921",
+                            "minWidth" : "",
+                            "minHeight" : "",
+                            "paddingInline" : "19px",
+                            "paddingBlock" : "15px",
+                            "flexDirection" : "column",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
+                        }
+                    },
+                    "cmps" : [ 
+                        {
+                            "id" : "CabeloT12",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Web Development",
+                                "style" : {
+                                    "fontSize" : "17px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "bold",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "5px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabeloT13",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                "style" : {
+                                    "fontSize" : "14px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
+                                }
+                            },
+                            "cmps" : []
+                        }
+                    ]
+                }, 
+                {
+                    "id" : "CabelloC4",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "#151921",
+                            "minWidth" : "",
+                            "minHeight" : "",
+                            "paddingInline" : "19px",
+                            "paddingBlock" : "15px",
+                            "flexDirection" : "column",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
+                        }
+                    },
+                    "cmps" : [ 
+                        {
+                            "id" : "CabeloT14",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Web Development",
+                                "style" : {
+                                    "fontSize" : "17px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "bold",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "5px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabeloT15",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                "style" : {
+                                    "fontSize" : "14px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
+                                }
+                            },
+                            "cmps" : []
+                        }
+                    ]
+                }, 
+                {
+                    "id" : "CabelloC7",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "#151921",
+                            "minWidth" : "",
+                            "minHeight" : "",
+                            "paddingInline" : "19px",
+                            "paddingBlock" : "15px",
+                            "flexDirection" : "column",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
+                        }
+                    },
+                    "cmps" : [ 
+                        {
+                            "id" : "CabeloT16",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Web Development",
+                                "style" : {
+                                    "fontSize" : "17px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "bold",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "5px"
+                                }
+                            },
+                            "cmps" : []
+                        }, 
+                        {
+                            "id" : "CabeloT17",
+                            "type" : "wap-text",
+                            "info" : {
+                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                "style" : {
+                                    "fontSize" : "14px",
+                                    "textAlign" : "center",
+                                    "textDecoration" : "",
+                                    "fontWeight" : "",
+                                    "fontStyle" : "",
+                                    "color" : "rgba(255,255,255,1)",
+                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                    "minWidth" : "16px",
+                                    "minHeight" : "16px",
+                                    "fontFamily" : "rubik",
+                                    "textShadow" : "none",
+                                    "paddingInline" : "5px",
+                                    "paddingBlock" : "5px",
+                                    "borderRadius" : "15px",
+                                    "letterSpacing" : "0px"
+                                }
+                            },
+                            "cmps" : []
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "id" : "Cabellos6",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#11141b",
+                    "minWidth" : "100%",
+                    "minHeight" : "100px",
+                    "paddingInline" : "",
+                    "paddingBlock" : "10px",
+                    "flexDirection" : "column",
+                    "alignItems" : "center",
+                    "justifyContent" : "center",
+                    "alignContent" : "unset"
+                }
+            },
+            "cmps" : [ 
+                {
+                    "id" : "CabeloT18",
+                    "type" : "wap-text",
+                    "info" : {
+                        "txt" : "Work & Eduction",
+                        "style" : {
+                            "fontSize" : "40px",
+                            "textAlign" : "center",
+                            "textDecoration" : "underline",
+                            "fontWeight" : "bold",
+                            "fontStyle" : "",
+                            "color" : "rgba(255,255,255,1)",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "16px",
+                            "minHeight" : "16px",
+                            "fontFamily" : "rubik",
+                            "textShadow" : "none",
+                            "paddingInline" : "5px",
+                            "paddingBlock" : "5px",
+                            "borderRadius" : "0px",
+                            "letterSpacing" : "0px"
+                        }
+                    },
+                    "cmps" : []
+                }
+            ]
+        }, 
+        {
+            "id" : "Cabellos7",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#11141b",
+                    "minWidth" : "100%",
+                    "minHeight" : "200px",
+                    "paddingInline" : "40",
+                    "paddingBlock" : "20px",
+                    "flexDirection" : "row",
+                    "alignItems" : "center",
+                    "justifyContent" : "center",
+                    "alignContent" : "unset"
+                }
+            },
+            "cmps" : [ 
+                {
+                    "id" : "CabeloC5",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "#0c0f16",
+                            "minWidth" : "",
+                            "minHeight" : "",
+                            "paddingInline" : "19px",
+                            "paddingBlock" : "15px",
+                            "flexDirection" : "column",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
+                        }
+                    },
+                    "cmps" : [ 
+                        {
+                            "id" : "CabeloC6",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "#0c0f16",
+                                    "minWidth" : "",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloIm1",
+                                    "type" : "wap-img",
+                                    "info" : {
+                                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622927742/zdp94nutndsuukcq78cb.jpg",
+                                        "style" : {
+                                            "minWidth" : "4px",
+                                            "minHeight" : "10px",
+                                            "backgroundColor" : "rgba(0,0,0,1)",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(255,255,255,1)",
+                                            "borderRadius" : "0px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }, 
+                                {
+                                    "id" : "CabeloC134",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "#0c0f16",
+                                            "minWidth" : "",
+                                            "minHeight" : "",
+                                            "paddingInline" : "19px",
+                                            "paddingBlock" : "15px",
+                                            "flexDirection" : "column",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT19",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Full stack Web Developer",
+                                                "style" : {
+                                                    "fontSize" : "17px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "5px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT20",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "2020 - 2021",
+                                                "style" : {
+                                                    "fontSize" : "10px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "#f55422",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "0px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT40",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                                "style" : {
+                                                    "fontSize" : "14px",
+                                                    "textAlign" : "left",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "id" : "CabeloC12",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "#0c0f16",
+                                    "minWidth" : "",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloIm1",
+                                    "type" : "wap-img",
+                                    "info" : {
+                                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622927742/zdp94nutndsuukcq78cb.jpg",
+                                        "style" : {
+                                            "minWidth" : "4px",
+                                            "minHeight" : "10px",
+                                            "backgroundColor" : "rgba(0,0,0,1)",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(255,255,255,1)",
+                                            "borderRadius" : "0px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }, 
+                                {
+                                    "id" : "CabeloC124",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "#0c0f16",
+                                            "minWidth" : "",
+                                            "minHeight" : "",
+                                            "paddingInline" : "19px",
+                                            "paddingBlock" : "15px",
+                                            "flexDirection" : "column",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT21",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Back-End Developer",
+                                                "style" : {
+                                                    "fontSize" : "17px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "5px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT22",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "2020 - 2021",
+                                                "style" : {
+                                                    "fontSize" : "10px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "#f55422",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "0px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT23",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                                "style" : {
+                                                    "fontSize" : "14px",
+                                                    "textAlign" : "left",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "id" : "CabeloC11",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "#0c0f16",
+                                    "minWidth" : "",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloIm1",
+                                    "type" : "wap-img",
+                                    "info" : {
+                                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622927742/zdp94nutndsuukcq78cb.jpg",
+                                        "style" : {
+                                            "minWidth" : "4px",
+                                            "minHeight" : "10px",
+                                            "backgroundColor" : "rgba(0,0,0,1)",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(255,255,255,1)",
+                                            "borderRadius" : "0px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }, 
+                                {
+                                    "id" : "CabeloC114",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "#0c0f16",
+                                            "minWidth" : "",
+                                            "minHeight" : "",
+                                            "paddingInline" : "19px",
+                                            "paddingBlock" : "15px",
+                                            "flexDirection" : "column",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT24",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "UI/UX Designer",
+                                                "style" : {
+                                                    "fontSize" : "17px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "5px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT25",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "2020 - 2021",
+                                                "style" : {
+                                                    "fontSize" : "10px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "#f55422",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "0px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT26",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                                "style" : {
+                                                    "fontSize" : "14px",
+                                                    "textAlign" : "left",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "id" : "CabeloC10",
+                    "type" : "wap-card",
+                    "info" : {
+                        "style" : {
+                            "backgroundImage" : "",
+                            "backgroundColor" : "#0c0f16",
+                            "minWidth" : "",
+                            "minHeight" : "",
+                            "paddingInline" : "19px",
+                            "paddingBlock" : "15px",
+                            "flexDirection" : "column",
+                            "alignItems" : "center",
+                            "justifyContent" : "space-between",
+                            "alignContent" : "unset",
+                            "borderRadius" : "15px"
+                        }
+                    },
+                    "cmps" : [ 
+                        {
+                            "id" : "CabeloC9",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "#0c0f16",
+                                    "minWidth" : "",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloIm1",
+                                    "type" : "wap-img",
+                                    "info" : {
+                                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622927742/zdp94nutndsuukcq78cb.jpg",
+                                        "style" : {
+                                            "minWidth" : "4px",
+                                            "minHeight" : "10px",
+                                            "backgroundColor" : "rgba(0,0,0,1)",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(255,255,255,1)",
+                                            "borderRadius" : "0px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }, 
+                                {
+                                    "id" : "CabeloC74",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "#0c0f16",
+                                            "minWidth" : "",
+                                            "minHeight" : "",
+                                            "paddingInline" : "19px",
+                                            "paddingBlock" : "15px",
+                                            "flexDirection" : "column",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT27",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Academic Degree",
+                                                "style" : {
+                                                    "fontSize" : "17px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "5px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT28",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "2017 - 2020",
+                                                "style" : {
+                                                    "fontSize" : "10px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "#f55422",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "0px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT29",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                                "style" : {
+                                                    "fontSize" : "14px",
+                                                    "textAlign" : "left",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "id" : "CabeloC8",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "#0c0f16",
+                                    "minWidth" : "",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloIm1",
+                                    "type" : "wap-img",
+                                    "info" : {
+                                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622927742/zdp94nutndsuukcq78cb.jpg",
+                                        "style" : {
+                                            "minWidth" : "4px",
+                                            "minHeight" : "10px",
+                                            "backgroundColor" : "rgba(0,0,0,1)",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(255,255,255,1)",
+                                            "borderRadius" : "0px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }, 
+                                {
+                                    "id" : "CabeloC154",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "#0c0f16",
+                                            "minWidth" : "",
+                                            "minHeight" : "",
+                                            "paddingInline" : "19px",
+                                            "paddingBlock" : "15px",
+                                            "flexDirection" : "column",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT31",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Bachelor’s Degree",
+                                                "style" : {
+                                                    "fontSize" : "17px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "5px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT32",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "2015 - 2017",
+                                                "style" : {
+                                                    "fontSize" : "10px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "#f55422",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "0px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT33",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                                "style" : {
+                                                    "fontSize" : "14px",
+                                                    "textAlign" : "left",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "id" : "CabeloC7",
+                            "type" : "wap-card",
+                            "info" : {
+                                "style" : {
+                                    "backgroundImage" : "",
+                                    "backgroundColor" : "#0c0f16",
+                                    "minWidth" : "",
+                                    "minHeight" : "",
+                                    "paddingInline" : "19px",
+                                    "paddingBlock" : "15px",
+                                    "flexDirection" : "row",
+                                    "alignItems" : "center",
+                                    "justifyContent" : "space-between",
+                                    "alignContent" : "unset",
+                                    "borderRadius" : "15px"
+                                }
+                            },
+                            "cmps" : [ 
+                                {
+                                    "id" : "CabelloIm1",
+                                    "type" : "wap-img",
+                                    "info" : {
+                                        "src" : "http://res.cloudinary.com/triplen91/image/upload/v1622927742/zdp94nutndsuukcq78cb.jpg",
+                                        "style" : {
+                                            "minWidth" : "4px",
+                                            "minHeight" : "10px",
+                                            "backgroundColor" : "rgba(0,0,0,1)",
+                                            "paddingInline" : "0px",
+                                            "paddingBlock" : "0px",
+                                            "borderWidth" : "0px",
+                                            "borderColor" : "rgba(255,255,255,1)",
+                                            "borderRadius" : "0px"
+                                        }
+                                    },
+                                    "cmps" : []
+                                }, 
+                                {
+                                    "id" : "CabeloC144",
+                                    "type" : "wap-card",
+                                    "info" : {
+                                        "style" : {
+                                            "backgroundImage" : "",
+                                            "backgroundColor" : "#0c0f16",
+                                            "minWidth" : "",
+                                            "minHeight" : "",
+                                            "paddingInline" : "19px",
+                                            "paddingBlock" : "15px",
+                                            "flexDirection" : "column",
+                                            "alignItems" : "flex-start",
+                                            "justifyContent" : "space-between",
+                                            "alignContent" : "unset",
+                                            "borderRadius" : "15px"
+                                        }
+                                    },
+                                    "cmps" : [ 
+                                        {
+                                            "id" : "CabeloT34",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Specialization Course",
+                                                "style" : {
+                                                    "fontSize" : "17px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "5px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT35",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "2010 - 2015",
+                                                "style" : {
+                                                    "fontSize" : "10px",
+                                                    "textAlign" : "center",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "bold",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "#f55422",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "0px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }, 
+                                        {
+                                            "id" : "CabeloT36",
+                                            "type" : "wap-text",
+                                            "info" : {
+                                                "txt" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore et dolore.",
+                                                "style" : {
+                                                    "fontSize" : "14px",
+                                                    "textAlign" : "left",
+                                                    "textDecoration" : "",
+                                                    "fontWeight" : "",
+                                                    "fontStyle" : "",
+                                                    "color" : "rgba(255,255,255,1)",
+                                                    "backgroundColor" : "rgba(255,255,255,0)",
+                                                    "minWidth" : "16px",
+                                                    "minHeight" : "16px",
+                                                    "fontFamily" : "rubik",
+                                                    "textShadow" : "none",
+                                                    "paddingInline" : "5px",
+                                                    "paddingBlock" : "5px",
+                                                    "borderRadius" : "15px",
+                                                    "letterSpacing" : "0px"
+                                                }
+                                            },
+                                            "cmps" : []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "id" : "Cabellos10",
+            "sectionType" : "Hero-section",
+            "type" : "wap-section",
+            "info" : {
+                "txt" : "",
+                "style" : {
+                    "backgroundImage" : "",
+                    "backgroundColor" : "#11141b",
+                    "minWidth" : "100%",
+                    "minHeight" : "100px",
+                    "paddingInline" : "",
+                    "paddingBlock" : "10px",
+                    "flexDirection" : "column",
+                    "alignItems" : "center",
+                    "justifyContent" : "center",
+                    "alignContent" : "unset"
+                }
+            },
+            "cmps" : [ 
+                {
+                    "id" : "CabeloT37",
+                    "type" : "wap-text",
+                    "info" : {
+                        "txt" : "My Skills",
+                        "style" : {
+                            "fontSize" : "40px",
+                            "textAlign" : "center",
+                            "textDecoration" : "underline",
+                            "fontWeight" : "bold",
+                            "fontStyle" : "",
+                            "color" : "rgba(255,255,255,1)",
+                            "backgroundColor" : "rgba(255,255,255,0)",
+                            "minWidth" : "16px",
+                            "minHeight" : "16px",
+                            "fontFamily" : "rubik",
+                            "textShadow" : "none",
+                            "paddingInline" : "5px",
+                            "paddingBlock" : "5px",
+                            "borderRadius" : "0px",
+                            "letterSpacing" : "0px"
+                        }
+                    },
+                    "cmps" : []
+                }
+            ]
+        }, 
+        {
+            "id" : "CabeloT38",
+            "type" : "wap-progress",
+            "info" : {
+                "txt" : "My Skills",
+                "progress" : "90",
+                "style" : {
+                    "fontSize" : "40px",
+                    "textAlign" : "center",
+                    "textDecoration" : "underline",
+                    "fontWeight" : "bold",
+                    "fontStyle" : "",
+                    "color" : "rgba(255,255,255,1)",
+                    "backgroundColor" : "rgba(255,255,255,0)",
+                    "minWidth" : "16px",
+                    "minHeight" : "16px",
+                    "fontFamily" : "rubik",
+                    "textShadow" : "none",
+                    "paddingInline" : "5px",
+                    "paddingBlock" : "5px",
+                    "borderRadius" : "0px",
+                    "letterSpacing" : "0px"
+                }
+            },
+            "cmps" : []
         }
     ],
-    "isPublic": true
+    "isEdit" : true,
+    "isPublic" : true
 }

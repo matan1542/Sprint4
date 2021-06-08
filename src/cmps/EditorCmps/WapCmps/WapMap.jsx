@@ -6,14 +6,17 @@ function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp, google }) {
     lat: cmp.info.lat,
     lng: cmp.info.lng,
   };
-  return (
+  const onMapClicked = (ev)=>{
+    return
+  }
+    return (
     <div className="wap-section wap-map" style={{ ...cmp.info.style, zIndex: "4" }} onClick={(ev) => onCmpFocus(ev, cmp)}>
       <div className="wap-section-tool" style={{ width: "30px" }}>
         <button className="wap-el-btn-del" onClick={() => onDeleteCmp(cmp.id)}>
           <DeleteForeverOutlinedIcon />
         </button>
       </div>
-      <div className="map-cover">
+      
       <Map
         className="wap-map-container"
         google={google}
@@ -33,7 +36,7 @@ function _GoogleMap({ cmp, onCmpFocus, onDeleteCmp, google }) {
       >
         <Marker position={pos} name={"branch location"} />
       </Map>
-      
+      <div className="map-cover">
       </div>
     </div>
   );
