@@ -44,7 +44,6 @@ export function EditTextShadow({ val, onUpdateCurrCmp ,currCmp }) {
           
           <FormControl variant="outlined" size="small" className={classes.formControl}>
             
-            <InputLabel id="demo-simple-select-outlined-label">Shadow</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"

@@ -42,8 +42,6 @@ export function EditFontFamily({val ,onUpdateCurrCmp ,currCmp }) {
         <Grid item>
           
           <FormControl variant="outlined" size="small" className={classes.formControl}>
-            
-            <InputLabel id="demo-simple-select-outlined-label">Font</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
