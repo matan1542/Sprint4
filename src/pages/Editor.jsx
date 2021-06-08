@@ -19,7 +19,9 @@ import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
+import { MousePointer } from '../cmps/MousePointer.jsx'
 import { prev } from "cheerio/lib/api/traversing";
+import React from "react";
 
 export class _Editor extends Component {
   state = {
@@ -49,9 +51,12 @@ export class _Editor extends Component {
       this.state.currWap.sessionId || this.props.match.params.roomId
     );
     socketService.on("update wap", this.updateSocketWap);
+    socketService.on("mouse_position_update", this.onUpdateMousePos)
     // socket.broadcast.emit('mouse_position_update', data);
     this.setState({ respView: screenView, editorStatus: status });
   }
+
+  mouseRef = React.createRef()
 
 
 
@@ -288,6 +293,9 @@ export class _Editor extends Component {
   //   }, 500);
   // }}
 
+  onUpdateMousePos = (newPos) => {
+    console.log(this.mouseRef);
+  }
 
   onMovingMouse = (ev) => {
     const pos = { x: ev.clientX, y: ev.clientY }
@@ -301,6 +309,7 @@ export class _Editor extends Component {
     if (!currWap || isLodaing) return <Loader />;
     return (
       <section className="app-editor flex space-between" onMouseMove={this.onMovingMouse}>
+        <MousePointer ref={this.mouseRef} />
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
