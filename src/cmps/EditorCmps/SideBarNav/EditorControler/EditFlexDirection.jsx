@@ -44,7 +44,6 @@ export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
         </Grid>
         <Grid item>
           <FormControl variant="outlined" size="small" className={classes.formControl}>
-            <InputLabel id="demo-simple-select-outlined-label">{val}</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
