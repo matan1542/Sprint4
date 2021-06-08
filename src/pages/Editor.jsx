@@ -49,7 +49,6 @@ export class _Editor extends Component {
       this.state.currWap.sessionId || this.props.match.params.roomId
     );
     socketService.on("update wap", this.updateSocketWap);
-    // socket.broadcast.emit('mouse_position_update', data);
     this.setState({ respView: screenView, editorStatus: status });
   }
 
@@ -69,10 +68,6 @@ export class _Editor extends Component {
       delete currWap._id;
     }
     currWap.isEdit = true;
-    currWap.coordinates = {
-      x:null,
-      y:null
-    }
     if (!currWap.sessionId && !this.props.match.params.roomId) {
       currWap.sessionId = utilService.makeId();
       this.props.history.push(`/editor/${currWap.sessionId}`);
@@ -277,17 +272,15 @@ export class _Editor extends Component {
     );
   };
 
-  // onChangeMouse=(ev)=>{
-  //   var prevMouseX, prevMouseY;
-  //   var intervalID = window.setInterval(function(){
-  //      ... you get your mouse coordinates
-    
-  //      if (prevMouseX !== x || !prevMouseY !== y) {
-  //         socket.emit('mouse_position', {mx : x, my : y});
-  //      }
-  //   }, 500);
-  // }}
-  
+  onChangeMo
+  var prevMouseX, prevMouseY;
+var intervalID = window.setInterval(function(){
+   ... you get your mouse coordinates
+
+   if (prevMouseX !== x || !prevMouseY !== y) {
+      socket.emit('mouse_position', {mx : x, my : y});
+   }
+}, 500);
 
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
