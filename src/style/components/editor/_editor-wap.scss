@@ -58,14 +58,14 @@
     }
 }
 
-@media screen and (max-width: $editor-mobile-breakpoint) {   
+@media screen and (max-width: $editor-mobile-breakpoint) {
     .editor-wap {
         margin: 0 auto;
         flex: 0 1 auto;
         .wap-section {
             flex-direction: column !important;
             nav {
-                flex-direction: column !important;
+                flex-direction: row !important;
             }
             img {
                 width: 100% !important;
@@ -78,6 +78,7 @@
             }
             &.wap-header {
                 flex-direction: column !important;
+                flex-direction: row !important;
             }
         }
         button.wap-text {
@@ -87,14 +88,14 @@
     }
     .app-editor {
         flex-direction: column !important;
-        justify-content: flex-start ;
+        justify-content: flex-start;
     }
-    .editor-side{
-        flex-direction: row !important;  
-        &-bar { 
+    .editor-side {
+        flex-direction: row !important;
+        &-bar {
             flex-direction: row !important;
             height: 100px;
-            min-width: 100%; 
+            min-width: 100%;
             margin: 0;
             border-radius: 0px;
         }
@@ -111,7 +112,7 @@
             display: none;
         }
         .editor-publish {
-            padding:5px;
+            padding: 5px;
             button {
                 padding: 10px 15px;
             }
@@ -182,14 +183,14 @@
 .editor-wap-size {
     min-height: 100%;
 }
-.map-cover{
+.map-cover {
     position: absolute;
     z-index: 3;
-    left:0;
+    left: 0;
     top: 0;
     height: 100%;
     width: 100%;
-    background-color:transparent !important;
+    background-color: transparent !important;
 }
 //     @media screen and (max-width : $mobile-breakpoint) {
 //         border: 5px solid grey;
