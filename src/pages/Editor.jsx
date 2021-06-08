@@ -20,6 +20,7 @@ import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
 import React from "react";
+import { Modal } from "@material-ui/core";
 
 export class _Editor extends Component {
   state = {
@@ -29,7 +30,8 @@ export class _Editor extends Component {
     undoWaps: [],
     respView: "large-view",
     isLodaing: false,
-    userUrl: ''
+    userUrl: '',
+    isModalOpen: false
   };
 
   async componentDidMount() {
@@ -85,14 +87,15 @@ export class _Editor extends Component {
     undoWaps.push(JSON.parse(JSON.stringify(currWap)));
     const userUrl = window.location.href
     this.setState({ ...this.state, currWap, undoWaps, userUrl }, () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
-  updateSocketWap = (currWap) => {
+  updateSocketWap = (data) => {
     this.setState((prevState) => ({
       ...prevState,
-      currWap,
+      currWap: data.currWap,
+      undoWaps: data.undoWaps
     }));
   };
 
@@ -117,7 +120,7 @@ export class _Editor extends Component {
       undoWaps,
       currCmp: null,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -133,12 +136,12 @@ export class _Editor extends Component {
       currWap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
   onCloneCmp = async (cmp, currWap) => {
-    console.log("cmp:", cmp, "cmp.parentId" , cmp.parentId);
+    console.log("cmp:", cmp, "cmp.parentId", cmp.parentId);
     const undoWaps = await this.addUndoWap();
     const clonedCmp = await cmpService.changeIds(cmp);
     if (cmp.parentId === "main") {
@@ -153,7 +156,7 @@ export class _Editor extends Component {
       currWap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -180,7 +183,7 @@ export class _Editor extends Component {
       currWap: wap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -193,7 +196,7 @@ export class _Editor extends Component {
       currWap,
       undoWaps,
     }), () => {
-      socketService.emit('update wap', this.state.currWap)
+      socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
     });
   };
 
@@ -259,7 +262,7 @@ export class _Editor extends Component {
         ...prevState,
         currWap: wapCmps,
       }), () => {
-        socketService.emit('update wap', this.state.currWap)
+        socketService.emit('update wap', { currWap: this.state.currWap, undoWaps: this.state.undoWaps })
       });
       return;
     }
@@ -296,8 +299,15 @@ export class _Editor extends Component {
     socketService.emit('mouse move', pos)
   }
 
+  toggleModal = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      isModalOpen: !this.state.isModalOpen
+    }))
+  }
+
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing, userUrl } =
+    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing, userUrl, isModalOpen } =
       this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
@@ -308,6 +318,7 @@ export class _Editor extends Component {
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
             userUrl={userUrl}
+            toggleModal={this.toggleModal}
             onUndoWap={this.onUndoWap}
             undoWaps={undoWaps}
             currCmp={currCmp}
