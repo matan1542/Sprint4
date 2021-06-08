@@ -13,7 +13,7 @@ export const routes = [
         component: Publish
     },
     {
-        path: '/editor/:id?',
+        path: '/editor/:roomId?',
         component: Editor,
     },
     {
