@@ -13,22 +13,22 @@ export class EditColor extends React.Component {
     },
   };
   componentDidMount() {
-      let color = this.props.val
-      if(!color) return
-      if(color.charAt() === '#') {
-        var r = parseInt(color.substring(1, 3), 16),
+    let color = this.props.val
+    if (!color) return
+    if (color.charAt() === '#') {
+      var r = parseInt(color.substring(1, 3), 16),
         g = parseInt(color.substring(3, 5), 16),
         b = parseInt(color.substring(5, 7), 16);
-        const colorRgb = {r, g, b, a: 1}
-        this.setState({...this.state, color: colorRgb })
-      } else if (color !== 'inherit') {
-        color = color.split('(')[1].split(')')[0].split(',')
-        const colorRgb = {r: color[0], g: color[1], b: color[2], a: color[3]}
-        this.setState({...this.state, color: colorRgb })
-      } else {
-        const colorRgb = {r: '255', g: '255', b: '255', a: '0'}
-        this.setState({...this.state, color: colorRgb })
-      }
+      const colorRgb = { r, g, b, a: 1 }
+      this.setState({ ...this.state, color: colorRgb })
+    } else if (color !== 'inherit') {
+      color = color.split('(')[1].split(')')[0].split(',')
+      const colorRgb = { r: color[0], g: color[1], b: color[2], a: color[3] }
+      this.setState({ ...this.state, color: colorRgb })
+    } else {
+      const colorRgb = { r: '255', g: '255', b: '255', a: '0' }
+      this.setState({ ...this.state, color: colorRgb })
+    }
   }
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker })
