@@ -5,6 +5,7 @@ export function WapImgGallery({ cmp,
     onDeleteCmp,
     onCmpFocus,
     onCloneCmp,
+    wap,
     isEdit }) {
     if (!isEdit) {
         return (
@@ -23,6 +24,7 @@ export function WapImgGallery({ cmp,
                 cmp.idx = idx
                 cmp.parentId = parentId
                 return <WapImg key={idx} cmp={cmp}
+                    wap={wap}
                     onDeleteCmp={onDeleteCmp}
                     onCloneCmp={onCloneCmp}
                     onCmpFocus={onCmpFocus}
