@@ -41,7 +41,7 @@ export class WapForm extends Component {
     }
 
     render() {
-        const { onSubmit } = this.props
+        const { onSubmit, isEdit } = this.props
         return (
             <form className="wap-el flex column" onSubmit={onSubmit}>
                 <TextField required id="outlined-basic" label="Your name" name="name" placeholder="John Smith" onChange={this.handleChange} />
@@ -49,7 +49,7 @@ export class WapForm extends Component {
                 <TextField required type="number" id="outlined-basic" label="Your phone number" name="phoneNumber" placeholder="0501234567" onChange={this.handleChange} />
                 <TextField required id="outlined-basic" label="Subject" name="subject" onChange={this.handleChange} />
                 <TextField required id="outlined-multiline-static" label="Your message" name="msg" multiline rows={5} onChange={this.handleChange} />
-                <Button variant="outlined" color="primary" type="submit">Send!</Button>
+                <Button variant="outlined" color="primary" type={!isEdit? "submit" : "button"}>Send!</Button>
             </form>
         )
     }
