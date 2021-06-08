@@ -35,6 +35,7 @@ export function EditBackgroundImg({ onUpdateCurrCmp, currCmp }) {
 
     useEffect(() => {
         onSubmitForm()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fileState])
 
     const fileToSearch = async ({ target }) => {

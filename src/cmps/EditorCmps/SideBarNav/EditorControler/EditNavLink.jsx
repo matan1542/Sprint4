@@ -9,6 +9,7 @@ export function EditNavLink({ cmp, onUpdateCurrCmp }) {
 
     useEffect(() => {
         onEditUrl()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [urlState])
 
     const onEditUrl = () => {

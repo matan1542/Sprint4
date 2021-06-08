@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 // import { Draggable, Droppable } from "react-beautiful-dnd";
 import { DynamicCmps } from "./WapCmps/DynamicCmps";
-import {utilService} from "../../services/utils"
 
 export class EditorWapCmps extends Component {
 
