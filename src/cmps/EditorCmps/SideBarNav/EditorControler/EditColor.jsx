@@ -13,7 +13,6 @@ export class EditColor extends React.Component {
     },
   };
   componentDidMount() {
-      console.log('val', this.props.val)
       let color = this.props.val
       if(!color) return
       if(color.charAt() === '#') {
@@ -40,7 +39,6 @@ export class EditColor extends React.Component {
   };
 
   handleChange = async (color) => {
-    console.log('@@@@ color:', color)
     const { currCmp, onUpdateCurrCmp, att } = this.props
     this.setState({ color: color.rgb })
     const { r, g, b, a } = color.rgb
@@ -81,8 +79,6 @@ export class EditColor extends React.Component {
         },
       },
     });
-    console.log('this.stsate.color:', this.props)
-    // console.log('styles.color', styles.color.background);
     return (
       <div className="color-picker flex space-between mb-3" >
         <label>{this.props.att === 'color' ? 'Color' : 'Background Color'}</label>
