@@ -8,10 +8,14 @@
 }
 
 .wap-card {
-    display: flex;
-    margin: 10px;
+    margin: 5px;
 }
 
 .wap-img {
     object-fit: cover;
+    margin: 5px;
+}
+
+.wap-gallery {
+    flex-wrap: wrap;
 }
