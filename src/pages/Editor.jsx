@@ -305,10 +305,11 @@ export class _Editor extends Component {
     socketService.emit('mouse move', pos)
   }
 
+  onUserDisconnected
+
   render() {
     const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
       this.state;
-    console.log('window.innerWidth', window.innerWidth);
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
     return (
