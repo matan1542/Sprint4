@@ -18,9 +18,18 @@ export function EditAlignText({ currCmp, att, onUpdateCurrCmp }) {
                     Text align
                 </Typography>
                 <Box display="flex" ml={1} width={110} justifyContent="space-between">
-                    <FormatAlignLeftIcon color={(val === 'start')?"primary":"secondary"} onClick={() => handleChange('start')} />
-                    <FormatAlignJustifyIcon color={(val === 'center')?"primary":"secondary"} onClick={() => handleChange('center')} />
-                    <FormatAlignRightIcon color={(val === 'end')?"primary":"secondary"} onClick={() => handleChange('end')} />
+                    <FormatAlignLeftIcon color={(val === 'start') ? "primary" : "inherit"} 
+                        style={{ cursor: 'pointer' }} 
+                        onClick={() => handleChange('start')} 
+                        />
+                    <FormatAlignJustifyIcon color={(val === 'center') ? "primary" : "inherit"}
+                        style={{ cursor: 'pointer' }} 
+                        onClick={() => handleChange('center')} 
+                        />
+                    <FormatAlignRightIcon color={(val === 'end') ? "primary" : "inherit"} 
+                    style={{cursor : 'pointer'}}
+                    onClick={() => handleChange('end')} 
+                        />
                 </Box>
             </Box>
 

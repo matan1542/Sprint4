@@ -19,14 +19,11 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditTextShadow({ val, onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [textShadow, setTextShadow] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,textShadow:`${value}`}}}
     await onUpdateCurrCmp(cmp)
-  
-    setTextShadow(event.target.value);
   };
 
   return (

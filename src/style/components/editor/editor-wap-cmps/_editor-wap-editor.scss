@@ -5,8 +5,9 @@
 .choose-responsive-view {
     display: flex;
     float: left;
+    text-align: center;
     height: auto;
-    padding: 0 0px;
+    padding: 0px 0px 0px 10px;
     align-self: center;
 }
 .choose-responsive-view:not(:checked) > input {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,14 +19,12 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [justifyContent, setJustifyContent] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,justifyContent:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setJustifyContent(event.target.value);
   };
 
 
@@ -42,11 +39,10 @@ export function EditJustifyContent({val ,onUpdateCurrCmp ,currCmp }) {
           </Box>
         <Grid item>
           <FormControl variant="outlined" size="small" className={classes.formControl}>
-            <InputLabel id="demo-simple-select-outlined-label">{val}</InputLabel>
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={justifyContent}
+              value={val}
               onChange={handleChange}
               size="small"
             >

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,16 +19,13 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [flexDirection, setFlexDirection] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,flexDirection:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setFlexDirection(event.target.value);
   };
-
 
   return (
     <div className={classes.root}>
@@ -47,11 +43,10 @@ export function EditFlexDirection({val ,onUpdateCurrCmp ,currCmp }) {
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={flexDirection}
+              value={val}
               onChange={handleChange}
               size="small"
             >
-              <MenuItem value={val}>{val}</MenuItem>
                 <MenuItem value="column">Column</MenuItem>
                 <MenuItem value="column-reverse">Column Reverse</MenuItem>
                 <MenuItem value="row">Row</MenuItem>
