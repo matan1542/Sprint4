@@ -13,15 +13,17 @@ import {
   setWapToEdit,
 } from "../store/actions/wap.actions.js";
 import { setMsg } from "../store/actions/user.msg.actions.js";
-// import { ScreenCapture } from 'react-screen-capture'
 
 import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
+<<<<<<< HEAD
 import { MousePointer } from '../cmps/MousePointer.jsx'
 import { prev } from "cheerio/lib/api/traversing";
 import React from "react";
+=======
+>>>>>>> 16fccb204c2a9ac84c5b4b9a517255e6dfc75824
 
 export class _Editor extends Component {
   state = {
@@ -37,7 +39,6 @@ export class _Editor extends Component {
     if (!this.props.waps) await this.props.loadWaps();
     if (!this.props.cmps) await this.props.loadCmps();
     await this.setCurrWap();
-    console.log(this.state.currWap);
     let screenView =
       window.innerWidth <= 555
         ? "small-view"
