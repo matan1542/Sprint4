@@ -29,6 +29,7 @@ export class _Editor extends Component {
     undoWaps: [],
     respView: "large-view",
     isLodaing: false,
+    userUrl: ''
   };
 
   async componentDidMount() {
@@ -82,7 +83,8 @@ export class _Editor extends Component {
     }
     const { undoWaps } = this.state;
     undoWaps.push(JSON.parse(JSON.stringify(currWap)));
-    this.setState({ ...this.state, currWap, undoWaps }, () => {
+    const userUrl = window.location.href
+    this.setState({ ...this.state, currWap, undoWaps, userUrl }, () => {
       socketService.emit('update wap', this.state.currWap)
     });
   };
@@ -295,7 +297,7 @@ export class _Editor extends Component {
   }
 
   render() {
-    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing } =
+    const { editorStatus, currCmp, currWap, respView, undoWaps, isLodaing, userUrl } =
       this.state;
     const { addCmp, changeCmpsIds, updateWap, cmps } = this.props;
     if (!currWap || isLodaing) return <Loader />;
@@ -305,6 +307,7 @@ export class _Editor extends Component {
         <UserMsg />
         <DragDropContext onDragEnd={this.onDragEnd}>
           <EditorSideBar
+            userUrl={userUrl}
             onUndoWap={this.onUndoWap}
             undoWaps={undoWaps}
             currCmp={currCmp}
