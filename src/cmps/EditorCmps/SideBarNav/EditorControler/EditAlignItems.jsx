@@ -20,14 +20,12 @@ const useStyles = makeStyles((theme) => ({
 
 export function EditAlignItems({val ,onUpdateCurrCmp ,currCmp }) {
   const classes = useStyles();
-  const [alignItems, setAlignItems] = React.useState('');
 
   const handleChange = async(event) => {
     const value = event.target.value;
     const cmp = {...currCmp,info:{...currCmp.info,style:{...currCmp.info.style,alignItems:`${value}`}}}
     await onUpdateCurrCmp(cmp)
   
-    setAlignItems(event.target.value);
   };
 
 
@@ -44,7 +42,7 @@ export function EditAlignItems({val ,onUpdateCurrCmp ,currCmp }) {
             <Select
               labelId="demo-simple-select-outlined-label"
               id="demo-simple-select-outlined"
-              value={alignItems}
+              value={val}
               onChange={handleChange}
               size="small"
             >
