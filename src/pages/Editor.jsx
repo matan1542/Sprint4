@@ -14,13 +14,13 @@ import {
   setWapToEdit,
 } from "../store/actions/wap.actions.js";
 import { setMsg } from "../store/actions/user.msg.actions.js";
-
 import { EditorSideBar } from "../cmps/EditorCmps/EditorSideBar";
 import { EditorWapSections } from "../cmps/EditorCmps/EditorWapSections";
 import { UserMsg } from "../cmps/UserMsg.jsx";
 import { Loader } from "../cmps/Loader.jsx";
 import React from "react";
 import {Modal} from "../cmps/Modal"
+
 export class _Editor extends Component {
   state = {
     editorStatus: "add",
