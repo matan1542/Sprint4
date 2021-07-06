@@ -62,7 +62,7 @@ export class EditorSideBar extends Component {
                     <div className="editor-publish w-100 flex space-around wrap" >
                         {window.innerWidth > 555 &&
                             <>
-                            <Button  color="primary" onClick={() => this.props.openModal()}>Work together now!</Button>
+                                <Button color="primary" onClick={() => this.props.openModal()}>Work together now!</Button>
                             </>}
                         <button className="btn-publish" color="primary" onClick={this.props.onPublish}>{(window.innerWidth < 555) ? <PublishIcon /> : 'Publish'}</button>
                     </div>
